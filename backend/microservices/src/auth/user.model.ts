@@ -22,6 +22,11 @@ export const UserSchema = new mongoose.Schema({
     enum: ['student', 'admin', 'instructor'],
     default: 'student',
   },
+  accountStatus: {
+    type: String,
+    enum: ['active', 'inactive', 'suspended'],
+    default: 'active',
+  },
 });
 
 export interface User extends Document {
@@ -30,4 +35,5 @@ export interface User extends Document {
   email: string;
   password: string;
   role: string;
+  accountStatus: string;
 }
