@@ -5,6 +5,7 @@ import { ConfigModule } from '@nestjs/config'; // Import ConfigModule
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
+import { AuthModule } from './auth/auth.module';
 import * as dotenv from 'dotenv'; // Import dotenv
 dotenv.config();
 
@@ -16,9 +17,10 @@ dotenv.config();
       isGlobal: true,
     }),
     MongooseModule.forRoot(process.env.DB),
-    ProductModule
+    ProductModule,
+    AuthModule
   ],
   controllers: [AppController],
   providers: [AppService],
 })
-export class AppModule {}
+export class AppModule { }
