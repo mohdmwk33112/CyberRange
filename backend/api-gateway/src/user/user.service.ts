@@ -12,6 +12,10 @@ export class UserService {
         return this.client.send({ cmd: 'get-profile' }, userId).toPromise();
     }
 
+    async getAllUsers(): Promise<any> {
+        return this.client.send({ cmd: 'get-all-users' }, {}).toPromise();
+    }
+
     async updateProfile(userId: string, data: any): Promise<any> {
         return this.client
             .send({ cmd: 'update-profile' }, { userId, data })

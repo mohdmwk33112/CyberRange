@@ -1,0 +1,82 @@
+/* eslint-disable prettier/prettier */
+import {
+    Controller,
+    Get,
+    Post,
+    Put,
+    Body,
+    Param,
+} from '@nestjs/common';
+import { ScenarioService } from './scenario.service';
+import { CreateScenarioDto } from './dto/create-scenario.dto';
+import { ValidateCommandDto } from './dto/validate-command.dto';
+import { ValidateActionDto } from './dto/validate-action.dto';
+
+@Controller('scenarios')
+export class ScenarioController {
+    constructor(private readonly scenarioService: ScenarioService) { }
+
+    @Post()
+    createScenario(@Body() createScenarioDto: CreateScenarioDto) {
+        return this.scenarioService.createScenario(createScenarioDto);
+    }
+
+    @Get()
+    getAllScenarios() {
+        return this.scenarioService.getAllScenarios();
+    }
+
+    @Get(':id')
+    getScenarioById(@Param('id') id: string) {
+        return this.scenarioService.getScenarioById(id);
+    }
+
+    @Post(':id/validate-command')
+    validateTerminalCommand(
+        @Param('id') scenarioId: string,
+        @Body() validateCommandDto: ValidateCommandDto,
+    ) {
+        return this.scenarioService.validateTerminalCommand(
+            validateCommandDto.userId,
+            scenarioId,
+            validateCommandDto.command,
+        );
+    }
+
+    @Post(':id/validate-action')
+    validateWebAction(
+        @Param('id') scenarioId: string,
+        @Body() validateActionDto: ValidateActionDto,
+    ) {
+        return this.scenarioService.validateWebAction(
+            validateActionDto.userId,
+            scenarioId,
+            validateActionDto.action,
+        );
+    }
+
+    @Get(':id/state/:userId')
+    getUserScenarioState(
+        @Param('id') scenarioId: string,
+        @Param('userId') userId: string,
+    ) {
+        return this.scenarioService.getUserScenarioState(userId, scenarioId);
+    }
+
+    @Put(':id/state/:userId')
+    updateScenarioState(
+        @Param('id') scenarioId: string,
+        @Param('userId') userId: string,
+        @Body() data: any,
+    ) {
+        return this.scenarioService.updateScenarioState(userId, scenarioId, data);
+    }
+
+    @Post(':id/complete/:userId')
+    completeScenario(
+        @Param('id') scenarioId: string,
+        @Param('userId') userId: string,
+    ) {
+        return this.scenarioService.completeScenario(userId, scenarioId);
+    }
+}

@@ -7,6 +7,7 @@ import { AppService } from './app.service';
 import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { ScenarioModule } from './scenario/scenario.module';
 import * as dotenv from 'dotenv'; // Import dotenv
 dotenv.config();
 
@@ -21,6 +22,7 @@ dotenv.config();
     ProductModule,
     AuthModule,
     UserModule,
+    ScenarioModule,
   ],
   controllers: [AppController],
   providers: [AppService],

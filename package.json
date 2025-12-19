@@ -1,0 +1,8 @@
+{
+  "dependencies": {
+    "@nestjs/microservices": "^11.1.9",
+    "@nestjs/mongoose": "^11.0.4",
+    "dotenv": "^17.2.3",
+    "mongoose": "^9.0.2"
+  }
+}

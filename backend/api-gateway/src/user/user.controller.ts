@@ -28,6 +28,11 @@ export class UserController {
     constructor(private readonly userService: UserService) { }
 
     // In a real app, UseGuards(JwtAuthGuard)
+    @Get() // GET /users
+    getAllUsers() {
+        return this.userService.getAllUsers();
+    }
+
     @Get('profile/:id')
     getProfile(@Param('id') id: string) {
         return this.userService.getProfile(id);

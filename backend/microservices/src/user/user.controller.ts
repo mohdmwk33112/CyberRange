@@ -12,6 +12,11 @@ export class UserController {
         return this.userService.getProfile(userId);
     }
 
+    @MessagePattern({ cmd: 'get-all-users' })
+    getAllUsers() {
+        return this.userService.getAllUsers();
+    }
+
     @MessagePattern({ cmd: 'update-profile' })
     updateProfile(payload: { userId: string; data: any }) {
         return this.userService.updateProfile(payload.userId, payload.data);

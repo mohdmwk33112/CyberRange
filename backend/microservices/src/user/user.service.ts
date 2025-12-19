@@ -22,6 +22,15 @@ export class UserService {
         return result as any;
     }
 
+    async getAllUsers(): Promise<User[]> {
+        const users = await this.userModel.find().exec();
+        return users.map((user) => {
+            // eslint-disable-next-line @typescript-eslint/no-unused-vars
+            const { password, ...result } = user.toObject();
+            return result as any;
+        });
+    }
+
     async updateProfile(userId: string, data: Partial<User>): Promise<User> {
         const updatedUser = await this.userModel
             .findByIdAndUpdate(userId, data, { new: true })

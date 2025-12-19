@@ -1,0 +1,176 @@
+Scenario Management Service
+Purpose
+
+Manages attack scenarios, including terminal-based command flows, web-based attack simulations (e.g., XSS), and command validation logic to ensure users execute attacks correctly and in the proper sequence.
+
+Database
+
+MongoDB
+
+Scenarios Collection
+
+ScenarioSteps Collection (or embedded steps)
+
+Responsibilities
+
+Define and manage attack scenarios
+
+Store terminal commands and web attack actions associated with each scenario
+
+Provide step-by-step guided instructions to the frontend
+
+Validate user-entered commands and actions
+
+Track scenario execution state and correctness
+
+Scenario Structure
+
+Each scenario includes:
+
+Scenario metadata:
+
+Title
+
+Description
+
+Attack type (XSS, SQLi, brute force, RCE, etc.)
+
+Difficulty level
+
+Attack execution model:
+
+Terminal-based commands
+
+Web interaction steps (form input, URL injection, payload submission)
+
+Validation rules:
+
+Expected commands or actions
+
+Required execution order
+
+Parameter and payload validation
+
+Completion criteria:
+
+Successful exploitation condition
+
+Failure conditions and hints
+
+Implementation Steps
+
+Create Scenario Management microservice
+
+Built with NestJS
+
+Connected to MongoDB
+
+Define scenario and step schemas
+
+Scenario:
+
+Scenario ID
+
+Attack type
+
+Difficulty
+
+Scenario Step:
+
+Step order
+
+Step type (terminal | web)
+
+Expected command or action
+
+Validation rules
+
+Feedback messages
+
+Implement scenario retrieval APIs
+
+GET /scenarios
+
+GET /scenarios/:id
+
+Returns:
+
+Scenario metadata
+
+Ordered steps
+
+Guide content for UI display
+
+Terminal command simulation logic
+
+Store allowed commands per step
+
+Match user input against:
+
+Exact commands
+
+Regex-based patterns
+
+Parameterized inputs
+
+Return simulated terminal output per command
+
+Web-based attack simulation support
+
+Define expected web interactions (e.g., XSS payload submission)
+
+Validate:
+
+Payload correctness
+
+Target field or URL
+
+Execution context
+
+Simulate vulnerable application responses
+
+Command and action validation engine
+
+Enforce:
+
+Correct command/action order
+
+Step-by-step progression
+
+Context-aware validation
+
+Reject:
+
+Skipped steps
+
+Incorrect payloads
+
+Out-of-sequence execution
+
+Scenario state tracking
+
+Maintain per-user scenario state:
+
+Current step
+
+Attempt count
+
+Partial completion
+
+Communicate state to:
+
+Terminal Service
+
+User Progress Service
+
+Completion and scoring
+
+Emit scenario completion events
+
+Trigger:
+
+Progress updates
+
+Score calculation
+
+Unlock next scenarios
