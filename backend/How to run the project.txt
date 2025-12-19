@@ -1,0 +1,11 @@
+To the microservices
+---------------------
+1 - Open new terminal
+2 - Write "cd microservices" then "npm install"
+3 - Run "npm run start:dev" to run microservices server.
+---------------------------------------------------------------------------
+To the API Gateway
+---------------------
+1 - Open new terminal
+2 - Write "cd api-gateway" then "npm install"
+3 - Run "npm run start:dev" to run API Gateway server.
