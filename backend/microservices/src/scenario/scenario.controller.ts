@@ -64,4 +64,24 @@ export class ScenarioController {
             payload.scenarioId,
         );
     }
+
+    @MessagePattern({ cmd: 'start-scenario' })
+    startScenario(payload: { scenarioId: string }) {
+        return this.scenarioService.startScenario(payload.scenarioId);
+    }
+
+    @MessagePattern({ cmd: 'stop-scenario' })
+    stopScenario(payload: { scenarioId: string }) {
+        return this.scenarioService.stopScenario(payload.scenarioId);
+    }
+
+    @MessagePattern({ cmd: 'reset-scenario' })
+    resetScenario(payload: { scenarioId: string }) {
+        return this.scenarioService.resetScenario(payload.scenarioId);
+    }
+
+    @MessagePattern({ cmd: 'get-scenario-runtime-status' })
+    getScenarioRuntimeStatus(payload: { scenarioId: string }) {
+        return this.scenarioService.getScenarioRuntimeStatus(payload.scenarioId);
+    }
 }

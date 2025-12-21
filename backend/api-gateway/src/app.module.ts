@@ -8,6 +8,7 @@ import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { ScenarioModule } from './scenario/scenario.module';
+import { SimulationModule } from './simulation/simulation.module';
 
 @Module({
   imports: [
@@ -21,6 +22,7 @@ import { ScenarioModule } from './scenario/scenario.module';
     AuthModule,
     UserModule,
     ScenarioModule,
+    SimulationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

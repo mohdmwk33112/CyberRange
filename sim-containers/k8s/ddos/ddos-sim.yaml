@@ -1,0 +1,87 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: juice-shop-ddos
+  namespace: simulations
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: juice-shop-ddos
+  template:
+    metadata:
+      labels:
+        app: juice-shop-ddos
+    spec:
+      containers:
+      - name: juice-shop
+        image: bkimminich/juice-shop:latest
+        ports:
+        - containerPort: 3000
+      - name: monitor
+        image: nicolaka/netshoot:latest
+        command: ["/bin/sh", "-c"]
+        args:
+          - |
+            tshark -l -i any -f 'tcp' -T fields \
+            -e frame.time_epoch -e ip.proto -e ip.src -e ip.dst \
+            -e tcp.srcport -e tcp.dstport -e frame.len -e tcp.len \
+            -e tcp.flags.fin -e tcp.flags.syn -e tcp.flags.reset \
+            -e tcp.flags.push -e tcp.flags.ack -e tcp.flags.urg \
+            -e tcp.flags.cwr -e tcp.flags.ece -e tcp.window_size_value \
+            -e tcp.hdr_len -E header=y -E separator=, > /data/flows_raw.csv
+        securityContext:
+          capabilities:
+            add: ["NET_ADMIN", "NET_RAW"]
+          privileged: true
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: ddos-data-pvc
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: juice-shop-ddos
+  namespace: simulations
+spec:
+  selector:
+    app: juice-shop-ddos
+  ports:
+  - protocol: TCP
+    port: 3000
+    targetPort: 3000
+---
+apiVersion: batch/v1
+kind: Job
+metadata:
+  name: ddos-attacker
+  namespace: simulations
+spec:
+  template:
+    spec:
+      containers:
+      - name: attacker
+        image: local/ddos-attacker:latest
+        imagePullPolicy: Never
+        env:
+        - name: TARGET_URL
+          value: "http://juice-shop-ddos:3000"
+        - name: DURATION
+          value: "20"
+        - name: THREADS
+          value: "5"
+        - name: DELAY
+          value: "0.2"
+        volumeMounts:
+        - name: data-volume
+          mountPath: /data
+      volumes:
+      - name: data-volume
+        persistentVolumeClaim:
+          claimName: ddos-data-pvc
+      restartPolicy: Never
+  backoffLimit: 0

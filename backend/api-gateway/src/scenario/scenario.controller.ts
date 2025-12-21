@@ -79,4 +79,24 @@ export class ScenarioController {
     ) {
         return this.scenarioService.completeScenario(userId, scenarioId);
     }
+
+    @Post(':id/start')
+    startScenario(@Param('id') id: string) {
+        return this.scenarioService.startScenario(id);
+    }
+
+    @Post(':id/stop')
+    stopScenario(@Param('id') id: string) {
+        return this.scenarioService.stopScenario(id);
+    }
+
+    @Post(':id/reset')
+    resetScenario(@Param('id') id: string) {
+        return this.scenarioService.resetScenario(id);
+    }
+
+    @Get(':id/status')
+    getScenarioRuntimeStatus(@Param('id') id: string) {
+        return this.scenarioService.getScenarioRuntimeStatus(id);
+    }
 }

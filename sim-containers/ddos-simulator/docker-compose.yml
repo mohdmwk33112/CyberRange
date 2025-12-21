@@ -1,0 +1,40 @@
+services:
+  juice-shop:
+    image: bkimminich/juice-shop
+    container_name: juice-shop
+    ports:
+      - "3000:3000"
+    networks:
+      - attack-net
+
+  attacker:
+    build: ./attacker
+    container_name: ddos-attacker
+    depends_on:
+      - juice-shop
+    environment:
+      - TARGET_URL=http://juice-shop:3000
+      - DURATION=20
+      - THREADS=5
+      - DELAY=0.2
+    networks:
+      - attack-net
+    volumes:
+      - ./data:/data
+
+  monitor:
+    image: nicolaka/netshoot
+    container_name: ddos-monitor
+    network_mode: "service:juice-shop"
+    init: true
+    command: >
+      sh -c "exec tshark -l -i any -f 'tcp' -T fields -e frame.time_epoch -e ip.proto -e ip.src -e ip.dst -e tcp.srcport -e tcp.dstport -e frame.len -e tcp.len -e tcp.flags.fin -e tcp.flags.syn -e tcp.flags.reset -e tcp.flags.push -e tcp.flags.ack -e tcp.flags.urg -e tcp.flags.cwr -e tcp.flags.ece -e tcp.window_size_value -e tcp.hdr_len -E header=y -E separator=, > /data/flows_raw.csv"
+    volumes:
+      - ./data:/data
+    cap_add:
+      - NET_ADMIN
+      - NET_RAW
+
+networks:
+  attack-net:
+    driver: bridge

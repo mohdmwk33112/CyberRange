@@ -8,11 +8,11 @@ import { AppModule } from "./app.module";
 async function bootstrap() {
 
 
-  const app = await NestFactory.createMicroservice<MicroserviceOptions> (AppModule, {
+  const app = await NestFactory.createMicroservice<MicroserviceOptions>(AppModule, {
     transport: Transport.TCP,
     options: {
       host: 'localhost',
-      post: '3000'
+      port: 3000
     }
   });
   await app.listen();

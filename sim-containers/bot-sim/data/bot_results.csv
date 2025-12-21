@@ -1,0 +1,9 @@
+Attack Type,Target Account,Outcome,Response Time
+Bot (Credential Stuffing),admin@juice-sh.op,SUCCESS,0.0469
+Bot (Credential Stuffing),user1@juice-sh.op,FAILED,0.0758
+Bot (Credential Stuffing),bender@juice-sh.op,FAILED,0.0436
+Bot (Credential Stuffing),jim@juice-sh.op,SUCCESS,0.0446
+Bot (Credential Stuffing),mc.safesearch@juice-sh.op,FAILED,0.0276
+Bot (Credential Stuffing),test@test.com,FAILED,0.0257
+Bot (Credential Stuffing),root@juice-sh.op,FAILED,0.0361
+Bot (Credential Stuffing),guest@juice-sh.op,FAILED,0.0326

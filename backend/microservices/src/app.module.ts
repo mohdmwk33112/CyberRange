@@ -8,6 +8,7 @@ import { ProductModule } from './product/product.module';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
 import { ScenarioModule } from './scenario/scenario.module';
+import { SimulationModule } from './simulation/simulation.module';
 import * as dotenv from 'dotenv'; // Import dotenv
 dotenv.config();
 
@@ -23,6 +24,7 @@ dotenv.config();
     AuthModule,
     UserModule,
     ScenarioModule,
+    SimulationModule,
   ],
   controllers: [AppController],
   providers: [AppService],

@@ -1,0 +1,85 @@
+apiVersion: v1
+kind: Namespace
+metadata:
+  name: simulations
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: bot-data-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  hostPath:
+    path: /run/desktop/mnt/host/c/Users/nader/Desktop/Courses/Cloud/Project/project/bot-sim/data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: bot-data-pvc
+  namespace: simulations
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: bot-data-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: ddos-data-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  hostPath:
+    path: /run/desktop/mnt/host/c/Users/nader/Desktop/Courses/Cloud/Project/project/ddos-simulator/data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: ddos-data-pvc
+  namespace: simulations
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: ddos-data-pv
+---
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: infiltration-data-pv
+spec:
+  capacity:
+    storage: 1Gi
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  hostPath:
+    path: /run/desktop/mnt/host/c/Users/nader/Desktop/Courses/Cloud/Project/project/Infiltration-sim/data
+---
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: infiltration-data-pvc
+  namespace: simulations
+spec:
+  accessModes:
+    - ReadWriteOnce
+  storageClassName: manual
+  resources:
+    requests:
+      storage: 1Gi
+  volumeName: infiltration-data-pv

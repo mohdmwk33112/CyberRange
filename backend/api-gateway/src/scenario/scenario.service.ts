@@ -61,4 +61,20 @@ export class ScenarioService {
             .send({ cmd: 'complete-scenario' }, { userId, scenarioId })
             .toPromise();
     }
+
+    async startScenario(scenarioId: string): Promise<any> {
+        return this.client.send({ cmd: 'start-scenario' }, { scenarioId }).toPromise();
+    }
+
+    async stopScenario(scenarioId: string): Promise<any> {
+        return this.client.send({ cmd: 'stop-scenario' }, { scenarioId }).toPromise();
+    }
+
+    async resetScenario(scenarioId: string): Promise<any> {
+        return this.client.send({ cmd: 'reset-scenario' }, { scenarioId }).toPromise();
+    }
+
+    async getScenarioRuntimeStatus(scenarioId: string): Promise<any> {
+        return this.client.send({ cmd: 'get-scenario-runtime-status' }, { scenarioId }).toPromise();
+    }
 }

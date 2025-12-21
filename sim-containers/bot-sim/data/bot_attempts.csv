@@ -1,0 +1,9 @@
+timestamp,attack_type,username,http_status,response_time
+1766195321.6176147,Bot (Credential Stuffing),admin@juice-sh.op,200,0.0469
+1766195322.1655924,Bot (Credential Stuffing),user1@juice-sh.op,401,0.0758
+1766195322.7418544,Bot (Credential Stuffing),bender@juice-sh.op,401,0.0436
+1766195323.2856765,Bot (Credential Stuffing),jim@juice-sh.op,200,0.0446
+1766195323.8304694,Bot (Credential Stuffing),mc.safesearch@juice-sh.op,401,0.0276
+1766195324.3581712,Bot (Credential Stuffing),test@test.com,401,0.0257
+1766195324.8840508,Bot (Credential Stuffing),root@juice-sh.op,401,0.0361
+1766195325.4203615,Bot (Credential Stuffing),guest@juice-sh.op,401,0.0326

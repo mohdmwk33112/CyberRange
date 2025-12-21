@@ -58,6 +58,11 @@ export const ScenarioStepSchema = new mongoose.Schema({
 }, { _id: false });
 
 export const ScenarioSchema = new mongoose.Schema({
+    slug: {
+        type: String,
+        required: true,
+        unique: true,
+    },
     title: {
         type: String,
         required: true,
@@ -114,6 +119,7 @@ export interface ScenarioStep {
 }
 
 export interface Scenario extends Document {
+    slug: string;
     title: string;
     description: string;
     attackType: string;

@@ -4,12 +4,15 @@ import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { Scenario } from './scenario.model';
 import { ScenarioState } from './scenario-state.model';
+import { SimulationService } from '../simulation/simulation.service';
 
 @Injectable()
 export class ScenarioService {
+
     constructor(
         @InjectModel('Scenario') private readonly scenarioModel: Model<Scenario>,
         @InjectModel('ScenarioState') private readonly scenarioStateModel: Model<ScenarioState>,
+        private readonly simulationService: SimulationService,
     ) { }
 
     async createScenario(scenarioData: any): Promise<Scenario> {
@@ -213,6 +216,26 @@ export class ScenarioService {
             state,
             // Here you could emit an event to trigger progress updates, unlock next scenarios, etc.
         };
+    }
+
+    async startScenario(scenarioId: string): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+        return this.simulationService.startSimulation(scenario.slug);
+    }
+
+    async stopScenario(scenarioId: string): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+        return this.simulationService.stopSimulation(scenario.slug);
+    }
+
+    async resetScenario(scenarioId: string): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+        return this.simulationService.resetSimulation(scenario.slug);
+    }
+
+    async getScenarioRuntimeStatus(scenarioId: string): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+        return this.simulationService.getSimulationStatus(scenario.slug);
     }
 
     // Helper methods
