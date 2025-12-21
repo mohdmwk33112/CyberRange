@@ -7,6 +7,8 @@ import { CreateUserDto } from './dto/create-user.dto';
 import { LoginUserDto } from './dto/login-user.dto';
 import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
+import * as fs from 'fs';
+import * as path from 'path';
 
 @Injectable()
 export class AuthService {
@@ -24,7 +26,14 @@ export class AuthService {
             password: hashedPassword,
             role: role || 'student',
         });
-        return await newUser.save();
+        try {
+            return await newUser.save();
+        } catch (error) {
+            const logPath = path.join(process.cwd(), 'microservice_error.log');
+            fs.appendFileSync(logPath, `Registration Error: ${JSON.stringify(error)}\n`);
+            console.error('Registration Error:', error);
+            throw error;
+        }
     }
 
     async validateUser(username: string, pass: string): Promise<any> {

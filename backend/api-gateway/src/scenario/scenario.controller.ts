@@ -99,4 +99,47 @@ export class ScenarioController {
     getScenarioRuntimeStatus(@Param('id') id: string) {
         return this.scenarioService.getScenarioRuntimeStatus(id);
     }
+
+    // Questionnaire endpoints
+    @Post(':id/validate-answer')
+    validateQuestionAnswer(
+        @Param('id') scenarioId: string,
+        @Body() body: { userId: string; stepOrder: number; questionOrder: number; answer: string },
+    ) {
+        return this.scenarioService.validateQuestionAnswer(
+            body.userId,
+            scenarioId,
+            body.stepOrder,
+            body.questionOrder,
+            body.answer,
+        );
+    }
+
+    @Post(':id/calculate-score')
+    calculateQuestionnaireScore(
+        @Param('id') scenarioId: string,
+        @Body() body: { userId: string; answers: { stepOrder: number; questionOrder: number; answer: string }[] },
+    ) {
+        return this.scenarioService.calculateQuestionnaireScore(
+            body.userId,
+            scenarioId,
+            body.answers,
+        );
+    }
+
+    @Get(':id/simulation-eligibility/:userId')
+    checkSimulationEligibility(
+        @Param('id') scenarioId: string,
+        @Param('userId') userId: string,
+    ) {
+        return this.scenarioService.checkSimulationEligibility(userId, scenarioId);
+    }
+
+    @Post(':id/unlock-simulation/:userId')
+    unlockSimulation(
+        @Param('id') scenarioId: string,
+        @Param('userId') userId: string,
+    ) {
+        return this.scenarioService.unlockSimulation(userId, scenarioId);
+    }
 }

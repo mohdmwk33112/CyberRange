@@ -34,6 +34,14 @@ export const ScenarioStateSchema = new mongoose.Schema({
         type: Number,
         default: 0,
     },
+    questionnaireCompleted: {
+        type: Boolean,
+        default: false,
+    },
+    simulationUnlocked: {
+        type: Boolean,
+        default: false,
+    },
     startedAt: {
         type: Date,
         default: Date.now,
@@ -57,6 +65,8 @@ export interface ScenarioState extends Document {
     attemptCount: number;
     status: 'in-progress' | 'completed' | 'failed';
     score: number;
+    questionnaireCompleted: boolean;
+    simulationUnlocked: boolean;
     startedAt: Date;
     completedAt?: Date;
     createdAt: Date;

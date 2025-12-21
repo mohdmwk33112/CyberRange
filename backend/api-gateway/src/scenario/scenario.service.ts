@@ -77,4 +77,39 @@ export class ScenarioService {
     async getScenarioRuntimeStatus(scenarioId: string): Promise<any> {
         return this.client.send({ cmd: 'get-scenario-runtime-status' }, { scenarioId }).toPromise();
     }
+
+    // Questionnaire methods
+    async validateQuestionAnswer(
+        userId: string,
+        scenarioId: string,
+        stepOrder: number,
+        questionOrder: number,
+        answer: string,
+    ): Promise<any> {
+        return this.client
+            .send({ cmd: 'validate-question-answer' }, { userId, scenarioId, stepOrder, questionOrder, answer })
+            .toPromise();
+    }
+
+    async calculateQuestionnaireScore(
+        userId: string,
+        scenarioId: string,
+        answers: { stepOrder: number; questionOrder: number; answer: string }[],
+    ): Promise<any> {
+        return this.client
+            .send({ cmd: 'calculate-questionnaire-score' }, { userId, scenarioId, answers })
+            .toPromise();
+    }
+
+    async checkSimulationEligibility(userId: string, scenarioId: string): Promise<any> {
+        return this.client
+            .send({ cmd: 'check-simulation-eligibility' }, { userId, scenarioId })
+            .toPromise();
+    }
+
+    async unlockSimulation(userId: string, scenarioId: string): Promise<any> {
+        return this.client
+            .send({ cmd: 'unlock-simulation' }, { userId, scenarioId })
+            .toPromise();
+    }
 }

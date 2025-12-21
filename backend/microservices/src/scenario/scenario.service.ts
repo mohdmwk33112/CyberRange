@@ -238,6 +238,136 @@ export class ScenarioService {
         return this.simulationService.getSimulationStatus(scenario.slug);
     }
 
+    // Questionnaire methods
+    async validateQuestionAnswer(
+        userId: string,
+        scenarioId: string,
+        stepOrder: number,
+        questionOrder: number,
+        userAnswer: string,
+    ): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+        const step = scenario.steps.find(s => s.stepOrder === stepOrder);
+
+        if (!step || step.stepType !== 'questionnaire') {
+            throw new BadRequestException('Invalid step or not a questionnaire step');
+        }
+
+        const question = step.questions.find(q => q.questionOrder === questionOrder);
+        if (!question) {
+            throw new NotFoundException('Question not found');
+        }
+
+        // Validate answer
+        const isCorrect = this.validateCommand(
+            userAnswer,
+            question.expectedCommand,
+            question.validationType,
+            question.validationPattern,
+        );
+
+        return {
+            correct: isCorrect,
+            points: isCorrect ? question.points : 0,
+            message: isCorrect ? question.successMessage : question.errorMessage,
+            explanation: question.explanation,
+            expectedAnswer: !isCorrect ? question.expectedCommand : undefined,
+        };
+    }
+
+    async calculateQuestionnaireScore(
+        userId: string,
+        scenarioId: string,
+        answers: { stepOrder: number; questionOrder: number; answer: string }[],
+    ): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+
+        let totalPoints = 0;
+        let earnedPoints = 0;
+        const results = [];
+
+        for (const answer of answers) {
+            const step = scenario.steps.find(s => s.stepOrder === answer.stepOrder);
+            if (step && step.stepType === 'questionnaire') {
+                const question = step.questions.find(q => q.questionOrder === answer.questionOrder);
+                if (question) {
+                    totalPoints += question.points;
+
+                    const isCorrect = this.validateCommand(
+                        answer.answer,
+                        question.expectedCommand,
+                        question.validationType,
+                        question.validationPattern,
+                    );
+
+                    if (isCorrect) {
+                        earnedPoints += question.points;
+                    }
+
+                    results.push({
+                        stepOrder: answer.stepOrder,
+                        questionOrder: answer.questionOrder,
+                        correct: isCorrect,
+                        points: isCorrect ? question.points : 0,
+                    });
+                }
+            }
+        }
+
+        const scorePercentage = totalPoints > 0 ? (earnedPoints / totalPoints) * 100 : 0;
+
+        // Update user progress
+        const state = await this.getOrCreateState(userId, scenarioId);
+        state.score = scorePercentage;
+        state.questionnaireCompleted = true;
+        await state.save();
+
+        return {
+            totalPoints,
+            earnedPoints,
+            scorePercentage: Math.round(scorePercentage),
+            passed: scorePercentage >= 90,
+            results,
+        };
+    }
+
+    async checkSimulationEligibility(userId: string, scenarioId: string): Promise<boolean> {
+        const state = await this.scenarioStateModel
+            .findOne({ userId, scenarioId })
+            .exec();
+
+        if (!state) {
+            throw new BadRequestException('Start the questionnaire first');
+        }
+
+        if (!state.questionnaireCompleted) {
+            throw new BadRequestException('Complete the questionnaire first');
+        }
+
+        if (state.score < 90) {
+            throw new BadRequestException(
+                `Score too low: ${state.score}%. Need 90% to unlock simulation.`
+            );
+        }
+
+        return true;
+    }
+
+    async unlockSimulation(userId: string, scenarioId: string): Promise<any> {
+        const eligible = await this.checkSimulationEligibility(userId, scenarioId);
+
+        if (eligible) {
+            const state = await this.getUserScenarioState(userId, scenarioId);
+            state.simulationUnlocked = true;
+            await state.save();
+
+            return {
+                message: 'Simulation unlocked! You can now run the attack simulation.',
+                unlocked: true,
+            };
+        }
+    }
+
     // Helper methods
     private async getOrCreateState(userId: string, scenarioId: string): Promise<ScenarioState> {
         let state = await this.scenarioStateModel

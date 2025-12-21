@@ -84,4 +84,41 @@ export class ScenarioController {
     getScenarioRuntimeStatus(payload: { scenarioId: string }) {
         return this.scenarioService.getScenarioRuntimeStatus(payload.scenarioId);
     }
+
+    // Questionnaire message patterns
+    @MessagePattern({ cmd: 'validate-question-answer' })
+    validateQuestionAnswer(payload: { userId: string; scenarioId: string; stepOrder: number; questionOrder: number; answer: string }) {
+        return this.scenarioService.validateQuestionAnswer(
+            payload.userId,
+            payload.scenarioId,
+            payload.stepOrder,
+            payload.questionOrder,
+            payload.answer,
+        );
+    }
+
+    @MessagePattern({ cmd: 'calculate-questionnaire-score' })
+    calculateQuestionnaireScore(payload: { userId: string; scenarioId: string; answers: { stepOrder: number; questionOrder: number; answer: string }[] }) {
+        return this.scenarioService.calculateQuestionnaireScore(
+            payload.userId,
+            payload.scenarioId,
+            payload.answers,
+        );
+    }
+
+    @MessagePattern({ cmd: 'check-simulation-eligibility' })
+    checkSimulationEligibility(payload: { userId: string; scenarioId: string }) {
+        return this.scenarioService.checkSimulationEligibility(
+            payload.userId,
+            payload.scenarioId,
+        );
+    }
+
+    @MessagePattern({ cmd: 'unlock-simulation' })
+    unlockSimulation(payload: { userId: string; scenarioId: string }) {
+        return this.scenarioService.unlockSimulation(
+            payload.userId,
+            payload.scenarioId,
+        );
+    }
 }

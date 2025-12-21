@@ -29,9 +29,9 @@ export default function SignupPage() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <CardContent className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="name">Name</Label>
-                        <Input id="name" placeholder="John Doe" {...register('name')} />
-                        {errors.name && <p className="text-sm text-red-500">{errors.name.message}</p>}
+                        <Label htmlFor="username">Username</Label>
+                        <Input id="username" placeholder="johndoe" {...register('username')} />
+                        {errors.username && <p className="text-sm text-red-500">{errors.username.message}</p>}
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="email">Email</Label>

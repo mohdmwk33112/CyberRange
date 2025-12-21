@@ -29,9 +29,9 @@ export default function LoginPage() {
             <form onSubmit={handleSubmit(onSubmit)}>
                 <CardContent className="space-y-4">
                     <div className="space-y-2">
-                        <Label htmlFor="email">Email</Label>
-                        <Input id="email" type="email" placeholder="m@example.com" {...register('email')} />
-                        {errors.email && <p className="text-sm text-red-500">{errors.email.message}</p>}
+                        <Label htmlFor="username">Username</Label>
+                        <Input id="username" placeholder="johndoe" {...register('username')} />
+                        {errors.username && <p className="text-sm text-red-500">{errors.username.message}</p>}
                     </div>
                     <div className="space-y-2">
                         <Label htmlFor="password">Password</Label>

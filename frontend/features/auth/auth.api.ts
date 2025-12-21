@@ -3,14 +3,14 @@ import { z } from 'zod';
 
 // Zod schemas for validation
 export const loginSchema = z.object({
-    email: z.string().email(),
+    username: z.string().min(2),
     password: z.string().min(6),
 });
 
 export const signupSchema = z.object({
+    username: z.string().min(2),
     email: z.string().email(),
     password: z.string().min(6),
-    name: z.string().min(2),
 });
 
 export type LoginCredentials = z.infer<typeof loginSchema>;

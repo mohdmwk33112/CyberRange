@@ -6,7 +6,7 @@ import { AuthService } from './auth.service';
 export class AuthController {
     constructor(private readonly authService: AuthService) { }
 
-    @Post('register')
+    @Post('signup')
     register(@Body() body: any) {
         return this.authService.register(body);
     }

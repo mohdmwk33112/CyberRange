@@ -11,9 +11,16 @@ export const useLogin = () => {
 
     return useMutation({
         mutationFn: (credentials: LoginCredentials) => authApi.login(credentials),
-        onSuccess: (data) => {
-            // Assuming backend returns { access_token: string, user: User }
-            setAuth(data.access_token, data.user);
+        onSuccess: (data, credentials) => {
+            // Decode JWT to get user data
+            const tokenPayload = JSON.parse(atob(data.access_token.split('.')[1]));
+            const user = {
+                sub: tokenPayload.sub,
+                username: tokenPayload.username,
+                email: credentials.username, // Use login username as email fallback
+                role: tokenPayload.role,
+            };
+            setAuth(data.access_token, user);
             toast({ title: 'Welcome back!', description: 'Logged in successfully.' });
             router.push('/dashboard');
         },
