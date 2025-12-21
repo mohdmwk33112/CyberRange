@@ -4,21 +4,23 @@ import * as k8s from '@kubernetes/client-node';
 import * as fs from 'fs';
 import * as path from 'path';
 import * as yaml from 'js-yaml';
+import { PassThrough } from 'stream';
 
 @Injectable()
 export class SimulationService {
     private k8sApi: k8s.CoreV1Api;
     private k8sAppsApi: k8s.AppsV1Api;
     private k8sBatchApi: k8s.BatchV1Api;
+    private kc: k8s.KubeConfig;
     private namespace = 'simulations';
     private readonly logger = new Logger(SimulationService.name);
 
     constructor() {
-        const kc = new k8s.KubeConfig();
-        kc.loadFromDefault();
-        this.k8sApi = kc.makeApiClient(k8s.CoreV1Api);
-        this.k8sAppsApi = kc.makeApiClient(k8s.AppsV1Api);
-        this.k8sBatchApi = kc.makeApiClient(k8s.BatchV1Api);
+        this.kc = new k8s.KubeConfig();
+        this.kc.loadFromDefault();
+        this.k8sApi = this.kc.makeApiClient(k8s.CoreV1Api);
+        this.k8sAppsApi = this.kc.makeApiClient(k8s.AppsV1Api);
+        this.k8sBatchApi = this.kc.makeApiClient(k8s.BatchV1Api);
     }
 
     async startSimulation(slug: string): Promise<any> {
@@ -39,6 +41,15 @@ export class SimulationService {
             if (!doc.metadata.labels) doc.metadata.labels = {};
             doc.metadata.labels['cyberrange.io/scenario'] = slug;
             doc.metadata.labels['cyberrange.io/managed-by'] = 'simulation-controller';
+
+            // CRITICAL: Also inject labels into the Pod Template (if it exists)
+            // so that the actual Pods created by Deployment/Job get the labels.
+            if (doc.spec && doc.spec.template) {
+                if (!doc.spec.template.metadata) doc.spec.template.metadata = {};
+                if (!doc.spec.template.metadata.labels) doc.spec.template.metadata.labels = {};
+                doc.spec.template.metadata.labels['cyberrange.io/scenario'] = slug;
+                doc.spec.template.metadata.labels['cyberrange.io/managed-by'] = 'simulation-controller';
+            }
 
             try {
                 if (doc.kind === 'Deployment') {
@@ -181,5 +192,81 @@ export class SimulationService {
                 succeeded: j.status?.succeeded
             }))
         };
+    }
+
+    async getActiveSimulations(userId: string): Promise<any[]> {
+        // For strict ownership, we should have labeled resources with userId
+        // For now, listing all running simulations as a mockup or based on namespace
+        // Ideally, ScenarioState in Mongo holds the source of truth for "active" sessions per user
+        // But if we want runtime k8s state:
+        const jobs = await this.k8sBatchApi.listNamespacedJob({
+            namespace: this.namespace,
+        });
+
+        // Filter for active ones and map to structure
+        const activeSims: any[] = [];
+        for (const job of jobs.items) {
+            if (job.status?.active && job.status.active > 0) {
+                activeSims.push({
+                    _id: job.metadata?.uid,
+                    scenarioName: job.metadata?.labels?.['cyberrange.io/scenario'] || 'Unknown',
+                    status: 'Running',
+                    startedAt: job.metadata?.creationTimestamp
+                });
+            }
+        }
+        return activeSims;
+    }
+
+    async streamSimulationLogs(slug: string, callback: (log: any) => void) {
+        try {
+            this.logger.log(`Stream logs requested for scenario: ${slug}`);
+            // Using 'any' cast to bypass generated client strict types if needed
+            const response = await this.k8sApi.listNamespacedPod({ namespace: this.namespace } as any);
+            const items = (response as any).items || (response as any).body?.items || [];
+            this.logger.log(`Found ${items.length} pods in namespace ${this.namespace}`);
+
+            const attackerPod = items.find((p: any) => {
+                const isScenario = p.metadata?.labels?.['cyberrange.io/scenario'] === slug;
+                const isAttacker = p.metadata?.name?.includes('attacker') || p.spec?.containers.some((c: any) => c.name === 'attacker');
+                if (isScenario) this.logger.debug(`Found scenario pod: ${p.metadata.name}, isAttacker: ${isAttacker}`);
+                return isScenario && isAttacker;
+            });
+
+            if (!attackerPod || !attackerPod.metadata?.name) {
+                this.logger.warn(`No provided attacker pod found for slug ${slug}. Pods found: ${items.map(i => i.metadata.name).join(', ')}`);
+                return;
+            }
+
+            const logStream = new k8s.Log(this.kc);
+            const passThrough = new PassThrough();
+
+            passThrough.on('data', (chunk) => {
+                const lines = chunk.toString().split('\n');
+                for (const line of lines) {
+                    if (!line.trim()) continue;
+                    try {
+                        const jsonLog = JSON.parse(line);
+                        callback(jsonLog);
+                    } catch (e) {
+                        // If not JSON, emit as plain log
+                        callback({ type: 'stdout', message: line, timestamp: Date.now() / 1000 });
+                    }
+                }
+            });
+
+            this.logger.log(`Starting log stream for pod ${attackerPod.metadata.name}`);
+
+            await logStream.log(
+                this.namespace,
+                attackerPod.metadata.name,
+                'attacker',
+                passThrough,
+                { follow: true, tailLines: 50, pretty: false, timestamps: false }
+            );
+
+        } catch (e) {
+            this.logger.error(`Error streaming logs: ${e}`);
+        }
     }
 }

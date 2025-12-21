@@ -23,4 +23,8 @@ export class SimulationService {
     async getSimulationStatus(slug: string): Promise<any> {
         return this.client.send({ cmd: 'get-simulation-status' }, { slug }).toPromise();
     }
+
+    async getActiveSimulations(userId: string): Promise<any> {
+        return this.client.send({ cmd: 'get-active-simulations' }, { userId }).toPromise();
+    }
 }

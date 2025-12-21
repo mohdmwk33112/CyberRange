@@ -1,15 +1,22 @@
 'use client';
 
-import { useState, use, useEffect } from 'react';
+import { useState, use, useEffect, useRef } from 'react';
 import { useScenario, useScenarioState, useUnlockSimulation } from '@/features/scenarios/scenarios.hooks';
 import { useAuthStore } from '@/features/auth/auth.store';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { LearningContent } from '@/features/scenarios/components/LearningContent';
 import { TerminalQuestionnaire } from '@/features/scenarios/components/TerminalQuestionnaire';
+import { ModeToggle } from '@/components/ui/mode-toggle';
+import { SimulationConsole } from '@/components/simulation/SimulationConsole';
+import { TrafficMonitor } from '@/components/simulation/TrafficMonitor';
+import { AttackDistribution } from '@/components/simulation/AttackDistribution';
+import { KillChainProgress } from '@/components/simulation/KillChainProgress';
+import { CredentialBreachStats } from '@/components/simulation/CredentialBreachStats';
 import { useToast } from '@/hooks/use-toast';
 import { Shield, ChevronLeft, ChevronRight, PlayCircle, Lock, CheckCircle2, Trophy, Loader2 } from 'lucide-react';
 import Link from 'next/link';
+import { io, Socket } from 'socket.io-client';
 
 interface ScenarioDetailPageProps {
     params: Promise<{ id: string }>;
@@ -31,6 +38,13 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
     const [phase, setPhase] = useState<'learning' | 'questionnaire' | 'simulation' | 'completed'>('learning');
     const [isLaunching, setIsLaunching] = useState(false);
 
+    // Visualization State
+    const [logs, setLogs] = useState<any[]>([]);
+    const [trafficData, setTrafficData] = useState<any[]>([]);
+    const [attackStats, setAttackStats] = useState<any[]>([]); // For pie chart
+    const [simulationActive, setSimulationActive] = useState(false);
+    const socketRef = useRef<Socket | null>(null);
+
     // Sync phase and step based on backend state when it loads
     useEffect(() => {
         if (state) {
@@ -46,6 +60,113 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
             }
         }
     }, [state]);
+
+    // WebSocket Connection
+    useEffect(() => {
+        if (!simulationActive || !scenario) return;
+
+        // Connect to WebSocket Gateway (Directly to Microservice on 3001)
+        socketRef.current = io('http://localhost:3001/simulation');
+
+        socketRef.current.on('connect', () => {
+            console.log('Connected to simulation logs');
+            // Check if scenario has slug, simpler cast
+            const slug = (scenario as any).slug;
+            socketRef.current?.emit('subscribe-logs', { slug });
+        });
+
+        socketRef.current.on('log-update', (log: any) => {
+            // Add to logs
+            setLogs(prev => [...prev, log]);
+
+            // Process data from logs (parsing text is necessary since we only get stdout)
+
+            // 1. Traffic Data (Requests Sent)
+            // Example Log: "[+] Requests Sent: 459"
+            // Process data from logs (parsing text is necessary since we only get stdout)
+
+            // 1. Traffic Data
+            let bytes = 0;
+            // A. Structured Traffic (Infiltration)
+            if (log.type === 'traffic' && log.metrics?.bytes) {
+                bytes = log.metrics.bytes;
+            }
+            // B. Unstructured Stdout Parsing
+            else if (typeof log.message === 'string') {
+                // DDoS Pattern: "[+] Requests Sent: 459"
+                const ddosMatch = log.message.match(/Requests Sent: (\d+)/);
+                if (ddosMatch) {
+                    const reqCount = parseInt(ddosMatch[1]);
+                    bytes = reqCount * 500; // Est. 500 bytes per request
+                }
+
+                // Bot Pattern: "[+] Attempt: user@email.com | Status: 401"
+                // Each attempt is a standardized HTTP POST
+                const botMatch = log.message.match(/Attempt: .+ \| Status: (\d+)/);
+                if (botMatch) {
+                    bytes = 850; // Est. login payload + headers
+                }
+
+                // Infiltration RCE Phase (if not structured)
+                if (log.message.includes('Exploit sent')) {
+                    bytes = 1200;
+                }
+            }
+
+            if (bytes > 0) {
+                setTrafficData(prev => {
+                    // Limit to last 30 points
+                    const newData = [...prev, {
+                        timestamp: log.timestamp || Date.now() / 1000,
+                        bytes: bytes
+                    }];
+                    return newData.slice(-30);
+                });
+            }
+
+            // 2. Attack Stats
+            // Infer type from message content if type is generic 'stdout'
+            let statName = log.type;
+
+            // Normalize known types for cleaner chart
+            if (log.type === 'phase') statName = 'Attack Phase';
+            if (log.type === 'attack') statName = 'Exploitation';
+            if (log.type === 'traffic') statName = 'Network Traffic';
+
+            if (log.type === 'stdout') {
+                const msg = log.message;
+                // DDoS
+                if (msg.includes('Requests Sent')) statName = 'HTTP Floods';
+                else if (msg.includes('Target is up')) statName = 'Health Checks';
+                else if (msg.includes('Simulation completed')) statName = 'System Events';
+                else if (msg.includes('Starting DDoS')) statName = 'Initialization';
+
+                // Bot / Credential Stuffing
+                else if (msg.includes('Starting Credential Stuffing')) statName = 'Initialization';
+                else if (msg.includes('Attempt:')) {
+                    if (msg.includes('Status: 200')) statName = 'Successful Logins';
+                    else if (msg.includes('Status: 401') || msg.includes('Status: 403')) statName = 'Failed Logins';
+                    else if (msg.includes('Status: 500')) statName = 'Server Errors';
+                    else statName = 'Login Attempts';
+                }
+
+                // General
+                else statName = 'System Logs';
+            }
+
+            setAttackStats(prev => {
+                const existing = prev.find(p => p.name === statName);
+                if (existing) {
+                    return prev.map(p => p.name === statName ? { ...p, value: p.value + 1 } : p);
+                }
+                return [...prev, { name: statName, value: 1 }];
+            });
+        });
+
+        return () => {
+            socketRef.current?.disconnect();
+        };
+    }, [simulationActive, scenario]);
 
     const handleQuestionnaireComplete = async (score: number, passed: boolean) => {
         refetchState();
@@ -68,20 +189,26 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
     const handleStartSimulation = async () => {
         setIsLaunching(true);
+        // Optimistically set active to start listening
+        setSimulationActive(true);
         try {
             const res = await fetch(`http://localhost:3010/scenarios/${id}/start`, {
                 method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId }),
             });
             const data = await res.json();
             if (res.ok) {
                 toast({
                     title: '🚀 Simulation Starting',
-                    description: 'Your attack environment is being deployed. Hang tight!',
+                    description: 'Your attack environment is being deployed. Logs will appear shortly.',
                 });
             } else {
+                setSimulationActive(false);
                 throw new Error(data.message || 'Failed to start simulation');
             }
         } catch (error: any) {
+            setSimulationActive(false);
             toast({
                 title: 'Launch Failed',
                 description: error.message,
@@ -118,15 +245,41 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                     <Shield className="h-5 w-5 text-primary" />
                     <span className="font-bold hidden sm:inline-block">{scenario.title}</span>
                 </div>
-                <div className="ml-auto w-24"></div> {/* Spacer for balance */}
+                <div className="ml-auto flex items-center gap-4">
+                    <ModeToggle />
+                </div>
             </header>
 
             <main className="container max-w-5xl mx-auto p-6 md:p-8">
-                {/* Progress Stepper */}
-                <div className="grid grid-cols-3 gap-2 mb-8">
-                    <div className={`h-1.5 rounded-full transition-all duration-500 ${phase === 'learning' ? 'bg-primary' : 'bg-primary/40'}`}></div>
-                    <div className={`h-1.5 rounded-full transition-all duration-500 ${phase === 'questionnaire' ? 'bg-primary' : state?.questionnaireCompleted ? 'bg-primary/40' : 'bg-secondary'}`}></div>
-                    <div className={`h-1.5 rounded-full transition-all duration-500 ${phase === 'simulation' ? 'bg-primary' : state?.simulationUnlocked ? 'bg-primary/40' : 'bg-secondary'}`}></div>
+                {/* Progress Stepper - Interactive */}
+                <div className="grid grid-cols-3 gap-4 mb-8">
+                    <button
+                        onClick={() => setPhase('learning')}
+                        className={`flex flex-col gap-2 group text-left transition-all outline-none ${phase === 'learning' ? 'opacity-100' : 'opacity-60 hover:opacity-80'}`}
+                    >
+                        <div className={`h-1.5 w-full rounded-full transition-all duration-500 ${phase === 'learning' ? 'bg-primary' : 'bg-primary/40'}`}></div>
+                        <span className={`text-xs font-bold uppercase tracking-wider ${phase === 'learning' ? 'text-primary' : 'text-muted-foreground'}`}>01. Learning</span>
+                    </button>
+
+                    <button
+                        onClick={() => setPhase('questionnaire')}
+                        className={`flex flex-col gap-2 group text-left transition-all outline-none ${phase === 'questionnaire' ? 'opacity-100' : 'opacity-60 hover:opacity-80'}`}
+                    >
+                        <div className={`h-1.5 w-full rounded-full transition-all duration-500 ${phase === 'questionnaire' ? 'bg-primary' : state?.questionnaireCompleted ? 'bg-primary/40' : 'bg-secondary'}`}></div>
+                        <span className={`text-xs font-bold uppercase tracking-wider ${phase === 'questionnaire' ? 'text-primary' : 'text-muted-foreground'}`}>02. Questionnaire</span>
+                    </button>
+
+                    <button
+                        onClick={() => state?.simulationUnlocked && setPhase('simulation')}
+                        disabled={!state?.simulationUnlocked}
+                        className={`flex flex-col gap-2 group text-left transition-all outline-none ${phase === 'simulation' ? 'opacity-100' : state?.simulationUnlocked ? 'opacity-60 hover:opacity-80 cursor-pointer' : 'opacity-40 cursor-not-allowed'}`}
+                    >
+                        <div className={`h-1.5 w-full rounded-full transition-all duration-500 ${phase === 'simulation' ? 'bg-primary' : state?.simulationUnlocked ? 'bg-primary/40' : 'bg-secondary'}`}></div>
+                        <div className="flex items-center justify-between">
+                            <span className={`text-xs font-bold uppercase tracking-wider ${phase === 'simulation' ? 'text-primary' : 'text-muted-foreground'}`}>03. Simulation</span>
+                            {!state?.simulationUnlocked && <Lock className="w-3 h-3 text-muted-foreground" />}
+                        </div>
+                    </button>
                 </div>
 
                 <div className="space-y-8">
@@ -174,59 +327,113 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                         )}
 
                         {phase === 'simulation' && (
-                            <Card className="border-primary/20 bg-card/40 backdrop-blur-sm overflow-hidden">
-                                <div className="h-2 bg-primary/20 w-full overflow-hidden">
-                                    <div className="h-full bg-primary animate-progress origin-left"></div>
-                                </div>
-                                <CardHeader className="text-center py-10">
-                                    <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/20">
-                                        {state?.simulationUnlocked ? (
-                                            <PlayCircle className="h-10 w-10 text-primary" />
-                                        ) : (
-                                            <Lock className="h-10 w-10 text-muted-foreground" />
-                                        )}
-                                    </div>
-                                    <CardTitle className="text-2xl font-bold">
-                                        {state?.simulationUnlocked ? 'Access Granted' : 'Simulation Locked'}
-                                    </CardTitle>
-                                    <CardDescription className="max-w-md mx-auto text-base mt-2">
-                                        {state?.simulationUnlocked
-                                            ? 'You have successfully demonstrated mastery of the required concepts. You can now launch the real-world attack environment.'
-                                            : 'Complete the questionnaire with a score of at least 90% to unlock the practical simulation.'}
-                                    </CardDescription>
-                                </CardHeader>
-                                <CardContent className="flex flex-col items-center pb-10 gap-4">
-                                    {state?.simulationUnlocked ? (
-                                        <div className="space-y-6 w-full max-w-sm text-center">
-                                            <Button
-                                                size="lg"
-                                                className="w-full h-14 text-lg font-bold shadow-xl shadow-primary/20"
-                                                onClick={handleStartSimulation}
-                                                disabled={isLaunching}
-                                            >
-                                                {isLaunching ? (
-                                                    <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Launching...</>
+                            <div className="space-y-8">
+                                {!simulationActive && (
+                                    <Card className="border-primary/20 bg-card/40 backdrop-blur-sm overflow-hidden">
+                                        <CardHeader className="text-center py-10">
+                                            <div className="w-20 h-20 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-6 border border-primary/20">
+                                                {state?.simulationUnlocked ? (
+                                                    <PlayCircle className="h-10 w-10 text-primary" />
                                                 ) : (
-                                                    <><PlayCircle className="mr-2 h-5 w-5" /> Launch Simulation</>
+                                                    <Lock className="h-10 w-10 text-muted-foreground" />
                                                 )}
-                                            </Button>
-                                            <p className="text-xs text-muted-foreground">
-                                                By starting the simulation, we will deploy a cluster of containers specifically for your training session.
-                                            </p>
+                                            </div>
+                                            <CardTitle className="text-2xl font-bold">
+                                                {state?.simulationUnlocked ? 'Ready to Deploy' : 'Simulation Locked'}
+                                            </CardTitle>
+                                            <CardDescription className="max-w-md mx-auto text-base mt-2">
+                                                {state?.simulationUnlocked
+                                                    ? 'Launch the attack simulation to visualize real-time exploitation data.'
+                                                    : 'Complete the questionnaire with >90% score to unlock.'}
+                                            </CardDescription>
+                                        </CardHeader>
+                                        <CardContent className="flex flex-col items-center pb-10 gap-4">
+                                            {state?.simulationUnlocked ? (
+                                                <div className="w-full max-w-sm space-y-3">
+                                                    <Button
+                                                        size="lg"
+                                                        className="w-full h-14 text-lg font-bold shadow-xl shadow-primary/20"
+                                                        onClick={handleStartSimulation}
+                                                        disabled={isLaunching}
+                                                    >
+                                                        {isLaunching ? (
+                                                            <><Loader2 className="mr-2 h-5 w-5 animate-spin" /> Launching...</>
+                                                        ) : (
+                                                            <><PlayCircle className="mr-2 h-5 w-5" /> Launch Simulation</>
+                                                        )}
+                                                    </Button>
+                                                    <Button
+                                                        variant="ghost"
+                                                        size="sm"
+                                                        className="w-full text-muted-foreground hover:text-primary"
+                                                        onClick={() => setPhase('questionnaire')}
+                                                    >
+                                                        Retake Questionnaire to Improve Score
+                                                    </Button>
+                                                </div>
+                                            ) : (
+                                                <Button
+                                                    variant="outline"
+                                                    size="lg"
+                                                    onClick={() => setPhase('questionnaire')}
+                                                    className="gap-2"
+                                                >
+                                                    <ChevronLeft className="h-4 w-4" />
+                                                    Return to Questionnaire
+                                                </Button>
+                                            )}
+                                        </CardContent>
+                                    </Card>
+                                )}
+
+                                {simulationActive && (
+                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                                        <div className="lg:col-span-2 space-y-6">
+                                            <SimulationConsole logs={logs} />
+                                            <TrafficMonitor data={trafficData} />
                                         </div>
-                                    ) : (
-                                        <Button
-                                            variant="outline"
-                                            size="lg"
-                                            onClick={() => setPhase('questionnaire')}
-                                            className="gap-2"
-                                        >
-                                            <ChevronLeft className="h-4 w-4" />
-                                            Return to Questionnaire
-                                        </Button>
-                                    )}
-                                </CardContent>
-                            </Card>
+                                        <div className="space-y-6">
+                                            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
+                                                <h3 className="text-sm font-bold text-muted-foreground mb-4">Simulation Status</h3>
+                                                <div className="flex items-center gap-2 text-green-600 dark:text-green-400 mb-2">
+                                                    <span className="relative flex h-3 w-3">
+                                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
+                                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
+                                                    </span>
+                                                    <span className="font-mono text-sm font-bold">ATTACK_IN_PROGRESS</span>
+                                                </div>
+                                                <p className="text-xs text-muted-foreground">
+                                                    Live telemetry from the attacker container.
+                                                </p>
+                                            </div>
+
+                                            {/* Scenario Specific Visualizations */}
+                                            {(scenario as any).slug === 'infiltration' ? (
+                                                <KillChainProgress logs={logs} />
+                                            ) : (scenario as any).slug === 'bot' ? (
+                                                <CredentialBreachStats stats={attackStats} />
+                                            ) : (
+                                                <AttackDistribution data={attackStats.length > 0 ? attackStats : [
+                                                    { name: 'Waiting for data...', value: 1 }
+                                                ]} />
+                                            )}
+
+                                            <Button
+                                                variant="destructive"
+                                                className="w-full"
+                                                onClick={() => {
+                                                    setSimulationActive(false);
+                                                    setLogs([]);
+                                                    setAttackStats([]);
+                                                    setTrafficData([]);
+                                                }}
+                                            >
+                                                Stop Simulation
+                                            </Button>
+                                        </div>
+                                    </div>
+                                )}
+                            </div>
                         )}
                     </div>
                 </div>

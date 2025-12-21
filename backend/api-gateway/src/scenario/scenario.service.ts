@@ -62,8 +62,8 @@ export class ScenarioService {
             .toPromise();
     }
 
-    async startScenario(scenarioId: string): Promise<any> {
-        return this.client.send({ cmd: 'start-scenario' }, { scenarioId }).toPromise();
+    async startScenario(scenarioId: string, userId: string): Promise<any> {
+        return this.client.send({ cmd: 'start-scenario' }, { scenarioId, userId }).toPromise();
     }
 
     async stopScenario(scenarioId: string): Promise<any> {

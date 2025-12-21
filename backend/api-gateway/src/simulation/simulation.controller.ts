@@ -25,4 +25,9 @@ export class SimulationController {
     async getSimulationStatus(@Param('slug') slug: string) {
         return this.simulationService.getSimulationStatus(slug);
     }
+
+    @Get('user/:userId/active')
+    async getActiveSimulations(@Param('userId') userId: string) {
+        return this.simulationService.getActiveSimulations(userId);
+    }
 }

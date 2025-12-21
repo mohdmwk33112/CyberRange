@@ -66,8 +66,8 @@ export class ScenarioController {
     }
 
     @MessagePattern({ cmd: 'start-scenario' })
-    startScenario(payload: { scenarioId: string }) {
-        return this.scenarioService.startScenario(payload.scenarioId);
+    startScenario(payload: { scenarioId: string; userId: string }) {
+        return this.scenarioService.startScenario(payload.scenarioId, payload.userId);
     }
 
     @MessagePattern({ cmd: 'stop-scenario' })

@@ -219,8 +219,15 @@ export class ScenarioService {
         };
     }
 
-    async startScenario(scenarioId: string): Promise<any> {
+    async startScenario(scenarioId: string, userId: string): Promise<any> {
         const scenario = await this.getScenarioById(scenarioId);
+
+        // Security check
+        const state = await this.getUserScenarioState(userId, scenarioId);
+        if (!state.simulationUnlocked) {
+            throw new BadRequestException('Simulation is locked! You must score 90% or higher on the questionnaire.');
+        }
+
         return this.simulationService.startSimulation(scenario.slug);
     }
 
@@ -399,13 +406,18 @@ export class ScenarioService {
     ): boolean {
         switch (validationType) {
             case 'exact':
-                return command.trim() === expectedCommand.trim();
+                return command.trim().replace(/\s+/g, ' ') === expectedCommand.trim().replace(/\s+/g, ' ');
 
             case 'regex':
+            case 'contains':
                 if (!validationPattern) {
+                    // If 'contains' without pattern, simple substring check
+                    if (validationType === 'contains') {
+                        return command.includes(expectedCommand);
+                    }
                     return false;
                 }
-                const regex = new RegExp(validationPattern);
+                const regex = new RegExp(validationPattern, 'i'); // Case insensitive default for user friendliness
                 return regex.test(command);
 
             case 'parameterized':

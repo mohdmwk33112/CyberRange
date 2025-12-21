@@ -81,8 +81,8 @@ export class ScenarioController {
     }
 
     @Post(':id/start')
-    startScenario(@Param('id') id: string) {
-        return this.scenarioService.startScenario(id);
+    startScenario(@Param('id') id: string, @Body() body: { userId: string }) {
+        return this.scenarioService.startScenario(id, body.userId);
     }
 
     @Post(':id/stop')

@@ -26,4 +26,9 @@ export class SimulationController {
     getSimulationStatus(payload: { slug: string }) {
         return this.simulationService.getSimulationStatus(payload.slug);
     }
+
+    @MessagePattern({ cmd: 'get-active-simulations' })
+    getActiveSimulations(payload: { userId: string }) {
+        return this.simulationService.getActiveSimulations(payload.userId);
+    }
 }
