@@ -10,7 +10,7 @@ import { ScenarioService } from './scenario.service';
             {
                 name: 'Microservices-services',
                 transport: Transport.TCP,
-                options: { port: 3000 },
+                options: { port: 3011 },
             },
         ]),
     ],

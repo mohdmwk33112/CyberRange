@@ -5,7 +5,7 @@ import { useAuthStore } from '@/features/auth/auth.store';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
-import { Activity, BookOpen, User, Shield, TrendingUp } from 'lucide-react';
+import { Activity, BookOpen, User, Shield, TrendingUp, ChevronRight } from 'lucide-react';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 
 export default function DashboardPage() {
@@ -114,18 +114,20 @@ export default function DashboardPage() {
                         <CardContent>
                             {scenarios && scenarios.length > 0 ? (
                                 <div className="space-y-2">
-                                    {scenarios.slice(0, 3).map((scenario) => (
-                                        <div
+                                    {scenarios.slice(0, 3).map((scenario: any) => (
+                                        <Link
                                             key={scenario._id}
-                                            className="flex items-center justify-between p-3 border border-border/40 rounded-lg bg-background/50"
+                                            href={`/scenarios/${scenario._id}`}
+                                            className="flex items-center justify-between p-3 border border-border/40 rounded-lg bg-background/50 hover:bg-background/80 hover:border-primary/30 transition-all group"
                                         >
                                             <div>
-                                                <p className="font-medium">{scenario.name}</p>
+                                                <p className="font-medium group-hover:text-primary transition-colors">{scenario.title}</p>
                                                 <p className="text-sm text-muted-foreground">
-                                                    {scenario.difficulty} • {scenario.estimatedTime}min
+                                                    {scenario.difficulty} • {scenario.estimatedTime || 15}min
                                                 </p>
                                             </div>
-                                        </div>
+                                            <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1" />
+                                        </Link>
                                     ))}
                                     <Link href="/scenarios">
                                         <Button variant="outline" className="w-full mt-2">

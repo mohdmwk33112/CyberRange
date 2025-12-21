@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import { scenariosApi } from '../scenarios.api';
 import { Card, CardHeader, CardTitle, CardContent } from '@/components/ui/card';
 import { Button } from '@/components/ui/button';
 import { Input } from '@/components/ui/input';
@@ -67,44 +68,40 @@ export function TerminalQuestionnaire({
         setIsSubmitting(true);
 
         try {
-            const response = await fetch(`/api/scenarios/${scenarioId}/validate-answer`, {
-                method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({
-                    userId,
-                    stepOrder,
-                    questionOrder: currentQuestion.questionOrder,
-                    answer: userAnswer,
-                }),
-            });
-
-            const data = await response.json();
+            const data = await scenariosApi.validateAnswer(
+                scenarioId,
+                userId,
+                stepOrder,
+                currentQuestion.questionOrder,
+                userAnswer
+            );
 
             // Add to history
             setCommandHistory(prev => [
                 ...prev,
                 {
                     command: userAnswer,
-                    output: data.correct ? data.message : data.message,
+                    output: data.correct ? (data.message || 'Correct!') : (data.message || 'Incorrect command.'),
                     success: data.correct,
                 },
             ]);
 
             // Add to results
-            setResults(prev => [
-                ...prev,
+            const newResults = [
+                ...results,
                 {
                     questionOrder: currentQuestion.questionOrder,
                     answer: userAnswer,
                     correct: data.correct,
                     points: data.points,
                 },
-            ]);
+            ];
+            setResults(newResults);
 
             if (data.correct) {
                 toast({
                     title: '✓ Correct!',
-                    description: data.message,
+                    description: data.message || 'Well done!',
                 });
 
                 // Move to next question or complete
@@ -116,16 +113,27 @@ export function TerminalQuestionnaire({
                         setHintIndex(0);
                     }, 1500);
                 } else {
-                    // All questions completed
-                    const finalScore = ((earnedPoints + data.points) / totalPoints) * 100;
-                    setTimeout(() => {
-                        onComplete(Math.round(finalScore), finalScore >= 90);
-                    }, 1500);
+                    // All questions completed - call backend to calculate final score and update state
+                    try {
+                        const scoreData = await scenariosApi.calculateScore(scenarioId, userId, newResults.map(r => ({
+                            stepOrder,
+                            questionOrder: r.questionOrder,
+                            answer: r.answer
+                        })));
+
+                        setTimeout(() => {
+                            onComplete(scoreData.score, scoreData.passed);
+                        }, 1500);
+                    } catch (err) {
+                        console.error('Failed to calculate final score', err);
+                        const fallbackScore = Math.round(((earnedPoints + data.points) / totalPoints) * 100);
+                        onComplete(fallbackScore, fallbackScore >= 90);
+                    }
                 }
             } else {
                 toast({
                     title: '✗ Incorrect',
-                    description: data.message,
+                    description: data.message || 'Try again.',
                     variant: 'destructive',
                 });
             }

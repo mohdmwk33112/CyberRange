@@ -16,13 +16,13 @@ export const useDashboardData = (userId: string) => {
         queryKey: ['scenarios'],
         queryFn: () => scenariosApi.getAll(),
         retry: false,
-        enabled: false, // Disable until backend endpoint is ready
+        enabled: true,
     });
 
     const simulationsQuery = useQuery({
         queryKey: ['simulations', userId],
         queryFn: () => simulationsApi.getActive(userId),
-        enabled: false, // Disable until backend endpoint is ready
+        enabled: true,
         retry: false,
     });
 

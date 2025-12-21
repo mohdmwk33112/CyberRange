@@ -25,7 +25,8 @@ export class ScenarioService {
             .find()
             .select('title description attackType difficulty completionCriteria createdAt')
             .sort({ createdAt: -1 })
-            .exec();
+            .lean()
+            .exec() as any;
     }
 
     async getScenarioById(id: string): Promise<Scenario> {

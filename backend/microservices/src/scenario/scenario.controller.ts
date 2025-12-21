@@ -13,7 +13,7 @@ export class ScenarioController {
     }
 
     @MessagePattern({ cmd: 'get-scenarios' })
-    getAllScenarios() {
+    async getAllScenarios() {
         return this.scenarioService.getAllScenarios();
     }
 

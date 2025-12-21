@@ -2,11 +2,13 @@ import apiClient from '@/lib/api-client';
 
 export interface Scenario {
     _id: string;
-    name: string;
+    title: string;
     description: string;
     difficulty: 'easy' | 'medium' | 'hard';
     category: string;
     estimatedTime: number;
+    attackType: string;
+    steps: any[];
 }
 
 export const scenariosApi = {
