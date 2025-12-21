@@ -16,7 +16,7 @@ import { SimulationModule } from './simulation/simulation.module';
       {
         name: 'Microservices-services',
         transport: Transport.TCP,
-        options: { port: 3000 },
+        options: { port: 3011 },
       },
     ]),
     AuthModule,

@@ -12,11 +12,11 @@ async function bootstrap() {
     transport: Transport.TCP,
     options: {
       host: 'localhost',
-      port: 3000
+      port: 3011
     }
   });
   await app.listen();
-  console.log("Microservices TCP is running on PORT: 3000")
+  console.log("Microservices TCP is running on PORT: 3011")
 }
 
 bootstrap()
