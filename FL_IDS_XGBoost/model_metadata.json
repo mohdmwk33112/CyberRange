@@ -1,0 +1,12 @@
+{
+    "framework": "XGBoost",
+    "learning_framework": "Flower (Federated Learning)",
+    "model_type": "XGBClassifier",
+    "max_depth": 6,
+    "learning_rate": 0.1,
+    "n_estimators": 100,
+    "objective": "multi:softmax",
+    "final_accuracy": 0.9847053102030263,
+    "num_clients": 5,
+    "num_rounds": 10
+}

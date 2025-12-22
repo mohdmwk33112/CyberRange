@@ -1,0 +1,54 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fl-ids-deployment
+  namespace: simulations
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fl-ids
+  template:
+    metadata:
+      labels:
+        app: fl-ids
+    spec:
+      containers:
+      - name: fl-ids
+        image: fl-ids:latest
+        imagePullPolicy: Never 
+        ports:
+        - containerPort: 5000
+        resources:
+          requests:
+            cpu: "500m"
+            memory: "1Gi"
+          limits:
+            cpu: "1"
+            memory: "2Gi"
+        livenessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 15
+          periodSeconds: 20
+        readinessProbe:
+          httpGet:
+            path: /healthz
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: fl-ids-service
+  namespace: simulations
+spec:
+  type: LoadBalancer
+  selector:
+    app: fl-ids
+  ports:
+  - protocol: TCP
+    port: 5000
+    targetPort: 5000

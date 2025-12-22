@@ -16,6 +16,21 @@ export class SimulationController {
         return this.simulationService.stopSimulation(slug);
     }
 
+    @Post('ids/predict')
+    async predictIDS(@Body() features: any) {
+        return this.simulationService.getIDSPrediction(features);
+    }
+
+    @Get('ids/healthz')
+    async getIDSHealth() {
+        return this.simulationService.getIDSHealth();
+    }
+
+    @Get(':slug/healthz')
+    async getServiceHealth(@Param('slug') slug: string) {
+        return this.simulationService.getServiceHealth(slug);
+    }
+
     @Post(':slug/reset')
     async resetSimulation(@Param('slug') slug: string) {
         return this.simulationService.resetSimulation(slug);
