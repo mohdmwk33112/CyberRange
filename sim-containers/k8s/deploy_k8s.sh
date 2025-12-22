@@ -19,25 +19,28 @@ docker build -t local/infiltration-attacker:latest "$PROJECT_ROOT/Infiltration-s
 
 echo "[*] Deploying Simulations..."
 
-kubectl delete job bot-attacker --namespace $NAMESPACE --ignore-not-found
-kubectl delete job ddos-attacker --namespace $NAMESPACE --ignore-not-found
-kubectl delete job infiltration-attacker --namespace $NAMESPACE --ignore-not-found
+# Clean up any potential old jobs/deployments first (though apply handles updates usually)
+kubectl delete deployment bot-attacker --namespace $NAMESPACE --ignore-not-found
+kubectl delete deployment ddos-attacker --namespace $NAMESPACE --ignore-not-found
+kubectl delete deployment infiltration-attacker --namespace $NAMESPACE --ignore-not-found
 
+# Apply Deployments
 kubectl apply -f "$SCRIPT_DIR/bot/bot-sim.yaml"
 kubectl apply -f "$SCRIPT_DIR/ddos/ddos-sim.yaml"
 kubectl apply -f "$SCRIPT_DIR/infiltration/infiltration-sim.yaml"
 
-echo "[*] Waiting for simulations to complete..."
-kubectl wait --for=condition=complete job/bot-attacker -n simulations --timeout=300s || echo "[!] Bot simulation did not complete in time."
-kubectl wait --for=condition=complete job/ddos-attacker -n simulations --timeout=300s || echo "[!] DDoS simulation did not complete in time."
-kubectl wait --for=condition=complete job/infiltration-attacker -n simulations --timeout=300s || echo "[!] Infiltration simulation did not complete in time."
+# Apply HPAs
+echo "[*] Applying Autoscalers (HPA)..."
+kubectl apply -f "$SCRIPT_DIR/bot/bot-hpa.yaml"
+kubectl apply -f "$SCRIPT_DIR/ddos/ddos-hpa.yaml"
+kubectl apply -f "$SCRIPT_DIR/infiltration/infiltration-hpa.yaml"
 
-echo "[*] Automatically processing data..."
-# Use subshells (parentheses) to change directory and run builder without affecting the current shell's path
-(cd "$PROJECT_ROOT/bot-sim" && python flows_builder.py)
-(cd "$PROJECT_ROOT/ddos-simulator" && python flows_builder.py)
-(cd "$PROJECT_ROOT/Infiltration-sim" && python flows_builder.py)
+echo "[*] Waiting for deployments to be ready..."
+kubectl rollout status deployment/bot-attacker -n $NAMESPACE
+kubectl rollout status deployment/ddos-attacker -n $NAMESPACE
+kubectl rollout status deployment/infiltration-attacker -n $NAMESPACE
 
-echo "[+] Deployment and data processing complete."
+echo "[+] Deployment complete. Attack simulations are running continuously."
+echo "[*] NOTE: To collect data, you must manually run 'python flows_builder.py' in the respective experiment folders after sufficient traffic has been generated."
 echo "[*] Monitor pods with: kubectl get pods -n $NAMESPACE"
 

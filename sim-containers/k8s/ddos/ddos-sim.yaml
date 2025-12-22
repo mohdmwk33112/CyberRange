@@ -67,13 +67,20 @@ spec:
     port: 3000
     targetPort: 3000
 ---
-apiVersion: batch/v1
-kind: Job
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: ddos-attacker
   namespace: simulations
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: ddos-attacker
   template:
+    metadata:
+      labels:
+        app: ddos-attacker
     spec:
       containers:
       - name: attacker
@@ -88,6 +95,27 @@ spec:
           value: "5"
         - name: DELAY
           value: "0.2"
+        ports:
+        - containerPort: 8000
+        resources:
+          requests:
+            cpu: "200m"
+            memory: "256Mi"
+          limits:
+            cpu: "1"
+            memory: "1Gi"
+        livenessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
         volumeMounts:
         - name: data-volume
           mountPath: /data
@@ -95,5 +123,3 @@ spec:
       - name: data-volume
         persistentVolumeClaim:
           claimName: ddos-data-pvc
-      restartPolicy: Never
-  backoffLimit: 0

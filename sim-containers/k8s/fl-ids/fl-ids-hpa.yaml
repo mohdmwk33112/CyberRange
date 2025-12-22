@@ -1,0 +1,19 @@
+apiVersion: autoscaling/v2
+kind: HorizontalPodAutoscaler
+metadata:
+  name: fl-ids-hpa
+  namespace: simulations
+spec:
+  scaleTargetRef:
+    apiVersions: apps/v1
+    kind: Deployment
+    name: fl-ids-deployment
+  minReplicas: 1
+  maxReplicas: 5
+  metrics:
+  - type: Resource
+    resource:
+      name: cpu
+      target:
+        type: Utilization
+        averageUtilization: 70

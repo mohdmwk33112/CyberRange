@@ -67,13 +67,20 @@ spec:
     port: 3000
     targetPort: 3000
 ---
-apiVersion: batch/v1
-kind: Job
+apiVersion: apps/v1
+kind: Deployment
 metadata:
   name: bot-attacker
   namespace: simulations
 spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: bot-attacker
   template:
+    metadata:
+      labels:
+        app: bot-attacker
     spec:
       containers:
       - name: attacker
@@ -84,6 +91,27 @@ spec:
           value: "http://juice-shop-bot:3000"
         - name: VICTIM_IP
           value: "juice-shop-bot"
+        ports:
+        - containerPort: 8000 
+        resources: 
+          requests:
+            cpu: "100m"
+            memory: "128Mi"
+          limits:
+            cpu: "500m"
+            memory: "512Mi"
+        livenessProbe: 
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 10
+          periodSeconds: 15
+        readinessProbe: 
+          httpGet:
+            path: /
+            port: 8000
+          initialDelaySeconds: 5
+          periodSeconds: 10
         volumeMounts:
         - name: data-volume
           mountPath: /data
@@ -91,5 +119,3 @@ spec:
       - name: data-volume
         persistentVolumeClaim:
           claimName: bot-data-pvc
-      restartPolicy: Never
-  backoffLimit: 0
