@@ -112,4 +112,10 @@ export class ScenarioService {
             .send({ cmd: 'unlock-simulation' }, { userId, scenarioId })
             .toPromise();
     }
+
+    async resetQuestionnaire(userId: string, scenarioId: string): Promise<any> {
+        return this.client
+            .send({ cmd: 'reset-questionnaire' }, { userId, scenarioId })
+            .toPromise();
+    }
 }

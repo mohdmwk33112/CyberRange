@@ -20,16 +20,16 @@ export const KillChainProgress: React.FC<KillChainProgressProps> = ({ logs }) =>
 
     let currentPhaseId = 0;
 
-    // Parse logs to find max phase
+    // Parse logs to find current phase
     logs.forEach(log => {
         if (log.type === 'phase' && log.metrics?.phase) {
-            if (log.metrics.phase > currentPhaseId) {
-                currentPhaseId = log.metrics.phase;
-            }
+            currentPhaseId = log.metrics.phase;
         }
         // Fallback text parsing
-        if (log.message?.includes('Stage 1')) currentPhaseId = Math.max(currentPhaseId, 2);
-        if (log.message?.includes('Stage 2')) currentPhaseId = Math.max(currentPhaseId, 3);
+        else if (log.message?.includes('Stage 1')) currentPhaseId = 1; // Now Stage 1 is Recon (Phase 1)
+        else if (log.message?.includes('Stage 2')) currentPhaseId = 2; // Now Stage 2 is Exploitation (Phase 2)
+        else if (log.message?.includes('Stage 3')) currentPhaseId = 3; // Now Stage 3 is Infiltration (Phase 3)
+        else if (log.message?.includes('Stage 4')) currentPhaseId = 4; // Now Stage 4 is Exfiltration (Phase 4)
     });
 
     // If no phase detected yet but logs exist, assume phase 1

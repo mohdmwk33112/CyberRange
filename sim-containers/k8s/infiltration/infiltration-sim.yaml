@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: juice-shop-infiltration
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "infiltration"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   replicas: 1
   selector:
@@ -12,6 +15,8 @@ spec:
     metadata:
       labels:
         app: juice-shop-infiltration
+        cyberrange.io/scenario: "infiltration"
+        cyberrange.io/managed-by: "simulation-controller"
     spec:
       containers:
       - name: juice-shop
@@ -72,6 +77,9 @@ kind: Deployment
 metadata:
   name: infiltration-attacker
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "infiltration"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   replicas: 1
   selector:
@@ -81,6 +89,8 @@ spec:
     metadata:
       labels:
         app: infiltration-attacker
+        cyberrange.io/scenario: "infiltration"
+        cyberrange.io/managed-by: "simulation-controller"
     spec:
       containers:
       - name: attacker

@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, use, useEffect, useRef } from 'react';
-import { useScenario, useScenarioState, useUnlockSimulation } from '@/features/scenarios/scenarios.hooks';
+import { useScenario, useScenarioState, useUnlockSimulation, useResetQuestionnaire } from '@/features/scenarios/scenarios.hooks';
 import { useAuthStore } from '@/features/auth/auth.store';
 import { Button } from '@/components/ui/button';
 import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
@@ -32,6 +32,7 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
     const { data: scenario, isLoading: loadingScenario } = useScenario(id);
     const { data: state, isLoading: loadingState, refetch: refetchState } = useScenarioState(id, userId);
     const unlockMutation = useUnlockSimulation();
+    const resetQuestionnaireMutation = useResetQuestionnaire();
 
     // UI Local state
     const [currentStepIndex, setCurrentStepIndex] = useState(0);
@@ -219,6 +220,25 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
         }
     };
 
+    const handleResetQuestionnaire = async () => {
+        try {
+            await resetQuestionnaireMutation.mutateAsync({ scenarioId: id, userId });
+            setPhase('questionnaire');
+            setCurrentStepIndex(0);
+            setSimulationActive(false);
+            toast({
+                title: 'Progress Reset',
+                description: 'Questionnaire score has been reset. Simulation is now locked.',
+            });
+        } catch (error: any) {
+            toast({
+                title: 'Reset Failed',
+                description: error.message,
+                variant: 'destructive',
+            });
+        }
+    };
+
     if (loadingScenario || loadingState) {
         return (
             <div className="flex min-h-screen items-center justify-center bg-background">
@@ -366,7 +386,7 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                                                         variant="ghost"
                                                         size="sm"
                                                         className="w-full text-muted-foreground hover:text-primary"
-                                                        onClick={() => setPhase('questionnaire')}
+                                                        onClick={handleResetQuestionnaire}
                                                     >
                                                         Retake Questionnaire to Improve Score
                                                     </Button>

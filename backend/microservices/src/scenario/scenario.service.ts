@@ -376,6 +376,22 @@ export class ScenarioService {
         }
     }
 
+    async resetQuestionnaire(userId: string, scenarioId: string): Promise<any> {
+        const state = await this.getOrCreateState(userId, scenarioId);
+        state.score = 0;
+        state.questionnaireCompleted = false;
+        state.simulationUnlocked = false;
+        state.completedSteps = [];
+        state.currentStep = 0;
+        state.status = 'in-progress';
+        await state.save();
+
+        return {
+            message: 'Questionnaire reset successfully',
+            state,
+        };
+    }
+
     // Helper methods
     private async getOrCreateState(userId: string, scenarioId: string): Promise<ScenarioState> {
         let state = await this.scenarioStateModel

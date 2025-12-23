@@ -55,41 +55,56 @@ while True:
     except (socket.timeout, ConnectionRefusedError, OSError):
         time.sleep(2)
 
-print("[*] Starting Continuous Infiltration Simulation...")
+print("[*] Starting Continuous 4-Stage Infiltration Simulation...")
 
 while True:
-    # 1. Exploitation Phase (RCE-style payload)
-    log_event("phase", "Stage 1: Sending RCE Exploit payload...", {"phase": 1})
+    # 1. Reconnaissance Phase
+    log_event("phase", "Stage 1: Reconnaissance - Scanning target network...", {"phase": 1})
+    for i in range(5):
+        try:
+            # Simulate a port scan or discovery
+            log_event("traffic", f"Port scan attempt {i} to {VICTIM_IP}", {"bytes": 64, "packets": 1, "packet_type": "TCP/SYN"})
+            time.sleep(1)
+        except Exception:
+            pass
+    
+    # 2. Exploitation Phase (RCE-style payload)
+    log_event("phase", "Stage 2: Exploitation - Sending RCE Exploit payload...", {"phase": 2})
     rce_payload = "'; process.exit(); //" # Simplified RCE-style injection
     try:
-        r = requests.get(TARGET_URL, params={"q": rce_payload})
+        r = requests.get(TARGET_URL, params={"q": rce_payload}, timeout=5)
         log_event("attack", f"Exploit sent to {TARGET_URL}", {"status_code": r.status_code, "traffic_bytes": len(rce_payload)})
     except Exception as e:
         log_event("error", f"Exploit failed: {str(e)}")
+    time.sleep(3)
 
-    time.sleep(2)
-
-    # 2. Infiltration / C2 Phase
-    log_event("phase", f"Stage 2: Starting C2 communication (Infiltration) on port {C2_PORT}...", {"phase": 2})
-    for i in range(20): # Increased iterations
+    # 3. Infiltration / C2 Phase
+    log_event("phase", f"Stage 3: Infiltration - Establishing C2 communication on port {C2_PORT}...", {"phase": 3})
+    for i in range(10): 
         try:
             with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
                 s.settimeout(2)
-                # log_event("debug", f"Attempting C2 heartbeat {i} to {VICTIM_IP}:{C2_PORT}...")
+                # We try to connect to the C2 port; it might fail, which is fine for simulation
                 s.connect((VICTIM_IP, C2_PORT))
-                payload_data = f"heartbeat_{i}_data_{random.getrandbits(32)}"
-                msg = payload_data.encode()
+                msg = f"heartbeat_{i}".encode()
                 s.sendall(msg)
-                
-                # Emit traffic metric
-                traffic_size = len(msg)
-                log_event("traffic", f"C2 heartbeat {i} sent", {"bytes": traffic_size, "packets": 1, "packet_type": "TCP"})
-                
+                log_event("traffic", f"C2 heartbeat {i} sent", {"bytes": len(msg), "packets": 1, "packet_type": "TCP"})
         except Exception as e:
-            # Expected if Juice Shop isn't listening, but packet is still sent
+            # Still record the traffic as an 'attempt'
             log_event("traffic", f"C2 heartbeat {i} attempted", {"bytes": 64, "packets": 1, "packet_type": "TCP/SYN", "error": str(e)})
         
-        time.sleep(random.uniform(0.5, 1.5)) # Slightly faster for more concentration
+        time.sleep(1)
 
-    log_event("complete", "Infiltration simulation batch completed. Restarting...")
-    time.sleep(5)
+    # 4. Exfiltration Phase
+    log_event("phase", "Stage 4: Exfiltration - Stealing sensitive data...", {"phase": 4})
+    for i in range(5):
+        try:
+            # Simulate data exfiltration via POST
+            data = {"file": f"database_dump_{i}.sql", "content": "BASE64_ENCODED_DATA..."}
+            log_event("traffic", f"Exfiltrating chunk {i}", {"bytes": 1024, "packets": 2, "packet_type": "TCP/POST"})
+            time.sleep(1.5)
+        except Exception:
+            pass
+
+    log_event("complete", "Infiltration simulation cycle completed successfully. Restarting in 10s...", {"status": "success"})
+    time.sleep(10)

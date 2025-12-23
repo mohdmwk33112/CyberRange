@@ -1,0 +1,56 @@
+# CyberRange Project - Restart & Setup Guide
+
+Since you've restarted your laptop, follow these steps to bring the entire CyberRange environment back up.
+
+## 1. Prerequisites (Automatic on Startup usually)
+Ensure these are running (you can check in the Task Manager or Docker Desktop UI):
+- Docker Desktop
+- Kubernetes (Status: Ready)
+- MongoDB Service
+
+## 2. Start Backend Services
+Open two terminal windows/tabs:
+
+### Terminal A: Microservices
+```bash
+cd backend/microservices
+npm run start:dev
+```
+
+### Terminal B: API Gateway
+```bash
+cd backend/api-gateway
+npm run start:dev
+```
+
+## 3. Infrastructure & Networking
+Run this in a separate terminal to allow the Gateway to talk to the Machine Learning IDS in the cluster:
+
+### Terminal C: IDS Port-Forward
+```bash
+kubectl port-forward svc/fl-ids-service 5005:5000 -n simulations
+```
+
+## 4. Start Frontend
+Finally, run the user interface:
+
+### Terminal D: Frontend UI
+```bash
+cd frontend
+npm run dev
+```
+
+## Accessing the Platform
+- **Dashboard**: http://localhost:3000
+- **Admin Health Dashboard**: http://localhost:3000/admin
+
+## Useful Maintenance Commands
+- **Check Simulation Pods**: `kubectl get pods -n simulations`
+- **Re-Seed Scenarios (if data missing)**: `cd backend/microservices && npm run seed`
+- **Full K8s Redeploy**: `./sim-containers/k8s/deploy_k8s.sh` (Run from project root)
+
+## 5. Troubleshooting
+If you see **"Cannot find module"** or **"MODULE_NOT_FOUND"** errors when starting the backend:
+1. Stop the running terminal.
+2. Run: `rm -rf dist` (or delete the `dist` folder manually in File Explorer).
+3. Run `npm run start:dev` again.

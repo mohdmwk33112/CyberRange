@@ -60,4 +60,14 @@ export const scenariosApi = {
         const response = await apiClient.post(`/scenarios/${scenarioId}/unlock-simulation/${userId}`);
         return response.data;
     },
+
+    resetQuestionnaire: async (scenarioId: string, userId: string) => {
+        const response = await apiClient.post(`/scenarios/${scenarioId}/reset-questionnaire/${userId}`);
+        return response.data;
+    },
+
+    getClusterHealth: async () => {
+        const response = await apiClient.get('/simulations/cluster/health');
+        return response.data;
+    },
 };

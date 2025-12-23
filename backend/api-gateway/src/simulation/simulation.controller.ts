@@ -41,6 +41,11 @@ export class SimulationController {
         return this.simulationService.getSimulationStatus(slug);
     }
 
+    @Get('cluster/health')
+    async getClusterHealth() {
+        return this.simulationService.getClusterHealth();
+    }
+
     @Get('user/:userId/active')
     async getActiveSimulations(@Param('userId') userId: string) {
         return this.simulationService.getActiveSimulations(userId);

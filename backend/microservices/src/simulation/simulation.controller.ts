@@ -31,4 +31,9 @@ export class SimulationController {
     getActiveSimulations(payload: { userId: string }) {
         return this.simulationService.getActiveSimulations(payload.userId);
     }
+
+    @MessagePattern({ cmd: 'get-cluster-health' })
+    getClusterHealth() {
+        return this.simulationService.getClusterHealth();
+    }
 }

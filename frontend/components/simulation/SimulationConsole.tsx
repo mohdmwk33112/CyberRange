@@ -68,16 +68,16 @@ export const SimulationConsole: React.FC<SimulationConsoleProps> = ({ logs }) =>
                                     <Badge variant="secondary" className={`${getBadgeColor(log.type)} text-white border-0 capitalize`}>
                                         {log.type}
                                     </Badge>
-                                    <span className={`break-all ${log.type === 'error' ? 'text-red-400' : 'text-gray-300'}`}>
+                                    <span className={`break-all ${log.type === 'error' ? 'text-destructive font-semibold' : 'text-foreground'}`}>
                                         {log.message}
                                     </span>
                                 </div>
                                 {log.metrics && Object.keys(log.metrics).length > 0 && (
-                                    <div className="bg-white/5 rounded p-2 text-xs grid grid-cols-2 gap-2 mt-1 w-fit">
+                                    <div className="bg-muted/30 rounded p-2 text-xs grid grid-cols-2 gap-2 mt-1 w-fit border border-border/50">
                                         {Object.entries(log.metrics).map(([k, v]) => (
                                             <div key={k} className="flex gap-2">
-                                                <span className="text-gray-500">{k}:</span>
-                                                <span className="text-green-300 font-bold">{String(v)}</span>
+                                                <span className="text-muted-foreground font-medium">{k}:</span>
+                                                <span className="text-primary font-bold">{String(v)}</span>
                                             </div>
                                         ))}
                                     </div>

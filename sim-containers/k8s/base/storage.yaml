@@ -14,7 +14,7 @@ spec:
     - ReadWriteOnce
   storageClassName: manual
   hostPath:
-    path: /run/desktop/mnt/host/c/Users/nader/Desktop/Courses/Cloud/Project/project/bot-sim/data
+    path: /run/desktop/mnt/host/d/Courses/Service/Project/CyberRange/sim-containers/bot-sim/data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -41,7 +41,7 @@ spec:
     - ReadWriteOnce
   storageClassName: manual
   hostPath:
-    path: /run/desktop/mnt/host/c/Users/nader/Desktop/Courses/Cloud/Project/project/ddos-simulator/data
+    path: /run/desktop/mnt/host/d/Courses/Service/Project/CyberRange/sim-containers/ddos-simulator/data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim
@@ -68,7 +68,7 @@ spec:
     - ReadWriteOnce
   storageClassName: manual
   hostPath:
-    path: /run/desktop/mnt/host/c/Users/nader/Desktop/Courses/Cloud/Project/project/Infiltration-sim/data
+    path: /run/desktop/mnt/host/d/Courses/Service/Project/CyberRange/sim-containers/Infiltration-sim/data
 ---
 apiVersion: v1
 kind: PersistentVolumeClaim

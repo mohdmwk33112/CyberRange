@@ -115,10 +115,12 @@ export class ScenarioController {
     }
 
     @MessagePattern({ cmd: 'unlock-simulation' })
-    unlockSimulation(payload: { userId: string; scenarioId: string }) {
-        return this.scenarioService.unlockSimulation(
-            payload.userId,
-            payload.scenarioId,
-        );
+    unlockSimulation(data: { userId: string; scenarioId: string }) {
+        return this.scenarioService.unlockSimulation(data.userId, data.scenarioId);
+    }
+
+    @MessagePattern({ cmd: 'reset-questionnaire' })
+    resetQuestionnaire(data: { userId: string; scenarioId: string }) {
+        return this.scenarioService.resetQuestionnaire(data.userId, data.scenarioId);
     }
 }

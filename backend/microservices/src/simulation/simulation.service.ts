@@ -5,6 +5,7 @@ import * as fs from 'fs';
 import * as path from 'path';
 import * as yaml from 'js-yaml';
 import { PassThrough } from 'stream';
+import { createInterface } from 'readline';
 
 @Injectable()
 export class SimulationService {
@@ -56,8 +57,8 @@ export class SimulationService {
                     // Try to create, if fails try to patch
                     try {
                         await this.k8sAppsApi.createNamespacedDeployment({ namespace: this.namespace, body: doc });
-                    } catch (e) {
-                        if (e.code === 409) {
+                    } catch (e: any) {
+                        if (e.statusCode === 409 || e.code === 409) {
                             await this.k8sAppsApi.patchNamespacedDeployment(
                                 {
                                     name: doc.metadata.name,
@@ -67,15 +68,15 @@ export class SimulationService {
                                         { op: 'add', path: '/metadata/labels/cyberrange.io~1scenario', value: slug },
                                         { op: 'add', path: '/metadata/labels/cyberrange.io~1managed-by', value: 'simulation-controller' }
                                     ],
-                                },
+                                }
                             );
                         } else throw e;
                     }
                 } else if (doc.kind === 'Service') {
                     try {
                         await this.k8sApi.createNamespacedService({ namespace: this.namespace, body: doc });
-                    } catch (e) {
-                        if (e.code === 409) {
+                    } catch (e: any) {
+                        if (e.statusCode === 409 || e.code === 409) {
                             await this.k8sApi.patchNamespacedService(
                                 {
                                     name: doc.metadata.name,
@@ -84,7 +85,7 @@ export class SimulationService {
                                         { op: 'add', path: '/metadata/labels/cyberrange.io~1scenario', value: slug },
                                         { op: 'add', path: '/metadata/labels/cyberrange.io~1managed-by', value: 'simulation-controller' }
                                     ],
-                                },
+                                }
                             );
                         } else throw e;
                     }
@@ -97,8 +98,8 @@ export class SimulationService {
                     } catch (e) { /* ignore */ }
                     await this.k8sBatchApi.createNamespacedJob({ namespace: this.namespace, body: doc });
                 }
-            } catch (err) {
-                this.logger.error(`Error applying ${doc.kind} ${doc.metadata.name}:`, err.body || err);
+            } catch (err: any) {
+                this.logger.error(`Error applying ${doc.kind} ${doc.metadata.name}:`, err.message || err);
             }
         }
 
@@ -131,7 +132,7 @@ export class SimulationService {
                                 value: 0,
                             },
                         ],
-                    },
+                    }
                 );
             }
         }
@@ -226,12 +227,26 @@ export class SimulationService {
             const items = (response as any).items || (response as any).body?.items || [];
             this.logger.log(`Found ${items.length} pods in namespace ${this.namespace}`);
 
-            const attackerPod = items.find((p: any) => {
+            let attackerPod = items.find((p: any) => {
                 const isScenario = p.metadata?.labels?.['cyberrange.io/scenario'] === slug;
                 const isAttacker = p.metadata?.name?.includes('attacker') || p.spec?.containers.some((c: any) => c.name === 'attacker');
-                if (isScenario) this.logger.debug(`Found scenario pod: ${p.metadata.name}, isAttacker: ${isAttacker}`);
-                return isScenario && isAttacker;
+                const isRunning = p.status?.phase === 'Running';
+                return isScenario && isAttacker && isRunning;
             });
+
+            // Fallback: If no pod found with scenario label, try finding by name prefix and running status
+            if (!attackerPod) {
+                this.logger.warn(`No pod found with label cyberrange.io/scenario=${slug}. Trying name-based fallback...`);
+                attackerPod = items.find((p: any) => {
+                    const nameMatch = p.metadata?.name?.includes(slug) && p.metadata?.name?.includes('attacker');
+                    const isRunning = p.status?.phase === 'Running';
+                    return nameMatch && isRunning;
+                });
+            }
+
+            if (attackerPod) {
+                this.logger.log(`Selected pod for log streaming: ${attackerPod.metadata.name}`);
+            }
 
             if (!attackerPod || !attackerPod.metadata?.name) {
                 this.logger.warn(`No provided attacker pod found for slug ${slug}. Pods found: ${items.map(i => i.metadata.name).join(', ')}`);
@@ -241,17 +256,20 @@ export class SimulationService {
             const logStream = new k8s.Log(this.kc);
             const passThrough = new PassThrough();
 
-            passThrough.on('data', (chunk) => {
-                const lines = chunk.toString().split('\n');
-                for (const line of lines) {
-                    if (!line.trim()) continue;
-                    try {
-                        const jsonLog = JSON.parse(line);
-                        callback(jsonLog);
-                    } catch (e) {
-                        // If not JSON, emit as plain log
-                        callback({ type: 'stdout', message: line, timestamp: Date.now() / 1000 });
-                    }
+            const rl = createInterface({
+                input: passThrough,
+                terminal: false
+            });
+
+            rl.on('line', (line) => {
+                if (!line.trim()) return;
+                this.logger.debug(`Received log line from ${attackerPod.metadata.name}: ${line.substring(0, 100)}...`);
+                try {
+                    const jsonLog = JSON.parse(line);
+                    callback(jsonLog);
+                } catch (e) {
+                    // If not JSON, emit as plain log
+                    callback({ type: 'stdout', message: line, timestamp: Date.now() / 1000 });
                 }
             });
 
@@ -267,6 +285,34 @@ export class SimulationService {
 
         } catch (e) {
             this.logger.error(`Error streaming logs: ${e}`);
+        }
+    }
+
+    async getClusterHealth(): Promise<any[]> {
+        try {
+            this.logger.log(`Fetching cluster health for namespace: ${this.namespace}`);
+            const response = await this.k8sApi.listNamespacedPod({
+                namespace: this.namespace
+            });
+
+            const items = response.items?.filter((p: any) => p.status?.phase !== 'Succeeded') || [];
+            this.logger.log(`Successfully fetched ${items.length} active pods`);
+
+            return items.map((pod: any) => ({
+                name: pod.metadata?.name,
+                status: pod.status?.phase,
+                image: pod.spec?.containers[0]?.image,
+                restarts: pod.status?.containerStatuses ? pod.status.containerStatuses[0].restartCount : 0,
+                creationTimestamp: pod.metadata?.creationTimestamp,
+                labels: pod.metadata?.labels,
+                ready: pod.status?.containerStatuses ? pod.status.containerStatuses.every((s: any) => s.ready) : false
+            }));
+        } catch (e: any) {
+            this.logger.error(`Error getting cluster health: ${e.message || e}`);
+            if (e.body) {
+                this.logger.error(`K8s Error Details: ${JSON.stringify(e.body)}`);
+            }
+            throw e;
         }
     }
 }

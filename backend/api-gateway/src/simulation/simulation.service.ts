@@ -99,4 +99,8 @@ export class SimulationService {
     async getActiveSimulations(userId: string): Promise<any> {
         return this.client.send({ cmd: 'get-active-simulations' }, { userId }).toPromise();
     }
+
+    async getClusterHealth(): Promise<any> {
+        return this.client.send({ cmd: 'get-cluster-health' }, {}).toPromise();
+    }
 }

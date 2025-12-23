@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: juice-shop-ddos
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "ddos"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   replicas: 1
   selector:
@@ -12,6 +15,8 @@ spec:
     metadata:
       labels:
         app: juice-shop-ddos
+        cyberrange.io/scenario: "ddos"
+        cyberrange.io/managed-by: "simulation-controller"
     spec:
       containers:
       - name: juice-shop
@@ -72,6 +77,9 @@ kind: Deployment
 metadata:
   name: ddos-attacker
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "ddos"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   replicas: 1
   selector:
@@ -81,6 +89,8 @@ spec:
     metadata:
       labels:
         app: ddos-attacker
+        cyberrange.io/scenario: "ddos"
+        cyberrange.io/managed-by: "simulation-controller"
     spec:
       containers:
       - name: attacker

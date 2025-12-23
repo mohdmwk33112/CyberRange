@@ -74,3 +74,21 @@ export const useUnlockSimulation = () => {
         },
     });
 };
+export const useResetQuestionnaire = () => {
+    const queryClient = useQueryClient();
+    return useMutation({
+        mutationFn: ({ scenarioId, userId }: { scenarioId: string; userId: string }) =>
+            scenariosApi.resetQuestionnaire(scenarioId, userId),
+        onSuccess: (_, variables) => {
+            queryClient.invalidateQueries({ queryKey: ['scenarioState', variables.scenarioId, variables.userId] });
+        },
+    });
+};
+
+export const useClusterHealth = () => {
+    return useQuery({
+        queryKey: ['cluster-health'],
+        queryFn: () => scenariosApi.getClusterHealth(),
+        refetchInterval: 10000, // Refresh every 10s
+    });
+};

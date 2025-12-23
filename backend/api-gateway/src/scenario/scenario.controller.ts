@@ -142,4 +142,12 @@ export class ScenarioController {
     ) {
         return this.scenarioService.unlockSimulation(userId, scenarioId);
     }
+
+    @Post(':id/reset-questionnaire/:userId')
+    resetQuestionnaire(
+        @Param('id') scenarioId: string,
+        @Param('userId') userId: string,
+    ) {
+        return this.scenarioService.resetQuestionnaire(userId, scenarioId);
+    }
 }
