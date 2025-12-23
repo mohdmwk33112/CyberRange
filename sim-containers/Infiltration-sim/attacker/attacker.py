@@ -17,10 +17,24 @@ C2_PORT = int(os.getenv("C2_PORT", "4444"))
 # --- Health Check Server ---
 class HealthHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'application/json')
-        self.end_headers()
-        self.wfile.write(b'{"status": "healthy"}')
+        if self.path == '/livez':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"status": "alive"}')
+        elif self.path == '/readyz':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"status": "ready"}')
+        elif self.path == '/startupz':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"status": "started"}')
+        else:
+            self.send_response(404)
+            self.end_headers()
     def log_message(self, format, *args):
         return
 

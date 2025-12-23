@@ -7,6 +7,7 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './auth/auth.module';
 import { UserModule } from './user/user.module';
+import { AuditModule } from './audit/audit.module';
 import { ScenarioModule } from './scenario/scenario.module';
 import { SimulationModule } from './simulation/simulation.module';
 
@@ -21,6 +22,7 @@ import { SimulationModule } from './simulation/simulation.module';
     ]),
     AuthModule,
     UserModule,
+    AuditModule,
     ScenarioModule,
     SimulationModule,
   ],

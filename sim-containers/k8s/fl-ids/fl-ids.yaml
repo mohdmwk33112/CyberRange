@@ -28,15 +28,21 @@ spec:
             memory: "2Gi"
         livenessProbe:
           httpGet:
-            path: /healthz
-            port: 5000
-          initialDelaySeconds: 15
-          periodSeconds: 20
-        readinessProbe:
-          httpGet:
-            path: /healthz
+            path: /livez
             port: 5000
           initialDelaySeconds: 5
+          periodSeconds: 10
+        readinessProbe:
+          httpGet:
+            path: /readyz
+            port: 5000
+          initialDelaySeconds: 5
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /startupz
+            port: 5000
+          failureThreshold: 30
           periodSeconds: 10
 ---
 apiVersion: v1

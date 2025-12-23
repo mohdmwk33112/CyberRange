@@ -27,10 +27,21 @@ except Exception as e:
     print(f"ERROR loading model: {str(e)}")
     model = None
 
-@app.route('/health', methods=['GET'])
-@app.route('/healthz', methods=['GET'])
-def health():
-    return jsonify({"status": "healthy", "model": "FL-IDS-XGBoost"}), 200
+@app.route('/livez', methods=['GET'])
+def livez():
+    return jsonify({"status": "alive"}), 200
+
+@app.route('/readyz', methods=['GET'])
+def readyz():
+    if model is None:
+        return jsonify({"status": "not_ready", "error": "Model not loaded"}), 503
+    return jsonify({"status": "ready"}), 200
+
+@app.route('/startupz', methods=['GET'])
+def startupz():
+    if os.path.exists(MODEL_PATH) and os.path.exists(FEATURE_NAMES_PATH):
+        return jsonify({"status": "started"}), 200
+    return jsonify({"status": "failed", "error": "Model files missing"}), 503
 
 @app.route('/predict', methods=['POST'])
 def predict():

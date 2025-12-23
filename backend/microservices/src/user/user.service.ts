@@ -3,6 +3,7 @@ import { Injectable, NotFoundException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from '../auth/user.model';
+import * as bcrypt from 'bcrypt';
 import { Progress } from './progress.model';
 
 @Injectable()
@@ -43,8 +44,13 @@ export class UserService {
         return result as any;
     }
 
-    async deleteUser(userId: string): Promise<any> {
-        return await this.userModel.findByIdAndDelete(userId).exec();
+    async deleteUser(id: string): Promise<any> {
+        return this.userModel.findByIdAndDelete(id).exec();
+    }
+
+    async resetPassword(id: string, newPassword: string): Promise<any> {
+        const hashedPassword = await bcrypt.hash(newPassword, 10);
+        return this.userModel.findByIdAndUpdate(id, { password: hashedPassword }).exec();
     }
 
     async getProgress(userId: string): Promise<Progress[]> {

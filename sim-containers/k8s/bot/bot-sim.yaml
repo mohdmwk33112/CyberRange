@@ -112,15 +112,21 @@ spec:
             memory: "512Mi"
         livenessProbe: 
           httpGet:
-            path: /
+            path: /livez
             port: 8000
           initialDelaySeconds: 10
           periodSeconds: 15
         readinessProbe: 
           httpGet:
-            path: /
+            path: /readyz
             port: 8000
           initialDelaySeconds: 5
+          periodSeconds: 10
+        startupProbe:
+          httpGet:
+            path: /startupz
+            port: 8000
+          failureThreshold: 30
           periodSeconds: 10
         volumeMounts:
         - name: data-volume

@@ -45,10 +45,12 @@ export class UserController {
 
     @Delete(':id')
     deleteUser(@Param('id') id: string) {
-        // Add RBAC check here: allow only if admin. 
-        // Since I don't have the context of the requester easily without the Guard, 
-        // I will forward the request. Validation should theoretically happen here or in service.
         return this.userService.deleteUser(id);
+    }
+
+    @Post(':id/reset-password')
+    resetPassword(@Param('id') id: string, @Body() body: { password: string }) {
+        return this.userService.resetPassword(id, body.password);
     }
 
     @Get('progress/:id')

@@ -36,4 +36,19 @@ export class SimulationController {
     getClusterHealth() {
         return this.simulationService.getClusterHealth();
     }
+
+    @MessagePattern({ cmd: 'ids-prediction' })
+    getIDSPrediction(payload: { data: any }) {
+        return this.simulationService.getIDSPrediction(payload.data);
+    }
+
+    @MessagePattern({ cmd: 'get-ids-health' })
+    getIDSHealth() {
+        return this.simulationService.getIDSHealth();
+    }
+
+    @MessagePattern({ cmd: 'get-service-health' })
+    getServiceHealth(payload: { slug: string }) {
+        return this.simulationService.getServiceHealth(payload.slug);
+    }
 }

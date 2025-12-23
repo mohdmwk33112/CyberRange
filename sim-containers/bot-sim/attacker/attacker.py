@@ -15,10 +15,27 @@ VICTIM_IP = os.getenv("VICTIM_IP", "juice-shop")
 # --- Health Check Server ---
 class HealthHandler(http.server.SimpleHTTPRequestHandler):
     def do_GET(self):
-        self.send_response(200)
-        self.send_header('Content-type', 'application/json')
-        self.end_headers()
-        self.wfile.write(b'{"status": "healthy"}')
+        if self.path == '/livez':
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"status": "alive"}')
+        elif self.path == '/readyz':
+            # Logic: Check if dependent service is reachable? For bot, simple 200 is fine as it retries.
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"status": "ready"}')
+        elif self.path == '/startupz':
+             # Logic: Check if config/credentials loaded? 
+            self.send_response(200)
+            self.send_header('Content-type', 'application/json')
+            self.end_headers()
+            self.wfile.write(b'{"status": "started"}')
+        else:
+             self.send_response(404)
+             self.end_headers()
+
     def log_message(self, format, *args):
         return # Suppress log output
 

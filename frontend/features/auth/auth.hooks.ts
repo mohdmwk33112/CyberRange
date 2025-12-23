@@ -22,7 +22,12 @@ export const useLogin = () => {
             };
             setAuth(data.access_token, user);
             toast({ title: 'Welcome back!', description: 'Logged in successfully.' });
-            router.push('/dashboard');
+
+            if (user.role === 'admin') {
+                router.push('/admin');
+            } else {
+                router.push('/dashboard');
+            }
         },
         onError: (error: any) => {
             toast({

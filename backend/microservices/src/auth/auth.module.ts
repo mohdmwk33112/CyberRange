@@ -7,10 +7,12 @@ import { ConfigModule, ConfigService } from '@nestjs/config';
 import { AuthService } from './auth.service';
 import { AuthController } from './auth.controller';
 import { UserSchema } from './user.model';
+import { AuditModule } from '../audit/audit.module';
 
 @Module({
     imports: [
         MongooseModule.forFeature([{ name: 'User', schema: UserSchema }]),
+        AuditModule,
         PassportModule,
         JwtModule.registerAsync({
             imports: [ConfigModule],

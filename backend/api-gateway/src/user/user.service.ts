@@ -22,8 +22,12 @@ export class UserService {
             .toPromise();
     }
 
-    async deleteUser(userId: string): Promise<any> {
-        return this.client.send({ cmd: 'delete-user' }, userId).toPromise();
+    async deleteUser(id: string): Promise<any> {
+        return this.client.send({ cmd: 'delete-user' }, id).toPromise();
+    }
+
+    async resetPassword(id: string, password: string): Promise<any> {
+        return this.client.send({ cmd: 'reset-password' }, { id, password }).toPromise();
     }
 
     async getProgress(userId: string): Promise<any> {

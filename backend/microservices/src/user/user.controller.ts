@@ -1,6 +1,6 @@
 /* eslint-disable prettier/prettier */
 import { Controller } from '@nestjs/common';
-import { MessagePattern } from '@nestjs/microservices';
+import { MessagePattern, Payload } from '@nestjs/microservices';
 import { UserService } from './user.service';
 
 @Controller()
@@ -23,8 +23,13 @@ export class UserController {
     }
 
     @MessagePattern({ cmd: 'delete-user' })
-    deleteUser(userId: string) {
-        return this.userService.deleteUser(userId);
+    async deleteUser(@Payload() id: string) {
+        return this.userService.deleteUser(id);
+    }
+
+    @MessagePattern({ cmd: 'reset-password' })
+    async resetPassword(@Payload() data: { id: string, password: string }) {
+        return this.userService.resetPassword(data.id, data.password);
     }
 
     @MessagePattern({ cmd: 'get-progress' })

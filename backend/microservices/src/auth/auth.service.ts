@@ -9,12 +9,14 @@ import * as bcrypt from 'bcrypt';
 import { JwtService } from '@nestjs/jwt';
 import * as fs from 'fs';
 import * as path from 'path';
+import { AuditService } from '../audit/audit.service';
 
 @Injectable()
 export class AuthService {
     constructor(
         @InjectModel('User') private readonly userModel: Model<User>,
         private readonly jwtService: JwtService,
+        private readonly auditService: AuditService,
     ) { }
 
     async register(createUserDto: CreateUserDto): Promise<User> {
@@ -46,11 +48,28 @@ export class AuthService {
         return null;
     }
 
-    async login(loginUserDto: LoginUserDto) {
+    async login(loginUserDto: LoginUserDto & { ip?: string; userAgent?: string }) {
         const user = await this.validateUser(loginUserDto.username, loginUserDto.password);
+
         if (!user) {
+            await this.auditService.log({
+                username: loginUserDto.username,
+                ip: loginUserDto.ip || 'unknown',
+                status: 'FAILURE',
+                userAgent: loginUserDto.userAgent,
+                details: 'Invalid credentials'
+            });
             return null;
         }
+
+        await this.auditService.log({
+            username: user.username,
+            ip: loginUserDto.ip || 'unknown',
+            status: 'SUCCESS',
+            userAgent: loginUserDto.userAgent,
+            details: 'Successful login'
+        });
+
         const payload = { username: user.username, sub: user._id, role: user.role };
         return {
             access_token: this.jwtService.sign(payload),
