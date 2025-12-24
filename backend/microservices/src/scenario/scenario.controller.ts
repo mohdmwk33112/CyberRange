@@ -85,6 +85,16 @@ export class ScenarioController {
         return this.scenarioService.getScenarioRuntimeStatus(payload.scenarioId);
     }
 
+    @MessagePattern({ cmd: 'get-victim-health' })
+    getVictimHealthDetailed(payload: { scenarioId: string }) {
+        return this.scenarioService.getVictimHealthDetailed(payload.scenarioId);
+    }
+
+    @MessagePattern({ cmd: 'get-ids-status' })
+    getIDSStatus() {
+        return this.scenarioService.getIDSStatus();
+    }
+
     // Questionnaire message patterns
     @MessagePattern({ cmd: 'validate-question-answer' })
     validateQuestionAnswer(payload: { userId: string; scenarioId: string; stepOrder: number; questionOrder: number; answer: string }) {

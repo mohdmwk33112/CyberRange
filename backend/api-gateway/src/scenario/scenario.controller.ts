@@ -26,6 +26,11 @@ export class ScenarioController {
         return this.scenarioService.getAllScenarios();
     }
 
+    @Get('ids/status')
+    getIDSStatus() {
+        return this.scenarioService.getIDSStatus();
+    }
+
     @Get(':id')
     getScenarioById(@Param('id') id: string) {
         return this.scenarioService.getScenarioById(id);
@@ -98,6 +103,11 @@ export class ScenarioController {
     @Get(':id/status')
     getScenarioRuntimeStatus(@Param('id') id: string) {
         return this.scenarioService.getScenarioRuntimeStatus(id);
+    }
+
+    @Get(':id/victim-health')
+    getVictimHealthDetailed(@Param('id') id: string) {
+        return this.scenarioService.getVictimHealthDetailed(id);
     }
 
     // Questionnaire endpoints

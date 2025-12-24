@@ -64,6 +64,9 @@ kind: Service
 metadata:
   name: juice-shop-infiltration
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "infiltration"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   selector:
     app: juice-shop-infiltration

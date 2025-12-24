@@ -44,12 +44,27 @@ export class SimulationGateway implements OnGatewayConnection, OnGatewayDisconne
         @ConnectedSocket() client: Socket,
     ) {
         const { slug } = data;
-        this.logger.log(`Client ${client.id} subscribed to logs for ${slug}`);
+        this.logger.log(`Client ${client.id} subscribed to attacker logs for ${slug}`);
         client.join(slug);
 
         // Start streaming if not already
         this.simulationService.streamSimulationLogs(slug, (logLine) => {
             this.server.to(slug).emit('log-update', logLine);
+        });
+    }
+
+    @SubscribeMessage('subscribe-victim-logs')
+    async handleSubscribeVictimLogs(
+        @MessageBody() data: { slug: string },
+        @ConnectedSocket() client: Socket,
+    ) {
+        const { slug } = data;
+        this.logger.log(`Client ${client.id} subscribed to victim logs for ${slug}`);
+        client.join(`${slug}-victim`);
+
+        // Start streaming if not already
+        this.simulationService.streamVictimLogs(slug, (logLine) => {
+            this.server.to(`${slug}-victim`).emit('victim-log-update', logLine);
         });
     }
 }

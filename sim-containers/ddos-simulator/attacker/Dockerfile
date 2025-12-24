@@ -6,4 +6,4 @@ RUN pip install requests pandas
 
 COPY simulate_ddos.py .
 
-CMD ["python", "simulate_ddos.py"]
+CMD ["python", "-u", "simulate_ddos.py"]

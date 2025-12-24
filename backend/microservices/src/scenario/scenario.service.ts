@@ -29,10 +29,21 @@ export class ScenarioService {
             .exec() as any;
     }
 
-    async getScenarioById(id: string): Promise<Scenario> {
-        const scenario = await this.scenarioModel.findById(id).exec();
+    async getScenarioById(idOrSlug: string): Promise<Scenario> {
+        let scenario;
+
+        // Check if it's a valid ObjectId
+        if (idOrSlug.match(/^[0-9a-fA-F]{24}$/)) {
+            scenario = await this.scenarioModel.findById(idOrSlug).exec();
+        }
+
+        // If not found by ID or not an ID, try slug
         if (!scenario) {
-            throw new NotFoundException('Scenario not found');
+            scenario = await this.scenarioModel.findOne({ slug: idOrSlug }).exec();
+        }
+
+        if (!scenario) {
+            throw new NotFoundException(`Scenario with ID or slug "${idOrSlug}" not found`);
         }
         return scenario;
     }
@@ -244,6 +255,15 @@ export class ScenarioService {
     async getScenarioRuntimeStatus(scenarioId: string): Promise<any> {
         const scenario = await this.getScenarioById(scenarioId);
         return this.simulationService.getSimulationStatus(scenario.slug);
+    }
+
+    async getVictimHealthDetailed(scenarioId: string): Promise<any> {
+        const scenario = await this.getScenarioById(scenarioId);
+        return this.simulationService.getVictimHealthDetailed(scenario.slug);
+    }
+
+    async getIDSStatus(): Promise<any> {
+        return this.simulationService.getIDSHealth();
     }
 
     // Questionnaire methods

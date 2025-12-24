@@ -64,6 +64,9 @@ kind: Service
 metadata:
   name: juice-shop-bot
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "bot"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   selector:
     app: juice-shop-bot

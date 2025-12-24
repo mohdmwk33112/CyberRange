@@ -78,6 +78,14 @@ export class ScenarioService {
         return this.client.send({ cmd: 'get-scenario-runtime-status' }, { scenarioId }).toPromise();
     }
 
+    async getVictimHealthDetailed(scenarioId: string): Promise<any> {
+        return this.client.send({ cmd: 'get-victim-health' }, { scenarioId }).toPromise();
+    }
+
+    async getIDSStatus(): Promise<any> {
+        return this.client.send({ cmd: 'get-ids-status' }, {}).toPromise();
+    }
+
     // Questionnaire methods
     async validateQuestionAnswer(
         userId: string,

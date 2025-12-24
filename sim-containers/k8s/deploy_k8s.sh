@@ -18,6 +18,8 @@ docker build -t local/ddos-attacker:latest "$PROJECT_ROOT/ddos-simulator/attacke
 docker build -t local/infiltration-attacker:latest "$PROJECT_ROOT/Infiltration-sim/attacker"
 # Federated IDS
 docker build -t fl-ids:latest "$PROJECT_ROOT/fl-ids"
+# IDS Agent Sidecar
+docker build -t local/ids-agent:latest "$PROJECT_ROOT/ids-agent"
 
 echo "[*] Deploying Simulations..."
 

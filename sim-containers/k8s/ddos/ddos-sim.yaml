@@ -64,6 +64,9 @@ kind: Service
 metadata:
   name: juice-shop-ddos
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "ddos"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   selector:
     app: juice-shop-ddos

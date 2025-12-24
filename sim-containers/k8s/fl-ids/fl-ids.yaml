@@ -3,6 +3,9 @@ kind: Deployment
 metadata:
   name: fl-ids-deployment
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "fl-ids"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   replicas: 1
   selector:
@@ -50,6 +53,9 @@ kind: Service
 metadata:
   name: fl-ids-service
   namespace: simulations
+  labels:
+    cyberrange.io/scenario: "fl-ids"
+    cyberrange.io/managed-by: "simulation-controller"
 spec:
   type: LoadBalancer
   selector:

@@ -37,67 +37,111 @@ export class SimulationService {
         const fileContent = fs.readFileSync(manifestPath, 'utf8');
         const docs = yaml.loadAll(fileContent) as any[];
 
+        // --- NEW: Load FL-IDS manifests to deploy alongside scenario ---
+        const flidsManifestPath = path.join(process.cwd(), '..', '..', 'sim-containers', 'k8s', 'fl-ids', 'fl-ids.yaml');
+        if (fs.existsSync(flidsManifestPath)) {
+            const flidsContent = fs.readFileSync(flidsManifestPath, 'utf8');
+            const flidsDocs = yaml.loadAll(flidsContent) as any[];
+            docs.push(...flidsDocs);
+        }
+
         for (const doc of docs) {
-            if (!doc) continue;
             if (!doc.metadata) doc.metadata = {};
             if (!doc.metadata.labels) doc.metadata.labels = {};
-            doc.metadata.labels['cyberrange.io/scenario'] = slug;
+
+            // Only set scenario label if it's NOT an fl-ids resource
+            if (doc.metadata.labels['cyberrange.io/scenario'] !== 'fl-ids') {
+                doc.metadata.labels['cyberrange.io/scenario'] = slug;
+            }
             doc.metadata.labels['cyberrange.io/managed-by'] = 'simulation-controller';
 
             // CRITICAL: Also inject labels into the Pod Template (if it exists)
-            // so that the actual Pods created by Deployment/Job get the labels.
             if (doc.spec && doc.spec.template) {
                 if (!doc.spec.template.metadata) doc.spec.template.metadata = {};
                 if (!doc.spec.template.metadata.labels) doc.spec.template.metadata.labels = {};
-                doc.spec.template.metadata.labels['cyberrange.io/scenario'] = slug;
+
+                if (doc.spec.template.metadata.labels['cyberrange.io/scenario'] !== 'fl-ids') {
+                    doc.spec.template.metadata.labels['cyberrange.io/scenario'] = slug;
+                }
                 doc.spec.template.metadata.labels['cyberrange.io/managed-by'] = 'simulation-controller';
+
+                // --- NEW: Inject IDS Agent Sidecar into Juice Shop Deployment ---
+                if (doc.kind === 'Deployment' && (doc.metadata.name.includes('juice-shop') || doc.metadata.name.includes('victim'))) {
+                    const containers = doc.spec.template.spec.containers;
+                    const hasIdsAgent = containers.some((c: any) => c.name === 'ids-agent');
+                    if (!hasIdsAgent) {
+                        containers.push({
+                            name: 'ids-agent',
+                            image: 'local/ids-agent:latest',
+                            imagePullPolicy: 'Never',
+                            env: [
+                                { name: 'IDS_SERVER_URL', value: 'http://fl-ids-service:5000/predict' }
+                            ],
+                            volumeMounts: [
+                                { name: 'data-volume', mountPath: '/data' }
+                            ]
+                        });
+                        this.logger.log(`Injected ids-agent sidecar into deployment ${doc.metadata.name}`);
+                    }
+                }
             }
 
             try {
                 if (doc.kind === 'Deployment') {
-                    // Try to create, if fails try to patch
+                    // Try to create, if fails try to replace
                     try {
                         await this.k8sAppsApi.createNamespacedDeployment({ namespace: this.namespace, body: doc });
+                        this.logger.log(`Created Deployment ${doc.metadata.name}`);
                     } catch (e: any) {
                         if (e.statusCode === 409 || e.code === 409) {
-                            await this.k8sAppsApi.patchNamespacedDeployment(
-                                {
-                                    name: doc.metadata.name,
-                                    namespace: this.namespace,
-                                    body: [
-                                        { op: 'replace', path: '/spec/replicas', value: doc.spec?.replicas || 1 },
-                                        { op: 'add', path: '/metadata/labels/cyberrange.io~1scenario', value: slug },
-                                        { op: 'add', path: '/metadata/labels/cyberrange.io~1managed-by', value: 'simulation-controller' }
-                                    ],
-                                }
-                            );
+                            // Resource exists, replace it
+                            this.logger.log(`Deployment ${doc.metadata.name} already exists, replacing...`);
+                            await this.k8sAppsApi.replaceNamespacedDeployment({
+                                name: doc.metadata.name,
+                                namespace: this.namespace,
+                                body: doc
+                            });
+                            this.logger.log(`Replaced Deployment ${doc.metadata.name}`);
                         } else throw e;
                     }
                 } else if (doc.kind === 'Service') {
                     try {
                         await this.k8sApi.createNamespacedService({ namespace: this.namespace, body: doc });
+                        this.logger.log(`Created Service ${doc.metadata.name}`);
                     } catch (e: any) {
                         if (e.statusCode === 409 || e.code === 409) {
-                            await this.k8sApi.patchNamespacedService(
-                                {
-                                    name: doc.metadata.name,
-                                    namespace: this.namespace,
-                                    body: [
-                                        { op: 'add', path: '/metadata/labels/cyberrange.io~1scenario', value: slug },
-                                        { op: 'add', path: '/metadata/labels/cyberrange.io~1managed-by', value: 'simulation-controller' }
-                                    ],
-                                }
-                            );
+                            // Resource exists, replace it
+                            this.logger.log(`Service ${doc.metadata.name} already exists, replacing...`);
+                            // For services, we need to preserve the clusterIP
+                            const existing = await this.k8sApi.readNamespacedService({
+                                name: doc.metadata.name,
+                                namespace: this.namespace
+                            });
+                            // Preserve clusterIP and resourceVersion
+                            if (existing.spec?.clusterIP) {
+                                doc.spec.clusterIP = existing.spec.clusterIP;
+                            }
+                            if (existing.metadata?.resourceVersion) {
+                                doc.metadata.resourceVersion = existing.metadata.resourceVersion;
+                            }
+                            await this.k8sApi.replaceNamespacedService({
+                                name: doc.metadata.name,
+                                namespace: this.namespace,
+                                body: doc
+                            });
+                            this.logger.log(`Replaced Service ${doc.metadata.name}`);
                         } else throw e;
                     }
                 } else if (doc.kind === 'Job') {
                     // Delete existing job if it exists to allow re-run
                     try {
                         await this.k8sBatchApi.deleteNamespacedJob({ name: doc.metadata.name, namespace: this.namespace });
+                        this.logger.log(`Deleted existing Job ${doc.metadata.name}`);
                         // Wait a bit for deletion
                         await new Promise(resolve => setTimeout(resolve, 2000));
                     } catch (e) { /* ignore */ }
                     await this.k8sBatchApi.createNamespacedJob({ namespace: this.namespace, body: doc });
+                    this.logger.log(`Created Job ${doc.metadata.name}`);
                 }
             } catch (err: any) {
                 this.logger.error(`Error applying ${doc.kind} ${doc.metadata.name}:`, err.message || err);
@@ -221,68 +265,87 @@ export class SimulationService {
     }
 
     async streamSimulationLogs(slug: string, callback: (log: any) => void) {
+        return this.streamLogsInternal(slug, 'attacker', callback);
+    }
+
+    async streamVictimLogs(slug: string, callback: (log: any) => void) {
+        return this.streamLogsInternal(slug, 'victim', callback);
+    }
+
+    private async streamLogsInternal(slug: string, perspective: 'attacker' | 'victim', callback: (log: any) => void) {
         try {
-            this.logger.log(`Stream logs requested for scenario: ${slug}`);
-            // Using 'any' cast to bypass generated client strict types if needed
+            this.logger.log(`Stream logs requested for scenario: ${slug} (perspective: ${perspective})`);
             const response = await this.k8sApi.listNamespacedPod({ namespace: this.namespace } as any);
             const items = (response as any).items || (response as any).body?.items || [];
-            this.logger.log(`Found ${items.length} pods in namespace ${this.namespace}`);
 
-            let attackerPod = items.find((p: any) => {
-                const isScenario = p.metadata?.labels?.['cyberrange.io/scenario'] === slug;
-                const isAttacker = p.metadata?.name?.includes('attacker') || p.spec?.containers.some((c: any) => c.name === 'attacker');
-                const isRunning = p.status?.phase === 'Running';
-                return isScenario && isAttacker && isRunning;
+            let targetPod = items.find((p: any) => {
+                const podLabels = p.metadata?.labels || {};
+                const isScenario = podLabels['cyberrange.io/scenario'] === slug;
+
+                const matchesPerspective = perspective === 'attacker'
+                    ? (p.metadata?.name?.includes('attacker') || p.spec?.containers?.some((c: any) => c.name === 'attacker'))
+                    : (p.metadata?.name?.includes('juice-shop') || p.metadata?.name?.includes('victim') || p.spec?.containers?.some((c: any) => c.name === 'juice-shop'));
+
+                // For logs, we might want to see them even if not fully 'Running' (e.g. if one container is failing)
+                // However, we need the container to have started. Pod phase 'Running' is usually what we want.
+                // But let's be more lenient and allow 'Running' or 'Pending' if we want to see startup logs.
+                const isRunning = p.status?.phase === 'Running' || p.status?.phase === 'Pending';
+
+                return isScenario && matchesPerspective && isRunning;
             });
 
-            // Fallback: If no pod found with scenario label, try finding by name prefix and running status
-            if (!attackerPod) {
-                this.logger.warn(`No pod found with label cyberrange.io/scenario=${slug}. Trying name-based fallback...`);
-                attackerPod = items.find((p: any) => {
-                    const nameMatch = p.metadata?.name?.includes(slug) && p.metadata?.name?.includes('attacker');
-                    const isRunning = p.status?.phase === 'Running';
-                    return nameMatch && isRunning;
+            if (!targetPod) {
+                this.logger.warn(`No ${perspective} pod found for slug ${slug} in phase Running/Pending. Found ${items.length} pods total in namespace.`);
+                // Log all pods for debugging
+                items.forEach((p: any) => {
+                    this.logger.debug(`Pod: ${p.metadata?.name}, Labels: ${JSON.stringify(p.metadata?.labels)}, Phase: ${p.status?.phase}`);
                 });
-            }
-
-            if (attackerPod) {
-                this.logger.log(`Selected pod for log streaming: ${attackerPod.metadata.name}`);
-            }
-
-            if (!attackerPod || !attackerPod.metadata?.name) {
-                this.logger.warn(`No provided attacker pod found for slug ${slug}. Pods found: ${items.map(i => i.metadata.name).join(', ')}`);
                 return;
             }
 
-            const logStream = new k8s.Log(this.kc);
-            const passThrough = new PassThrough();
+            const containersToStream = perspective === 'attacker' ? ['attacker'] : ['juice-shop', 'ids-agent'];
 
-            const rl = createInterface({
-                input: passThrough,
-                terminal: false
-            });
-
-            rl.on('line', (line) => {
-                if (!line.trim()) return;
-                this.logger.debug(`Received log line from ${attackerPod.metadata.name}: ${line.substring(0, 100)}...`);
-                try {
-                    const jsonLog = JSON.parse(line);
-                    callback(jsonLog);
-                } catch (e) {
-                    // If not JSON, emit as plain log
-                    callback({ type: 'stdout', message: line, timestamp: Date.now() / 1000 });
+            for (const containerName of containersToStream) {
+                // Verify container exists in pod spec
+                if (!targetPod.spec.containers.some((c: any) => c.name === containerName)) {
+                    continue;
                 }
-            });
 
-            this.logger.log(`Starting log stream for pod ${attackerPod.metadata.name}`);
+                this.logger.log(`Starting log stream for pod ${targetPod.metadata.name} container ${containerName}`);
 
-            await logStream.log(
-                this.namespace,
-                attackerPod.metadata.name,
-                'attacker',
-                passThrough,
-                { follow: true, tailLines: 50, pretty: false, timestamps: false }
-            );
+                const logStream = new k8s.Log(this.kc);
+                const passThrough = new PassThrough();
+
+                const rl = createInterface({
+                    input: passThrough,
+                    terminal: false
+                });
+
+                rl.on('line', (line) => {
+                    if (!line.trim()) return;
+                    try {
+                        const jsonLog = JSON.parse(line);
+                        // Tag IDS logs for easier frontend processing if they came from ids-agent
+                        if (containerName === 'ids-agent' || jsonLog.type?.includes('ids')) {
+                            jsonLog.perspective = 'victim';
+                            if (!jsonLog.type) jsonLog.type = 'ids-alert';
+                        }
+                        callback(jsonLog);
+                    } catch (e) {
+                        callback({ type: 'stdout', message: line, timestamp: Date.now() / 1000, perspective, container: containerName });
+                    }
+                });
+
+                logStream.log(
+                    this.namespace,
+                    targetPod.metadata.name,
+                    containerName,
+                    passThrough,
+                    { follow: true, tailLines: 50, pretty: false, timestamps: false }
+                ).catch(err => {
+                    this.logger.error(`Log stream error for ${containerName}: ${err.message}`);
+                });
+            }
 
         } catch (e) {
             this.logger.error(`Error streaming logs: ${e}`);
@@ -358,6 +421,36 @@ export class SimulationService {
         return this.callIDSService('/readyz', 'get');
     }
 
+    async getVictimHealthDetailed(slug: string): Promise<any> {
+        try {
+            const response = await this.k8sApi.listNamespacedPod({
+                namespace: this.namespace,
+                labelSelector: `cyberrange.io/scenario=${slug}`
+            } as any);
+
+            const pods = (response as any).items || (response as any).body?.items || [];
+            const victimPod = pods.find((p: any) => p.metadata?.name?.includes('juice-shop'));
+
+            if (!victimPod) {
+                return { status: 'unhealthy', message: 'Victim pod not found' };
+            }
+
+            const containerStatus = victimPod.status?.containerStatuses?.find((c: any) => c.name === 'juice-shop');
+
+            return {
+                status: victimPod.status?.phase === 'Running' && containerStatus?.ready ? 'healthy' : 'degraded',
+                podName: victimPod.metadata?.name,
+                phase: victimPod.status?.phase,
+                restarts: containerStatus?.restartCount || 0,
+                ready: containerStatus?.ready || false,
+                creationTimestamp: victimPod.metadata?.creationTimestamp,
+            };
+        } catch (error: any) {
+            this.logger.error(`Error getting victim health: ${error.message}`);
+            return { status: 'error', message: error.message };
+        }
+    }
+
     async getServiceHealth(slug: string): Promise<any> {
         const urls = [
             `http://juice-shop-${slug}.simulations.svc.cluster.local:3000`, // Cluster internal
@@ -375,7 +468,7 @@ export class SimulationService {
                     url: url,
                     message: 'Service is reachable'
                 };
-            } catch (error) {
+            } catch (error: any) {
                 this.logger.warn(`[SimulationService] Health check failed for ${url}: ${error.message}`);
                 lastError = error;
             }

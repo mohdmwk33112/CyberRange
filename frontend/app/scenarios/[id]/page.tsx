@@ -9,6 +9,11 @@ import { LearningContent } from '@/features/scenarios/components/LearningContent
 import { TerminalQuestionnaire } from '@/features/scenarios/components/TerminalQuestionnaire';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 import { SimulationConsole } from '@/components/simulation/SimulationConsole';
+import { VictimConsole } from '@/components/simulation/VictimConsole';
+import { VictimHealthMetrics } from '@/components/simulation/VictimHealthMetrics';
+import { VictimImpactChart } from '@/components/simulation/VictimImpactChart';
+import { IDSAlerts } from '@/components/simulation/IDSAlerts';
+import { IDSStatus } from '@/components/simulation/IDSStatus';
 import { TrafficMonitor } from '@/components/simulation/TrafficMonitor';
 import { AttackDistribution } from '@/components/simulation/AttackDistribution';
 import { KillChainProgress } from '@/components/simulation/KillChainProgress';
@@ -41,6 +46,10 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
     // Visualization State
     const [logs, setLogs] = useState<any[]>([]);
+    const [victimLogs, setVictimLogs] = useState<any[]>([]);
+    const [victimHealth, setVictimHealth] = useState<any>(null);
+    const [idsAlerts, setIdsAlerts] = useState<any[]>([]);
+    const [idsStatus, setIdsStatus] = useState<any>(null);
     const [trafficData, setTrafficData] = useState<any[]>([]);
     const [attackStats, setAttackStats] = useState<any[]>([]); // For pie chart
     const [simulationActive, setSimulationActive] = useState(false);
@@ -71,52 +80,43 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
         socketRef.current.on('connect', () => {
             console.log('Connected to simulation logs');
-            // Check if scenario has slug, simpler cast
             const slug = (scenario as any).slug;
             socketRef.current?.emit('subscribe-logs', { slug });
+            socketRef.current?.emit('subscribe-victim-logs', { slug });
         });
 
         socketRef.current.on('log-update', (log: any) => {
-            // Add to logs
-            setLogs(prev => [...prev, log]);
+            setLogs(prev => [...prev, { ...log, perspective: 'attacker' }]);
+            // ... existing log processing for stats ...
+            processLogForStats(log);
+        });
 
-            // Process data from logs (parsing text is necessary since we only get stdout)
+        socketRef.current.on('victim-log-update', (log: any) => {
+            if (log.type === 'ids-alert' || log.type === 'ids-status') {
+                setIdsAlerts(prev => [...prev, log].slice(-20));
+            } else {
+                setVictimLogs(prev => [...prev, { ...log, perspective: 'victim' }].slice(-100));
+            }
+        });
 
-            // 1. Traffic Data (Requests Sent)
-            // Example Log: "[+] Requests Sent: 459"
-            // Process data from logs (parsing text is necessary since we only get stdout)
-
-            // 1. Traffic Data
+        const processLogForStats = (log: any) => {
+            // ... existing log parsing logic moved here ...
             let bytes = 0;
-            // A. Structured Traffic (Infiltration)
             if (log.type === 'traffic' && log.metrics?.bytes) {
                 bytes = log.metrics.bytes;
-            }
-            // B. Unstructured Stdout Parsing
-            else if (typeof log.message === 'string') {
-                // DDoS Pattern: "[+] Requests Sent: 459"
+            } else if (typeof log.message === 'string') {
                 const ddosMatch = log.message.match(/Requests Sent: (\d+)/);
                 if (ddosMatch) {
                     const reqCount = parseInt(ddosMatch[1]);
-                    bytes = reqCount * 500; // Est. 500 bytes per request
+                    bytes = reqCount * 500;
                 }
-
-                // Bot Pattern: "[+] Attempt: user@email.com | Status: 401"
-                // Each attempt is a standardized HTTP POST
                 const botMatch = log.message.match(/Attempt: .+ \| Status: (\d+)/);
-                if (botMatch) {
-                    bytes = 850; // Est. login payload + headers
-                }
-
-                // Infiltration RCE Phase (if not structured)
-                if (log.message.includes('Exploit sent')) {
-                    bytes = 1200;
-                }
+                if (botMatch) bytes = 850;
+                if (log.message.includes('Exploit sent')) bytes = 1200;
             }
 
             if (bytes > 0) {
                 setTrafficData(prev => {
-                    // Limit to last 30 points
                     const newData = [...prev, {
                         timestamp: log.timestamp || Date.now() / 1000,
                         bytes: bytes
@@ -125,24 +125,17 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                 });
             }
 
-            // 2. Attack Stats
-            // Infer type from message content if type is generic 'stdout'
             let statName = log.type;
-
-            // Normalize known types for cleaner chart
             if (log.type === 'phase') statName = 'Attack Phase';
             if (log.type === 'attack') statName = 'Exploitation';
             if (log.type === 'traffic') statName = 'Network Traffic';
 
             if (log.type === 'stdout') {
                 const msg = log.message;
-                // DDoS
                 if (msg.includes('Requests Sent')) statName = 'HTTP Floods';
                 else if (msg.includes('Target is up')) statName = 'Health Checks';
                 else if (msg.includes('Simulation completed')) statName = 'System Events';
                 else if (msg.includes('Starting DDoS')) statName = 'Initialization';
-
-                // Bot / Credential Stuffing
                 else if (msg.includes('Starting Credential Stuffing')) statName = 'Initialization';
                 else if (msg.includes('Attempt:')) {
                     if (msg.includes('Status: 200')) statName = 'Successful Logins';
@@ -150,8 +143,6 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                     else if (msg.includes('Status: 500')) statName = 'Server Errors';
                     else statName = 'Login Attempts';
                 }
-
-                // General
                 else statName = 'System Logs';
             }
 
@@ -162,12 +153,45 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                 }
                 return [...prev, { name: statName, value: 1 }];
             });
-        });
+        };
+
+        // Polling for victim health
+        const fetchHealth = async () => {
+            try {
+                const res = await fetch(`http://localhost:3010/scenarios/${id}/victim-health`);
+                if (res.ok) {
+                    const data = await res.json();
+                    setVictimHealth(data);
+                }
+            } catch (e) {
+                console.error('Failed to fetch victim health', e);
+            }
+        };
+
+        const fetchIDSStatus = async () => {
+            try {
+                const res = await fetch(`http://localhost:3010/scenarios/ids/status`);
+                if (res.ok) {
+                    const data = await res.json();
+                    setIdsStatus(data);
+                }
+            } catch (e) {
+                console.error('Failed to fetch IDS status', e);
+            }
+        };
+
+        fetchHealth();
+        fetchIDSStatus();
+        const healthInterval = setInterval(() => {
+            fetchHealth();
+            fetchIDSStatus();
+        }, 5000);
 
         return () => {
             socketRef.current?.disconnect();
+            clearInterval(healthInterval);
         };
-    }, [simulationActive, scenario]);
+    }, [simulationActive, scenario, id]);
 
     const handleQuestionnaireComplete = async (score: number, passed: boolean) => {
         refetchState();
@@ -185,6 +209,31 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                 description: `You scored ${score}%. You need 90% to unlock the simulation.`,
                 variant: 'destructive',
             });
+        }
+    };
+
+    const handleStopSimulation = async () => {
+        setSimulationActive(false);
+        setLogs([]);
+        setVictimLogs([]);
+        setVictimHealth(null);
+        setIdsAlerts([]);
+        setIdsStatus(null);
+        setTrafficData([]);
+        setAttackStats([]);
+        try {
+            await fetch(`http://localhost:3010/scenarios/${id}/stop`, {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ userId }),
+            });
+            refetchState();
+            toast({
+                title: 'Simulation Stopped',
+                description: 'The simulation environment has been terminated.',
+            });
+        } catch (e) {
+            console.error('Failed to stop simulation', e);
         }
     };
 
@@ -396,7 +445,6 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                                                     variant="outline"
                                                     size="lg"
                                                     onClick={() => setPhase('questionnaire')}
-                                                    className="gap-2"
                                                 >
                                                     <ChevronLeft className="h-4 w-4" />
                                                     Return to Questionnaire
@@ -407,49 +455,66 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                                 )}
 
                                 {simulationActive && (
-                                    <div className="grid grid-cols-1 lg:grid-cols-3 gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
-                                        <div className="lg:col-span-2 space-y-6">
-                                            <SimulationConsole logs={logs} />
-                                            <TrafficMonitor data={trafficData} />
-                                        </div>
-                                        <div className="space-y-6">
-                                            <div className="bg-card rounded-lg p-4 border border-border shadow-sm">
-                                                <h3 className="text-sm font-bold text-muted-foreground mb-4">Simulation Status</h3>
-                                                <div className="flex items-center gap-2 text-green-600 dark:text-green-400 mb-2">
-                                                    <span className="relative flex h-3 w-3">
-                                                        <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>
-                                                        <span className="relative inline-flex rounded-full h-3 w-3 bg-green-500"></span>
-                                                    </span>
-                                                    <span className="font-mono text-sm font-bold">ATTACK_IN_PROGRESS</span>
+                                    <div className="flex flex-col gap-6 animate-in fade-in slide-in-from-bottom-8 duration-700">
+                                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6">
+                                            <div className="space-y-6">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <div className="w-2 h-2 rounded-full bg-rose-500 animate-pulse" />
+                                                    <h3 className="text-xs font-bold uppercase tracking-widest text-rose-500">Attacker Perspective</h3>
                                                 </div>
-                                                <p className="text-xs text-muted-foreground">
-                                                    Live telemetry from the attacker container.
-                                                </p>
+                                                <SimulationConsole logs={logs} />
+                                                <TrafficMonitor data={trafficData} />
+                                            </div>
+                                            <div className="space-y-6">
+                                                <div className="flex items-center gap-2 mb-2">
+                                                    <div className="w-2 h-2 rounded-full bg-sky-500 animate-pulse" />
+                                                    <h3 className="text-xs font-bold uppercase tracking-widest text-sky-500">Victim Perspective</h3>
+                                                </div>
+                                                <IDSStatus status={idsStatus} />
+                                                <VictimHealthMetrics health={victimHealth} />
+                                                <IDSAlerts alerts={idsAlerts} />
+                                                <VictimConsole logs={victimLogs} />
+                                                <VictimImpactChart logs={victimLogs} scenarioSlug={(scenario as any).slug} />
+                                            </div>
+                                        </div>
+
+                                        <div className="grid grid-cols-1 lg:grid-cols-3 gap-6">
+                                            <div className="lg:col-span-2">
+                                                <Card className="bg-card/40 border-border/40 p-6">
+                                                    <h3 className="text-sm font-bold text-muted-foreground mb-4 uppercase tracking-widest">Active Exploitation Strategy</h3>
+                                                    {/* Scenario Specific Visualizations */}
+                                                    {(scenario as any).slug === 'infiltration' ? (
+                                                        <KillChainProgress logs={logs} />
+                                                    ) : (scenario as any).slug === 'bot' ? (
+                                                        <CredentialBreachStats stats={attackStats} />
+                                                    ) : (
+                                                        <AttackDistribution data={attackStats.length > 0 ? attackStats : [
+                                                            { name: 'Waiting for data...', value: 1 }
+                                                        ]} />
+                                                    )}
+                                                </Card>
                                             </div>
 
-                                            {/* Scenario Specific Visualizations */}
-                                            {(scenario as any).slug === 'infiltration' ? (
-                                                <KillChainProgress logs={logs} />
-                                            ) : (scenario as any).slug === 'bot' ? (
-                                                <CredentialBreachStats stats={attackStats} />
-                                            ) : (
-                                                <AttackDistribution data={attackStats.length > 0 ? attackStats : [
-                                                    { name: 'Waiting for data...', value: 1 }
-                                                ]} />
-                                            )}
+                                            <div className="space-y-6">
+                                                <div className="bg-card rounded-lg p-6 border border-border bg-card/40 backdrop-blur-sm">
+                                                    <h3 className="text-sm font-bold text-muted-foreground mb-4">Simulation Control</h3>
+                                                    <div className="flex items-center gap-2 text-rose-600 dark:text-rose-400 mb-4">
+                                                        <span className="relative flex h-3 w-3">
+                                                            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-rose-400 opacity-75"></span>
+                                                            <span className="relative inline-flex rounded-full h-3 w-3 bg-rose-500"></span>
+                                                        </span>
+                                                        <span className="font-mono text-sm font-bold uppercase">Active_Session</span>
+                                                    </div>
 
-                                            <Button
-                                                variant="destructive"
-                                                className="w-full"
-                                                onClick={() => {
-                                                    setSimulationActive(false);
-                                                    setLogs([]);
-                                                    setAttackStats([]);
-                                                    setTrafficData([]);
-                                                }}
-                                            >
-                                                Stop Simulation
-                                            </Button>
+                                                    <Button
+                                                        variant="destructive"
+                                                        className="w-full h-12 font-bold shadow-lg shadow-rose-500/10"
+                                                        onClick={handleStopSimulation}
+                                                    >
+                                                        Terminate Simulation
+                                                    </Button>
+                                                </div>
+                                            </div>
                                         </div>
                                     </div>
                                 )}
