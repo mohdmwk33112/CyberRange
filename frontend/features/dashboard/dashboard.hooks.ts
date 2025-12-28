@@ -34,7 +34,7 @@ export const useDashboardData = (userId: string) => {
     });
 
     return {
-        user: userQuery.data,
+        userProfile: userQuery.data,
         scenarios: scenariosQuery.data || [],
         simulations: simulationsQuery.data || [],
         progress: progressQuery.data || [],

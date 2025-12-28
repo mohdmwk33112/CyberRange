@@ -11,7 +11,7 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 export default function DashboardPage() {
     const user = useAuthStore((state) => state.user) as any;
     const userId = user?._id || user?.sub || '';
-    const { user: userProfile, scenarios, simulations, progress, isLoading, error } = useDashboardData(userId);
+    const { userProfile, scenarios, simulations, progress, isLoading, error } = useDashboardData(userId);
 
     const completedScenarios = progress.filter(p => p.status === 'completed');
     const completionRate = scenarios.length > 0 ? Math.round((completedScenarios.length / scenarios.length) * 100) : 0;
@@ -60,27 +60,6 @@ export default function DashboardPage() {
     return (
         <div className="min-h-screen bg-background">
             {/* Header */}
-            <header className="px-4 lg:px-6 h-16 flex items-center border-b border-border/40 bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
-                <Link className="flex items-center justify-center gap-2" href="/">
-                    <Shield className="h-6 w-6 text-primary" />
-                    <span className="font-bold text-xl tracking-tight">CyberRange</span>
-                </Link>
-                <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-                    <Link className="text-sm font-medium hover:text-primary transition-colors" href="/scenarios">
-                        Scenarios
-                    </Link>
-                    <Link className="text-sm font-medium hover:text-primary transition-colors" href="/progress">
-                        Progress
-                    </Link>
-                    <ModeToggle />
-                    <Button variant="ghost" size="sm" onClick={() => {
-                        useAuthStore.getState().clearAuth();
-                        window.location.href = '/';
-                    }}>
-                        Logout
-                    </Button>
-                </nav>
-            </header>
 
             <main className="container mx-auto p-6 space-y-6">
                 {/* Welcome Section */}

@@ -5,6 +5,7 @@ import { Model } from 'mongoose';
 import { Scenario } from './scenario.model';
 import { ScenarioState } from './scenario-state.model';
 import { SimulationService } from '../simulation/simulation.service';
+import { UserService } from '../user/user.service';
 
 @Injectable()
 export class ScenarioService {
@@ -13,6 +14,7 @@ export class ScenarioService {
         @InjectModel('Scenario') private readonly scenarioModel: Model<Scenario>,
         @InjectModel('ScenarioState') private readonly scenarioStateModel: Model<ScenarioState>,
         private readonly simulationService: SimulationService,
+        private readonly userService: UserService,
     ) { }
 
     async createScenario(scenarioData: any): Promise<Scenario> {
@@ -223,10 +225,19 @@ export class ScenarioService {
         state.completedAt = new Date();
         await state.save();
 
+        // Update User Progress
+        await this.userService.updateProgress(userId, {
+            scenarioId,
+            status: 'completed',
+            score: state.score,
+            title: scenario.title,
+            difficulty: scenario.difficulty,
+            timestamp: new Date(),
+        });
+
         return {
             message: 'Scenario completed successfully',
             state,
-            // Here you could emit an event to trigger progress updates, unlock next scenarios, etc.
         };
     }
 
@@ -343,6 +354,7 @@ export class ScenarioService {
         }
 
         const scorePercentage = totalPoints > 0 ? (earnedPoints / totalPoints) * 100 : 0;
+        const passed = scorePercentage >= 90;
 
         // Update user progress
         const state = await this.getOrCreateState(userId, scenarioId);
@@ -350,11 +362,21 @@ export class ScenarioService {
         state.questionnaireCompleted = true;
         await state.save();
 
+        // Update User Progress Model
+        await this.userService.updateProgress(userId, {
+            scenarioId,
+            status: passed ? 'completed' : 'failed', // Or 'in-progress' if you allow retries without marking failed
+            score: scorePercentage,
+            title: scenario.title, // Add title for UI display
+            difficulty: scenario.difficulty, // Add difficulty for UI display
+            timestamp: new Date(),
+        });
+
         return {
             totalPoints,
             earnedPoints,
             scorePercentage: Math.round(scorePercentage),
-            passed: scorePercentage >= 90,
+            passed,
             results,
         };
     }

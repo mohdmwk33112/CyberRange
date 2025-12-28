@@ -7,6 +7,8 @@ import { ScenarioService } from './scenario.service';
 import { ScenarioSchema } from './scenario.model';
 import { ScenarioStateSchema } from './scenario-state.model';
 
+import { UserModule } from '../user/user.module';
+
 @Module({
     imports: [
         MongooseModule.forFeature([
@@ -14,6 +16,7 @@ import { ScenarioStateSchema } from './scenario-state.model';
             { name: 'ScenarioState', schema: ScenarioStateSchema },
         ]),
         SimulationModule,
+        UserModule,
     ],
     controllers: [ScenarioController],
     providers: [ScenarioService],
