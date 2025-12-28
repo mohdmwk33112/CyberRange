@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Termination of a running simulation</description>
+   <name>Stop Simulation</name>
+   <tag>TC-SIM-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>97571564-0b06-4cc5-bf5d-1bad96947fe6</testCaseGuid>
+</TestCaseEntity>

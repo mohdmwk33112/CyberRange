@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>View Kubernetes pod phases across simulation</description>
+   <name>Cluster Health</name>
+   <tag>TC-ADM-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d0681389-fa9d-49f8-9d6c-f2d4c0cc4178</testCaseGuid>
+</TestCaseEntity>

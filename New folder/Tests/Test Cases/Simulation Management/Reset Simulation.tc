@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Full purge and restart of scenario resources.</description>
+   <name>Reset Simulation</name>
+   <tag>TC-SIM-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0f87565a-376c-4063-9b46-54a53ea34c3d</testCaseGuid>
+</TestCaseEntity>

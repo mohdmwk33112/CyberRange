@@ -305,19 +305,7 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
     return (
         <div className="min-h-screen bg-background">
-            <header className="px-4 lg:px-6 h-16 flex items-center border-b border-border/40 bg-background/95 backdrop-blur sticky top-0 z-50">
-                <Link className="flex items-center gap-2" href="/scenarios">
-                    <ChevronLeft className="h-4 w-4" />
-                    <span className="text-sm font-medium">Back to Scenarios</span>
-                </Link>
-                <div className="mx-auto flex items-center gap-2">
-                    <Shield className="h-5 w-5 text-primary" />
-                    <span className="font-bold hidden sm:inline-block">{scenario.title}</span>
-                </div>
-                <div className="ml-auto flex items-center gap-4">
-                    <ModeToggle />
-                </div>
-            </header>
+
 
             <main className="container max-w-5xl mx-auto p-6 md:p-8">
                 {/* Progress Stepper - Interactive */}

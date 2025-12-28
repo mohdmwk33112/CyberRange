@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>List latest scenario attempts and simulations.</description>
+   <name>Recent Activity</name>
+   <tag>TC-DASH-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c562ee42-9a7f-4cf7-b632-55c75037c58d</testCaseGuid>
+</TestCaseEntity>

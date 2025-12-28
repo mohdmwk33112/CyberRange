@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Interacting with incorrect inputs multiple times.</description>
+   <name>Hint System</name>
+   <tag>TC-SCEN-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>7e19cbd9-2e17-4915-a723-eb213d26fc5c</testCaseGuid>
+</TestCaseEntity>

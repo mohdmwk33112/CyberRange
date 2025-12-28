@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Stress-test victim with 100+ threads.</description>
+   <name>DDoS (HOIC)</name>
+   <tag>TC-ATK-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a4a3b063-28ae-4d91-88c7-16efd3587b2a</testCaseGuid>
+</TestCaseEntity>

@@ -6,6 +6,7 @@ export interface UserProfile {
     email: string;
     role: string;
     accountStatus: string;
+    createdAt?: string;
 }
 
 export interface Progress {

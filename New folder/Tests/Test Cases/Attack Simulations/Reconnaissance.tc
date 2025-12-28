@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Infiltration-sim Stage 1 (Port scanning).</description>
+   <name>Reconnaissance</name>
+   <tag>TC-ATK-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>6d42fbe0-1b41-4c13-b164-63397d219597</testCaseGuid>
+</TestCaseEntity>

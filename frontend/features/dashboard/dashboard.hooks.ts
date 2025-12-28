@@ -40,5 +40,6 @@ export const useDashboardData = (userId: string) => {
         progress: progressQuery.data || [],
         isLoading: userQuery.isLoading || scenariosQuery.isLoading || simulationsQuery.isLoading || progressQuery.isLoading,
         error: userQuery.error || scenariosQuery.error || simulationsQuery.error || progressQuery.error,
+        refetch: userQuery.refetch,
     };
 };

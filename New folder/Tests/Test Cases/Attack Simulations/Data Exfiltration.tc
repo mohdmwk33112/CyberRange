@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Infiltration-sim Stage 4 (Stealing DB dumps).</description>
+   <name>Data Exfiltration</name>
+   <tag>TC-ATK-05</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>03e80e35-06f9-49f2-81f2-010150af53a0</testCaseGuid>
+</TestCaseEntity>

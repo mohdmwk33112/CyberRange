@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Admin removes a user account</description>
+   <name>Delete Student</name>
+   <tag>TC-ADM-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9f736415-e276-4883-a926-c3376418b0d5</testCaseGuid>
+</TestCaseEntity>

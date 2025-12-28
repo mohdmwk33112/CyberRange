@@ -50,28 +50,7 @@ export default function ScenariosPage() {
 
     return (
         <div className="min-h-screen bg-background text-foreground">
-            {/* Header */}
-            <header className="px-4 lg:px-6 h-16 flex items-center border-b border-border/40 bg-background/95 backdrop-blur sticky top-0 z-50">
-                <Link className="flex items-center gap-2 group" href="/dashboard">
-                    <Shield className="h-6 w-6 text-primary transition-transform group-hover:scale-110" />
-                    <span className="font-bold text-xl tracking-tight">CyberRange</span>
-                </Link>
-                <nav className="ml-auto flex gap-4 sm:gap-6 items-center">
-                    <Link className="text-sm font-medium hover:text-primary transition-colors py-2" href="/dashboard">
-                        Dashboard
-                    </Link>
-                    <Link className="text-sm font-medium text-primary py-2 border-b-2 border-primary" href="/scenarios">
-                        Scenarios
-                    </Link>
-                    <ModeToggle />
-                    <Button variant="ghost" size="sm" onClick={() => {
-                        useAuthStore.getState().clearAuth();
-                        window.location.href = '/';
-                    }} className="text-muted-foreground hover:text-foreground">
-                        Logout
-                    </Button>
-                </nav>
-            </header>
+
 
             <main className="container mx-auto p-6 md:p-8 space-y-10">
                 <div className="space-y-4 max-w-3xl">

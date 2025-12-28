@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Access protected route with valid/invalid token</description>
+   <name>JWT Validation</name>
+   <tag>TC-AUTH-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fac59b31-24e6-497b-8def-1c276b77ba80</testCaseGuid>
+</TestCaseEntity>

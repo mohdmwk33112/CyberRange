@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Trigger attack and check IDS status</description>
+   <name>Real-time Prediction</name>
+   <tag>TC-DEF-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>672e1cf0-2b81-490f-a612-c4f328fa7f0e</testCaseGuid>
+</TestCaseEntity>

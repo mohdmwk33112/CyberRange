@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Reach >= 90% score on questionnaire.</description>
+   <name>Unlock Simulation</name>
+   <tag>TC-SCEN-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>61f08637-4e26-4f5b-ae8f-2482de974855</testCaseGuid>
+</TestCaseEntity>

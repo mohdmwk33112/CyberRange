@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Switch between Attacker and Victim logs.</description>
+   <name>Perspective Toggle</name>
+   <tag>TC-SIM-05</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b6115ac1-d3dd-4df8-8445-085be959cc11</testCaseGuid>
+</TestCaseEntity>

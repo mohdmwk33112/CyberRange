@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Admin lists all users in the system</description>
+   <name>User Management</name>
+   <tag>TC-ADM-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>b2831bc8-3efc-404f-9381-026591cebfb6</testCaseGuid>
+</TestCaseEntity>

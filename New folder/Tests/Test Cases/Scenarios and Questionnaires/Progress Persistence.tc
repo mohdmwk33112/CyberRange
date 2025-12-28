@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Start scenario, logout, and login again.</description>
+   <name>Progress Persistence</name>
+   <tag>TC-SCEN-05</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>2533454d-8d1b-4be9-9fe6-b31dfa01d340</testCaseGuid>
+</TestCaseEntity>

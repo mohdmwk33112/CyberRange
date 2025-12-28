@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Check pod spec of juice-shop after launch.</description>
+   <name>Sidecar Injection</name>
+   <tag>TC-DEF-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>e37e778d-659d-487a-aad3-59d60d35f6f9</testCaseGuid>
+</TestCaseEntity>

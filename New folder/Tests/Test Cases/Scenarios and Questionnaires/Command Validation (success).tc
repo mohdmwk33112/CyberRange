@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Input exact terminal command (e.g., nmap -sV).</description>
+   <name>Command Validation (success)</name>
+   <tag>TC-SCEN-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>940a8889-3222-447d-b2bd-0695ad47107c</testCaseGuid>
+</TestCaseEntity>

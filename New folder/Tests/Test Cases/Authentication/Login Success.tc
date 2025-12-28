@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Authenticate with valid credentials</description>
+   <name>Login Success</name>
+   <tag>TC-AUTH-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>51aeb832-a5d7-4ea9-81fb-cf420db53e34</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Start a scenario from the UI</description>
+   <name>Launch Simulation</name>
+   <tag>TC-SIM-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>a34d47c6-5854-4958-b81b-8c406e0be243</testCaseGuid>
+</TestCaseEntity>

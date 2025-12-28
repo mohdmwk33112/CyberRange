@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Input command matching pattern (e.g., any ping cmd).</description>
+   <name>Regex Match</name>
+   <tag>TC-SCEN-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>be8d1af7-055e-433d-a49d-2554085241ab</testCaseGuid>
+</TestCaseEntity>

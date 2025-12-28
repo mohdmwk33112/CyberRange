@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Student attempt to access /admin page.</description>
+   <name>Role-Based Access</name>
+   <tag>TC-AUTH-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fb94fca8-8d20-4834-ae50-e914bc099c43</testCaseGuid>
+</TestCaseEntity>

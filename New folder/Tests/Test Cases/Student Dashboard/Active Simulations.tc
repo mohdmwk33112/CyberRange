@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Display currently running K8s simulation pods</description>
+   <name>Active Simulations</name>
+   <tag>TC-DASH-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ca9ba7eb-018b-4162-a7d6-128d093f99f8</testCaseGuid>
+</TestCaseEntity>

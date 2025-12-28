@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Viewing real-time pod logs in the browser.</description>
+   <name>Log Streaming</name>
+   <tag>TC-SIM-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>31b22216-10af-48ea-9038-64279cab9c74</testCaseGuid>
+</TestCaseEntity>

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Calculate percentage of completed vs total scenarios.</description>
+   <name>Completion Rate</name>
+   <tag>TC-DASH-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>12a40fab-9046-49a0-88a2-9387dc1cd141</testCaseGuid>
+</TestCaseEntity>

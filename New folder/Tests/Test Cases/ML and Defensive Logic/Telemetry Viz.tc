@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Monitor live charts during active simulation</description>
+   <name>Telemetry Viz</name>
+   <tag>TC-DEF-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ec980683-9d33-4d96-ab1d-2d1e650b5cd7</testCaseGuid>
+</TestCaseEntity>

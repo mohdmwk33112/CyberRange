@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Review login history CSV/Database</description>
+   <name>Audit Trail</name>
+   <tag>TC-ADM-05</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d4041b5e-78b8-4077-a60c-a3985db43d54</testCaseGuid>
+</TestCaseEntity>
