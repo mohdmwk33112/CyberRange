@@ -3,6 +3,7 @@
 import { useQuery, useMutation, useQueryClient } from '@tanstack/react-query';
 import { scenariosApi, Scenario } from './scenarios.api';
 import { useToast } from '@/hooks/use-toast';
+import apiClient from '@/lib/api-client';
 
 export const useScenarios = () => {
     return useQuery({
@@ -23,8 +24,8 @@ export const useScenarioState = (scenarioId: string, userId: string) => {
     return useQuery({
         queryKey: ['scenarioState', scenarioId, userId],
         queryFn: async () => {
-            const response = await fetch(`http://localhost:3010/scenarios/${scenarioId}/state/${userId}`);
-            return response.json();
+            const response = await apiClient.get(`/scenarios/${scenarioId}/state/${userId}`);
+            return response.data;
         },
         enabled: !!scenarioId && !!userId,
     });

@@ -35,14 +35,16 @@ export default function DashboardPage() {
         );
     }
 
-    if (error) {
+    // Only show full error if critical data (profile or scenarios) failed to load
+    const isCriticalError = !userProfile && !scenarios.length && error;
+    if (isCriticalError) {
         return (
             <div className="flex min-h-screen items-center justify-center bg-background">
                 <Card className="w-full max-w-md border-border/40">
                     <CardHeader>
                         <CardTitle className="text-destructive">Error Loading Dashboard</CardTitle>
                         <CardDescription>
-                            Unable to load dashboard data. Please try again later.
+                            Unable to load critical dashboard data. Please check your connection.
                         </CardDescription>
                     </CardHeader>
                     <CardContent>

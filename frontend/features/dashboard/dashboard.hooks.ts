@@ -22,7 +22,7 @@ export const useDashboardData = (userId: string) => {
     const simulationsQuery = useQuery({
         queryKey: ['simulations', userId],
         queryFn: () => simulationsApi.getActive(userId),
-        enabled: true,
+        enabled: !!userId,
         retry: false,
     });
 

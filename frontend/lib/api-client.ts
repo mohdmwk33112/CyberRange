@@ -1,4 +1,5 @@
 import axios from 'axios';
+import { useAuthStore } from '@/features/auth/auth.store';
 
 const apiClient = axios.create({
     baseURL: 'http://localhost:3010', // API Gateway URL
@@ -10,11 +11,10 @@ const apiClient = axios.create({
 
 apiClient.interceptors.request.use(
     (config) => {
-        // TODO: Attach token from storage
-        // const token = useAuthStore.getState().token;
-        // if (token) {
-        //   config.headers.Authorization = `Bearer ${token}`;
-        // }
+        const token = useAuthStore.getState().token;
+        if (token) {
+            config.headers.Authorization = `Bearer ${token}`;
+        }
         return config;
     },
     (error) => Promise.reject(error)
