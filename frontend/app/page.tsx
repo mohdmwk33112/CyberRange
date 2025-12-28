@@ -57,7 +57,7 @@ export default function LandingPage() {
         {/* Feature Grid */}
         <section className="w-full py-20 bg-muted/30 relative border-y border-border/40">
           <div className="absolute inset-0 bg-grid-white/[0.02] bg-[length:32px_32px]" />
-          <div className="container relative px-4 md:px-6">
+          <div className="container mx-auto relative px-4 md:px-6">
             <div className="text-center mb-16">
               <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">Mission Critical Features</h2>
               <p className="mx-auto mt-4 max-w-[600px] text-muted-foreground md:text-lg">
@@ -126,7 +126,7 @@ export default function LandingPage() {
 
         {/* Dashboard Preview Section */}
         <section className="w-full py-20 lg:py-32 overflow-hidden">
-          <div className="container px-4 md:px-6">
+          <div className="container mx-auto px-4 md:px-6">
             <div className="grid gap-12 lg:grid-cols-2 lg:gap-8 items-center">
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold tracking-tighter sm:text-4xl md:text-5xl">
