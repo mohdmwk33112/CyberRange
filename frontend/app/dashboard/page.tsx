@@ -11,7 +11,18 @@ import { ModeToggle } from '@/components/ui/mode-toggle';
 export default function DashboardPage() {
     const user = useAuthStore((state) => state.user) as any;
     const userId = user?._id || user?.sub || '';
-    const { user: userProfile, scenarios, simulations, isLoading, error } = useDashboardData(userId);
+    const { user: userProfile, scenarios, simulations, progress, isLoading, error } = useDashboardData(userId);
+
+    const completedScenarios = progress.filter(p => p.status === 'completed');
+    const completionRate = scenarios.length > 0 ? Math.round((completedScenarios.length / scenarios.length) * 100) : 0;
+
+    const recommendedScenarios = scenarios
+        .filter(s => !progress.find(p => p.scenarioId === s._id && p.status === 'completed'))
+        .slice(0, 3);
+
+    const recentActivity = [...simulations, ...progress]
+        .sort((a: any, b: any) => new Date(b.startedAt || b.timestamp).getTime() - new Date(a.startedAt || a.timestamp).getTime())
+        .slice(0, 5);
 
     if (isLoading) {
         return (
@@ -226,11 +237,14 @@ export default function DashboardPage() {
                                 <div>
                                     <div className="flex justify-between text-sm mb-2">
                                         <span className="text-muted-foreground">Completion Rate</span>
-                                        <span className="font-medium">0%</span>
+                                        <span className="font-medium">{completionRate}%</span>
                                     </div>
                                     <div className="w-full bg-secondary rounded-full h-2">
-                                        <div className="bg-primary h-2 rounded-full" style={{ width: '0%' }}></div>
+                                        <div className="bg-primary h-2 rounded-full" style={{ width: `${completionRate}%` }}></div>
                                     </div>
+                                </div>
+                                <div className="text-sm text-muted-foreground">
+                                    {completedScenarios.length} of {scenarios.length} scenarios completed
                                 </div>
                                 <Link href="/progress">
                                     <Button variant="outline" className="w-full">
@@ -238,6 +252,79 @@ export default function DashboardPage() {
                                     </Button>
                                 </Link>
                             </div>
+                        </CardContent>
+                    </Card>
+                </div>
+
+                <div className="grid gap-6 md:grid-cols-2">
+                    {/* Recent Activity */}
+                    <Card className="border-border/40 bg-card/50 backdrop-blur">
+                        <CardHeader>
+                            <CardTitle>Recent Activity</CardTitle>
+                            <CardDescription>Your latest actions and events</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            {recentActivity.length > 0 ? (
+                                <div className="space-y-4">
+                                    {recentActivity.map((activity: any, index) => (
+                                        <div key={activity._id || index} className="flex items-start gap-3 pb-4 border-b border-border/40 last:border-0 last:pb-0">
+                                            <div className="p-1.5 bg-primary/10 rounded-full mt-1">
+                                                {activity.status === 'Running' || activity.status === 'Starting' ? (
+                                                    <Activity className="h-4 w-4 text-primary" />
+                                                ) : activity.status === 'completed' ? (
+                                                    <Shield className="h-4 w-4 text-green-500" />
+                                                ) : (
+                                                    <BookOpen className="h-4 w-4 text-blue-500" />
+                                                )}
+                                            </div>
+                                            <div className="flex-1">
+                                                <p className="text-sm font-medium">
+                                                    {activity.scenarioName || scenarios.find(s => s._id === activity.scenarioId)?.title || 'Unknown Scenario'}
+                                                </p>
+                                                <p className="text-xs text-muted-foreground">
+                                                    {activity.status === 'Running' ? 'Simulation in progress' :
+                                                        activity.status === 'completed' ? 'Scenario completed' :
+                                                            activity.status === 'started' ? 'Scenario started' : activity.status}
+                                                    • {new Date(activity.startedAt || activity.timestamp).toLocaleString()}
+                                                </p>
+                                            </div>
+                                        </div>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p className="text-sm text-muted-foreground text-center py-4">No recent activity found.</p>
+                            )}
+                        </CardContent>
+                    </Card>
+
+                    {/* Recommended Scenarios */}
+                    <Card className="border-border/40 bg-card/50 backdrop-blur">
+                        <CardHeader>
+                            <CardTitle>Recommended for You</CardTitle>
+                            <CardDescription>Continue your learning journey</CardDescription>
+                        </CardHeader>
+                        <CardContent>
+                            {recommendedScenarios.length > 0 ? (
+                                <div className="space-y-3">
+                                    {recommendedScenarios.map((scenario) => (
+                                        <Link
+                                            key={scenario._id}
+                                            href={`/scenarios/${scenario._id}`}
+                                            className="flex items-center justify-between p-3 border border-border/40 rounded-lg bg-background/50 hover:bg-background/80 hover:border-primary/30 transition-all group"
+                                        >
+                                            <div>
+                                                <p className="font-medium group-hover:text-primary transition-colors">{scenario.title}</p>
+                                                <p className="text-sm text-muted-foreground">
+                                                    {scenario.difficulty} • {scenario.category}
+                                                </p>
+                                            </div>
+                                            <ChevronRight className="h-4 w-4 text-muted-foreground group-hover:text-primary transition-all group-hover:translate-x-1" />
+                                        </Link>
+                                    ))}
+                                </div>
+                            ) : (
+                                <p className="text-sm text-muted-foreground text-center py-4">You've completed all available scenarios! Well done.</p>
+                            )}
                         </CardContent>
                     </Card>
                 </div>

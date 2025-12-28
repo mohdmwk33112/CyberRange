@@ -26,11 +26,19 @@ export const useDashboardData = (userId: string) => {
         retry: false,
     });
 
+    const progressQuery = useQuery({
+        queryKey: ['progress', userId],
+        queryFn: () => dashboardApi.getUserProgress(userId),
+        enabled: !!userId,
+        retry: false,
+    });
+
     return {
         user: userQuery.data,
         scenarios: scenariosQuery.data || [],
         simulations: simulationsQuery.data || [],
-        isLoading: userQuery.isLoading,
-        error: userQuery.error,
+        progress: progressQuery.data || [],
+        isLoading: userQuery.isLoading || scenariosQuery.isLoading || simulationsQuery.isLoading || progressQuery.isLoading,
+        error: userQuery.error || scenariosQuery.error || simulationsQuery.error || progressQuery.error,
     };
 };
