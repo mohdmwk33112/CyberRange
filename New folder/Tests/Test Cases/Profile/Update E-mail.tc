@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>update email in profile page</description>
+   <name>Update E-mail</name>
+   <tag>TC-PROF-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>cc21794e-1365-4612-970b-acc0f6e296ed</testCaseGuid>
+</TestCaseEntity>

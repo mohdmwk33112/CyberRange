@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input_New Password_flex h-10 w-full rounded_d228b6_4</name>
+   <tag></tag>
+   <elementGuidId>e0cef99a-6c4c-4f63-93ae-e800530440e4</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@value='!@#$%']</value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:attr=[placeholder=&quot;Enter new password (min. 6 chars)&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>3030d73e-f36c-4111-9062-b0804c4def3f</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50</value>
+      <webElementGuid>806c15c6-b4e7-4f1e-a679-615476db2aef</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Enter new password (min. 6 chars)</value>
+      <webElementGuid>9cf38ea9-9d68-4796-8b7a-0e7fa9590b7b</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>type</name>
+      <type>Main</type>
+      <value>password</value>
+      <webElementGuid>4fc4fb41-a133-473d-8ab6-332c3b5a57de</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>!@#$%</value>
+      <webElementGuid>bef6cd92-79d0-4348-a31f-3cc16bfc6896</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[@class=&quot;dark&quot;]/body[@class=&quot;geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased&quot;]/div[@class=&quot;flex min-h-screen w-full bg-muted/20&quot;]/div[@class=&quot;container mx-auto py-10 max-w-4xl&quot;]/div[@class=&quot;grid gap-6 md:grid-cols-[1fr_2fr]&quot;]/div[@class=&quot;space-y-6&quot;]/div[@class=&quot;rounded-lg border bg-card text-card-foreground shadow-sm&quot;]/div[@class=&quot;p-6 pt-0 space-y-4&quot;]/div[@class=&quot;space-y-4&quot;]/div[@class=&quot;p-4 border rounded-lg bg-muted/30 space-y-4 animate-in fade-in slide-in-from-top-2&quot;]/div[@class=&quot;space-y-2&quot;]/input[@class=&quot;flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50&quot;]</value>
+      <webElementGuid>26fe7522-c95c-47f7-abe9-a4f7d6cd722c</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//input[@value='!@#$%']</value>
+      <webElementGuid>621aad36-fb01-4700-b610-76bfe74ef210</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[2]/div[2]/div/div[2]/div/input</value>
+      <webElementGuid>00de7e15-dc3d-4d5d-a499-b18a83843627</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@placeholder = 'Enter new password (min. 6 chars)' and @type = 'password']</value>
+      <webElementGuid>f65f9175-de1c-4ed3-81d8-038b6a43ef47</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>
