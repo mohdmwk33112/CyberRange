@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Update username in the profile page</description>
+   <name>Update Username</name>
+   <tag>TC-PROF-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>80ad74be-6203-4ab4-afd1-7670e2218e27</testCaseGuid>
+</TestCaseEntity>
