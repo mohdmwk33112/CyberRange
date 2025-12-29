@@ -13,7 +13,8 @@ import {
     Cpu,
     Box,
     Users,
-    History as HistoryIcon
+    History as HistoryIcon,
+    ChevronDown
 } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { useToast } from '@/hooks/use-toast';
@@ -198,63 +199,7 @@ export default function AdminDashboard() {
                                 {/* Pod Grid */}
                                 <div className="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 gap-6">
                                     {pods?.map((pod: any) => (
-                                        <Card key={pod.name} className="bg-card border-border/50 overflow-hidden hover:border-primary/30 transition-colors group">
-                                            <div className="p-5">
-                                                <div className="flex justify-between items-start mb-4">
-                                                    <div className="flex items-center gap-3">
-                                                        <div className={`p-2 rounded-md ${pod.ready ? 'bg-primary/10' : 'bg-muted'}`}>
-                                                            <Box className={`w-5 h-5 ${pod.ready ? 'text-primary' : 'text-muted-foreground'}`} />
-                                                        </div>
-                                                        <div>
-                                                            <h3 className="font-bold text-sm truncate max-w-[180px]" title={pod.name}>
-                                                                {pod.name}
-                                                            </h3>
-                                                            <p className="text-[10px] text-muted-foreground font-mono">
-                                                                {new Date(pod.creationTimestamp).toLocaleString()}
-                                                            </p>
-                                                        </div>
-                                                    </div>
-                                                    <Badge variant="outline" className={`text-[10px] ${getStatusColor(pod.status, pod.ready)}`}>
-                                                        {pod.ready ? 'READY' : 'NOT READY'}
-                                                    </Badge>
-                                                </div>
-
-                                                <div className="space-y-3">
-                                                    <div className="flex items-center justify-between text-xs">
-                                                        <span className="text-muted-foreground">Image:</span>
-                                                        <span className="font-mono text-[10px] bg-muted/50 px-2 py-0.5 rounded border border-border/30 max-w-[200px] truncate" title={pod.image}>
-                                                            {pod.image?.split('/').pop()}
-                                                        </span>
-                                                    </div>
-                                                    <div className="flex items-center justify-between text-xs">
-                                                        <span className="text-muted-foreground">Phase:</span>
-                                                        <span className={`font-semibold ${pod.status === 'Running' ? 'text-green-500' : 'text-yellow-500'}`}>
-                                                            {pod.status}
-                                                        </span>
-                                                    </div>
-                                                    <div className="flex items-center justify-between text-xs">
-                                                        <span className="text-muted-foreground">Restarts:</span>
-                                                        <span className={`font-bold ${pod.restarts > 0 ? 'text-destructive' : 'text-foreground'}`}>
-                                                            {pod.restarts}
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-
-                                            {/* Labels footer */}
-                                            <div className="px-5 py-3 bg-muted/10 border-t border-border/50 flex flex-wrap gap-1.5">
-                                                {pod.labels?.['cyberrange.io/scenario'] && (
-                                                    <Badge className="bg-primary/5 text-primary border-primary/20 text-[9px] h-4">
-                                                        scenario: {pod.labels['cyberrange.io/scenario']}
-                                                    </Badge>
-                                                )}
-                                                {pod.labels?.['app'] && (
-                                                    <Badge variant="secondary" className="text-[9px] h-4">
-                                                        app: {pod.labels['app']}
-                                                    </Badge>
-                                                )}
-                                            </div>
-                                        </Card>
+                                        <PodItem key={pod.name} pod={pod} getStatusColor={getStatusColor} />
                                     ))}
                                 </div>
                             </>
@@ -271,5 +216,105 @@ export default function AdminDashboard() {
                 </Tabs>
             </div>
         </div>
+    );
+}
+
+function PodItem({ pod, getStatusColor }: { pod: any, getStatusColor: (status: string, ready: boolean) => string }) {
+    const [isExpanded, setIsExpanded] = React.useState(false);
+
+    return (
+        <Card
+            className={`bg-card border-border/50 overflow-hidden hover:border-primary/30 transition-all group cursor-pointer ${isExpanded ? 'ring-1 ring-primary/20' : ''}`}
+            onClick={() => setIsExpanded(!isExpanded)}
+        >
+            <div className="p-5">
+                <div className="flex justify-between items-start mb-4">
+                    <div className="flex items-center gap-3">
+                        <div className={`p-2 rounded-md ${pod.ready ? 'bg-primary/10' : 'bg-muted'}`}>
+                            <Box className={`w-5 h-5 ${pod.ready ? 'text-primary' : 'text-muted-foreground'}`} />
+                        </div>
+                        <div>
+                            <h3 className="font-bold text-sm truncate max-w-[180px]" title={pod.name}>
+                                {pod.name}
+                            </h3>
+                            <p className="text-[10px] text-muted-foreground font-mono">
+                                {new Date(pod.creationTimestamp).toLocaleString()}
+                            </p>
+                        </div>
+                    </div>
+                    <Badge variant="outline" className={`text-[10px] ${getStatusColor(pod.status, pod.ready)}`}>
+                        {pod.ready ? 'READY' : 'NOT READY'}
+                    </Badge>
+                </div>
+
+                <div className="space-y-3">
+                    <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Image:</span>
+                        <span className="font-mono text-[10px] bg-muted/50 px-2 py-0.5 rounded border border-border/30 max-w-[200px] truncate" title={pod.image}>
+                            {pod.image?.split('/').pop()}
+                        </span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Phase:</span>
+                        <span className={`font-semibold ${pod.status === 'Running' ? 'text-green-500' : 'text-yellow-500'}`}>
+                            {pod.status}
+                        </span>
+                    </div>
+                    <div className="flex items-center justify-between text-xs">
+                        <span className="text-muted-foreground">Restarts:</span>
+                        <span className={`font-bold ${pod.restarts > 0 ? 'text-destructive' : 'text-foreground'}`}>
+                            {pod.restarts}
+                        </span>
+                    </div>
+                </div>
+
+                {isExpanded && (
+                    <div className="mt-4 pt-4 border-t border-border/50 space-y-3 animation-in fade-in slide-in-from-top-2 duration-300">
+                        <div className="grid grid-cols-2 gap-4">
+                            <div>
+                                <h4 className="text-[10px] font-semibold uppercase text-muted-foreground mb-1">Details</h4>
+                                <ul className="text-xs space-y-1">
+                                    <li className="flex justify-between">
+                                        <span className="text-muted-foreground">Node:</span>
+                                        <span className="font-mono text-[10px]">{pod.nodeName || 'N/A'}</span>
+                                    </li>
+                                    <li className="flex justify-between">
+                                        <span className="text-muted-foreground">IP:</span>
+                                        <span className="font-mono text-[10px]">{pod.podIP || 'N/A'}</span>
+                                    </li>
+                                </ul>
+                            </div>
+                            <div>
+                                <h4 className="text-[10px] font-semibold uppercase text-muted-foreground mb-1">QoS</h4>
+                                <span className="text-xs">{pod.qosClass || 'BestEffort'}</span>
+                            </div>
+                        </div>
+
+                        <div>
+                            <h4 className="text-[10px] font-semibold uppercase text-muted-foreground mb-1">All Labels</h4>
+                            <div className="flex flex-wrap gap-1">
+                                {pod.labels && Object.entries(pod.labels).map(([k, v]) => (
+                                    <span key={k} className="text-[9px] px-1.5 py-0.5 bg-secondary text-secondary-foreground rounded border border-border/50">
+                                        {k}: {String(v)}
+                                    </span>
+                                ))}
+                            </div>
+                        </div>
+                    </div>
+                )}
+            </div>
+
+            {/* Labels footer */}
+            <div className="px-5 py-3 bg-muted/10 border-t border-border/50 flex justify-between items-center">
+                <div className="flex flex-wrap gap-1.5">
+                    {pod.labels?.['cyberrange.io/scenario'] && (
+                        <Badge className="bg-primary/5 text-primary border-primary/20 text-[9px] h-4">
+                            scenario: {pod.labels['cyberrange.io/scenario']}
+                        </Badge>
+                    )}
+                </div>
+                <ChevronDown className={`w-4 h-4 text-muted-foreground transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+            </div>
+        </Card>
     );
 }

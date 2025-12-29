@@ -4,7 +4,7 @@ import Link from "next/link";
 import { useAuthStore } from "@/features/auth/auth.store";
 import { Button } from "@/components/ui/button";
 import { ModeToggle } from "@/components/ui/mode-toggle";
-import { Shield } from "lucide-react";
+import { Shield, CircleUser } from "lucide-react";
 import { useRouter } from "next/navigation"; // Correct import for App Router
 
 export function Navbar() {
@@ -39,6 +39,11 @@ export function Navbar() {
                             Progress
                         </Link>
                         <ModeToggle />
+                        <Link href={`/users/profile/${user._id || user.id || user.sub}`} title="My Profile">
+                            <Button variant="ghost" size="icon" className="rounded-full">
+                                <CircleUser className="h-5 w-5" />
+                            </Button>
+                        </Link>
                         <Button variant="ghost" size="sm" onClick={handleLogout}>
                             Logout
                         </Button>
@@ -55,6 +60,6 @@ export function Navbar() {
                     </>
                 )}
             </nav>
-        </header>
+        </header >
     );
 }

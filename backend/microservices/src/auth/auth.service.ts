@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, ConflictException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from './user.model';
@@ -21,6 +21,13 @@ export class AuthService {
 
     async register(createUserDto: CreateUserDto): Promise<User> {
         const { username, email, password, role } = createUserDto;
+
+        // Check if email already exists
+        const existingUser = await this.userModel.findOne({ email });
+        if (existingUser) {
+            throw new ConflictException('This email is already registered. Would you like to sign in instead?');
+        }
+
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new this.userModel({
             username,

@@ -59,7 +59,8 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
     useEffect(() => {
         if (state) {
             if (state.simulationUnlocked) {
-                setPhase('simulation');
+                // If simulation is unlocked, start at learning phase instead of simulation
+                setPhase('learning');
             } else if (state.questionnaireCompleted) {
                 setPhase('simulation'); // Show simulation UI to attempt unlock
             } else {
@@ -319,7 +320,14 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                     </button>
 
                     <button
-                        onClick={() => setPhase('questionnaire')}
+                        onClick={() => {
+                            // Find the questionnaire step
+                            const questionnaireStepIndex = scenario.steps.findIndex(step => step.stepType === 'questionnaire');
+                            if (questionnaireStepIndex !== -1) {
+                                setCurrentStepIndex(questionnaireStepIndex);
+                            }
+                            setPhase('questionnaire');
+                        }}
                         className={`flex flex-col gap-2 group text-left transition-all outline-none ${phase === 'questionnaire' ? 'opacity-100' : 'opacity-60 hover:opacity-80'}`}
                     >
                         <div className={`h-1.5 w-full rounded-full transition-all duration-500 ${phase === 'questionnaire' ? 'bg-primary' : state?.questionnaireCompleted ? 'bg-primary/40' : 'bg-secondary'}`}></div>
@@ -373,10 +381,10 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                             />
                         )}
 
-                        {phase === 'questionnaire' && currentStep?.stepType === 'questionnaire' && (
+                        {phase === 'questionnaire' && (
                             <TerminalQuestionnaire
-                                questions={currentStep.questions}
-                                stepOrder={currentStep.stepOrder}
+                                questions={currentStep?.questions || []}
+                                stepOrder={currentStep?.stepOrder || 0}
                                 scenarioId={id}
                                 userId={userId}
                                 onComplete={handleQuestionnaireComplete}
