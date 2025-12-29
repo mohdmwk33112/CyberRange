@@ -44,9 +44,9 @@ export default function AdminDashboard() {
     useEffect(() => {
         if (!isHydrated) return;
 
-        if (!isAuthenticated()) {
+        if (!isAuthenticated() || !user) {
             router.push('/auth/login');
-        } else if (user?.role !== 'admin') {
+        } else if (user.role !== 'admin') {
             toast({
                 title: 'Access Denied',
                 description: 'You must be an administrator to access this page.',

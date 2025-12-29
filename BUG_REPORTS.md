@@ -175,5 +175,58 @@ Added authentication guards to protected pages using a `ProtectedRoute` componen
 - `frontend/app/admin/page.tsx`
 - `frontend/app/users/profile/[id]/page.tsx`
 
-### Security Impact
-**HIGH** - This vulnerability allowed unauthorized users to view User dashboards, Scenario details, Simulation data, and Admin panels.
+---
+
+## Bug #8: Incorrect Admin Redirection
+**Status**: ✅ FIXED  
+**Severity**: Low  
+**Date Reported**: 2025-12-30  
+**Date Fixed**: 2025-12-30
+
+### Description
+Accessing `http://localhost:3000/admin` while not logged in incorrectly redirected users to the student dashboard (`/dashboard`) instead of the login page (`/auth/login`).
+
+### Steps to Reproduce
+1. Ensure you are completely logged out (clear local storage).
+2. Navigate directly to `http://localhost:3000/admin`.
+3. **Expected**: Redirected to `/auth/login`.
+4. **Actual**: Redirected to `/dashboard`.
+
+### Root Cause
+The redirection logic in `frontend/app/admin/page.tsx` only checked `isAuthenticated()` using the token. If the user object was missing but a stale token existed, it defaulted to the dashboard redirect instead of the login redirect.
+
+### Resolution
+Updated the authentication guard to verify both token presence and the existence of the user object:
+```typescript
+if (!isAuthenticated() || !user) {
+    router.push('/auth/login');
+}
+```
+
+---
+
+## Bug #9: User Join Date "N/A" in Admin Dashboard
+**Status**: ✅ FIXED  
+**Severity**: Low  
+**Date Reported**: 2025-12-30  
+**Date Fixed**: 2025-12-30
+
+### Description
+In the Admin Dashboard's User Management tab, expanding a user row showed "N/A" for the "Joined Date" for all users.
+
+### Steps to Reproduce
+1. Log in as Admin.
+2. Go to User Management tab.
+3. Expand any user row.
+4. **Actual**: Joined Date shows "N/A".
+
+### Root Cause
+The `UserSchema` in `backend/microservices/src/auth/user.model.ts` did not have `timestamps: true` enabled, so Mongoose was not recording the `createdAt` and `updatedAt` fields.
+
+### Resolution
+1. **Backend Schema Update**: Enabled `timestamps: true` in `UserSchema` to record `createdAt` for all new registrations.
+2. **Frontend Robustness (ObjectId Fallback)**: Implemented a logic in `UserManagement.tsx` to extract the registration date from the first 8 characters of the MongoDB `_id` (Hex timestamp) if the `createdAt` field is missing. This ensures all existing users show a valid date.
+
+### Files Modified
+- `backend/microservices/src/auth/user.model.ts`
+- `frontend/features/admin/UserManagement.tsx`
