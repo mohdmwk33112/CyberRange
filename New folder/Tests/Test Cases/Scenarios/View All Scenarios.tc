@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify list of scenarios loads correctly</description>
+   <name>View All Scenarios</name>
+   <tag>FE-Scen-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>303bae20-fbce-48e3-aade-0d6faebbc193</testCaseGuid>
+</TestCaseEntity>

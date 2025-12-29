@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify failing questionnaire keeps simulation locked</description>
+   <name>Complete Questionnaire-Fail</name>
+   <tag>FE-Scen-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>1648a6c2-072a-40d5-b59d-dc94db6de687</testCaseGuid>
+</TestCaseEntity>

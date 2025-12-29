@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify passing questionnaire unlocks simulation</description>
+   <name>Complete Questionnaire-Pass</name>
+   <tag>FE-Scen-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>aae6d3cd-3fde-4891-a829-c857efd9cf8a</testCaseGuid>
+</TestCaseEntity>
