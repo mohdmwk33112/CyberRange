@@ -272,17 +272,29 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
     const handleResetQuestionnaire = async () => {
         try {
-            await resetQuestionnaireMutation.mutateAsync({ scenarioId: id, userId });
+            // Only reset in backend if simulation is NOT unlocked (i.e. they haven't passed yet)
+            // or if they specifically want to clear everything. 
+            // Here we prioritize keep-access.
+            if (!state?.simulationUnlocked) {
+                await resetQuestionnaireMutation.mutateAsync({ scenarioId: id, userId });
+            }
+
+            // Find the proper questionnaire step index
+            const questionnaireStepIndex = scenario?.steps.findIndex(step => step.stepType === 'questionnaire') ?? 0;
+
             setPhase('questionnaire');
-            setCurrentStepIndex(0);
+            setCurrentStepIndex(questionnaireStepIndex >= 0 ? questionnaireStepIndex : 0);
             setSimulationActive(false);
+
             toast({
-                title: 'Progress Reset',
-                description: 'Questionnaire score has been reset. Simulation is now locked.',
+                title: state?.simulationUnlocked ? 'Practice Mode' : 'Progress Reset',
+                description: state?.simulationUnlocked
+                    ? 'Retaking the questionnaire for practice. Your simulation remains unlocked.'
+                    : 'Questionnaire score has been reset. Simulation is now locked.',
             });
         } catch (error: any) {
             toast({
-                title: 'Reset Failed',
+                title: 'Operation Failed',
                 description: error.message,
                 variant: 'destructive',
             });
@@ -312,7 +324,16 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                 {/* Progress Stepper - Interactive */}
                 <div className="grid grid-cols-3 gap-4 mb-8">
                     <button
-                        onClick={() => setPhase('learning')}
+                        onClick={() => {
+                            // Find the first learning step
+                            const learningStepIndex = scenario.steps.findIndex(step => step.stepType === 'learning');
+                            if (learningStepIndex !== -1) {
+                                setCurrentStepIndex(learningStepIndex);
+                            } else {
+                                setCurrentStepIndex(0);
+                            }
+                            setPhase('learning');
+                        }}
                         className={`flex flex-col gap-2 group text-left transition-all outline-none ${phase === 'learning' ? 'opacity-100' : 'opacity-60 hover:opacity-80'}`}
                     >
                         <div className={`h-1.5 w-full rounded-full transition-all duration-500 ${phase === 'learning' ? 'bg-primary' : 'bg-primary/40'}`}></div>
@@ -335,7 +356,10 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
                     </button>
 
                     <button
-                        onClick={() => state?.simulationUnlocked && setPhase('simulation')}
+                        onClick={() => {
+                            setPhase('simulation');
+                            // Simulation is a global phase for the scenario, currentStepIndex matters less here
+                        }}
                         disabled={!state?.simulationUnlocked}
                         className={`flex flex-col gap-2 group text-left transition-all outline-none ${phase === 'simulation' ? 'opacity-100' : state?.simulationUnlocked ? 'opacity-60 hover:opacity-80 cursor-pointer' : 'opacity-40 cursor-not-allowed'}`}
                     >
@@ -366,15 +390,20 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
                     {/* Phase Content */}
                     <div className="animate-in fade-in slide-in-from-bottom-4 duration-500">
-                        {phase === 'learning' && currentStep?.stepType === 'learning' && (
+                        {phase === 'learning' && (
                             <LearningContent
-                                content={currentStep.learningContent}
+                                content={currentStep?.stepType === 'learning'
+                                    ? currentStep.learningContent
+                                    : scenario.steps.find(s => s.stepType === 'learning')?.learningContent || ''}
                                 onContinue={() => {
-                                    // Move to next step if it exists or switch phase
-                                    if (scenario.steps[currentStepIndex + 1]?.stepType === 'questionnaire') {
-                                        setCurrentStepIndex(currentStepIndex + 1);
+                                    const nextStepIndex = currentStepIndex + 1;
+                                    if (scenario.steps[nextStepIndex]?.stepType === 'questionnaire') {
+                                        setCurrentStepIndex(nextStepIndex);
                                         setPhase('questionnaire');
                                     } else {
+                                        // Try to find first questionnaire step
+                                        const qIndex = scenario.steps.findIndex(s => s.stepType === 'questionnaire');
+                                        if (qIndex !== -1) setCurrentStepIndex(qIndex);
                                         setPhase('questionnaire');
                                     }
                                 }}
@@ -383,8 +412,12 @@ export default function ScenarioDetailPage({ params }: ScenarioDetailPageProps) 
 
                         {phase === 'questionnaire' && (
                             <TerminalQuestionnaire
-                                questions={currentStep?.questions || []}
-                                stepOrder={currentStep?.stepOrder || 0}
+                                questions={currentStep?.stepType === 'questionnaire'
+                                    ? (currentStep.questions || [])
+                                    : (scenario.steps.find(s => s.stepType === 'questionnaire')?.questions || [])}
+                                stepOrder={currentStep?.stepType === 'questionnaire'
+                                    ? (currentStep.stepOrder || 0)
+                                    : (scenario.steps.find(s => s.stepType === 'questionnaire')?.stepOrder || 0)}
                                 scenarioId={id}
                                 userId={userId}
                                 onComplete={handleQuestionnaireComplete}
