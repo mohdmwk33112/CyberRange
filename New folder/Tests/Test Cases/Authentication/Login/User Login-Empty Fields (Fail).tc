@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>verify behavior when fields are left empty.</description>
+   <name>User Login-Empty Fields (Fail)</name>
+   <tag>FE-Login-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>2ca7827c-90dd-4165-ab9a-9f5b92a5b43e</testCaseGuid>
+</TestCaseEntity>

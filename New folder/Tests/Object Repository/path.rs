@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>path</name>
+   <tag></tag>
+   <elementGuidId>70e2dcf2-c9ff-4d04-bb83-486aeae9e8c7</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>XPATH</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:role=row[name=&quot;mohamed mohamed@gmail.com student Reset Password Delete User&quot;i] >> internal:attr=[title=&quot;Delete User&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>path</value>
+      <webElementGuid>74e7ec87-4fac-486d-86b3-1db780bfca50</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>d</name>
+      <type>Main</type>
+      <value>M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6</value>
+      <webElementGuid>7d096865-f08e-4339-b4dd-46bb398f4047</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>id(&quot;radix-_r_0_-content-users&quot;)/div[@class=&quot;rounded-lg border bg-card text-card-foreground shadow-sm mt-8&quot;]/div[@class=&quot;p-6 pt-0&quot;]/div[@class=&quot;rounded-md border&quot;]/div[@class=&quot;relative w-full overflow-auto&quot;]/table[@class=&quot;w-full caption-bottom text-sm&quot;]/tbody[@class=&quot;[&amp;_tr:last-child]:border-0&quot;]/tr[@class=&quot;border-b transition-colors data-[state=selected]:bg-muted cursor-pointer hover:bg-muted/50&quot;]/td[@class=&quot;p-4 align-middle [&amp;:has([role=checkbox])]:pr-0 text-right space-x-2&quot;]/button[@class=&quot;inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent h-9 rounded-md px-3 text-destructive hover:text-destructive/90&quot;]/svg[@class=&quot;lucide lucide-trash2 lucide-trash-2 w-4 h-4&quot;]/path[3]</value>
+      <webElementGuid>3bfdd59e-b0a0-4346-b6f4-40fc13f55a26</webElementGuid>
+   </webElementProperties>
+</WebElementEntity>

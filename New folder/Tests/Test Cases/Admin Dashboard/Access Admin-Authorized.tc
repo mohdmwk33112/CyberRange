@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify Admin Dashboard loads for admin.</description>
+   <name>Access Admin-Authorized</name>
+   <tag>FE-Admin-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ac97d6c7-e904-4f4b-ba20-91fe5dc072bc</testCaseGuid>
+</TestCaseEntity>

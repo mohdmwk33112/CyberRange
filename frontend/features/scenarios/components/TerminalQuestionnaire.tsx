@@ -51,7 +51,17 @@ export function TerminalQuestionnaire({
     const [isSubmitting, setIsSubmitting] = useState(false);
     const { toast } = useToast();
 
+    if (!questions || questions.length === 0) {
+        return (
+            <Card className="border-border/40 bg-card/50 backdrop-blur p-8 text-center">
+                <p className="text-muted-foreground">No questions available for this step.</p>
+            </Card>
+        );
+    }
+
     const currentQuestion = questions[currentQuestionIndex];
+    if (!currentQuestion) return null;
+
     const totalPoints = questions.reduce((sum, q) => sum + q.points, 0);
     const earnedPoints = results.reduce((sum, r) => sum + r.points, 0);
 

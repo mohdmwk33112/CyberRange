@@ -27,7 +27,7 @@ export const UserSchema = new mongoose.Schema({
     enum: ['active', 'inactive', 'suspended'],
     default: 'active',
   },
-});
+}, { timestamps: true });
 
 export interface User extends Document {
   id: string;
@@ -36,4 +36,6 @@ export interface User extends Document {
   password: string;
   role: string;
   accountStatus: string;
+  createdAt: Date;
+  updatedAt: Date;
 }
