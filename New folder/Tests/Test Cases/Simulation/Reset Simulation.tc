@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Verify resetting a running simulation</description>
-   <name>Reset Simulation</name>
-   <tag>FE-Sim-04</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>40cc654f-453b-4409-a638-36cac660685b</testCaseGuid>
-</TestCaseEntity>

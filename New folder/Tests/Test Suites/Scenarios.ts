@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestSuiteEntity>
-   <description></description>
-   <name>Admin Dashboard</name>
+   <description>Scenarios test suit that ensures that the attackes questionnaire is working</description>
+   <name>Scenarios</name>
    <tag></tag>
    <isRerun>false</isRerun>
    <mailRecipient></mailRecipient>
@@ -10,47 +10,40 @@
    <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
    <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
    <rerunImmediately>true</rerunImmediately>
-   <testSuiteGuid>2d821f5d-4b60-4efd-ac62-bcd9be6362e3</testSuiteGuid>
+   <testSuiteGuid>7dd91ec4-df3e-4015-926e-e468f464a611</testSuiteGuid>
    <testCaseLink>
-      <guid>6aa74c43-428b-4d1a-be1c-38ebf5e43ccf</guid>
+      <guid>31d8eaae-3fe6-4736-ab4e-67ff0a704754</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)</testCaseId>
+      <testCaseId>Test Cases/Scenarios/View All Scenarios</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>f89d2163-cda4-481c-b897-42330db25295</guid>
+      <guid>25ee274d-9c6a-4afb-b216-01e0579e20e0</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Admin Dashboard/Access Admin-Authorized</testCaseId>
+      <testCaseId>Test Cases/Scenarios/View Scenario Details</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>e3990528-4ce3-49c2-8962-8b3153b1eee6</guid>
+      <guid>2efe8b6f-eb8d-4a82-b1c5-6f167d2b3172</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Admin Dashboard/Delete User</testCaseId>
+      <testCaseId>Test Cases/Scenarios/Complete Questionnaire-Fail</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>0589b109-2b46-4d9f-a08e-88bdfe65cd34</guid>
+      <guid>064085cd-2026-406e-a6f0-bb38142321cb</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Admin Dashboard/List Users and Expand Details</testCaseId>
+      <testCaseId>Test Cases/Scenarios/Complete Questionnaire-Pass</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
    <testCaseLink>
-      <guid>1a52ccd9-5411-4a1c-9962-fdb4f0761232</guid>
+      <guid>83fe380a-bead-4a81-8282-b5063b46f371</guid>
       <isReuseDriver>false</isReuseDriver>
       <isRun>true</isRun>
-      <testCaseId>Test Cases/Admin Dashboard/View Audit Logs</testCaseId>
-      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
-   </testCaseLink>
-   <testCaseLink>
-      <guid>fc61e84c-00c0-4cdc-a4ae-4ef3fc21a89f</guid>
-      <isReuseDriver>false</isReuseDriver>
-      <isRun>true</isRun>
-      <testCaseId>Test Cases/Admin Dashboard/View Cluster Health and Expand Pods</testCaseId>
+      <testCaseId>Test Cases/Scenarios/Reset Questionnaire</testCaseId>
       <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
    </testCaseLink>
 </TestSuiteEntity>

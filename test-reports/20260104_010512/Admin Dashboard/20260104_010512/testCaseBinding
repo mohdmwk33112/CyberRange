@@ -1,0 +1,6 @@
+{"testCaseName":"Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)","testCaseId":"Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin Dashboard/Access Admin-Authorized","testCaseId":"Test Cases/Admin Dashboard/Access Admin-Authorized","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin Dashboard/Delete User","testCaseId":"Test Cases/Admin Dashboard/Delete User","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin Dashboard/List Users and Expand Details","testCaseId":"Test Cases/Admin Dashboard/List Users and Expand Details","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin Dashboard/View Audit Logs","testCaseId":"Test Cases/Admin Dashboard/View Audit Logs","iterationVariableName":""}
+{"testCaseName":"Test Cases/Admin Dashboard/View Cluster Health and Expand Pods","testCaseId":"Test Cases/Admin Dashboard/View Cluster Health and Expand Pods","iterationVariableName":""}
