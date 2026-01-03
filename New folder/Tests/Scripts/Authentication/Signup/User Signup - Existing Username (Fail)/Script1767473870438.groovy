@@ -21,9 +21,9 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/auth/signup')
 
-WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Username_username'), 'mohamed1')
+WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Username_username'), 'mohamed')
 
-WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Email_email'), 'mohamed@gmail.com')
+WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Email_email'), 'mohamed1@gmail.com')
 
 WebUI.setEncryptedText(findTestObject('SignUp/Page_CyberRange/input_Password_password'), 'CMnPGly1SfJKz+QUrjJbYA==')
 
