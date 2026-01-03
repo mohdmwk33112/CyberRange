@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify user details are correctly displayed</description>
+   <name>View Profile</name>
+   <tag>FE-Profile-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ce5d7f21-73e5-4e6b-8f94-6de08190934a</testCaseGuid>
+</TestCaseEntity>

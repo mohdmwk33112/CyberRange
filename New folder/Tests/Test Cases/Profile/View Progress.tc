@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify user can view their training progress</description>
+   <name>View Progress</name>
+   <tag>FE-Prog-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>ff037d77-9390-4440-989d-836e885fb809</testCaseGuid>
+</TestCaseEntity>

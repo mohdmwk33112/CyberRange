@@ -7,7 +7,7 @@
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@value='!@']</value>
+         <value>//input[@value='sh']</value>
       </entry>
       <entry>
          <key>CSS</key>
@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>7a04380e-eb49-4a37-9753-7ce6eed5bb9d</webElementGuid>
+      <webElementGuid>996718c7-9c4f-4984-8724-18689411ee96</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,7 +37,7 @@
       <name>class</name>
       <type>Main</type>
       <value>flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50</value>
-      <webElementGuid>12c5eb73-ca6f-4daf-9b49-480acccde399</webElementGuid>
+      <webElementGuid>34335563-fa74-47d7-a652-9f99e36bfe94</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -45,7 +45,7 @@
       <name>placeholder</name>
       <type>Main</type>
       <value>Enter new password (min. 6 chars)</value>
-      <webElementGuid>1393119f-dfc9-4f19-ae46-4d7148a73c84</webElementGuid>
+      <webElementGuid>3c98b940-8e2b-4217-ac9c-e7f3f2ca151d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -53,15 +53,15 @@
       <name>type</name>
       <type>Main</type>
       <value>password</value>
-      <webElementGuid>8049de14-8b7c-45eb-b99b-3e4f6021e091</webElementGuid>
+      <webElementGuid>869c3e7f-862d-482e-9814-f99d6f1d0fab</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>value</name>
       <type>Main</type>
-      <value>!@</value>
-      <webElementGuid>74301614-c892-450d-b1e5-af1dec537a69</webElementGuid>
+      <value>sh</value>
+      <webElementGuid>99a33db4-8af2-4511-a0e3-b7751c961419</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -69,15 +69,15 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[@class=&quot;dark&quot;]/body[@class=&quot;geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased&quot;]/div[@class=&quot;flex min-h-screen w-full bg-muted/20&quot;]/div[@class=&quot;container mx-auto py-10 max-w-4xl&quot;]/div[@class=&quot;grid gap-6 md:grid-cols-[1fr_2fr]&quot;]/div[@class=&quot;space-y-6&quot;]/div[@class=&quot;rounded-lg border bg-card text-card-foreground shadow-sm&quot;]/div[@class=&quot;p-6 pt-0 space-y-4&quot;]/div[@class=&quot;space-y-4&quot;]/div[@class=&quot;p-4 border rounded-lg bg-muted/30 space-y-4 animate-in fade-in slide-in-from-top-2&quot;]/div[@class=&quot;space-y-2&quot;]/input[@class=&quot;flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50&quot;]</value>
-      <webElementGuid>5d24c4d0-a9fc-44c4-81ff-f473d748e616</webElementGuid>
+      <webElementGuid>d96abe1d-a7ae-4ece-b1f5-4d8675a64b14</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//input[@value='!@']</value>
-      <webElementGuid>e5a8e556-4694-4423-a84d-fee6be8a9035</webElementGuid>
+      <value>//input[@value='sh']</value>
+      <webElementGuid>ad598fd4-5725-49c5-9685-0f6f5aee7b2e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +85,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div[2]/div[2]/div/div[2]/div/input</value>
-      <webElementGuid>f88f6a7b-ee5c-43be-9f08-dbbfcbb0334d</webElementGuid>
+      <webElementGuid>7896cbdc-0f6a-40a0-b594-c751ce4cabeb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -93,6 +93,14 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//input[@placeholder = 'Enter new password (min. 6 chars)' and @type = 'password']</value>
-      <webElementGuid>3850c661-73af-4cfa-a0f4-4253dd1eecee</webElementGuid>
+      <webElementGuid>8cda1a0e-327d-4a0e-8c61-cb530b0ac58a</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//input[@value='!@']</value>
+      <webElementGuid>e5a8e556-4694-4423-a84d-fee6be8a9035</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
