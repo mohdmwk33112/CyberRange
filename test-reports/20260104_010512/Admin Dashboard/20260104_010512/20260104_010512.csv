@@ -1,0 +1,80 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Admin Dashboard,Chrome 143.0.7499.170,,,04-01-2026 01:05:24,04-01-2026 01:06:31,1m - 7.012s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail),Chrome 143.0.7499.170,Verify non-admins and guests are blocked.,FE-Admin-02,04-01-2026 01:05:24,04-01-2026 01:05:36,11.217s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 01:05:25,04-01-2026 01:05:29,3.523s,PASSED
+"navigateToUrl(""http://localhost:3000"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:29,04-01-2026 01:05:29,0.881s,PASSED
+delay(1),Chrome 143.0.7499.170,,,04-01-2026 01:05:29,04-01-2026 01:05:31,1.085s,PASSED
+"navigateToUrl(""http://localhost:3000/admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:31,04-01-2026 01:05:31,0.467s,PASSED
+delay(1),Chrome 143.0.7499.170,,,04-01-2026 01:05:31,04-01-2026 01:05:32,1.022s,PASSED
+"setText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:32,04-01-2026 01:05:33,0.985s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password""), ""CMnPGly1SfLjmbcgmrxzhQ=="")",Chrome 143.0.7499.170,,,04-01-2026 01:05:33,04-01-2026 01:05:34,0.528s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 01:05:34,04-01-2026 01:05:34,0.424s,PASSED
+"navigateToUrl(""http://localhost:3000/admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:34,04-01-2026 01:05:34,0.400s,PASSED
+delay(1),Chrome 143.0.7499.170,,,04-01-2026 01:05:34,04-01-2026 01:05:35,1.010s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 01:05:35,04-01-2026 01:05:36,0.265s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/Access Admin-Authorized,Chrome 143.0.7499.170,Verify Admin Dashboard loads for admin.,FE-Admin-01,04-01-2026 01:05:36,04-01-2026 01:05:46,9.872s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 01:05:36,04-01-2026 01:05:38,2.123s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:38,04-01-2026 01:05:40,1.991s,PASSED
+"setText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username""), ""admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:40,04-01-2026 01:05:41,1.257s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.170,,,04-01-2026 01:05:41,04-01-2026 01:05:42,0.374s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 01:05:42,04-01-2026 01:05:42,0.464s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_User Management""))",Chrome 143.0.7499.170,,,04-01-2026 01:05:42,04-01-2026 01:05:43,1.253s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login Activity""))",Chrome 143.0.7499.170,,,04-01-2026 01:05:43,04-01-2026 01:05:44,1.072s,PASSED
+delay(1),Chrome 143.0.7499.170,,,04-01-2026 01:05:44,04-01-2026 01:05:45,1.014s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 01:05:45,04-01-2026 01:05:46,0.202s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/Delete User,Chrome 143.0.7499.170,Verify admin can delete a user.,FE-Admin-06,04-01-2026 01:05:46,04-01-2026 01:05:59,13.785s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 01:05:46,04-01-2026 01:05:47,1.596s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:47,04-01-2026 01:05:48,0.931s,PASSED
+"setText(findTestObject(""Object Repository/input_Username_username""), ""admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:48,04-01-2026 01:05:49,1.096s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.170,,,04-01-2026 01:05:49,04-01-2026 01:05:50,0.413s,PASSED
+"click(findTestObject(""Object Repository/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 01:05:50,04-01-2026 01:05:50,0.415s,PASSED
+waitForPageLoad(5),Chrome 143.0.7499.170,,,04-01-2026 01:05:50,04-01-2026 01:05:50,0.196s,PASSED
+"userTab = TestObject().addProperty(""xpath"", EQUALS, ""//button[@role='tab'][contains(., 'User Management')]"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:50,04-01-2026 01:05:50,0.029s,PASSED
+"waitForElementClickable(userTab, 10)",Chrome 143.0.7499.170,,,04-01-2026 01:05:50,04-01-2026 01:05:51,0.958s,PASSED
+click(userTab),Chrome 143.0.7499.170,,,04-01-2026 01:05:51,04-01-2026 01:05:52,0.361s,PASSED
+"lastDeleteBtn = TestObject().addProperty(""xpath"", EQUALS, ""(//button[@title='Delete User'])[last()]"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:52,04-01-2026 01:05:52,0.003s,PASSED
+"waitForElementVisible(lastDeleteBtn, 10)",Chrome 143.0.7499.170,,,04-01-2026 01:05:52,04-01-2026 01:05:52,0.649s,PASSED
+click(lastDeleteBtn),Chrome 143.0.7499.170,,,04-01-2026 01:05:52,04-01-2026 01:05:56,3.477s,PASSED
+"confirmDeleteBtn = TestObject().addProperty(""xpath"", EQUALS, ""//button[text()='Delete User' and contains(@class, 'bg-destructive')]"")",Chrome 143.0.7499.170,,,04-01-2026 01:05:56,04-01-2026 01:05:56,0.002s,PASSED
+"waitForElementVisible(confirmDeleteBtn, 5)",Chrome 143.0.7499.170,,,04-01-2026 01:05:56,04-01-2026 01:05:56,0.475s,PASSED
+click(confirmDeleteBtn),Chrome 143.0.7499.170,,,04-01-2026 01:05:56,04-01-2026 01:05:57,0.375s,PASSED
+delay(2),Chrome 143.0.7499.170,,,04-01-2026 01:05:57,04-01-2026 01:05:59,2.011s,PASSED
+"verifyTextPresent(""User deleted"", false)",Chrome 143.0.7499.170,,,04-01-2026 01:05:59,04-01-2026 01:05:59,0.336s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 01:05:59,04-01-2026 01:05:59,0.206s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/List Users and Expand Details,Chrome 143.0.7499.170,Verify admin can see and expand user details.,FE-Admin-05,04-01-2026 01:05:59,04-01-2026 01:06:10,10.322s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 01:05:59,04-01-2026 01:06:01,1.579s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 01:06:01,04-01-2026 01:06:02,0.800s,PASSED
+"setText(findTestObject(""Object Repository/Admin/input_Username_username""), ""admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:06:02,04-01-2026 01:06:03,1.422s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.170,,,04-01-2026 01:06:03,04-01-2026 01:06:04,0.519s,PASSED
+"click(findTestObject(""Object Repository/Admin/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:04,04-01-2026 01:06:04,0.418s,PASSED
+"click(findTestObject(""Object Repository/Admin/button_User Management""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:04,04-01-2026 01:06:05,1.316s,PASSED
+"click(findTestObject(""Object Repository/Admin/td_Actions_p-4 align-middle has(rolecheckbox)pr-0""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:05,04-01-2026 01:06:06,0.786s,PASSED
+"click(findTestObject(""Object Repository/Admin/svg_Joined Date_lucide lucide-chevron-down _900689""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:06,04-01-2026 01:06:07,0.602s,PASSED
+"click(findTestObject(""Object Repository/Admin/td_Joined Date_p-4 align-middle has(roleche_7b20bd""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:07,04-01-2026 01:06:07,0.570s,PASSED
+delay(2),Chrome 143.0.7499.170,,,04-01-2026 01:06:07,04-01-2026 01:06:09,2.012s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 01:06:09,04-01-2026 01:06:10,0.235s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/View Audit Logs,Chrome 143.0.7499.170,Verify system audit logs are visible.,FE-Admin-07,04-01-2026 01:06:10,04-01-2026 01:06:19,9.685s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 01:06:10,04-01-2026 01:06:12,1.830s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 01:06:12,04-01-2026 01:06:13,1.136s,PASSED
+"setText(findTestObject(""Object Repository/Admin/Page_CyberRange/input_Username_username""), ""admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:06:13,04-01-2026 01:06:14,1.306s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.170,,,04-01-2026 01:06:14,04-01-2026 01:06:14,0.411s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:14,04-01-2026 01:06:15,0.457s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/button_Login Activity""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:15,04-01-2026 01:06:16,1.147s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/td_mohd33112""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:16,04-01-2026 01:06:17,1.083s,PASSED
+delay(2),Chrome 143.0.7499.170,,,04-01-2026 01:06:17,04-01-2026 01:06:19,2.016s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 01:06:19,04-01-2026 01:06:19,0.205s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/View Cluster Health and Expand Pods,Chrome 143.0.7499.170,Verify pod status display and details expansion,,04-01-2026 01:06:19,04-01-2026 01:06:31,11.255s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 01:06:19,04-01-2026 01:06:21,1.765s,PASSED
+"navigateToUrl(""http://localhost:3000/admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:06:21,04-01-2026 01:06:22,0.730s,PASSED
+"setText(findTestObject(""Object Repository/Admin/admin view/input_Username_username""), ""admin"")",Chrome 143.0.7499.170,,,04-01-2026 01:06:22,04-01-2026 01:06:23,1.541s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/admin view/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.170,,,04-01-2026 01:06:23,04-01-2026 01:06:24,0.402s,PASSED
+"click(findTestObject(""Object Repository/Admin/admin view/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:24,04-01-2026 01:06:24,0.333s,PASSED
+"click(findTestObject(""Object Repository/Admin/admin view/svg_scenarioddos_lucide lucide-chevron-down_1ed8b5""))",Chrome 143.0.7499.170,,,04-01-2026 01:06:24,04-01-2026 01:06:25,1.040s,PASSED
+delay(5),Chrome 143.0.7499.170,,,04-01-2026 01:06:25,04-01-2026 01:06:30,5.015s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 01:06:30,04-01-2026 01:06:31,0.363s,PASSED

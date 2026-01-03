@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify pod status display and details expansion</description>
+   <name>View Cluster Health and Expand Pods</name>
+   <tag></tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>98f07fbf-0e34-4e2b-bc5c-166e8e065073</testCaseGuid>
+</TestCaseEntity>

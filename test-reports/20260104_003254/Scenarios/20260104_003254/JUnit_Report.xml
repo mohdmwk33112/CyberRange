@@ -1,0 +1,493 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Scenarios" time="278.21" tests="5" failures="0" errors="0">
+   <testsuite name="Scenarios" tests="5" failures="0" errors="0" time="278.21" skipped="0" timestamp="2026-01-03T22:33:05.758Z" hostname="nader - MSI" id="Test Suites/Scenarios">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_003254\\Scenarios\\20260104_003254"/>
+         <property name="logFiles" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_003254\\Scenarios\\20260104_003254\\console0.log, D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_003254\\Scenarios\\20260104_003254\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="nader - MSI"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Nader Ahmed Abdelsattar Abdeltawab"/>
+         <property name="hostAddress" value="192.168.202.1"/>
+         <property name="sessionId" value="33a3942240bf6cab11870f4532bd7643"/>
+         <property name="projectName" value="Tests"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Scenarios/View All Scenarios" time="10.441" classname="Test Cases/Scenarios/View All Scenarios" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:33:06 - [TEST_CASE][PASSED] - Test Cases/Scenarios/View All Scenarios: Test Cases/Scenarios/View All Scenarios
+
+04-01-2026T00:33:07 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:33:07 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:33:07 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:33:10 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:33:10 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:33:11 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:33:11 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/View Scenarios/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Scenario/View Scenarios/input_Username_username'
+
+04-01-2026T00:33:13 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Scenario/View Scenarios/input_Username_username'
+
+04-01-2026T00:33:13 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Scenario/View Scenarios/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Scenario/View Scenarios/input_Password_password'
+
+04-01-2026T00:33:13 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Scenario/View Scenarios/input_Password_password'
+
+04-01-2026T00:33:13 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Login")): Object: 'Object Repository/Scenario/View Scenarios/button_Login' is clicked on
+
+04-01-2026T00:33:14 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Login' is clicked on
+
+04-01-2026T00:33:14 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_View All Scenarios")): Object: 'Object Repository/Scenario/View Scenarios/button_View All Scenarios' is clicked on
+
+04-01-2026T00:33:15 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_View All Scenarios' is clicked on
+
+04-01-2026T00:33:15 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+04-01-2026T00:33:16 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+04-01-2026T00:33:16 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:33:16 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Scenarios/View Scenario Details" time="7.206" classname="Test Cases/Scenarios/View Scenario Details" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:33:16 - [TEST_CASE][PASSED] - Test Cases/Scenarios/View Scenario Details: Test Cases/Scenarios/View Scenario Details
+
+04-01-2026T00:33:17 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:33:17 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:33:17 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:33:18 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:33:18 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:33:19 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:33:19 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/View Scenarios/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Scenario/View Scenarios/input_Username_username'
+
+04-01-2026T00:33:21 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Scenario/View Scenarios/input_Username_username'
+
+04-01-2026T00:33:21 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Scenario/View Scenarios/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Scenario/View Scenarios/input_Password_password'
+
+04-01-2026T00:33:21 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Scenario/View Scenarios/input_Password_password'
+
+04-01-2026T00:33:21 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Login")): Object: 'Object Repository/Scenario/View Scenarios/button_Login' is clicked on
+
+04-01-2026T00:33:21 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Login' is clicked on
+
+04-01-2026T00:33:21 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_View All Scenarios")): Object: 'Object Repository/Scenario/View Scenarios/button_View All Scenarios' is clicked on
+
+04-01-2026T00:33:23 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_View All Scenarios' is clicked on
+
+04-01-2026T00:33:23 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Start Training")): Object: 'Object Repository/Scenario/View Scenarios/button_Start Training' is clicked on
+
+04-01-2026T00:33:23 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Start Training' is clicked on
+
+04-01-2026T00:33:23 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:33:24 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Scenarios/Complete Questionnaire-Fail" time="142.764" classname="Test Cases/Scenarios/Complete Questionnaire-Fail" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:33:24 - [TEST_CASE][PASSED] - Test Cases/Scenarios/Complete Questionnaire-Fail: Test Cases/Scenarios/Complete Questionnaire-Fail
+
+04-01-2026T00:33:24 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:33:24 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:33:24 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:33:26 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:33:26 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:33:27 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:33:27 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Scenario/Questionnaire-fail/input_Username_username'
+
+04-01-2026T00:33:28 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Scenario/Questionnaire-fail/input_Username_username'
+
+04-01-2026T00:33:28 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Scenario/Questionnaire-fail/input_Password_password'
+
+04-01-2026T00:33:29 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Scenario/Questionnaire-fail/input_Password_password'
+
+04-01-2026T00:33:29 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Scenario/Questionnaire-fail/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Scenario/Questionnaire-fail/input_Password_password'
+
+04-01-2026T00:33:29 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Scenario/Questionnaire-fail/input_Password_password'
+
+04-01-2026T00:33:29 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_View All Scenarios")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_View All Scenarios' is clicked on
+
+04-01-2026T00:33:31 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_View All Scenarios' is clicked on
+
+04-01-2026T00:33:31 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_Start Training")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_Start Training' is clicked on
+
+04-01-2026T00:33:31 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_Start Training' is clicked on
+
+04-01-2026T00:33:31 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/div_Logout_h-1.5 w-full rounded-full transi_477328")): Object: 'Object Repository/Scenario/Questionnaire-fail/div_Logout_h-1.5 w-full rounded-full transi_477328' is clicked on
+
+04-01-2026T00:33:33 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/div_Logout_h-1.5 w-full rounded-full transi_477328' is clicked on
+
+04-01-2026T00:33:33 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_Continue to Practice")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_Continue to Practice' is clicked on
+
+04-01-2026T00:33:33 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_Continue to Practice' is clicked on
+
+04-01-2026T00:33:33 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141")): Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:33:34 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:33:34 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1"), "a"): Text 'a' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:33:44 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'. Try using Self-healing.
+
+04-01-2026T00:33:44 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:33:44 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:33:54 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'. Try using Self-healing.
+
+04-01-2026T00:33:54 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:33:54 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:33:54 - [MESSAGE][PASSED] - Text 'a' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:33:54 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:33:55 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:33:55 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1")): Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1' is clicked on
+
+04-01-2026T00:33:56 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1' is clicked on
+
+04-01-2026T00:33:56 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2"), "aa"): Text 'aa' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2'
+
+04-01-2026T00:34:06 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2'. Try using Self-healing.
+
+04-01-2026T00:34:06 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:34:06 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:34:16 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2'. Try using Self-healing.
+
+04-01-2026T00:34:16 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:34:16 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:34:16 - [MESSAGE][PASSED] - Text 'aa' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2'
+
+04-01-2026T00:34:16 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3"), "aas"): Text 'aas' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3'
+
+04-01-2026T00:34:26 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3'. Try using Self-healing.
+
+04-01-2026T00:34:27 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:34:27 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:34:37 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3'. Try using Self-healing.
+
+04-01-2026T00:34:37 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:34:37 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:34:37 - [MESSAGE][PASSED] - Text 'aas' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3'
+
+04-01-2026T00:34:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_Submit Command")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command' is clicked on
+
+04-01-2026T00:34:38 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command' is clicked on
+
+04-01-2026T00:34:38 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3")): Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3' is clicked on
+
+04-01-2026T00:34:38 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3' is clicked on
+
+04-01-2026T00:34:38 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4"), "aasd"): Text 'aasd' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4'
+
+04-01-2026T00:34:48 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4'. Try using Self-healing.
+
+04-01-2026T00:34:49 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:34:49 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:34:59 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4'. Try using Self-healing.
+
+04-01-2026T00:34:59 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:34:59 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:34:59 - [MESSAGE][PASSED] - Text 'aasd' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4'
+
+04-01-2026T00:34:59 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_Submit Command_1")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command_1' is clicked on
+
+04-01-2026T00:35:00 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command_1' is clicked on
+
+04-01-2026T00:35:00 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/html_CyberRangeCyberRangekatalonfont-family_dd8fd1")): Object: 'Object Repository/Scenario/Questionnaire-fail/html_CyberRangeCyberRangekatalonfont-family_dd8fd1' is clicked on
+
+04-01-2026T00:35:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/html_CyberRangeCyberRangekatalonfont-family_dd8fd1' is clicked on
+
+04-01-2026T00:35:01 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5"), "hydra -l admin -P passwords.txt ssh://192.168.1.10"): Text 'hydra -l admin -P passwords.txt ssh://192.168.1.10' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5'
+
+04-01-2026T00:35:11 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5'. Try using Self-healing.
+
+04-01-2026T00:35:11 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:35:11 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:35:21 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5'. Try using Self-healing.
+
+04-01-2026T00:35:22 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:35:22 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:35:22 - [MESSAGE][PASSED] - Text 'hydra -l admin -P passwords.txt ssh://192.168.1.10' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5'
+
+04-01-2026T00:35:22 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_Submit Command_2")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command_2' is clicked on
+
+04-01-2026T00:35:22 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command_2' is clicked on
+
+04-01-2026T00:35:22 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141")): Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:35:24 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:35:24 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6"), "gobuster dir -u http://192.168.1.10 -w common.txt"): Text 'gobuster dir -u http://192.168.1.10 -w common.txt' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6'
+
+04-01-2026T00:35:35 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6'. Try using Self-healing.
+
+04-01-2026T00:35:35 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:35:35 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:35:45 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6'. Try using Self-healing.
+
+04-01-2026T00:35:45 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:35:45 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:35:46 - [MESSAGE][PASSED] - Text 'gobuster dir -u http://192.168.1.10 -w common.txt' is set on object 'Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6'
+
+04-01-2026T00:35:46 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Questionnaire-fail/button_Submit Command_3")): Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command_3' is clicked on
+
+04-01-2026T00:35:46 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Questionnaire-fail/button_Submit Command_3' is clicked on
+
+04-01-2026T00:35:46 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:35:46 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Scenarios/Complete Questionnaire-Pass" time="59.021" classname="Test Cases/Scenarios/Complete Questionnaire-Pass" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:35:46 - [TEST_CASE][PASSED] - Test Cases/Scenarios/Complete Questionnaire-Pass: Test Cases/Scenarios/Complete Questionnaire-Pass
+
+04-01-2026T00:35:47 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:35:47 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:35:47 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:35:49 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:35:49 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:35:50 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:35:50 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/View Scenarios/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Scenario/View Scenarios/input_Username_username'
+
+04-01-2026T00:35:52 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Scenario/View Scenarios/input_Username_username'
+
+04-01-2026T00:35:52 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Scenario/View Scenarios/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Scenario/View Scenarios/input_Password_password'
+
+04-01-2026T00:35:52 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Scenario/View Scenarios/input_Password_password'
+
+04-01-2026T00:35:52 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Login")): Object: 'Object Repository/Scenario/View Scenarios/button_Login' is clicked on
+
+04-01-2026T00:35:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Login' is clicked on
+
+04-01-2026T00:35:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_View All Scenarios")): Object: 'Object Repository/Scenario/View Scenarios/button_View All Scenarios' is clicked on
+
+04-01-2026T00:35:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_View All Scenarios' is clicked on
+
+04-01-2026T00:35:54 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Start Training")): Object: 'Object Repository/Scenario/View Scenarios/button_Start Training' is clicked on
+
+04-01-2026T00:35:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Start Training' is clicked on
+
+04-01-2026T00:35:55 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Continue to Practice")): Object: 'Object Repository/Scenario/View Scenarios/button_Continue to Practice' is clicked on
+
+04-01-2026T00:35:57 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Continue to Practice' is clicked on
+
+04-01-2026T00:35:57 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141")): Object: 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:35:57 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:35:57 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1"), "hping3 -S --flood -p 80 192.168.1.10"): Text 'hping3 -S --flood -p 80 192.168.1.10' is set on object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:36:07 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1'. Try using Self-healing.
+
+04-01-2026T00:36:08 - [MESSAGE][INFO] - [WEBUI-SELF-HEALING] Failed Locator: '//input[@value='hping3 -S --flood -p 80 192.168.1.10']'.
+
+04-01-2026T00:36:08 - [MESSAGE][INFO] - [WEBUI-SELF-HEALING] Working Locator: '//input'.
+
+04-01-2026T00:36:09 - [MESSAGE][INFO] - [WEBUI-SELF-HEALING] Screenshot: D:/Courses/Service/Project/CyberRange/New folder/Tests/Reports/Self-healing/Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1_position.png
+
+04-01-2026T00:36:09 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:36:09 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:36:19 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1'. Try using Self-healing.
+
+04-01-2026T00:36:19 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:36:19 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:36:19 - [MESSAGE][PASSED] - Text 'hping3 -S --flood -p 80 192.168.1.10' is set on object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:36:19 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Submit Command")): Object: 'Object Repository/Scenario/View Scenarios/button_Submit Command' is clicked on
+
+04-01-2026T00:36:20 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Submit Command' is clicked on
+
+04-01-2026T00:36:20 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141")): Object: 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:36:22 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:36:22 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2"), "hping3 --udp --flood -p 53 192.168.1.10"): Text 'hping3 --udp --flood -p 53 192.168.1.10' is set on object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2'
+
+04-01-2026T00:36:32 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2'. Try using Self-healing.
+
+04-01-2026T00:36:32 - [MESSAGE][INFO] - [WEBUI-SELF-HEALING] Failed Locator: '//input[@value='hping3 --udp --flood -p 53 192.168.1.10']'.
+
+04-01-2026T00:36:32 - [MESSAGE][INFO] - [WEBUI-SELF-HEALING] Working Locator: '//input'.
+
+04-01-2026T00:36:32 - [MESSAGE][INFO] - [WEBUI-SELF-HEALING] Screenshot: D:/Courses/Service/Project/CyberRange/New folder/Tests/Reports/Self-healing/Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2_position.png
+
+04-01-2026T00:36:32 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:36:32 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:36:43 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2'. Try using Self-healing.
+
+04-01-2026T00:36:43 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:36:43 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:36:43 - [MESSAGE][PASSED] - Text 'hping3 --udp --flood -p 53 192.168.1.10' is set on object 'Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2'
+
+04-01-2026T00:36:43 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/View Scenarios/button_Submit Command_1")): Object: 'Object Repository/Scenario/View Scenarios/button_Submit Command_1' is clicked on
+
+04-01-2026T00:36:44 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/View Scenarios/button_Submit Command_1' is clicked on
+
+04-01-2026T00:36:44 - [TEST_STEP][PASSED] - delay(1.5): Delayed 1.5 second(s)
+
+04-01-2026T00:36:45 - [MESSAGE][PASSED] - Delayed 1.5 second(s)
+
+04-01-2026T00:36:45 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:36:45 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Scenarios/Reset Questionnaire" time="57.994" classname="Test Cases/Scenarios/Reset Questionnaire" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:36:45 - [TEST_CASE][PASSED] - Test Cases/Scenarios/Reset Questionnaire: Test Cases/Scenarios/Reset Questionnaire
+
+04-01-2026T00:36:46 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:36:46 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:36:46 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:36:47 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:36:47 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:36:49 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:36:49 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Reset Questionnaire/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Scenario/Reset Questionnaire/input_Username_username'
+
+04-01-2026T00:36:50 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Scenario/Reset Questionnaire/input_Username_username'
+
+04-01-2026T00:36:50 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Scenario/Reset Questionnaire/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Scenario/Reset Questionnaire/input_Password_password'
+
+04-01-2026T00:36:51 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Scenario/Reset Questionnaire/input_Password_password'
+
+04-01-2026T00:36:51 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Scenario/Reset Questionnaire/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Scenario/Reset Questionnaire/input_Password_password'
+
+04-01-2026T00:36:51 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Scenario/Reset Questionnaire/input_Password_password'
+
+04-01-2026T00:36:51 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/button_View All Scenarios")): Object: 'Object Repository/Scenario/Reset Questionnaire/button_View All Scenarios' is clicked on
+
+04-01-2026T00:36:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/button_View All Scenarios' is clicked on
+
+04-01-2026T00:36:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/button_Start Training")): Object: 'Object Repository/Scenario/Reset Questionnaire/button_Start Training' is clicked on
+
+04-01-2026T00:36:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/button_Start Training' is clicked on
+
+04-01-2026T00:36:54 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/button_Continue to Practice")): Object: 'Object Repository/Scenario/Reset Questionnaire/button_Continue to Practice' is clicked on
+
+04-01-2026T00:36:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/button_Continue to Practice' is clicked on
+
+04-01-2026T00:36:55 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141")): Object: 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:36:56 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:36:56 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1"), "hping3 -S --flood -p 80 192.168.1.10"): Text 'hping3 -S --flood -p 80 192.168.1.10' is set on object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:37:06 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1'. Try using Self-healing.
+
+04-01-2026T00:37:06 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:37:06 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:37:16 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1'. Try using Self-healing.
+
+04-01-2026T00:37:17 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:37:17 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:37:17 - [MESSAGE][PASSED] - Text 'hping3 -S --flood -p 80 192.168.1.10' is set on object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1'
+
+04-01-2026T00:37:17 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/button_Submit Command")): Object: 'Object Repository/Scenario/Reset Questionnaire/button_Submit Command' is clicked on
+
+04-01-2026T00:37:17 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/button_Submit Command' is clicked on
+
+04-01-2026T00:37:17 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141")): Object: 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:37:19 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141' is clicked on
+
+04-01-2026T00:37:19 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2"), "hping3 --udp --flood -p 53 192.168.1.10"): Text 'hping3 --udp --flood -p 53 192.168.1.10' is set on object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2'
+
+04-01-2026T00:37:29 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2'. Try using Self-healing.
+
+04-01-2026T00:37:29 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:37:29 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:37:40 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2'. Try using Self-healing.
+
+04-01-2026T00:37:40 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2' was broken. Propose an alternative one: '//input'.
+
+04-01-2026T00:37:40 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T00:37:40 - [MESSAGE][PASSED] - Text 'hping3 --udp --flood -p 53 192.168.1.10' is set on object 'Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2'
+
+04-01-2026T00:37:40 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/button_Submit Command_1")): Object: 'Object Repository/Scenario/Reset Questionnaire/button_Submit Command_1' is clicked on
+
+04-01-2026T00:37:41 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/button_Submit Command_1' is clicked on
+
+04-01-2026T00:37:41 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Scenario/Reset Questionnaire/button_Retake Questionnaire to Improve Score")): Object: 'Object Repository/Scenario/Reset Questionnaire/button_Retake Questionnaire to Improve Score' is clicked on
+
+04-01-2026T00:37:43 - [MESSAGE][PASSED] - Object: 'Object Repository/Scenario/Reset Questionnaire/button_Retake Questionnaire to Improve Score' is clicked on
+
+04-01-2026T00:37:43 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:37:43 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[04-01-2026T00:33:05 - [TEST_SUITE][PASSED] - Scenarios: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

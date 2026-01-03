@@ -1,0 +1,104 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1",
+      "brokenLocator": "//input[@value\u003d\u0027a\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2",
+      "brokenLocator": "//input[@value\u003d\u0027aa\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3",
+      "brokenLocator": "//input[@value\u003d\u0027aas\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4",
+      "brokenLocator": "//input[@value\u003d\u0027aasd\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5",
+      "brokenLocator": "//input[@value\u003d\u0027hydra -l admin -P passwords.txt ssh://192.168.1.10\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6",
+      "brokenLocator": "//input[@value\u003d\u0027gobuster dir -u http://192.168.1.10 -w common.txt\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1",
+      "brokenLocator": "//input[@value\u003d\u0027hping3 -S --flood -p 80 192.168.1.10\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2",
+      "brokenLocator": "//input[@value\u003d\u0027hping3 --udp --flood -p 53 192.168.1.10\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1",
+      "brokenLocator": "//input[@value\u003d\u0027hping3 -S --flood -p 80 192.168.1.10\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2",
+      "brokenLocator": "//input[@value\u003d\u0027hping3 --udp --flood -p 53 192.168.1.10\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_003254/Scenarios/20260104_003254/Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2_position.png"
+    }
+  ]
+}

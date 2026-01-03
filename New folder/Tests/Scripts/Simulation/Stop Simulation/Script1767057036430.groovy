@@ -17,3 +17,27 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://localhost:3000/scenarios')
+
+WebUI.setText(findTestObject('Object Repository/Simulation/launch/input_Username_username'), 'nader')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Simulation/launch/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
+
+WebUI.sendKeys(findTestObject('Object Repository/Simulation/launch/input_Password_password'), Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_View All Scenarios'))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_Start Training'))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_03. Simulation'))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_Launch Simulation'))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_Terminate Simulation'))
+
+WebUI.delay(2)
+
+WebUI.closeBrowser()
+

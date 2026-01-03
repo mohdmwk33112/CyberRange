@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Simulation" time="52.494" tests="3" failures="0" errors="0">
+   <testsuite name="Simulation" tests="3" failures="0" errors="0" time="52.494" skipped="0" timestamp="2026-01-03T22:38:24.593Z" hostname="nader - MSI" id="Test Suites/Simulation">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_003811\\Simulation\\20260104_003811"/>
+         <property name="logFiles" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_003811\\Simulation\\20260104_003811\\console0.log, D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_003811\\Simulation\\20260104_003811\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="nader - MSI"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Nader Ahmed Abdelsattar Abdeltawab"/>
+         <property name="hostAddress" value="192.168.202.1"/>
+         <property name="sessionId" value="7c06512e763b75c059d1dc7ca23ef9ac"/>
+         <property name="projectName" value="Tests"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Simulation/Launch Simulation-locked (fail)" time="19.563" classname="Test Cases/Simulation/Launch Simulation-locked (fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:38:25 - [TEST_CASE][PASSED] - Test Cases/Simulation/Launch Simulation-locked (fail): Test Cases/Simulation/Launch Simulation-locked (fail)
+
+04-01-2026T00:38:26 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:38:26 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:38:26 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:38:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:38:30 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:38:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:38:31 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Simulation/launch(fail)/input_Username_username"), "nader2"): Text 'nader2' is set on object 'Object Repository/Simulation/launch(fail)/input_Username_username'
+
+04-01-2026T00:38:33 - [MESSAGE][PASSED] - Text 'nader2' is set on object 'Object Repository/Simulation/launch(fail)/input_Username_username'
+
+04-01-2026T00:38:33 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Simulation/launch(fail)/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Simulation/launch(fail)/input_Password_password'
+
+04-01-2026T00:38:33 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Simulation/launch(fail)/input_Password_password'
+
+04-01-2026T00:38:33 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Simulation/launch(fail)/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Simulation/launch(fail)/input_Password_password'
+
+04-01-2026T00:38:33 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Simulation/launch(fail)/input_Password_password'
+
+04-01-2026T00:38:33 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch(fail)/button_View All Scenarios")): Object: 'Object Repository/Simulation/launch(fail)/button_View All Scenarios' is clicked on
+
+04-01-2026T00:38:35 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch(fail)/button_View All Scenarios' is clicked on
+
+04-01-2026T00:38:35 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch(fail)/button_Start Training")): Object: 'Object Repository/Simulation/launch(fail)/button_Start Training' is clicked on
+
+04-01-2026T00:38:36 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch(fail)/button_Start Training' is clicked on
+
+04-01-2026T00:38:36 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch(fail)/button_Continue to Practice")): Object: 'Object Repository/Simulation/launch(fail)/button_Continue to Practice' is clicked on
+
+04-01-2026T00:38:44 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch(fail)/button_Continue to Practice' is clicked on
+
+04-01-2026T00:38:44 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:38:45 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Simulation/Launch Simulation-Success" time="15.148" classname="Test Cases/Simulation/Launch Simulation-Success" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:38:45 - [TEST_CASE][PASSED] - Test Cases/Simulation/Launch Simulation-Success: Test Cases/Simulation/Launch Simulation-Success
+
+04-01-2026T00:38:45 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:38:45 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:38:45 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:38:47 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:38:47 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:38:47 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:38:47 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Simulation/launch/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Simulation/launch/input_Username_username'
+
+04-01-2026T00:38:49 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Simulation/launch/input_Username_username'
+
+04-01-2026T00:38:49 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Simulation/launch/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:38:50 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:38:50 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Simulation/launch/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:38:50 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:38:50 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_View All Scenarios")): Object: 'Object Repository/Simulation/launch/button_View All Scenarios' is clicked on
+
+04-01-2026T00:38:51 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_View All Scenarios' is clicked on
+
+04-01-2026T00:38:51 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_Start Training")): Object: 'Object Repository/Simulation/launch/button_Start Training' is clicked on
+
+04-01-2026T00:38:52 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_Start Training' is clicked on
+
+04-01-2026T00:38:52 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_03. Simulation")): Object: 'Object Repository/Simulation/launch/button_03. Simulation' is clicked on
+
+04-01-2026T00:38:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_03. Simulation' is clicked on
+
+04-01-2026T00:38:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_Launch Simulation")): Object: 'Object Repository/Simulation/launch/button_Launch Simulation' is clicked on
+
+04-01-2026T00:38:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_Launch Simulation' is clicked on
+
+04-01-2026T00:38:54 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+04-01-2026T00:38:59 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+04-01-2026T00:38:59 - [TEST_STEP][PASSED] - scrollToPosition(0, 10000000): Browser is scrolled to position x = 0, y = 10000000
+
+04-01-2026T00:38:59 - [MESSAGE][PASSED] - Browser is scrolled to position x = 0, y = 10000000
+
+04-01-2026T00:38:59 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:39:00 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Simulation/Stop Simulation" time="16.814" classname="Test Cases/Simulation/Stop Simulation" status="PASSED">
+         <system-out><![CDATA[04-01-2026T00:39:00 - [TEST_CASE][PASSED] - Test Cases/Simulation/Stop Simulation: Test Cases/Simulation/Stop Simulation
+
+04-01-2026T00:39:00 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T00:39:00 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T00:39:00 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T00:39:03 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T00:39:03 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/scenarios"): Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:39:04 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/scenarios' successfully
+
+04-01-2026T00:39:04 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Simulation/launch/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/Simulation/launch/input_Username_username'
+
+04-01-2026T00:39:06 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/Simulation/launch/input_Username_username'
+
+04-01-2026T00:39:06 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Simulation/launch/input_Password_password"), "n+7DTJndE0qI+loUi7Fb3w=="): Text ****** has been set on object 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:39:07 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:39:07 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Simulation/launch/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:39:07 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Simulation/launch/input_Password_password'
+
+04-01-2026T00:39:07 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_View All Scenarios")): Object: 'Object Repository/Simulation/launch/button_View All Scenarios' is clicked on
+
+04-01-2026T00:39:09 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_View All Scenarios' is clicked on
+
+04-01-2026T00:39:09 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_Start Training")): Object: 'Object Repository/Simulation/launch/button_Start Training' is clicked on
+
+04-01-2026T00:39:10 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_Start Training' is clicked on
+
+04-01-2026T00:39:10 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_03. Simulation")): Object: 'Object Repository/Simulation/launch/button_03. Simulation' is clicked on
+
+04-01-2026T00:39:11 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_03. Simulation' is clicked on
+
+04-01-2026T00:39:11 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_Launch Simulation")): Object: 'Object Repository/Simulation/launch/button_Launch Simulation' is clicked on
+
+04-01-2026T00:39:12 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_Launch Simulation' is clicked on
+
+04-01-2026T00:39:12 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Simulation/launch/button_Terminate Simulation")): Object: 'Object Repository/Simulation/launch/button_Terminate Simulation' is clicked on
+
+04-01-2026T00:39:14 - [MESSAGE][PASSED] - Object: 'Object Repository/Simulation/launch/button_Terminate Simulation' is clicked on
+
+04-01-2026T00:39:14 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T00:39:16 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T00:39:16 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T00:39:17 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[04-01-2026T00:38:24 - [TEST_SUITE][PASSED] - Simulation: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>
