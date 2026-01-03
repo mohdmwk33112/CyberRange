@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>verify error when updating to an invalid or duplicate email.</description>
+   <name>Update Email - Fail</name>
+   <tag>FE-Profile-07</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>c4e98e5c-eb55-416e-bf13-38934b3e937b</testCaseGuid>
+</TestCaseEntity>

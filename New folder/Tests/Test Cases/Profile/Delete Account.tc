@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TestCaseEntity>
    <description>Delete user successfully from the profile page</description>
-   <name>Delete User</name>
-   <tag>TC-PROF-04</tag>
+   <name>Delete Account</name>
+   <tag>FE-Profile-08</tag>
    <comment></comment>
    <recordOption>OTHER</recordOption>
    <testCaseGuid>fa3bcfdf-5099-43dc-8c0d-7f679c01c4b2</testCaseGuid>

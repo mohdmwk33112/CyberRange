@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Clears the username then tries to save</description>
+   <name>Update Username - Invalid Error (Fail)</name>
+   <tag>FE-Profile-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>61263cee-8337-4d88-ac6e-f32f23542a05</testCaseGuid>
+</TestCaseEntity>
