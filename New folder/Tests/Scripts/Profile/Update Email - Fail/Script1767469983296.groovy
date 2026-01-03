@@ -19,17 +19,35 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:3000/auth/signup')
+WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
-WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Username_username'), 'mohamed1')
+WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail')
 
-WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Email_email'), 'mohamed@gmail.com')
+WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_Password_password'), 'ctjkNZzQVZQqnpFh3PgUMg==')
 
-WebUI.setEncryptedText(findTestObject('SignUp/Page_CyberRange/input_Password_password'), 'CMnPGly1SfJKz+QUrjJbYA==')
+WebUI.click(findTestObject('Object Repository/Profile/button_Login'))
 
-WebUI.click(findTestObject('SignUp/Page_CyberRange/button_Sign Up'))
+WebUI.openBrowser('')
 
-WebUI.delay(2)
+WebUI.closeBrowser()
+
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://localhost:3000/auth/login')
+
+WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_Password_password'), 'ctjkNZzQVZQqnpFh3PgUMg==')
+
+WebUI.click(findTestObject('Object Repository/Profile/button_Login'))
+
+WebUI.click(findTestObject('Object Repository/Profile/button_View Profile'))
+
+WebUI.click(findTestObject('Object Repository/Profile/button_Edit Profile'))
+
+WebUI.setText(findTestObject('Object Repository/Profile/input_Email_email'), '')
+
+WebUI.click(findTestObject('Object Repository/Profile/button_Save Changes'))
 
 WebUI.closeBrowser()
 

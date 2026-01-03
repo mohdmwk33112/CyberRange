@@ -332,3 +332,30 @@ Implemented a validation check in `handleUpdateProfile` that ensures both `usern
 
 ### Files Modified
 - `frontend/app/users/profile/[id]/page.tsx`
+---
+
+## Bug #14: Missing Username Uniqueness Check during Signup
+**Status**: ✅ FIXED  
+**Severity**: Medium  
+**Date Reported**: 2026-01-03  
+**Date Fixed**: 2026-01-03
+
+### Description
+The signup process only checked for unique emails, allowing multiple accounts to be created with the same username. This could lead to confusion and potential issues with authentication lookups.
+
+### Steps to Reproduce
+1. Navigate to the Signup page.
+2. Register an account with username "uniqueuser".
+3. Log out.
+4. Attempt to register another account with the same username "uniqueuser" but a different email.
+5. **Actual**: The account is created successfully.
+6. **Expected**: The signup should fail with an error "This username is already taken".
+
+### Root Cause
+`backend/microservices/src/auth/auth.service.ts` was missing a database check for the `username` field during the registration process.
+
+### Resolution
+Modified the `register` method in `auth.service.ts` to perform a `findOne` query on the `username` field. If a user is found, a `ConflictException` is thrown with an appropriate message.
+
+### Files Modified
+- `backend/microservices/src/auth/auth.service.ts`

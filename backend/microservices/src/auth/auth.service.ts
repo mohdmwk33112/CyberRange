@@ -28,6 +28,12 @@ export class AuthService {
             throw new ConflictException('This email is already registered. Would you like to sign in instead?');
         }
 
+        // Check if username already exists
+        const existingUsername = await this.userModel.findOne({ username });
+        if (existingUsername) {
+            throw new ConflictException('This username is already taken. Please choose another one.');
+        }
+
         // Password validation
         const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}$/;
         if (!passwordRegex.test(password)) {

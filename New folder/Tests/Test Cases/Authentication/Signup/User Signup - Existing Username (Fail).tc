@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify error when registering with a username that is already taken</description>
+   <name>User Signup - Existing Username (Fail)</name>
+   <tag>FE-Sign-05</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>3b1cb797-8bc5-4cc6-8000-1f2ebcd1efc7</testCaseGuid>
+</TestCaseEntity>

@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>3ed2bec3-eafb-45be-a20c-602c424cc097</webElementGuid>
+      <webElementGuid>fb60e389-4ea3-497c-83a2-5408c866ba7d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,7 +37,7 @@
       <name>class</name>
       <type>Main</type>
       <value>inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3</value>
-      <webElementGuid>0eb1fdaa-b91e-44b0-842a-f16552646155</webElementGuid>
+      <webElementGuid>4f4ac913-62bd-4326-9105-2594fe55b8af</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -45,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>Edit Profile</value>
-      <webElementGuid>89a64965-43cd-4071-b1dd-f62a8ea78cb3</webElementGuid>
+      <webElementGuid>14068314-1275-4d21-9cef-09c3e47fe042</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[@class=&quot;dark&quot;]/body[@class=&quot;geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased&quot;]/div[@class=&quot;flex min-h-screen w-full bg-muted/20&quot;]/div[@class=&quot;container mx-auto py-10 max-w-4xl&quot;]/div[@class=&quot;grid gap-6 md:grid-cols-[1fr_2fr]&quot;]/div[@class=&quot;space-y-6&quot;]/div[@class=&quot;rounded-lg border bg-card text-card-foreground shadow-sm&quot;]/div[@class=&quot;p-6 flex flex-row items-center justify-between space-y-0 pb-4&quot;]/button[@class=&quot;inline-flex items-center justify-center whitespace-nowrap text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-9 rounded-md px-3&quot;]</value>
-      <webElementGuid>3c2905e1-9e5a-4d04-b13a-6a418976e5ca</webElementGuid>
+      <webElementGuid>dcdee4cc-e663-447c-8a7b-6e275631f213</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -61,7 +61,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Profile Details'])[1]/following::button[1]</value>
-      <webElementGuid>d445dab7-4b77-4f75-82f3-bf8bad8de7e7</webElementGuid>
+      <webElementGuid>fcca70f8-52d8-4f9c-9a4b-f3541dcc5d3c</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -69,7 +69,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Username'])[1]/preceding::button[1]</value>
-      <webElementGuid>3755a86d-f5cd-4857-ba29-69f294697efc</webElementGuid>
+      <webElementGuid>fd90e5db-8465-47c5-971b-c103bcc00818</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Email'])[1]/preceding::button[1]</value>
-      <webElementGuid>7fe6b607-cdf7-4cde-a276-389bc1347849</webElementGuid>
+      <webElementGuid>be4e3b32-8834-4314-98c9-7de6b387170e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='Edit Profile']/parent::*</value>
-      <webElementGuid>058bd95b-98e3-4eac-87cc-8003a88ceece</webElementGuid>
+      <webElementGuid>a2d03e0e-3bfe-4354-b449-1de89068e187</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -93,7 +93,7 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//div/button</value>
-      <webElementGuid>29833a0a-91c9-4c73-adb1-e10a52da1b32</webElementGuid>
+      <webElementGuid>e2990a7a-5fad-40b6-8b57-198448444e65</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -101,6 +101,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//button[(text() = 'Edit Profile' or . = 'Edit Profile')]</value>
-      <webElementGuid>b0310d3e-27b6-4dfa-89f9-7070d30372ae</webElementGuid>
+      <webElementGuid>c6637e11-d18a-44c5-84a8-21df22ad6485</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

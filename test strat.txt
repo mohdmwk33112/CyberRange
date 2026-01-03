@@ -1,0 +1,49 @@
+1. Scope and overview: 
+Creating a new Application (Say Google Mail) which offers email services. Test the functionality of emails and make sure it gives value to the customer.>> AGIL ,WATERFFALL
+2. Test Approach: 
+In this section, we usually define the following
+•	Test levels
+•	Test types
+•	Roles and responsibilities 
+•	Environment requirements
+3. Test Levels:
+Levels of testing such as unit testing, integration testing, system testing and user acceptance testing.
+4. Test Types: 
+This section lists out the testing types that will be performed during QA Testing.
+5. Roles and Responsibilities
+
+Role	Responsibilities
+Project Manger	
+Project Lead	
+QA	
+
+6. Environment requirements: 
+Hardware and software ware requirements 
+7. Testing tools: 
+List of all the testing tools
+8. Industry standards to follow: 
+This section describes the industry standard to produce high quality system that meets or exceeds customer expectations. 
+9. Test deliverables: 
+List of all the test deliverables 
+10. Testing metrics: 
+This section describes the metrics that should be used in the project to analyze the project status. 
+11. Requirement Traceability Matrix: 
+Requirement traceability matrix is used to trace the requirements to the tests that are needed to verify whether the requirements are fulfilled.
+12. Risk and mitigation
+S.No	Risk	Mitigation Plan	Impact
+			
+			
+			
+
+13. Reporting tool: 
+JIRA will be the reporting tool for this project.
+14 Test summary: 
+15. Approvals: 
+
+The following people are required to approve the Test Strategy
+
+Approved By Role 	Approved By Name
+	
+	
+	
+

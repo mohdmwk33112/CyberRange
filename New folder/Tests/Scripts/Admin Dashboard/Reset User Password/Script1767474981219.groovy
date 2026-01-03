@@ -19,15 +19,24 @@ import org.openqa.selenium.Keys as Keys
 
 WebUI.openBrowser('')
 
-WebUI.navigateToUrl('http://localhost:3000/auth/signup')
+WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
-WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Username_username'), 'mohamed1')
+WebUI.setText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Username_username'), 
+    'admin')
 
-WebUI.setText(findTestObject('SignUp/Page_CyberRange/input_Email_email'), 'mohamed@gmail.com')
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Password_password'), 
+    '/5S6MFFLcE4ZOg6V2jhgMg==')
 
-WebUI.setEncryptedText(findTestObject('SignUp/Page_CyberRange/input_Password_password'), 'CMnPGly1SfJKz+QUrjJbYA==')
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Login'))
 
-WebUI.click(findTestObject('SignUp/Page_CyberRange/button_Sign Up'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_User Management'))
+
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/svg_student_lucide lucide-key-round w-4 h-4'))
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_New Password_new-password'), 
+    'ctjkNZzQVZQqnpFh3PgUMg==')
+
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Update Password'))
 
 WebUI.delay(2)
 
