@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Password_password</name>
+   <name>input_Username_username</name>
    <tag></tag>
-   <elementGuidId>c3d6f672-79bc-43e3-bcaf-cfee1c71f1bc</elementGuidId>
+   <elementGuidId>565838f0-d829-41b7-8211-7c9ba871069e</elementGuidId>
    <selectorCollection>
       <entry>
          <key>CSS</key>
-         <value>#password</value>
+         <value>#username</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='password']</value>
+         <value>//input[@id='username']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <smartLocatorCollection>
       <entry>
          <key>SMART_LOCATOR</key>
-         <value>internal:label=&quot;Password&quot;i</value>
+         <value>internal:attr=[placeholder=&quot;johndoe&quot;i]</value>
       </entry>
    </smartLocatorCollection>
    <smartLocatorEnabled>false</smartLocatorEnabled>
@@ -29,15 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>7a5c82f2-6c36-46e7-b812-c3590bb2608e</webElementGuid>
-   </webElementProperties>
-   <webElementProperties>
-      <isSelected>true</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>type</name>
-      <type>Main</type>
-      <value>password</value>
-      <webElementGuid>51f27a42-3ebb-42df-8f29-5e0e19689e0f</webElementGuid>
+      <webElementGuid>50916718-3d4c-41a1-85cc-c91b5d01059e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,54 +37,62 @@
       <name>class</name>
       <type>Main</type>
       <value>flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50</value>
-      <webElementGuid>c8efd482-acfb-4677-a220-31f6813b9d0f</webElementGuid>
+      <webElementGuid>d18bdd01-9e4e-44d1-a3e1-6cae00e41ffd</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>password</value>
-      <webElementGuid>8d36c67c-705d-43d1-82ac-56a6e90169b2</webElementGuid>
+      <value>username</value>
+      <webElementGuid>44ca57b0-ccfc-4051-a656-90477f3c51c3</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>johndoe</value>
+      <webElementGuid>a9d255ea-d754-45c8-b5da-f72d7a2b16ce</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>name</name>
       <type>Main</type>
-      <value>password</value>
-      <webElementGuid>f911583a-64e6-4491-96aa-6779488febba</webElementGuid>
+      <value>username</value>
+      <webElementGuid>0364680e-0b2f-4376-b9f2-24d167bd3e99</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;password&quot;)</value>
-      <webElementGuid>0285f3ed-6df0-4ca3-a5cc-4fd23e7bc379</webElementGuid>
+      <value>id(&quot;username&quot;)</value>
+      <webElementGuid>c02ecc5b-9fbb-417f-b600-ee88cd07c669</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//input[@id='password']</value>
-      <webElementGuid>fa52d70e-d174-43bb-bd23-dbc0025ed5c6</webElementGuid>
+      <value>//input[@id='username']</value>
+      <webElementGuid>ad62f3b0-d015-42bd-864e-299532aa3c3f</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//div[2]/input</value>
-      <webElementGuid>e519b833-bc24-4366-b8ea-784b1ceb3c6d</webElementGuid>
+      <value>//input</value>
+      <webElementGuid>25c3739a-8d5b-4384-8fde-0ed6ee0c606e</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:customAttributes</name>
       <type>Main</type>
-      <value>//input[@type = 'password' and @id = 'password' and @name = 'password']</value>
-      <webElementGuid>55b089ce-a550-42ea-90cf-8393e101f53e</webElementGuid>
+      <value>//input[@id = 'username' and @placeholder = 'johndoe' and @name = 'username']</value>
+      <webElementGuid>fe6b91cf-986b-4292-a5d1-3ad2831c8a7b</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -25,6 +25,7 @@ export default function UserProfilePage({ params }: { params: { id: string } }) 
     // Editing State
     const [isEditing, setIsEditing] = useState(false);
     const [editForm, setEditForm] = useState({ username: '', email: '' });
+    const [formErrors, setFormErrors] = useState({ username: '', email: '' });
     const [isSaving, setIsSaving] = useState(false);
 
     // Password State
@@ -68,7 +69,19 @@ export default function UserProfilePage({ params }: { params: { id: string } }) 
     };
 
     const handleUpdateProfile = async () => {
+        // Validation
+        const newErrors = {
+            username: !editForm.username.trim() ? 'Username is required' : '',
+            email: !editForm.email.trim() ? 'Email is required' : !editForm.email.includes('@') ? 'Invalid email format' : '',
+        };
+
+        if (newErrors.username || newErrors.email) {
+            setFormErrors(newErrors);
+            return;
+        }
+
         setIsSaving(true);
+        setFormErrors({ username: '', email: '' });
         try {
             await userApi.updateProfile(userId, editForm);
             toast({ title: 'Profile Updated', description: 'Your changes have been saved.' });
@@ -189,8 +202,13 @@ export default function UserProfilePage({ params }: { params: { id: string } }) 
                                         id="username"
                                         value={isEditing ? editForm.username : userProfile.username}
                                         disabled={!isEditing}
-                                        onChange={(e) => setEditForm({ ...editForm, username: e.target.value })}
+                                        onChange={(e) => {
+                                            setEditForm({ ...editForm, username: e.target.value });
+                                            if (formErrors.username) setFormErrors({ ...formErrors, username: '' });
+                                        }}
+                                        className={formErrors.username ? "border-destructive focus-visible:ring-destructive" : ""}
                                     />
+                                    {formErrors.username && <p className="text-xs text-destructive">{formErrors.username}</p>}
                                 </div>
                                 <div className="grid gap-2">
                                     <Label htmlFor="email">Email</Label>
@@ -198,8 +216,13 @@ export default function UserProfilePage({ params }: { params: { id: string } }) 
                                         id="email"
                                         value={isEditing ? editForm.email : userProfile.email}
                                         disabled={!isEditing}
-                                        onChange={(e) => setEditForm({ ...editForm, email: e.target.value })}
+                                        onChange={(e) => {
+                                            setEditForm({ ...editForm, email: e.target.value });
+                                            if (formErrors.email) setFormErrors({ ...formErrors, email: '' });
+                                        }}
+                                        className={formErrors.email ? "border-destructive focus-visible:ring-destructive" : ""}
                                     />
+                                    {formErrors.email && <p className="text-xs text-destructive">{formErrors.email}</p>}
                                 </div>
                                 <div className="grid gap-2">
                                     <Label htmlFor="role">Role</Label>

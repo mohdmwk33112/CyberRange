@@ -33,7 +33,7 @@ import {
 export default function AdminDashboard() {
     const { data: pods, isLoading, error, refetch, isFetching } = useClusterHealth();
     const { toast } = useToast();
-    const { user, isAuthenticated } = useAuthStore();
+    const { user, isAuthenticated: checkAuth } = useAuthStore();
     const router = useRouter();
     const [isHydrated, setIsHydrated] = React.useState(false);
 
@@ -44,9 +44,19 @@ export default function AdminDashboard() {
     useEffect(() => {
         if (!isHydrated) return;
 
-        if (!isAuthenticated() || !user) {
+        const authenticated = checkAuth();
+
+        // If definitively not authenticated, go to login
+        if (!authenticated) {
             router.push('/auth/login');
-        } else if (user.role !== 'admin') {
+            return;
+        }
+
+        // If authenticated but user data hasn't finished hydrating/loading yet, wait
+        if (!user) return;
+
+        // Finally check role
+        if (user.role !== 'admin') {
             toast({
                 title: 'Access Denied',
                 description: 'You must be an administrator to access this page.',
@@ -54,11 +64,13 @@ export default function AdminDashboard() {
             });
             router.push('/dashboard');
         }
-    }, [isHydrated, isAuthenticated, user, router, toast]);
+    }, [isHydrated, checkAuth, user, router, toast]);
 
-    // Simple authorized check to prevent flash of content
-    if (!isHydrated || !isAuthenticated() || user?.role !== 'admin') {
-        return null; // Or a loading spinner while redirecting
+    // Simplified authorized check for rendering
+    const isAuthorized = isHydrated && checkAuth() && user?.role === 'admin';
+
+    if (!isAuthorized) {
+        return null;
     }
 
     const handleRefresh = async () => {

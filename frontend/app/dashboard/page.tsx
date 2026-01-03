@@ -8,9 +8,36 @@ import Link from 'next/link';
 import { Activity, BookOpen, User, Shield, TrendingUp, ChevronRight } from 'lucide-react';
 import { ModeToggle } from '@/components/ui/mode-toggle';
 
+import { useRouter } from 'next/navigation';
+import { useEffect, useState } from 'react';
+
 export default function DashboardPage() {
-    const user = useAuthStore((state) => state.user) as any;
-    const userId = user?._id || user?.sub || '';
+    const router = useRouter();
+    const { user, isAuthenticated: checkAuth } = useAuthStore();
+    const [isHydrated, setIsHydrated] = useState(false);
+
+    useEffect(() => {
+        setIsHydrated(true);
+    }, []);
+
+    useEffect(() => {
+        if (!isHydrated) return;
+
+        const authenticated = checkAuth();
+
+        if (!authenticated) {
+            router.push('/auth/login');
+            return;
+        }
+
+        if (!user) return;
+
+        if (user.role === 'admin') {
+            router.push('/admin');
+        }
+    }, [isHydrated, checkAuth, user, router]);
+
+    const userId = (user as any)?._id || (user as any)?.sub || '';
     const { userProfile, scenarios, simulations, progress, isLoading, error } = useDashboardData(userId);
 
     const completedScenarios = progress.filter(p => p.status === 'completed');
@@ -24,7 +51,7 @@ export default function DashboardPage() {
         .sort((a: any, b: any) => new Date(b.startedAt || b.timestamp).getTime() - new Date(a.startedAt || a.timestamp).getTime())
         .slice(0, 5);
 
-    if (isLoading) {
+    if (!isHydrated || isLoading || (user && user.role === 'admin')) {
         return (
             <div className="flex min-h-screen items-center justify-center bg-background">
                 <div className="text-center">

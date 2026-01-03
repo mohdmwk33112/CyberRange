@@ -17,16 +17,10 @@ export default function LandingPage() {
 
   useEffect(() => {
     setMounted(true)
-    if (isAuthenticated()) {
-      router.replace('/dashboard')
-    }
-  }, [isAuthenticated, router])
+  }, [])
 
   // Prevent flash or render basic structure while checking
   if (!mounted) return null;
-
-  // If authenticated, we are redirecting, so don't render content to avoid flash
-  if (isAuthenticated()) return null;
 
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
@@ -61,16 +55,26 @@ export default function LandingPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href="/auth/signup">
-                  <Button size="lg" className="h-12 px-8 text-lg shadow-lg shadow-primary/20">
-                    Start Training <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/auth/login">
-                  <Button variant="outline" size="lg" className="h-12 px-8 text-lg backdrop-blur-sm bg-background/50 hover:bg-accent/50">
-                    Log In
-                  </Button>
-                </Link>
+                {isAuthenticated() ? (
+                  <Link href="/dashboard">
+                    <Button size="lg" className="h-12 px-8 text-lg shadow-lg shadow-primary/20">
+                      Go to Dashboard <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                ) : (
+                  <>
+                    <Link href="/auth/signup">
+                      <Button size="lg" className="h-12 px-8 text-lg shadow-lg shadow-primary/20">
+                        Start Training <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                    <Link href="/auth/login">
+                      <Button variant="outline" size="lg" className="h-12 px-8 text-lg backdrop-blur-sm bg-background/50 hover:bg-accent/50">
+                        Log In
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
