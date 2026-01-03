@@ -21,23 +21,27 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
-WebUI.setText(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/input_Username_username'), 'mohamed')
+WebUI.setText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'), 'mohamed')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/input_Password_password'), 'CMnPGly1SfLjmbcgmrxzhQ==')
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'), 
+    'CMnPGly1SfJKz+QUrjJbYA==')
 
-WebUI.click(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/button_Login'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login'))
 
-WebUI.waitForPageLoad(500)
+WebUI.waitForPageLoad(0)
 
-WebUI.click(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/button_Logout'))
+WebUI.navigateToUrl('http://localhost:3000/admin')
 
-WebUI.click(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/button_Log In'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Logout'))
 
-WebUI.setText(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/input_Username_username'), 'admin')
+WebUI.setText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'), 'admin')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/input_Password_password'), '/5S6MFFLcE4ZOg6V2jhgMg==')
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'), 
+    '/5S6MFFLcE4ZOg6V2jhgMg==')
 
-WebUI.click(findTestObject('Object Repository/RoleBasedRepo/Page_CyberRange/button_Login'))
+WebUI.waitForPageLoad(5)
 
-WebUI.closeBrowser()
+WebUI.navigateToUrl('http://localhost:3000/dashboard')
+
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login'))
 

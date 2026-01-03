@@ -229,4 +229,106 @@ The `UserSchema` in `backend/microservices/src/auth/user.model.ts` did not have 
 
 ### Files Modified
 - `backend/microservices/src/auth/user.model.ts`
-- `frontend/features/admin/UserManagement.tsx`
+---
+
+## Bug #10: Forced Dashboard Redirection from Landing Page
+**Status**: ✅ FIXED  
+**Severity**: Low  
+**Date Reported**: 2026-01-03  
+**Date Fixed**: 2026-01-03
+
+### Description
+Authenticated users were automatically redirected from the landing page (`/`) to the dashboard (`/dashboard`), preventing them from viewing the landing page content.
+
+### Steps to Reproduce
+1. Log in as any user.
+2. Navigate directly to the base URL `http://localhost:3000/`.
+3. **Actual**: Redirected to `/dashboard`.
+4. **Expected**: Landing page is displayed.
+
+### Root Cause
+An `useEffect` hook in `frontend/app/page.tsx` was checking `isAuthenticated()` and calling `router.replace('/dashboard')` immediately on mount.
+
+### Resolution
+Removed the auto-redirection logic. The landing page now renders for all users, and the call-to-action buttons dynamically update to "Go to Dashboard" if the user is logged in.
+
+### Files Modified
+- `frontend/app/page.tsx`
+---
+
+## Bug #11: Missing Role-Based Redirection on Student Dashboard
+**Status**: ✅ FIXED  
+**Severity**: Low  
+**Date Reported**: 2026-01-03  
+**Date Fixed**: 2026-01-03
+
+### Description
+Administrators were able to access the student dashboard (`/dashboard`) by manually typing the URL, which showed them the student interface with admin data.
+
+### Steps to Reproduce
+1. Log in as an admin.
+2. Manually navigate to `http://localhost:3000/dashboard`.
+3. **Actual**: Admin sees the student dashboard.
+4. **Expected**: Admin should be redirected to `/admin`.
+
+### Root Cause
+`frontend/app/dashboard/page.tsx` lacked an authentication and role-based redirect guard.
+
+### Resolution
+Implemented a `useEffect` hook in the dashboard page to check for authentication and user role. Admins are now automatically redirected to the administrative interface (`/admin`).
+
+### Files Modified
+- `frontend/app/dashboard/page.tsx`
+---
+
+## Bug #12: Accidental Logout on Unauthorized Access
+**Status**: ✅ FIXED  
+**Severity**: Medium  
+**Date Reported**: 2026-01-03  
+**Date Fixed**: 2026-01-03
+
+### Description
+Users were being logged out when attempting to access unauthorized routes (e.g., a student accessing `/admin`). Instead of just being redirected to their dashboard, the session was lost.
+
+### Steps to Reproduce
+1. Log in as a student.
+2. Manually navigate to `http://localhost:3000/admin`.
+3. **Actual**: Redirected to `/auth/login` and logged out.
+4. **Expected**: Redirected to `/dashboard` with an "Access Denied" message, keeping the session.
+
+### Root Cause
+The authentication guard logic `if (!checkAuth() || !user)` was triggering a redirect to login if the `user` object hadn't finished hydrating from localStorage yet, even if the token was present.
+
+### Resolution
+Refined the guards in both `app/admin/page.tsx` and `app/dashboard/page.tsx` to explicitly wait for the `user` object to hydrate if a valid token is detected, before making role-based redirection decisions.
+
+### Files Modified
+- `frontend/app/admin/page.tsx`
+- `frontend/app/dashboard/page.tsx`
+---
+
+## Bug #13: Missing Validation on User Profile Update
+**Status**: ✅ FIXED  
+**Severity**: Low  
+**Date Reported**: 2026-01-03  
+**Date Fixed**: 2026-01-03
+
+### Description
+The user profile update form allowed saving with empty username or email fields, which could lead to data inconsistency and a poor user experience.
+
+### Steps to Reproduce
+1. Navigate to the User Profile page.
+2. Click "Edit Profile".
+3. Remove all text from the "Username" or "Email" field.
+4. Click "Save Changes".
+5. **Actual**: The form attempts to save the empty fields.
+6. **Expected**: Submitting empty required fields should be blocked, and an error message should be displayed.
+
+### Root Cause
+`frontend/app/users/profile/[id]/page.tsx` lacked client-side validation for empty strings before calling the update API.
+
+### Resolution
+Implemented a validation check in `handleUpdateProfile` that ensures both `username` and `email` are non-empty and that the email follows a basic format. Added `formErrors` state to display inline error messages and highlight problematic fields in red.
+
+### Files Modified
+- `frontend/app/users/profile/[id]/page.tsx`
