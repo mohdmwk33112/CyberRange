@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify error when registering with an email that is already taken.</description>
+   <name>User Signup - Existng email (Fail)</name>
+   <tag>FE-Sign-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>97147f06-00ee-4aad-af58-20a8d064c1b0</testCaseGuid>
+</TestCaseEntity>

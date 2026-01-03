@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify behavior when fields are left empty.</description>
+   <name>User Signup - Empty fields (Fail)</name>
+   <tag>FE-Sign-04</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>9e47e2e0-d99d-406e-81f6-e801cc9969a8</testCaseGuid>
+</TestCaseEntity>

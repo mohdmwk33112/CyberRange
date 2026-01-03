@@ -10,8 +10,18 @@ export class AuthController {
     constructor(private readonly authService: AuthService) { }
 
     @MessagePattern({ cmd: 'register' })
-    register(createUserDto: CreateUserDto) {
-        return this.authService.register(createUserDto);
+    async register(createUserDto: CreateUserDto) {
+        try {
+            const user = await this.authService.register(createUserDto);
+            return user;
+        } catch (error: any) {
+            // Return error in a structured format for the gateway
+            return {
+                status: 'error',
+                statusCode: error.status || 500,
+                message: error.message || 'Internal server error'
+            };
+        }
     }
 
     @MessagePattern({ cmd: 'login' })

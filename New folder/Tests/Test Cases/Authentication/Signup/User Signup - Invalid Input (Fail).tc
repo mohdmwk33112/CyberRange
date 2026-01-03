@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify validation for invalid email or weak password (based on the password rules).</description>
+   <name>User Signup - Invalid Input (Fail)</name>
+   <tag>FE-Sign-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>76aa1635-0712-427c-b854-0be3754cbeaf</testCaseGuid>
+</TestCaseEntity>

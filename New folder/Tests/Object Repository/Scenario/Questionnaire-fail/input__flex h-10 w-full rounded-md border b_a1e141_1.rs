@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>input__flex h-10 w-full rounded-md border b_a1e141_1</name>
+   <tag></tag>
+   <elementGuidId>b9b34326-0424-4e83-bd49-526a66359f71</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>//input[@value='a']</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>internal:attr=[placeholder=&quot;Type your command here...&quot;i]</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>input</value>
+      <webElementGuid>2f7ea4f9-3d42-4f2e-a7e4-d8cdd665caba</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 bg-transparent border-none text-green-400 font-mono focus-visible:ring-0 focus-visible:ring-offset-0</value>
+      <webElementGuid>8351a318-2bcb-45dc-976c-dba578067b00</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Type your command here...</value>
+      <webElementGuid>fddcd0ee-0f9a-4962-bcc8-1e6d4b73ff5e</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>a</value>
+      <webElementGuid>930f82c0-a2d7-4101-9941-313e88ba2290</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>wfd-id</name>
+      <type>Main</type>
+      <value>id2</value>
+      <webElementGuid>8267a29d-9e9c-40c2-951a-d53e478e1ecc</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[@class=&quot;dark&quot;]/body[@class=&quot;geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased&quot;]/div[@class=&quot;min-h-screen bg-background&quot;]/main[@class=&quot;container max-w-5xl mx-auto p-6 md:p-8&quot;]/div[@class=&quot;space-y-8&quot;]/div[@class=&quot;animate-in fade-in slide-in-from-bottom-4 duration-500&quot;]/div[@class=&quot;space-y-4&quot;]/div[@class=&quot;rounded-lg border text-card-foreground shadow-sm border-border/40 bg-black/90 backdrop-blur&quot;]/div[@class=&quot;p-4 font-mono text-sm&quot;]/div[@class=&quot;flex items-center gap-2&quot;]/input[@class=&quot;flex h-10 w-full rounded-md border border-input px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50 bg-transparent border-none text-green-400 font-mono focus-visible:ring-0 focus-visible:ring-offset-0&quot;]</value>
+      <webElementGuid>1ce0f83a-c441-4827-a9ef-dd90071f6936</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:attributes</name>
+      <type>Main</type>
+      <value>//input[@value='a']</value>
+      <webElementGuid>1f746c00-7ef4-4caa-9429-99f6d14a216e</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//input</value>
+      <webElementGuid>601265b0-ff72-4b2e-bd52-9ac355c5abcd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//input[@placeholder = 'Type your command here...']</value>
+      <webElementGuid>39511aeb-471b-4334-842d-defdf9f3dbc5</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

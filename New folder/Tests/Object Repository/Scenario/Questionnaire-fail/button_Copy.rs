@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<WebElementEntity>
+   <description></description>
+   <name>button_Copy</name>
+   <tag></tag>
+   <elementGuidId>94e878cf-34ee-4a60-b32b-7ccd3c4d6ecb</elementGuidId>
+   <selectorCollection>
+      <entry>
+         <key>CSS</key>
+         <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(.//*[normalize-space(text()) and normalize-space(.)='$ Command'])[1]/following::button[1]</value>
+      </entry>
+   </selectorCollection>
+   <selectorMethod>XPATH</selectorMethod>
+   <smartLocatorCollection>
+      <entry>
+         <key>SMART_LOCATOR</key>
+         <value>div >> internal:has-text=/^\$ CommandCopyhydra -l admin -P passwords\.txt ssh://192\.168\.1\.10$/ >> internal:role=button</value>
+      </entry>
+   </smartLocatorCollection>
+   <smartLocatorEnabled>false</smartLocatorEnabled>
+   <useRalativeImagePath>true</useRalativeImagePath>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>tag</name>
+      <type>Main</type>
+      <value>button</value>
+      <webElementGuid>8fa8d519-30c3-42dd-b85c-08e40c3802c0</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>class</name>
+      <type>Main</type>
+      <value>inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-6 text-xs</value>
+      <webElementGuid>e6140d4c-a299-4fbb-8688-974d05fbc0c5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>text</name>
+      <type>Main</type>
+      <value>Copy</value>
+      <webElementGuid>dd9a520a-3759-4dc8-b8c9-290bbb7413f5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath</name>
+      <type>Main</type>
+      <value>/html[@class=&quot;dark&quot;]/body[@class=&quot;geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased&quot;]/div[@class=&quot;min-h-screen bg-background&quot;]/main[@class=&quot;container max-w-5xl mx-auto p-6 md:p-8&quot;]/div[@class=&quot;space-y-8&quot;]/div[@class=&quot;animate-in fade-in slide-in-from-bottom-4 duration-500&quot;]/div[@class=&quot;space-y-6&quot;]/div[@class=&quot;rounded-lg border text-card-foreground shadow-sm border-border/40 bg-card/50 backdrop-blur&quot;]/div[@class=&quot;p-6 pt-0 space-y-4&quot;]/div[@class=&quot;border border-border/40 rounded-lg p-4 bg-background/50&quot;]/div[@class=&quot;bg-black/90 rounded-md p-3 mb-2&quot;]/div[@class=&quot;flex items-center justify-between mb-1&quot;]/button[@class=&quot;inline-flex items-center justify-center whitespace-nowrap font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 hover:bg-accent hover:text-accent-foreground rounded-md px-3 h-6 text-xs&quot;]</value>
+      <webElementGuid>88b983f9-5ceb-4a7c-b0ff-8d08eec7925b</webElementGuid>
+   </webElementProperties>
+   <webElementXpaths>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='$ Command'])[1]/following::button[1]</value>
+      <webElementGuid>017cb52e-1e5f-44cd-904c-88939d3f47ec</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Cracking SSH with Hydra'])[1]/following::button[1]</value>
+      <webElementGuid>595fb414-713f-4199-ad4e-a385a4944533</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='hydra -l admin -P passwords.txt ssh://192.168.1.10'])[1]/preceding::button[1]</value>
+      <webElementGuid>ad80dd06-1032-4a34-a777-845b06bfa9a6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Output:'])[1]/preceding::button[1]</value>
+      <webElementGuid>71340a20-47ab-463b-b3aa-e26eaae65ad1</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='Copy']/parent::*</value>
+      <webElementGuid>5464726e-52f7-4555-9aa4-168e073d4602</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div[3]/div[2]/div/div/div/button</value>
+      <webElementGuid>9a985533-32a0-44bd-9e94-86d9096c4671</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[(text() = 'Copy' or . = 'Copy')]</value>
+      <webElementGuid>b61727df-d41a-4f6f-8c67-754517d4cfba</webElementGuid>
+   </webElementXpaths>
+</WebElementEntity>

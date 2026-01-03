@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify scenario specific details page</description>
+   <name>View Scenario Details</name>
+   <tag>FE-Scen-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>fb8d4eb4-e9f1-439d-8315-2d8311c3723d</testCaseGuid>
+</TestCaseEntity>

@@ -1,5 +1,5 @@
 /* eslint-disable prettier/prettier */
-import { Injectable, UnauthorizedException } from '@nestjs/common';
+import { Injectable, UnauthorizedException, ConflictException, BadRequestException } from '@nestjs/common';
 import { InjectModel } from '@nestjs/mongoose';
 import { Model } from 'mongoose';
 import { User } from './user.model';
@@ -21,6 +21,27 @@ export class AuthService {
 
     async register(createUserDto: CreateUserDto): Promise<User> {
         const { username, email, password, role } = createUserDto;
+
+        // Check if email already exists
+        const existingUser = await this.userModel.findOne({ email });
+        if (existingUser) {
+            throw new ConflictException('This email is already registered. Would you like to sign in instead?');
+        }
+
+        // Check if username already exists
+        const existingUsername = await this.userModel.findOne({ username });
+        if (existingUsername) {
+            throw new ConflictException('This username is already taken. Please choose another one.');
+        }
+
+        // Password validation
+        const passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,20}$/;
+        if (!passwordRegex.test(password)) {
+            throw new BadRequestException(
+                'Password must be 8-20 characters long and contain at least one uppercase letter, one lowercase letter, and one number.'
+            );
+        }
+
         const hashedPassword = await bcrypt.hash(password, 10);
         const newUser = new this.userModel({
             username,

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify admin can see and expand user details.</description>
+   <name>List Users and Expand Details</name>
+   <tag>FE-Admin-05</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>d33950cb-b0a2-4fa0-80b8-d724e4318851</testCaseGuid>
+</TestCaseEntity>

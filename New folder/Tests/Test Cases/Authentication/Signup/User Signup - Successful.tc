@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify a new user can register via the Signup form.</description>
+   <name>User Signup - Successful</name>
+   <tag>FE-Sign-01</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>98972c52-4395-47d2-9a7e-819666f2471c</testCaseGuid>
+</TestCaseEntity>

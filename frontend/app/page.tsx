@@ -1,11 +1,27 @@
 
+'use client';
+
 import Link from "next/link"
 import Image from "next/image"
 import { Button } from "@/components/ui/button"
 import { ModeToggle } from "@/components/ui/mode-toggle"
 import { Shield, Lock, Terminal, Activity, ArrowRight, Zap, Target, BarChart } from "lucide-react"
+import { useAuthStore } from "@/features/auth/auth.store"
+import { useRouter } from "next/navigation"
+import { useEffect, useState } from "react"
 
 export default function LandingPage() {
+  const { isAuthenticated } = useAuthStore()
+  const router = useRouter()
+  const [mounted, setMounted] = useState(false)
+
+  useEffect(() => {
+    setMounted(true)
+  }, [])
+
+  // Prevent flash or render basic structure while checking
+  if (!mounted) return null;
+
   return (
     <div className="flex min-h-screen flex-col bg-background text-foreground">
       <main className="flex-1">
@@ -39,16 +55,26 @@ export default function LandingPage() {
               </p>
 
               <div className="flex flex-col sm:flex-row gap-4 pt-4">
-                <Link href="/auth/signup">
-                  <Button size="lg" className="h-12 px-8 text-lg shadow-lg shadow-primary/20">
-                    Start Training <ArrowRight className="ml-2 h-4 w-4" />
-                  </Button>
-                </Link>
-                <Link href="/auth/login">
-                  <Button variant="outline" size="lg" className="h-12 px-8 text-lg backdrop-blur-sm bg-background/50 hover:bg-accent/50">
-                    Log In
-                  </Button>
-                </Link>
+                {isAuthenticated() ? (
+                  <Link href="/dashboard">
+                    <Button size="lg" className="h-12 px-8 text-lg shadow-lg shadow-primary/20">
+                      Go to Dashboard <ArrowRight className="ml-2 h-4 w-4" />
+                    </Button>
+                  </Link>
+                ) : (
+                  <>
+                    <Link href="/auth/signup">
+                      <Button size="lg" className="h-12 px-8 text-lg shadow-lg shadow-primary/20">
+                        Start Training <ArrowRight className="ml-2 h-4 w-4" />
+                      </Button>
+                    </Link>
+                    <Link href="/auth/login">
+                      <Button variant="outline" size="lg" className="h-12 px-8 text-lg backdrop-blur-sm bg-background/50 hover:bg-accent/50">
+                        Log In
+                      </Button>
+                    </Link>
+                  </>
+                )}
               </div>
             </div>
           </div>
@@ -179,7 +205,7 @@ export default function LandingPage() {
               className="object-cover"
             />
           </div>
-          <div className="container relative z-10 px-4 md:px-6">
+          <div className="container mx-auto relative z-10 px-4 md:px-6">
             <div className="flex flex-col items-center text-center space-y-6">
               <div className="inline-block rounded-lg bg-green-500/20 px-3 py-1 text-sm font-mono text-green-400 border border-green-500/30">
                 $ system_check --depth=full

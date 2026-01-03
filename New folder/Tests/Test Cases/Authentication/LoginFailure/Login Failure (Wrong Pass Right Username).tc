@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Authenticate with invalid credentials.</description>
-   <name>Login Failure (Wrong Pass Right Username)</name>
-   <tag>TC-AUTH-F-01</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>8b44faf5-5932-4d58-a6ee-941676d14184</testCaseGuid>
-</TestCaseEntity>

@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<TestCaseEntity>
-   <description>Register a new student/trainee account</description>
-   <name>User Registration</name>
-   <tag>TC-AUTH-01</tag>
-   <comment></comment>
-   <recordOption>OTHER</recordOption>
-   <testCaseGuid>98972c52-4395-47d2-9a7e-819666f2471c</testCaseGuid>
-</TestCaseEntity>

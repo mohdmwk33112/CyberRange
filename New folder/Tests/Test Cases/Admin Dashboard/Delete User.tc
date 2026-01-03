@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify admin can delete a user.</description>
+   <name>Delete User</name>
+   <tag>FE-Admin-06</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>2bb4ea06-df9a-4177-a583-ed42141d97e4</testCaseGuid>
+</TestCaseEntity>

@@ -39,22 +39,35 @@ export const useLogin = () => {
     });
 };
 
-export const useSignup = () => {
+export const useSignup = (callbacks?: { onError?: (error: any) => void; onSuccess?: () => void }) => {
     const router = useRouter();
     const { toast } = useToast();
 
     return useMutation({
         mutationFn: (credentials: SignupCredentials) => authApi.signup(credentials),
         onSuccess: () => {
+            if (callbacks?.onSuccess) {
+                callbacks.onSuccess();
+            }
             toast({ title: 'Account created', description: 'Please login with your credentials.' });
             router.push('/auth/login');
         },
         onError: (error: any) => {
-            toast({
-                title: 'Signup failed',
-                description: error.response?.data?.message || 'Something went wrong',
-                variant: 'destructive'
-            });
+            if (callbacks?.onError) {
+                callbacks.onError(error);
+            } else {
+                // Extract error message from various possible structures
+                const errorMessage =
+                    error.response?.data?.message ||
+                    error.message ||
+                    'Something went wrong';
+
+                toast({
+                    title: 'Signup failed',
+                    description: errorMessage,
+                    variant: 'destructive'
+                });
+            }
         },
     });
 };

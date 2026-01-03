@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify non-admins and guests are blocked.</description>
+   <name>Access Admin - Unauthorized (Fail)</name>
+   <tag>FE-Admin-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>64be38b7-7c3e-4d66-b49d-b839a70a7dad</testCaseGuid>
+</TestCaseEntity>
