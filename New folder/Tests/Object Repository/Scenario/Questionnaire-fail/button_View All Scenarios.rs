@@ -3,15 +3,15 @@
    <description></description>
    <name>button_View All Scenarios</name>
    <tag></tag>
-   <elementGuidId>cbca5932-ca8a-452e-8239-68e53a030758</elementGuidId>
+   <elementGuidId>45c8ce9a-4d65-4523-8cbb-35a1bcf1e32f</elementGuidId>
    <selectorCollection>
-      <entry>
-         <key>XPATH</key>
-         <value>(.//*[normalize-space(text()) and normalize-space(.)='Available Scenarios'])[1]/following::button[1]</value>
-      </entry>
       <entry>
          <key>CSS</key>
          <value></value>
+      </entry>
+      <entry>
+         <key>XPATH</key>
+         <value>(.//*[normalize-space(text()) and normalize-space(.)='Available Scenarios'])[1]/following::button[1]</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>0136a4d5-2afe-4f14-be52-e86384402445</webElementGuid>
+      <webElementGuid>bc917727-4e1e-449e-8477-5e4554db55df</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,7 +37,7 @@
       <name>class</name>
       <type>Main</type>
       <value>inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full mt-2</value>
-      <webElementGuid>ec37f6cd-e0a0-460e-a201-3980733c7d3c</webElementGuid>
+      <webElementGuid>64546da9-43c1-42d8-9468-fd9a1ed3b4b8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -45,7 +45,7 @@
       <name>text</name>
       <type>Main</type>
       <value>View All Scenarios</value>
-      <webElementGuid>6b123755-8217-4fbd-b013-cc880eaa7cbb</webElementGuid>
+      <webElementGuid>9a83f57f-e9e4-4a25-ae78-ccb82ba9698e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,7 +53,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>/html[@class=&quot;dark&quot;]/body[@class=&quot;geist_a71539c9-module__T19VSG__variable geist_mono_8d43a2aa-module__8Li5zG__variable antialiased&quot;]/div[@class=&quot;min-h-screen bg-background&quot;]/main[@class=&quot;container mx-auto p-6 space-y-6&quot;]/div[@class=&quot;grid gap-6 md:grid-cols-2 lg:grid-cols-3&quot;]/div[@class=&quot;rounded-lg border text-card-foreground border-border/40 bg-card/50 backdrop-blur shadow-sm hover:shadow-md transition-shadow&quot;]/div[@class=&quot;p-6 pt-0&quot;]/div[@class=&quot;space-y-2&quot;]/a[4]/button[@class=&quot;inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium ring-offset-background transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 border border-input bg-background hover:bg-accent hover:text-accent-foreground h-10 px-4 py-2 w-full mt-2&quot;]</value>
-      <webElementGuid>e37f15d9-4ad1-4e56-88cb-68a3cc4e4b00</webElementGuid>
+      <webElementGuid>236003ae-0bac-43cf-9601-40328a10bf33</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -61,7 +61,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Available Scenarios'])[1]/following::button[1]</value>
-      <webElementGuid>84b572ea-35b2-43cf-aa0d-0cc89fa73c38</webElementGuid>
+      <webElementGuid>219266c4-0475-4bd7-942e-fdb4e291a671</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -69,7 +69,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='nader'])[1]/following::button[1]</value>
-      <webElementGuid>18af5572-662e-4e6a-852d-2b006fd55269</webElementGuid>
+      <webElementGuid>0f10b587-3040-4035-a9b1-9b3ba8c8e0f7</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -77,7 +77,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Active Simulations'])[1]/preceding::button[1]</value>
-      <webElementGuid>00165caf-4879-4f96-aef4-c688e066f4e3</webElementGuid>
+      <webElementGuid>f16c8269-c163-4e4b-aebc-5ef74033ae61</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,7 +85,7 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Start a Scenario'])[1]/preceding::button[1]</value>
-      <webElementGuid>bdc11d2e-d441-469b-9e60-3f04bfe05a6e</webElementGuid>
+      <webElementGuid>73294edd-36fb-441c-aedb-40259a0315e8</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -93,15 +93,15 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>//*/text()[normalize-space(.)='View All Scenarios']/parent::*</value>
-      <webElementGuid>947da693-51d7-48c7-baac-6a0d193e72a2</webElementGuid>
+      <webElementGuid>aac69dbd-6b91-46ce-898e-8838e8b26d23</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//a[4]/button</value>
-      <webElementGuid>970c6a44-3b38-462d-9916-882a03fb9e4a</webElementGuid>
+      <value>//div/a[4]/button</value>
+      <webElementGuid>f74780e0-caf9-4103-9612-d8886757cb77</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -109,6 +109,6 @@
       <name>xpath:customAttributes</name>
       <type>Main</type>
       <value>//button[(text() = 'View All Scenarios' or . = 'View All Scenarios')]</value>
-      <webElementGuid>913746fd-45ae-45a6-94f6-2fd326ab4f0f</webElementGuid>
+      <webElementGuid>4d4cc963-2df2-4580-b853-833c98834836</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

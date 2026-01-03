@@ -17,3 +17,37 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://localhost:3000/scenarios')
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Reset Questionnaire/input_Username_username'), 'nader')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/Reset Questionnaire/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
+
+WebUI.sendKeys(findTestObject('Object Repository/Scenario/Reset Questionnaire/input_Password_password'), Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/button_View All Scenarios'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/button_Start Training'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/button_Continue to Practice'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1'), 
+    'hping3 -S --flood -p 80 192.168.1.10')
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/button_Submit Command'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2'), 
+    'hping3 --udp --flood -p 53 192.168.1.10')
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/button_Submit Command_1'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Reset Questionnaire/button_Retake Questionnaire to Improve Score'))
+
+WebUI.closeBrowser()
+

@@ -21,13 +21,13 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/scenarios')
 
-WebUI.setText(findTestObject('Object Repository/Scenario/Page_CyberRange/input_Username_username'), 'nader')
+WebUI.setText(findTestObject('Object Repository/Scenario/View Scenarios/input_Username_username'), 'nader')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/Page_CyberRange/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
+WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/View Scenarios/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_Login'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Login'))
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_View All Scenarios'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_View All Scenarios'))
 
 WebUI.delay(1)
 

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify stopping a running simulation</description>
+   <name>Stop Simulation</name>
+   <tag>FE-Sim-03</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>07ba4a4d-15c2-4583-bfb6-ba1144d576a5</testCaseGuid>
+</TestCaseEntity>

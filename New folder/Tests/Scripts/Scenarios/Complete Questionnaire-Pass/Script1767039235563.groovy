@@ -21,31 +21,31 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/scenarios')
 
-WebUI.setText(findTestObject('Object Repository/Scenario/Page_CyberRange/input_Username_username'), 'nader')
+WebUI.setText(findTestObject('Object Repository/Scenario/View Scenarios/input_Username_username'), 'nader')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/Page_CyberRange/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
+WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/View Scenarios/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_Login'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Login'))
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_View All Scenarios'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_View All Scenarios'))
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_Start Training'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Start Training'))
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_Continue to Practice'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Continue to Practice'))
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/input__flex h-10 w-full rounded-md border b_a1e141'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141'))
 
-WebUI.setText(findTestObject('Object Repository/Scenario/Page_CyberRange/input__flex h-10 w-full rounded-md border b_a1e141_1'), 
+WebUI.setText(findTestObject('Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1'), 
     'hping3 -S --flood -p 80 192.168.1.10')
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_Submit Command'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Submit Command'))
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/input__flex h-10 w-full rounded-md border b_a1e141'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141'))
 
-WebUI.setText(findTestObject('Object Repository/Scenario/Page_CyberRange/input__flex h-10 w-full rounded-md border b_a1e141_2'), 
+WebUI.setText(findTestObject('Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2'), 
     'hping3 --udp --flood -p 53 192.168.1.10')
 
-WebUI.click(findTestObject('Object Repository/Scenario/Page_CyberRange/button_Submit Command_1'))
+WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Submit Command_1'))
 
 WebUI.delay(1.5)
 

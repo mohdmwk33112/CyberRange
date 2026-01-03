@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify locked simulation cannot be started</description>
+   <name>Launch Simulation-locked (fail)</name>
+   <tag>FE-Sim-02</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>0079850c-f2c3-4125-9699-0441af347c44</testCaseGuid>
+</TestCaseEntity>

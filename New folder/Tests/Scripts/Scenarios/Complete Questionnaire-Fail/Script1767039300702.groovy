@@ -17,3 +17,62 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://localhost:3000/scenarios')
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input_Username_username'), 'nader')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
+
+WebUI.sendKeys(findTestObject('Object Repository/Scenario/Questionnaire-fail/input_Password_password'), Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_View All Scenarios'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_Start Training'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/div_Logout_h-1.5 w-full rounded-full transi_477328'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_Continue to Practice'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'), 
+    'a')
+
+WebUI.sendKeys(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'), 
+    Keys.chord(Keys.ENTER))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2'), 
+    'aa')
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3'), 
+    'aas')
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_Submit Command'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4'), 
+    'aasd')
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_Submit Command_1'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/html_CyberRangeCyberRangekatalonfont-family_dd8fd1'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5'), 
+    'hydra -l admin -P passwords.txt ssh://192.168.1.10')
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_Submit Command_2'))
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141'))
+
+WebUI.setText(findTestObject('Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6'), 
+    'gobuster dir -u http://192.168.1.10 -w common.txt')
+
+WebUI.click(findTestObject('Object Repository/Scenario/Questionnaire-fail/button_Submit Command_3'))
+
+WebUI.closeBrowser()
+

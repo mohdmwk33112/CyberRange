@@ -21,15 +21,19 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/scenarios')
 
-WebUI.setText(findTestObject('Object Repository/Scenario/View Scenarios/input_Username_username'), 'nader')
+WebUI.click(findTestObject('Object Repository/Simulation/launch/div_Username'))
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Scenario/View Scenarios/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
+WebUI.setText(findTestObject('Object Repository/Simulation/launch/input_Username_username'), 'nader')
 
-WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Login'))
+WebUI.setEncryptedText(findTestObject('Object Repository/Simulation/launch/input_Password_password'), 'n+7DTJndE0qI+loUi7Fb3w==')
 
-WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_View All Scenarios'))
+WebUI.sendKeys(findTestObject('Object Repository/Simulation/launch/input_Password_password'), Keys.chord(Keys.ENTER))
 
-WebUI.click(findTestObject('Object Repository/Scenario/View Scenarios/button_Start Training'))
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_View All Scenarios'))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_Start Training'))
+
+WebUI.click(findTestObject('Object Repository/Simulation/launch/button_Return to Questionnaire'))
 
 WebUI.closeBrowser()
 
