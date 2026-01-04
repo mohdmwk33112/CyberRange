@@ -1,0 +1,84 @@
+{
+  "brokenTestObjects": [
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6",
+      "brokenLocator": "//input[@value\u003d\u0027s\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1",
+      "brokenLocator": "//input[@value\u003d\u0027sh\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2",
+      "brokenLocator": "//input[@value\u003d\u0027sho\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3",
+      "brokenLocator": "//input[@value\u003d\u0027shor\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4",
+      "brokenLocator": "//input[@value\u003d\u0027short\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5",
+      "brokenLocator": "//input[@value\u003d\u0027!@#$%^\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6",
+      "brokenLocator": "//input[@value\u003d\u0027!@#$%^\u0026\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6_position.png"
+    },
+    {
+      "approved": true,
+      "testObjectId": "Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7",
+      "brokenLocator": "//input[@value\u003d\u0027!@#$%^\u0026*\u0027]",
+      "brokenLocatorMethod": "XPATH",
+      "proposedLocator": "//div[2]/div[2]/div/div[2]/div/input",
+      "proposedLocatorMethod": "XPATH",
+      "recoveryMethod": "XPATH",
+      "pathToScreenshot": "Reports/20260104_031509/Profile/20260104_031509/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7_position.png"
+    }
+  ]
+}
