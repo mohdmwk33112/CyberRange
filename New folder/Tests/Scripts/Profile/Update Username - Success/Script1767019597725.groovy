@@ -23,7 +23,7 @@ WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
 WebUI.click(findTestObject('Object Repository/Profile/input_Username_username'))
 
-WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail')
+WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail2')
 
 WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_Password_password'), 'ctjkNZzQVZQqnpFh3PgUMg==')
 
@@ -35,7 +35,7 @@ WebUI.click(findTestObject('Object Repository/Profile/button_Edit Profile'))
 
 WebUI.doubleClick(findTestObject('Object Repository/Profile/input_Username_username'))
 
-WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail2')
+WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail3')
 
 WebUI.click(findTestObject('Object Repository/Profile/button_Save Changes'))
 

@@ -1,56 +1,63 @@
-<?xml version="1.0" encoding = "UTF-8" ?>
-   <TestSuiteEntity>
+<?xml version="1.0" encoding="UTF-8"?>
+<TestSuiteEntity>
    <description></description>
-   < name > Admin Dashboard </name>
-      < tag > </tag>
-      < isRerun > false </isRerun>
-      < mailRecipient > </mailRecipient>
-      < numberOfRerun > 3 </numberOfRerun>
-      < pageLoadTimeout > 10 </pageLoadTimeout>
-      < pageLoadTimeoutDefault > true </pageLoadTimeoutDefault>
-      < rerunFailedTestCasesOnly > false </rerunFailedTestCasesOnly>
-      < rerunImmediately > true </rerunImmediately>
-      < testSuiteGuid > 2d821f5d - 4b60 - 4efd - ac62 - bcd9be6362e3 </testSuiteGuid>
-         < testCaseLink >
-         <guid>6aa74c43 - 428b - 4d1a - be1c - 38ebf5e43ccf </guid>
-            < isReuseDriver > false </isReuseDriver>
-            < isRun > true </isRun>
-            < testCaseId > Test Cases / Admin Dashboard / Access Admin - Unauthorized(Fail) </testCaseId>
-               < usingDataBindingAtTestSuiteLevel > true </usingDataBindingAtTestSuiteLevel>
-               </testCaseLink>
-               < testCaseLink >
-               <guid>f89d2163 - cda4 - 481c - b897 - 42330db25295 </guid>
-                  < isReuseDriver > false </isReuseDriver>
-                  < isRun > true </isRun>
-                  < testCaseId > Test Cases / Admin Dashboard / Access Admin - Authorized </testCaseId>
-                     < usingDataBindingAtTestSuiteLevel > true </usingDataBindingAtTestSuiteLevel>
-                     </testCaseLink>
-                     < testCaseLink >
-                     <guid>e3990528 - 4ce3 - 49c2 - 8962 - 8b3153b1eee6 </guid>
-                        < isReuseDriver > false </isReuseDriver>
-                        < isRun > true </isRun>
-                        < testCaseId > Test Cases / Admin Dashboard / Delete User </testCaseId>
-                           < usingDataBindingAtTestSuiteLevel > true </usingDataBindingAtTestSuiteLevel>
-                           </testCaseLink>
-                           < testCaseLink >
-                           <guid>0589b109 - 2b46 - 4d9f - a08e - 88bdfe65cd34 </guid>
-                              < isReuseDriver > false </isReuseDriver>
-                              < isRun > true </isRun>
-                              < testCaseId > Test Cases / Admin Dashboard / List Users and Expand Details </testCaseId>
-                                 < usingDataBindingAtTestSuiteLevel > true </usingDataBindingAtTestSuiteLevel>
-                                 </testCaseLink>
-                                 < testCaseLink >
-                                 <guid>1a52ccd9 - 5411 - 4a1c - 9962 - fdb4f0761232 </guid>
-                                    < isReuseDriver > false </isReuseDriver>
-                                    < isRun > true </isRun>
-                                    < testCaseId > Test Cases / Admin Dashboard / View Audit Logs </testCaseId>
-                                       < usingDataBindingAtTestSuiteLevel > true </usingDataBindingAtTestSuiteLevel>
-                                       </testCaseLink>
-                                       < testCaseLink >
-                                       <guid>fc61e84c-00c0 - 4cdc - a4ae - 4ef3fc21a89f </guid>
-                                          < isReuseDriver > false </isReuseDriver>
-                                          < isRun > true </isRun>
-                                          < testCaseId > Test Cases / Admin Dashboard / View Cluster Health and Expand Pods </testCaseId>
-                                             < usingDataBindingAtTestSuiteLevel > true </usingDataBindingAtTestSuiteLevel>
-                                             </testCaseLink>
-                                             </TestSuiteEntity>
+   <name>Admin Dashboard</name>
+   <tag></tag>
+   <isRerun>false</isRerun>
+   <mailRecipient></mailRecipient>
+   <numberOfRerun>3</numberOfRerun>
+   <pageLoadTimeout>10</pageLoadTimeout>
+   <pageLoadTimeoutDefault>true</pageLoadTimeoutDefault>
+   <rerunFailedTestCasesOnly>false</rerunFailedTestCasesOnly>
+   <rerunImmediately>true</rerunImmediately>
+   <testSuiteGuid>2d821f5d-4b60-4efd-ac62-bcd9be6362e3</testSuiteGuid>
+   <testCaseLink>
+      <guid>c6764ae0-ac5b-403d-8890-c0817a35ec4d</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/Access Admin-Authorized</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f4c8f7a3-8566-4cf1-abe1-9e9446ef4515</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>ad18ed08-b169-4f45-8a01-089e15479a5c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/View Cluster Health and Expand Pods</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f763bdd5-4e70-421c-b2d2-58c6489cab79</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/List Users and Expand Details</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>f516af5b-2712-49aa-b4b7-238915c59c64</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/View Audit Logs</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>a8b73c7c-145f-41e1-8b2a-58dc5609e53f</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/Reset User Password</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+   <testCaseLink>
+      <guid>c4fed1b2-231e-42fc-9cc1-13f71ab9756c</guid>
+      <isReuseDriver>false</isReuseDriver>
+      <isRun>true</isRun>
+      <testCaseId>Test Cases/Admin Dashboard/Delete User</testCaseId>
+      <usingDataBindingAtTestSuiteLevel>true</usingDataBindingAtTestSuiteLevel>
+   </testCaseLink>
+</TestSuiteEntity>

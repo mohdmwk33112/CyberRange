@@ -1,0 +1,129 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Profile,Chrome 143.0.7499.170,,,04-01-2026 03:15:18,04-01-2026 03:18:55,3m - 37.476s,PASSED
+,,,,,,,
+Test Cases/Profile/View Profile,Chrome 143.0.7499.170,Verify user details are correctly displayed,FE-Profile-01,04-01-2026 03:15:19,04-01-2026 03:15:26,7.731s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:15:19,04-01-2026 03:15:22,3.241s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:22,04-01-2026 03:15:23,0.732s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:23,04-01-2026 03:15:24,1.155s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:15:24,04-01-2026 03:15:24,0.354s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:24,04-01-2026 03:15:25,0.336s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:25,04-01-2026 03:15:26,1.076s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:15:26,04-01-2026 03:15:26,0.381s,PASSED
+,,,,,,,
+Test Cases/Profile/View Progress,Chrome 143.0.7499.170,Verify user can view their training progress,FE-Prog-01,04-01-2026 03:15:26,04-01-2026 03:15:33,6.867s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:15:26,04-01-2026 03:15:28,1.565s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:28,04-01-2026 03:15:29,0.888s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:29,04-01-2026 03:15:30,1.304s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:15:30,04-01-2026 03:15:31,0.456s,PASSED
+"sendKeys(findTestObject(""Object Repository/Profile/input_Password_password""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 03:15:31,04-01-2026 03:15:31,0.793s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Detailed Progress""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:31,04-01-2026 03:15:33,1.460s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:15:33,04-01-2026 03:15:33,0.260s,PASSED
+,,,,,,,
+Test Cases/Profile/Update Email - Fail,Chrome 143.0.7499.170,verify error when updating to an invalid or duplicate email.,FE-Profile-07,04-01-2026 03:15:33,04-01-2026 03:15:40,7.381s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:15:33,04-01-2026 03:15:35,1.320s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:35,04-01-2026 03:15:35,0.755s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:35,04-01-2026 03:15:36,0.948s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:15:36,04-01-2026 03:15:37,0.444s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:37,04-01-2026 03:15:37,0.430s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:37,04-01-2026 03:15:38,1.046s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Edit Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:38,04-01-2026 03:15:39,0.859s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Email_email""), """")",Chrome 143.0.7499.170,,,04-01-2026 03:15:39,04-01-2026 03:15:40,0.907s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Save Changes""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:40,04-01-2026 03:15:40,0.331s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:15:40,04-01-2026 03:15:40,0.229s,PASSED
+,,,,,,,
+Test Cases/Profile/Update Email - Success,Chrome 143.0.7499.170,update email in profile page,FE-Profile-06,04-01-2026 03:15:40,04-01-2026 03:15:49,8.347s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:15:41,04-01-2026 03:15:43,2.064s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:43,04-01-2026 03:15:43,0.736s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:43,04-01-2026 03:15:44,1.079s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:15:44,04-01-2026 03:15:45,0.407s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:45,04-01-2026 03:15:45,0.338s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:45,04-01-2026 03:15:46,1.013s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Edit Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:46,04-01-2026 03:15:47,0.775s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Email_email""), ""ayadzewail2@gmail.com"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:47,04-01-2026 03:15:48,1.112s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Save Changes""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:48,04-01-2026 03:15:49,0.429s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:15:49,04-01-2026 03:15:49,0.322s,PASSED
+,,,,,,,
+Test Cases/Profile/Update Password - Mismatch (Fail),Chrome 143.0.7499.170,"put ""short"" as new password and attempt to save",FE-Profile-05,04-01-2026 03:15:49,04-01-2026 03:16:48,59.162s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:15:49,04-01-2026 03:15:51,1.691s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:51,04-01-2026 03:15:51,0.598s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:15:51,04-01-2026 03:15:52,1.104s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:15:52,04-01-2026 03:15:53,0.513s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:53,04-01-2026 03:15:53,0.330s,PASSED
+"click(findTestObject(""Object Repository/Profile/svg_Browse Scenarios_lucide lucide-user h-6 w-6""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:53,04-01-2026 03:15:54,1.005s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Change Password""))",Chrome 143.0.7499.170,,,04-01-2026 03:15:54,04-01-2026 03:15:55,0.707s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6""), ""UjWHzyF6vE8="")",Chrome 143.0.7499.170,,,04-01-2026 03:15:55,04-01-2026 03:16:06,10.560s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1""), ""9GOtePQYp2c="")",Chrome 143.0.7499.170,,,04-01-2026 03:16:06,04-01-2026 03:16:16,10.414s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2""), ""G5ed2Ngh+RQ="")",Chrome 143.0.7499.170,,,04-01-2026 03:16:16,04-01-2026 03:16:26,10.441s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3""), ""Cwp8A+okQc4="")",Chrome 143.0.7499.170,,,04-01-2026 03:16:26,04-01-2026 03:16:37,10.530s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4""), ""lO3w8bfNEkI="")",Chrome 143.0.7499.170,,,04-01-2026 03:16:37,04-01-2026 03:16:47,10.432s,PASSED
+"click(findTestObject(""Object Repository/Profile/div_Update Password""))",Chrome 143.0.7499.170,,,04-01-2026 03:16:47,04-01-2026 03:16:48,0.314s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:16:48,04-01-2026 03:16:48,0.292s,PASSED
+,,,,,,,
+Test Cases/Profile/Update Password - Success,Chrome 143.0.7499.170,Update password successfully in the profile page,FE-Profile-04,04-01-2026 03:16:48,04-01-2026 03:18:19,1m - 30.897s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:16:48,04-01-2026 03:16:50,1.538s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:16:50,04-01-2026 03:16:50,0.493s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:16:50,04-01-2026 03:16:51,0.916s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:16:51,04-01-2026 03:16:52,0.420s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:16:52,04-01-2026 03:16:52,0.507s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:16:52,04-01-2026 03:16:53,1.094s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Change Password""))",Chrome 143.0.7499.170,,,04-01-2026 03:16:53,04-01-2026 03:16:54,0.807s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6""), ""DUEOm35DxGo="")",Chrome 143.0.7499.170,,,04-01-2026 03:16:54,04-01-2026 03:17:05,10.440s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1""), ""HIXudGnohtg="")",Chrome 143.0.7499.170,,,04-01-2026 03:17:05,04-01-2026 03:17:15,10.441s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2""), ""y566jGqKNJk="")",Chrome 143.0.7499.170,,,04-01-2026 03:17:15,04-01-2026 03:17:25,10.453s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3""), ""lBrxkZGs0MQ="")",Chrome 143.0.7499.170,,,04-01-2026 03:17:25,04-01-2026 03:17:36,10.443s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4""), ""5YbW3XBgarU="")",Chrome 143.0.7499.170,,,04-01-2026 03:17:36,04-01-2026 03:17:46,10.514s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5""), ""2ihRrRfSAwg="")",Chrome 143.0.7499.170,,,04-01-2026 03:17:46,04-01-2026 03:17:57,10.584s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6""), ""M5FYQmxHOW0="")",Chrome 143.0.7499.170,,,04-01-2026 03:17:57,04-01-2026 03:18:07,10.399s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7""), ""RQ040/2ztytLb1OrXWsytw=="")",Chrome 143.0.7499.170,,,04-01-2026 03:18:07,04-01-2026 03:18:18,10.499s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Update Password""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:18,04-01-2026 03:18:18,0.338s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:18:18,04-01-2026 03:18:19,0.684s,PASSED
+,,,,,,,
+Test Cases/Admin Dashboard/Reset User Password,Chrome 143.0.7499.170,Resseting user password,,04-01-2026 03:18:19,04-01-2026 03:18:33,14.489s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:18:19,04-01-2026 03:18:22,2.763s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:22,04-01-2026 03:18:23,0.901s,PASSED
+"setText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Username_username""), ""admin"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:23,04-01-2026 03:18:24,1.058s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:18:24,04-01-2026 03:18:24,0.368s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:24,04-01-2026 03:18:24,0.352s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_User Management""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:24,04-01-2026 03:18:26,1.087s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/svg_student_lucide lucide-key-round w-4 h-4""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:26,04-01-2026 03:18:30,4.400s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_New Password_new-password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:18:30,04-01-2026 03:18:31,0.731s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Update Password""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:31,04-01-2026 03:18:31,0.359s,PASSED
+delay(2),Chrome 143.0.7499.170,,,04-01-2026 03:18:31,04-01-2026 03:18:33,2.035s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:18:33,04-01-2026 03:18:33,0.325s,PASSED
+,,,,,,,
+Test Cases/Profile/Update Username - Invalid Error (Fail),Chrome 143.0.7499.170,Clears the username then tries to save,FE-Profile-03,04-01-2026 03:18:33,04-01-2026 03:18:41,7.462s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:18:34,04-01-2026 03:18:35,1.212s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:35,04-01-2026 03:18:35,0.652s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:35,04-01-2026 03:18:36,1.097s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:18:36,04-01-2026 03:18:37,0.505s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:37,04-01-2026 03:18:37,0.398s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:37,04-01-2026 03:18:39,1.231s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Edit Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:39,04-01-2026 03:18:39,0.718s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), """")",Chrome 143.0.7499.170,,,04-01-2026 03:18:39,04-01-2026 03:18:40,0.831s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Save Changes""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:40,04-01-2026 03:18:41,0.350s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:18:41,04-01-2026 03:18:41,0.358s,PASSED
+,,,,,,,
+Test Cases/Profile/Update Username - Success,Chrome 143.0.7499.170,Update username in the profile page,FE-Profile-02,04-01-2026 03:18:41,04-01-2026 03:18:49,8.574s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:18:41,04-01-2026 03:18:42,1.418s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:42,04-01-2026 03:18:43,0.901s,PASSED
+"click(findTestObject(""Object Repository/Profile/input_Username_username""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:43,04-01-2026 03:18:44,0.724s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail2"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:44,04-01-2026 03:18:45,0.649s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:18:45,04-01-2026 03:18:45,0.342s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:45,04-01-2026 03:18:45,0.318s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:45,04-01-2026 03:18:46,1.177s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Edit Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:46,04-01-2026 03:18:47,0.754s,PASSED
+"doubleClick(findTestObject(""Object Repository/Profile/input_Username_username""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:47,04-01-2026 03:18:48,0.620s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail3"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:48,04-01-2026 03:18:49,0.794s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Save Changes""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:49,04-01-2026 03:18:49,0.329s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:18:49,04-01-2026 03:18:49,0.494s,PASSED
+,,,,,,,
+Test Cases/Profile/Delete Account,Chrome 143.0.7499.170,Delete user successfully from the profile page,FE-Profile-08,04-01-2026 03:18:49,04-01-2026 03:18:55,5.832s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 03:18:50,04-01-2026 03:18:51,1.327s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:51,04-01-2026 03:18:52,0.650s,PASSED
+"setText(findTestObject(""Object Repository/Profile/input_Username_username""), ""ayadzewail3"")",Chrome 143.0.7499.170,,,04-01-2026 03:18:52,04-01-2026 03:18:53,0.958s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Profile/input_Password_password""), ""ctjkNZzQVZQqnpFh3PgUMg=="")",Chrome 143.0.7499.170,,,04-01-2026 03:18:53,04-01-2026 03:18:53,0.442s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:53,04-01-2026 03:18:53,0.330s,PASSED
+"click(findTestObject(""Object Repository/Profile/button_View Profile""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:53,04-01-2026 03:18:54,1.009s,PASSED
+"click(findTestObject(""Object Repository/Profile/svg_Delete Account_lucide lucide-trash2 luc_f007f8""))",Chrome 143.0.7499.170,,,04-01-2026 03:18:54,04-01-2026 03:18:55,0.678s,PASSED
+acceptAlert(),Chrome 143.0.7499.170,,,04-01-2026 03:18:55,04-01-2026 03:18:55,0.026s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 03:18:55,04-01-2026 03:18:55,0.307s,PASSED

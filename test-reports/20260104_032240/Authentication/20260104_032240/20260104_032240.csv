@@ -1,0 +1,114 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Authentication,Chrome 143.0.7499.169,,,04-01-2026 03:22:47,04-01-2026 03:24:28,1m - 40.486s,PASSED
+,,,,,,,
+Test Cases/Authentication/Signup/User Signup - Successful,Chrome 143.0.7499.169,Verify a new user can register via the Signup form.,FE-Sign-01,04-01-2026 03:22:48,04-01-2026 03:22:57,8.834s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:22:49,04-01-2026 03:22:52,3.737s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/signup"")",Chrome 143.0.7499.169,,,04-01-2026 03:22:52,04-01-2026 03:22:53,1.011s,PASSED
+"setText(findTestObject(""SignUp/Page_CyberRange/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.169,,,04-01-2026 03:22:53,04-01-2026 03:22:55,1.369s,PASSED
+"setText(findTestObject(""SignUp/Page_CyberRange/input_Email_email""), ""mohamed@gmail.com"")",Chrome 143.0.7499.169,,,04-01-2026 03:22:55,04-01-2026 03:22:56,0.861s,PASSED
+"setEncryptedText(findTestObject(""SignUp/Page_CyberRange/input_Password_password""), ""CMnPGly1SfJKz+QUrjJbYA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:22:56,04-01-2026 03:22:56,0.479s,PASSED
+"click(findTestObject(""SignUp/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:22:56,04-01-2026 03:22:56,0.446s,PASSED
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:22:56,04-01-2026 03:22:57,0.298s,PASSED
+,,,,,,,
+Test Cases/Authentication/Signup/User Signup - Empty fields (Fail),Chrome 143.0.7499.169,Verify behavior when fields are left empty.,FE-Sign-04,04-01-2026 03:22:57,04-01-2026 03:23:00,3.070s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:22:57,04-01-2026 03:22:58,1.178s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/signup"")",Chrome 143.0.7499.169,,,04-01-2026 03:22:58,04-01-2026 03:22:59,0.699s,PASSED
+"click(findTestObject(""Object Repository/Admin/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:22:59,04-01-2026 03:23:00,0.870s,PASSED
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:23:00,04-01-2026 03:23:00,0.217s,PASSED
+,,,,,,,
+Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail),Chrome 143.0.7499.169,Verify validation for invalid email or weak password (based on the password rules).,FE-Sign-03,04-01-2026 03:23:00,04-01-2026 03:23:10,10.089s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:00,04-01-2026 03:23:01,1.317s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/signup"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:01,04-01-2026 03:23:02,0.888s,PASSED
+"setText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:02,04-01-2026 03:23:03,1.173s,PASSED
+"setText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email""), ""mohdemail.com"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:03,04-01-2026 03:23:04,0.967s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password""), ""tzH6RvlfSTg="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:04,04-01-2026 03:23:05,0.475s,PASSED
+"click(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:05,04-01-2026 03:23:05,0.433s,PASSED
+"setText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email""), ""mohd111@gmailcom"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:05,04-01-2026 03:23:06,0.811s,PASSED
+"click(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:06,04-01-2026 03:23:06,0.392s,PASSED
+"setText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email""), ""mohd@gmail.com"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:06,04-01-2026 03:23:07,0.990s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password""), ""RigbBhfdqOBGNlJIWM1ClA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:07,04-01-2026 03:23:08,0.454s,PASSED
+"click(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:08,04-01-2026 03:23:08,0.388s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password""), ""RigbBhfdqOAzyPoZeICXsA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:08,04-01-2026 03:23:09,0.445s,PASSED
+"click(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:09,04-01-2026 03:23:09,0.390s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password""), ""RigbBhfdqOBe6YUDkwoVIA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:09,04-01-2026 03:23:10,0.454s,PASSED
+"click(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:10,04-01-2026 03:23:10,0.389s,PASSED
+,,,,,,,
+Test Cases/Authentication/Signup/User Signup - Existing Username (Fail),Chrome 143.0.7499.169,Verify error when registering with a username that is already taken,FE-Sign-05,04-01-2026 03:23:10,04-01-2026 03:23:17,7.366s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:10,04-01-2026 03:23:11,1.403s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/signup"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:11,04-01-2026 03:23:12,0.668s,PASSED
+"setText(findTestObject(""SignUp/Page_CyberRange/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:12,04-01-2026 03:23:13,1.213s,PASSED
+"setText(findTestObject(""SignUp/Page_CyberRange/input_Email_email""), ""mohamed1@gmail.com"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:13,04-01-2026 03:23:14,0.794s,PASSED
+"setEncryptedText(findTestObject(""SignUp/Page_CyberRange/input_Password_password""), ""CMnPGly1SfJKz+QUrjJbYA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:14,04-01-2026 03:23:15,0.435s,PASSED
+"click(findTestObject(""SignUp/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:15,04-01-2026 03:23:15,0.421s,PASSED
+delay(2),Chrome 143.0.7499.169,,,04-01-2026 03:23:15,04-01-2026 03:23:17,2.049s,PASSED
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:23:17,04-01-2026 03:23:17,0.260s,PASSED
+,,,,,,,
+Test Cases/Authentication/Signup/User Signup - Existng email (Fail),Chrome 143.0.7499.169,Verify error when registering with an email that is already taken.,FE-Sign-02,04-01-2026 03:23:17,04-01-2026 03:23:24,7.139s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:17,04-01-2026 03:23:19,1.134s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/signup"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:19,04-01-2026 03:23:19,0.851s,PASSED
+"setText(findTestObject(""SignUp/Page_CyberRange/input_Username_username""), ""mohamed1"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:19,04-01-2026 03:23:21,1.182s,PASSED
+"setText(findTestObject(""SignUp/Page_CyberRange/input_Email_email""), ""mohamed@gmail.com"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:21,04-01-2026 03:23:21,0.778s,PASSED
+"setEncryptedText(findTestObject(""SignUp/Page_CyberRange/input_Password_password""), ""CMnPGly1SfJKz+QUrjJbYA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:21,04-01-2026 03:23:22,0.431s,PASSED
+"click(findTestObject(""SignUp/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:22,04-01-2026 03:23:22,0.425s,PASSED
+delay(2),Chrome 143.0.7499.169,,,04-01-2026 03:23:22,04-01-2026 03:23:24,2.020s,PASSED
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:23:24,04-01-2026 03:23:24,0.230s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/User Login-Successful,Chrome 143.0.7499.169,Verify a registered user can log in via the UI.,FE-Login-01,04-01-2026 03:23:24,04-01-2026 03:23:29,4.558s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:25,04-01-2026 03:23:26,1.113s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:26,04-01-2026 03:23:26,0.732s,PASSED
+"setText(findTestObject(""SignIn/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:26,04-01-2026 03:23:28,1.222s,PASSED
+"setEncryptedText(findTestObject(""SignIn/input_Password_password""), ""CMnPGly1SfLjmbcgmrxzhQ=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:28,04-01-2026 03:23:28,0.658s,PASSED
+"click(findTestObject(""SignIn/button_Login""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:28,04-01-2026 03:23:29,0.500s,PASSED
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:23:29,04-01-2026 03:23:29,0.249s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail),Chrome 143.0.7499.169,"Authenticate with invalid credentials.
+Wrong Username Correct Password.",FE-Login-03,04-01-2026 03:23:29,04-01-2026 03:23:44,14.730s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:29,04-01-2026 03:23:30,1.210s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:30,04-01-2026 03:23:31,0.687s,PASSED
+"setText(findTestObject(""SignIn/input_Username_username""), ""nader"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:31,04-01-2026 03:23:32,1.224s,PASSED
+"setEncryptedText(findTestObject(""SignIn/input_Password_password""), ""CMnPGly1SfLjmbcgmrxzhQ=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:32,04-01-2026 03:23:33,0.441s,PASSED
+"click(findTestObject(""SignIn/button_Login""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:33,04-01-2026 03:23:33,0.436s,PASSED
+waitForAlert(0),Chrome 143.0.7499.169,,,04-01-2026 03:23:33,04-01-2026 03:23:43,10.334s,WARNING
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:23:43,04-01-2026 03:23:44,0.273s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail),Chrome 143.0.7499.169,"Authenticate with invalid credentials.
+Wrong Username and Password.",FE-Login-04,04-01-2026 03:23:44,04-01-2026 03:23:59,14.874s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:44,04-01-2026 03:23:45,1.309s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:45,04-01-2026 03:23:46,0.906s,PASSED
+"setText(findTestObject(""SignIn/input_Username_username""), ""nader"")",Chrome 143.0.7499.169,,,04-01-2026 03:23:46,04-01-2026 03:23:47,1.195s,PASSED
+"setEncryptedText(findTestObject(""SignIn/input_Password_password""), ""6UJhAZfJ2UdrlNzgc4+48Q=="")",Chrome 143.0.7499.169,,,04-01-2026 03:23:47,04-01-2026 03:23:48,0.444s,PASSED
+"click(findTestObject(""SignIn/button_Login""))",Chrome 143.0.7499.169,,,04-01-2026 03:23:48,04-01-2026 03:23:48,0.442s,PASSED
+waitForAlert(0),Chrome 143.0.7499.169,,,04-01-2026 03:23:48,04-01-2026 03:23:58,10.259s,WARNING
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:23:58,04-01-2026 03:23:59,0.227s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail),Chrome 143.0.7499.169,"Authenticate with invalid credentials.
+Wrong Pass Right Username",FE-Login-02,04-01-2026 03:23:59,04-01-2026 03:24:14,14.936s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:23:59,04-01-2026 03:24:00,1.203s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:00,04-01-2026 03:24:01,1.171s,PASSED
+"setText(findTestObject(""SignIn/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:01,04-01-2026 03:24:02,1.212s,PASSED
+"setEncryptedText(findTestObject(""SignIn/input_Password_password""), ""6UJhAZfJ2UdrlNzgc4+48Q=="")",Chrome 143.0.7499.169,,,04-01-2026 03:24:02,04-01-2026 03:24:03,0.423s,PASSED
+"click(findTestObject(""SignIn/button_Login""))",Chrome 143.0.7499.169,,,04-01-2026 03:24:03,04-01-2026 03:24:03,0.404s,PASSED
+waitForAlert(0),Chrome 143.0.7499.169,,,04-01-2026 03:24:03,04-01-2026 03:24:13,10.224s,WARNING
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:24:13,04-01-2026 03:24:14,0.217s,PASSED
+,,,,,,,
+Test Cases/Authentication/Login/User Login-Empty Fields (Fail),Chrome 143.0.7499.169,verify behavior when fields are left empty.,FE-Login-04,04-01-2026 03:24:14,04-01-2026 03:24:19,4.993s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:24:14,04-01-2026 03:24:15,1.087s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/signup"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:15,04-01-2026 03:24:15,0.722s,PASSED
+"click(findTestObject(""Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up""))",Chrome 143.0.7499.169,,,04-01-2026 03:24:15,04-01-2026 03:24:16,0.844s,PASSED
+delay(2),Chrome 143.0.7499.169,,,04-01-2026 03:24:16,04-01-2026 03:24:18,2.019s,PASSED
+closeBrowser(),Chrome 143.0.7499.169,,,04-01-2026 03:24:18,04-01-2026 03:24:19,0.244s,PASSED
+,,,,,,,
+Test Cases/Authentication/Role-Based Access,Chrome 143.0.7499.169,Student attempt to access /admin page.,FE-AUTH-02,04-01-2026 03:24:19,04-01-2026 03:24:27,8.682s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.169,,,04-01-2026 03:24:19,04-01-2026 03:24:20,1.117s,PASSED
+"navigateToUrl(""http://localhost:3000/auth/login"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:20,04-01-2026 03:24:21,1.019s,PASSED
+"setText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username""), ""mohamed"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:21,04-01-2026 03:24:22,1.133s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password""), ""CMnPGly1SfJKz+QUrjJbYA=="")",Chrome 143.0.7499.169,,,04-01-2026 03:24:22,04-01-2026 03:24:22,0.464s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login""))",Chrome 143.0.7499.169,,,04-01-2026 03:24:22,04-01-2026 03:24:23,0.461s,PASSED
+waitForPageLoad(0),Chrome 143.0.7499.169,,,04-01-2026 03:24:23,04-01-2026 03:24:23,0.137s,PASSED
+"navigateToUrl(""http://localhost:3000/admin"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:23,04-01-2026 03:24:23,0.433s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Logout""))",Chrome 143.0.7499.169,,,04-01-2026 03:24:23,04-01-2026 03:24:24,0.998s,PASSED
+"setText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username""), ""admin"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:24,04-01-2026 03:24:26,1.211s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password""), ""/5S6MFFLcE4ZOg6V2jhgMg=="")",Chrome 143.0.7499.169,,,04-01-2026 03:24:26,04-01-2026 03:24:26,0.430s,PASSED
+waitForPageLoad(5),Chrome 143.0.7499.169,,,04-01-2026 03:24:26,04-01-2026 03:24:26,0.017s,PASSED
+"navigateToUrl(""http://localhost:3000/dashboard"")",Chrome 143.0.7499.169,,,04-01-2026 03:24:26,04-01-2026 03:24:26,0.348s,PASSED
+"click(findTestObject(""Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login""))",Chrome 143.0.7499.169,,,04-01-2026 03:24:26,04-01-2026 03:24:27,0.826s,PASSED

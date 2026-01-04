@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>596ee622-ec35-4cde-b9ed-7a6c84b024ef</webElementGuid>
+      <webElementGuid>52420ada-dfd2-40d1-9277-2a095f693302</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -37,7 +37,7 @@
       <name>type</name>
       <type>Main</type>
       <value>button</value>
-      <webElementGuid>efcf11b8-17b4-4ea7-be44-eca31d85696f</webElementGuid>
+      <webElementGuid>af235655-09a9-4241-a347-3857957412d4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -45,7 +45,7 @@
       <name>role</name>
       <type>Main</type>
       <value>tab</value>
-      <webElementGuid>8f15aaf1-f970-42e0-b200-b1bc14357450</webElementGuid>
+      <webElementGuid>b521dba0-8aa1-4759-8d42-70314ef0ea20</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -53,7 +53,7 @@
       <name>aria-selected</name>
       <type>Main</type>
       <value>true</value>
-      <webElementGuid>58ef3576-458b-4b81-820f-ca6086a1ec26</webElementGuid>
+      <webElementGuid>d973bfda-3d57-4a8c-9f34-c28f41422933</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -61,7 +61,7 @@
       <name>aria-controls</name>
       <type>Main</type>
       <value>radix-_r_0_-content-users</value>
-      <webElementGuid>7db6b29f-9cf3-4001-a217-5236f13c37fa</webElementGuid>
+      <webElementGuid>d1511d7d-82a0-416f-9408-57f97146cdb4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -69,7 +69,7 @@
       <name>data-state</name>
       <type>Main</type>
       <value>active</value>
-      <webElementGuid>53adce13-f60e-44f7-91e9-46fbb2fd981e</webElementGuid>
+      <webElementGuid>ec78fcaf-7836-468f-b0bd-35d6704e9cd4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -77,7 +77,7 @@
       <name>id</name>
       <type>Main</type>
       <value>radix-_r_0_-trigger-users</value>
-      <webElementGuid>b2599196-0232-47a2-b0ca-5e84d6f37834</webElementGuid>
+      <webElementGuid>22d8b7e2-0334-40b2-9b9c-ca9ebd714a3f</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -85,7 +85,7 @@
       <name>class</name>
       <type>Main</type>
       <value>inline-flex items-center justify-center whitespace-nowrap rounded-md py-1 text-sm font-medium ring-offset-background transition-all focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 data-[state=active]:bg-background data-[state=active]:text-foreground data-[state=active]:shadow gap-2 px-6</value>
-      <webElementGuid>457655ee-0087-4af0-9d8e-4728dc0e1eb0</webElementGuid>
+      <webElementGuid>8bb2e4da-9bcd-4135-b46f-83496eafa120</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -93,7 +93,7 @@
       <name>tabindex</name>
       <type>Main</type>
       <value>0</value>
-      <webElementGuid>46fe1e7a-5fc3-40b5-889c-13b6c8213fd8</webElementGuid>
+      <webElementGuid>36cf622e-52ad-4bfd-a496-c24f34051e39</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -101,7 +101,7 @@
       <name>data-orientation</name>
       <type>Main</type>
       <value>horizontal</value>
-      <webElementGuid>0179a874-4237-4509-90bc-8fec753d1fd9</webElementGuid>
+      <webElementGuid>35c2c567-c3ef-4caf-aa22-7a9092cbb2ea</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -109,7 +109,7 @@
       <name>text</name>
       <type>Main</type>
       <value> User Management</value>
-      <webElementGuid>7d0c0022-a407-47d5-9dd3-11d04b14bd36</webElementGuid>
+      <webElementGuid>175734ca-007d-4c52-9287-b6033b4900e3</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -117,7 +117,7 @@
       <name>xpath</name>
       <type>Main</type>
       <value>id(&quot;radix-_r_0_-trigger-users&quot;)</value>
-      <webElementGuid>88cbf61c-2459-4368-8772-c78b3b33e707</webElementGuid>
+      <webElementGuid>a9331426-6c7d-49d1-9ff5-d4f1139f75bc</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
@@ -125,7 +125,7 @@
       <name>xpath:attributes</name>
       <type>Main</type>
       <value>//button[@id='radix-_r_0_-trigger-users']</value>
-      <webElementGuid>708ffc27-f05f-406c-a32c-bc3995ccdae3</webElementGuid>
+      <webElementGuid>2363a225-98ef-4b97-a5f4-08b12c2a43f8</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -133,7 +133,39 @@
       <name>xpath:neighbor</name>
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='Infrastructure Health'])[1]/following::button[1]</value>
-      <webElementGuid>e167f539-2c9e-467e-9bcc-43b3152c73b1</webElementGuid>
+      <webElementGuid>448f1bdb-5f59-4fea-9b84-b5212a2655e3</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>(.//*[normalize-space(text()) and normalize-space(.)='Loading users...'])[1]/preceding::button[2]</value>
+      <webElementGuid>6a7d0051-36f1-4bfc-a23a-3cb2242b97de</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:neighbor</name>
+      <type>Main</type>
+      <value>//*/text()[normalize-space(.)='User Management']/parent::*</value>
+      <webElementGuid>054c0cb5-3f4f-4343-89fa-d069495d8772</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:position</name>
+      <type>Main</type>
+      <value>//div/button[2]</value>
+      <webElementGuid>0e939bec-96ee-45c0-933d-e369a8f102bd</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:customAttributes</name>
+      <type>Main</type>
+      <value>//button[@type = 'button' and @id = 'radix-_r_0_-trigger-users' and (text() = ' User Management' or . = ' User Management')]</value>
+      <webElementGuid>a0800421-92e0-4b8a-b1c9-fb01b5015337</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -142,29 +174,5 @@
       <type>Main</type>
       <value>(.//*[normalize-space(text()) and normalize-space(.)='User Management'])[1]/preceding::button[2]</value>
       <webElementGuid>2a4d3cac-0d4f-47be-926f-9e81d25998a6</webElementGuid>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:neighbor</name>
-      <type>Main</type>
-      <value>//*/text()[normalize-space(.)='User Management']/parent::*</value>
-      <webElementGuid>4d64157f-5145-413e-88d7-bfddcc844391</webElementGuid>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:position</name>
-      <type>Main</type>
-      <value>//div/button[2]</value>
-      <webElementGuid>0216de35-77ce-40ad-975f-da394e392d99</webElementGuid>
-   </webElementXpaths>
-   <webElementXpaths>
-      <isSelected>false</isSelected>
-      <matchCondition>equals</matchCondition>
-      <name>xpath:customAttributes</name>
-      <type>Main</type>
-      <value>//button[@type = 'button' and @id = 'radix-_r_0_-trigger-users' and (text() = ' User Management' or . = ' User Management')]</value>
-      <webElementGuid>e1f0ebc6-8716-4733-93f0-f122a060d036</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
