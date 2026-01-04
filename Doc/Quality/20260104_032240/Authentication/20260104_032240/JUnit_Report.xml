@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Authentication" time="100.165" tests="11" failures="0" errors="0">
+   <testsuite name="Authentication" tests="11" failures="0" errors="0" time="100.165" skipped="0" timestamp="2026-01-04T01:22:47.580Z" hostname="Wael - ITS-WORKING" id="Test Suites/Authentication">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="H:\\year 4 semester 1\\Service\\project\\CyberRange\\CyberRange\\New folder\\Tests\\Reports\\20260104_032240\\Authentication\\20260104_032240"/>
+         <property name="logFiles" value="H:\\year 4 semester 1\\Service\\project\\CyberRange\\CyberRange\\New folder\\Tests\\Reports\\20260104_032240\\Authentication\\20260104_032240\\console0.log, H:\\year 4 semester 1\\Service\\project\\CyberRange\\CyberRange\\New folder\\Tests\\Reports\\20260104_032240\\Authentication\\20260104_032240\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="Wael - ITS-WORKING"/>
+         <property name="os" value="Windows 10 64bit"/>
+         <property name="katalonVersion" value="10.4.2.0"/>
+         <property name="browser" value="Chrome 143.0.7499.169"/>
+         <property name="userFullName" value="Mohamed Wael Abdelmenem Mohamed Khalifa"/>
+         <property name="hostAddress" value="192.168.1.8"/>
+         <property name="sessionId" value="6ed2b88c4e3819a2f66e3deefbf38edc"/>
+         <property name="projectName" value="Tests"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 10"/>
+      </properties>
+      <testcase name="Test Cases/Authentication/Signup/User Signup - Successful" time="8.834" classname="Test Cases/Authentication/Signup/User Signup - Successful" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:22:48 - [TEST_CASE][PASSED] - Test Cases/Authentication/Signup/User Signup - Successful: Test Cases/Authentication/Signup/User Signup - Successful
+
+04-01-2026T03:22:49 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:22:49 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:22:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:22:52 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:22:52 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/signup"): Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:22:53 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:22:53 - [TEST_STEP][PASSED] - setText(findTestObject("SignUp/Page_CyberRange/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:22:55 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:22:55 - [TEST_STEP][PASSED] - setText(findTestObject("SignUp/Page_CyberRange/input_Email_email"), "mohamed@gmail.com"): Text 'mohamed@gmail.com' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:22:56 - [MESSAGE][PASSED] - Text 'mohamed@gmail.com' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:22:56 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignUp/Page_CyberRange/input_Password_password"), "CMnPGly1SfJKz+QUrjJbYA=="): Text ****** has been set on object 'Object Repository/SignUp/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:22:56 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:22:56 - [TEST_STEP][PASSED] - click(findTestObject("SignUp/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:22:56 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:22:56 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:22:57 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Signup/User Signup - Empty fields (Fail)" time="3.07" classname="Test Cases/Authentication/Signup/User Signup - Empty fields (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:22:57 - [TEST_CASE][PASSED] - Test Cases/Authentication/Signup/User Signup - Empty fields (Fail): Test Cases/Authentication/Signup/User Signup - Empty fields (Fail)
+
+04-01-2026T03:22:57 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:22:57 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:22:57 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:22:58 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:22:58 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/signup"): Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:22:59 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:22:59 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/button_Sign Up")): Object: 'Object Repository/Admin/button_Sign Up' is clicked on
+
+04-01-2026T03:23:00 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/button_Sign Up' is clicked on
+
+04-01-2026T03:23:00 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:23:00 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail)" time="10.089" classname="Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:00 - [TEST_CASE][PASSED] - Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail): Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail)
+
+04-01-2026T03:23:00 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:00 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:00 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:23:01 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:23:01 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/signup"): Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:23:02 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:23:02 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:23:03 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:23:03 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email"), "mohdemail.com"): Text 'mohdemail.com' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:04 - [MESSAGE][PASSED] - Text 'mohdemail.com' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:04 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password"), "tzH6RvlfSTg="): Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:05 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:05 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:05 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:05 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email"), "mohd111@gmailcom"): Text 'mohd111@gmailcom' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:06 - [MESSAGE][PASSED] - Text 'mohd111@gmailcom' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:06 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:06 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:06 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email"), "mohd@gmail.com"): Text 'mohd@gmail.com' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:07 - [MESSAGE][PASSED] - Text 'mohd@gmail.com' is set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:07 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password"), "RigbBhfdqOBGNlJIWM1ClA=="): Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:08 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:08 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:08 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:08 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password"), "RigbBhfdqOAzyPoZeICXsA=="): Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:09 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:09 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:09 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:09 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password"), "RigbBhfdqOBe6YUDkwoVIA=="): Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:10 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/signuptesting/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:10 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:10 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Signup/User Signup - Existing Username (Fail)" time="7.366" classname="Test Cases/Authentication/Signup/User Signup - Existing Username (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:10 - [TEST_CASE][PASSED] - Test Cases/Authentication/Signup/User Signup - Existing Username (Fail): Test Cases/Authentication/Signup/User Signup - Existing Username (Fail)
+
+04-01-2026T03:23:10 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:10 - [MESSAGE][WARNING] - A browser is already opened. Closing browser and opening a new one
+
+04-01-2026T03:23:10 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:10 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:23:11 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:23:11 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/signup"): Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:23:12 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:23:12 - [TEST_STEP][PASSED] - setText(findTestObject("SignUp/Page_CyberRange/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:23:13 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:23:13 - [TEST_STEP][PASSED] - setText(findTestObject("SignUp/Page_CyberRange/input_Email_email"), "mohamed1@gmail.com"): Text 'mohamed1@gmail.com' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:14 - [MESSAGE][PASSED] - Text 'mohamed1@gmail.com' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:14 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignUp/Page_CyberRange/input_Password_password"), "CMnPGly1SfJKz+QUrjJbYA=="): Text ****** has been set on object 'Object Repository/SignUp/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:15 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:15 - [TEST_STEP][PASSED] - click(findTestObject("SignUp/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:15 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:15 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T03:23:17 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T03:23:17 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:23:17 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Signup/User Signup - Existng email (Fail)" time="7.139" classname="Test Cases/Authentication/Signup/User Signup - Existng email (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:17 - [TEST_CASE][PASSED] - Test Cases/Authentication/Signup/User Signup - Existng email (Fail): Test Cases/Authentication/Signup/User Signup - Existng email (Fail)
+
+04-01-2026T03:23:17 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:17 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:17 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:23:19 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:23:19 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/signup"): Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:23:19 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:23:19 - [TEST_STEP][PASSED] - setText(findTestObject("SignUp/Page_CyberRange/input_Username_username"), "mohamed1"): Text 'mohamed1' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:23:21 - [MESSAGE][PASSED] - Text 'mohamed1' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:23:21 - [TEST_STEP][PASSED] - setText(findTestObject("SignUp/Page_CyberRange/input_Email_email"), "mohamed@gmail.com"): Text 'mohamed@gmail.com' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:21 - [MESSAGE][PASSED] - Text 'mohamed@gmail.com' is set on object 'Object Repository/SignUp/Page_CyberRange/input_Email_email'
+
+04-01-2026T03:23:21 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignUp/Page_CyberRange/input_Password_password"), "CMnPGly1SfJKz+QUrjJbYA=="): Text ****** has been set on object 'Object Repository/SignUp/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:22 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignUp/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:23:22 - [TEST_STEP][PASSED] - click(findTestObject("SignUp/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:22 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:23:22 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T03:23:24 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T03:23:24 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:23:24 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/User Login-Successful" time="4.558" classname="Test Cases/Authentication/Login/User Login-Successful" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:24 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/User Login-Successful: Test Cases/Authentication/Login/User Login-Successful
+
+04-01-2026T03:23:25 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:25 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:25 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:23:26 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:23:26 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:23:26 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:23:26 - [TEST_STEP][PASSED] - setText(findTestObject("SignIn/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:23:28 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:23:28 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignIn/input_Password_password"), "CMnPGly1SfLjmbcgmrxzhQ=="): Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:23:28 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:23:28 - [TEST_STEP][PASSED] - click(findTestObject("SignIn/button_Login")): Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:23:29 - [MESSAGE][PASSED] - Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:23:29 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:23:29 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail)" time="14.73" classname="Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:29 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail): Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail)
+
+04-01-2026T03:23:29 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:29 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:29 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:23:30 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:23:30 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:23:31 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:23:31 - [TEST_STEP][PASSED] - setText(findTestObject("SignIn/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:23:32 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:23:32 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignIn/input_Password_password"), "CMnPGly1SfLjmbcgmrxzhQ=="): Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:23:33 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:23:33 - [TEST_STEP][PASSED] - click(findTestObject("SignIn/button_Login")): Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:23:33 - [MESSAGE][PASSED] - Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:23:33 - [TEST_STEP][WARNING] - waitForAlert(0): No alert found after 10 second(s).
+
+04-01-2026T03:23:33 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '10'
+
+04-01-2026T03:23:43 - [MESSAGE][WARNING] - No alert found after 10 second(s).
+
+04-01-2026T03:23:43 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:23:44 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail)" time="14.874" classname="Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:44 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail): Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail)
+
+04-01-2026T03:23:44 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:44 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:44 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:23:45 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:23:45 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:23:46 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:23:46 - [TEST_STEP][PASSED] - setText(findTestObject("SignIn/input_Username_username"), "nader"): Text 'nader' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:23:47 - [MESSAGE][PASSED] - Text 'nader' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:23:47 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignIn/input_Password_password"), "6UJhAZfJ2UdrlNzgc4+48Q=="): Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:23:48 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:23:48 - [TEST_STEP][PASSED] - click(findTestObject("SignIn/button_Login")): Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:23:48 - [MESSAGE][PASSED] - Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:23:48 - [TEST_STEP][WARNING] - waitForAlert(0): No alert found after 10 second(s).
+
+04-01-2026T03:23:48 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '10'
+
+04-01-2026T03:23:58 - [MESSAGE][WARNING] - No alert found after 10 second(s).
+
+04-01-2026T03:23:58 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:23:59 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail)" time="14.936" classname="Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:23:59 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail): Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail)
+
+04-01-2026T03:23:59 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:23:59 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:23:59 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:24:00 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:24:00 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:24:01 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:24:01 - [TEST_STEP][PASSED] - setText(findTestObject("SignIn/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:24:02 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/SignIn/input_Username_username'
+
+04-01-2026T03:24:02 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("SignIn/input_Password_password"), "6UJhAZfJ2UdrlNzgc4+48Q=="): Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:24:03 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/SignIn/input_Password_password'
+
+04-01-2026T03:24:03 - [TEST_STEP][PASSED] - click(findTestObject("SignIn/button_Login")): Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:24:03 - [MESSAGE][PASSED] - Object: 'Object Repository/SignIn/button_Login' is clicked on
+
+04-01-2026T03:24:03 - [TEST_STEP][WARNING] - waitForAlert(0): No alert found after 10 second(s).
+
+04-01-2026T03:24:03 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '10'
+
+04-01-2026T03:24:13 - [MESSAGE][WARNING] - No alert found after 10 second(s).
+
+04-01-2026T03:24:13 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:24:14 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Login/User Login-Empty Fields (Fail)" time="4.993" classname="Test Cases/Authentication/Login/User Login-Empty Fields (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:24:14 - [TEST_CASE][PASSED] - Test Cases/Authentication/Login/User Login-Empty Fields (Fail): Test Cases/Authentication/Login/User Login-Empty Fields (Fail)
+
+04-01-2026T03:24:14 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:24:14 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:24:14 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:24:15 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:24:15 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/signup"): Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:24:15 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/signup' successfully
+
+04-01-2026T03:24:15 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up")): Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:24:16 - [MESSAGE][PASSED] - Object: 'Object Repository/SignUp/signuptesting/Page_CyberRange/button_Sign Up' is clicked on
+
+04-01-2026T03:24:16 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T03:24:18 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T03:24:18 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:24:19 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Authentication/Role-Based Access" time="8.682" classname="Test Cases/Authentication/Role-Based Access" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:24:19 - [TEST_CASE][PASSED] - Test Cases/Authentication/Role-Based Access: Test Cases/Authentication/Role-Based Access
+
+04-01-2026T03:24:19 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:24:19 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:24:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:24:20 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:24:20 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:24:21 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:24:21 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:24:22 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:24:22 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password"), "CMnPGly1SfJKz+QUrjJbYA=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:24:22 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:24:22 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T03:24:23 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T03:24:23 - [TEST_STEP][PASSED] - waitForPageLoad(0): Wait for page load successfully
+
+04-01-2026T03:24:23 - [MESSAGE][WARNING] - Timeout '0' is invalid. Using default page load timeout: '10'
+
+04-01-2026T03:24:23 - [MESSAGE][PASSED] - Wait for page load successfully
+
+04-01-2026T03:24:23 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/admin"): Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T03:24:23 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T03:24:23 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Logout")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Logout' is clicked on
+
+04-01-2026T03:24:24 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Logout' is clicked on
+
+04-01-2026T03:24:24 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:24:26 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:24:26 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:24:26 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:24:26 - [TEST_STEP][PASSED] - waitForPageLoad(5): Wait for page load successfully
+
+04-01-2026T03:24:26 - [MESSAGE][PASSED] - Wait for page load successfully
+
+04-01-2026T03:24:26 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/dashboard"): Navigate to 'http://localhost:3000/dashboard' successfully
+
+04-01-2026T03:24:26 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/dashboard' successfully
+
+04-01-2026T03:24:26 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T03:24:27 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[04-01-2026T03:22:47 - [TEST_SUITE][PASSED] - Authentication: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

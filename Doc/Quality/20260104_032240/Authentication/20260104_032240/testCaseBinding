@@ -1,0 +1,11 @@
+{"testCaseName":"Test Cases/Authentication/Signup/User Signup - Successful","testCaseId":"Test Cases/Authentication/Signup/User Signup - Successful","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Signup/User Signup - Empty fields (Fail)","testCaseId":"Test Cases/Authentication/Signup/User Signup - Empty fields (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail)","testCaseId":"Test Cases/Authentication/Signup/User Signup - Invalid Input (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Signup/User Signup - Existing Username (Fail)","testCaseId":"Test Cases/Authentication/Signup/User Signup - Existing Username (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Signup/User Signup - Existng email (Fail)","testCaseId":"Test Cases/Authentication/Signup/User Signup - Existng email (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Login/User Login-Successful","testCaseId":"Test Cases/Authentication/Login/User Login-Successful","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail)","testCaseId":"Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username Correct Password (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail)","testCaseId":"Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Username and Password (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail)","testCaseId":"Test Cases/Authentication/Login/User Login-Invalid Credentials-Wrong Pass Right Username (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Login/User Login-Empty Fields (Fail)","testCaseId":"Test Cases/Authentication/Login/User Login-Empty Fields (Fail)","iterationVariableName":""}
+{"testCaseName":"Test Cases/Authentication/Role-Based Access","testCaseId":"Test Cases/Authentication/Role-Based Access","iterationVariableName":""}

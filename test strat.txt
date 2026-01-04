@@ -1,49 +1,401 @@
+
+
+
+
+
+
+Test Strategy
+
+
+
+
+<CyberRange>
+
+
+
+
+Version 1.0.0
+1/3/2026
+ 
+Document Control: 
+Document Details:
+Title	Test Strategy for CyberRange Cybersecurity Training Platform
+Version	1.0.0
+Date	1/3/2026
+File Name	CyberRangeTestStrategy
+File Location	h:\year 4 semester 1\service\project\CyberRange\CyberRange
+Author	Mohamed Wael Abdelmenem
+Contributor	•	Mohamed Wael Abdelmenem
+•	Nader Ahmed Abdelsattar
+•	Ayad Ahmed Zwail
+Change Control:
+Issue Date	Version	Details	Author
+1/3/2026	1.0.0	Working Draft, Reviewed	Mohamed Wael Abdelmenem
+			
+Document Reference:
+Document Name	File Location
+Test_Strategy.md	h:\year 4 semester 1\service\project\CyberRange\CyberRange
+Comprehensive_Test_Cases.md	h:\year 4 semester 1\service\project\CyberRange\CyberRange
+BUG_REPORTS.md	h:\year 4 semester 1\service\project\CyberRange\CyberRange
+	
+	
+
+Contents
+1. Scope and overview	4
+2. Test Approach	4
+3. Test Levels	4
+4. Test Types	4
+5. Roles and Responsibilities	4
+6. Environment requirements	4
+7. Testing tools	4
+8. Industry standards to follow	4
+9. Test deliverables	4
+10. Testing metrics	4
+11. Requirement Traceability Matrix	4
+12. Risk and mitigation	4
+13. Reporting tool	5
+14 Test summary	5
+15. Approvals	5
+
+ 
 1. Scope and overview: 
-Creating a new Application (Say Google Mail) which offers email services. Test the functionality of emails and make sure it gives value to the customer.>> AGIL ,WATERFFALL
+The CyberRange platform is a comprehensive cybersecurity training application that provides hands-on simulation environments for students to practice defensive and offensive security techniques. The platform integrates Kubernetes-based attack simulations, machine learning-powered intrusion detection, and real-time monitoring capabilities.
+Testing Scope:
+•	Authentication and authorization (JWT-based, role-based access control)
+•	User management and profile operations
+•	Scenario and questionnaire management
+•	Kubernetes-based simulation orchestration
+•	Real-time attack simulation execution (DDoS, Botnet, Infiltration)
+•	ML-powered IDS integration and alert generation
+•	Admin dashboard (cluster health, user management, audit logs)
+•	Student dashboard (progress tracking, active simulations)
+•	API Gateway and microservices communication
+
+Development Methodology:
+•	Agile with iterative testing cycles
+
 2. Test Approach: 
-In this section, we usually define the following
-•	Test levels
-•	Test types
-•	Roles and responsibilities 
-•	Environment requirements
+The CyberRange testing strategy employs a multi-layered approach combining automated and manual testing techniques:
 3. Test Levels:
-Levels of testing such as unit testing, integration testing, system testing and user acceptance testing.
+Unit Testing: Backend services and frontend components
+•	Backend:  NestJS services (AuthService, SimulationService, UserService).
+•	Frontend: React components, custom hooks, utility functions.
+•	Coverage Target: 70% code coverage
+Integration Testing: Testing the integrations between the Api Gateway, Microservices, Frontend, and Backend.
+•	API Integration: Gateway routing to microservices
+•	Database Integration: MongoDB CRUD operations
+•	External Services: Kubernetes API, FL-IDS model predictions
+System Testing: End-to-end user workflows and simulation scenarios
+•	End-to-End Workflows: Login → Scenario Selection → Questionnaire → Simulation Launch → Monitoring
+•	Cross-Module Testing: Admin actions affecting student views
+•	Data Flow Validation: User actions → Audit logs
 4. Test Types: 
-This section lists out the testing types that will be performed during QA Testing.
+Functional Testing:
+•	Feature validation against requirements (login, signup, simulation launch, etc.)
+UI Testing:
+•	Cross-browser compatibility, responsive design
+•	Verify UI elements, navigation, responsiveness.
+API Testing:
+•	Test REST endpoints, request/response validation
+Security Testing:
+•	Authentication, authorization, input validation
+•	JWT validation and role-based access
+Performance Testing:
+•	Concurrent simulation handling, API response times
+Regression Testing:
+•	Automated test suites after each code change
 5. Roles and Responsibilities
 
 Role	Responsibilities
-Project Manger	
-Project Lead	
-QA	
+Project Manager	Approve test strategy and budget, review weekly test reports, escalate critical defects, ensure testing milestones are met
+Project Lead	Define test scope and priorities, coordinate between QA and development teams, review and approve test cases, manage defect triage meetings
+QA Engineer	Design and document test cases, execute manual and automated tests, log defects in tracking system, maintain test automation scripts (Katalon), generate test reports and metrics
+Backend Developer	Write unit tests for services, fix backend defects, support API integration testing
+Frontend Developer	Write unit tests for components, fix UI/UX defects, ensure cross-browser compatibility
+DevOps Engineer	Maintain Kubernetes test cluster, configure CI/CD pipelines, monitor infrastructure health during testing
 
 6. Environment requirements: 
-Hardware and software ware requirements 
+Hardware:
+•	Development: Local machines (Windows/Linux)
+o	OS:  Windows 10/11
+o	IDE:  VS Code
+o	Node.js: v18.x or higher
+o	MongoDB: v6.0+
+o	Docker Desktop: Latest stable version
+•	Kubernetes cluster (Minikube/Cloud-based)  for attack simulations
+•	Minimum: 8GB RAM, 4 CPU cores for simulation testing
+
+Software:
+•	Frontend: Node.js 18+, Next.js 14, React 18
+•	Backend: NestJS, MongoDB, JWT authentication
+•	Infrastructure: Kubernetes, Docker, Helm
+•	Browsers: Chrome, Firefox, Edge (latest versions)
+•	Testing Tools: Katalon Studio, Postman, Git,and Github
+
 7. Testing tools: 
-List of all the testing tools
+•	Katalon Studio (v9.x) for UI automation and end-to-end testing
+•	Postman for API testing and endpoint validation
+•	Git/GitHub for version control and test script management
+•	Jest (v29.x) for unit testing (Frontend & Backend)
+•	React Testing Library (v14.x) for component testing
+•	JMeter (v5.x) for performance and load testing
+•	MongoDB Compass for database inspection and validation
+•	Docker (v24.x) for containerization and environment consistency
+•	Kubernetes CLI (kubectl v1.28+) for cluster inspection and debugging
+•	JIRA (Cloud) for defect tracking and test management
 8. Industry standards to follow: 
-This section describes the industry standard to produce high quality system that meets or exceeds customer expectations. 
+The CyberRange project adheres to the following industry standards and best practices:
+
+Quality Standards:
+•	ISO/IEC 25010: Software quality model (functionality, reliability, usability, security)
+•	OWASP Top 10: Security testing for web applications
+•	WCAG 2.1: Web accessibility guidelines (Level AA compliance)
+
+Testing Standards:
+•	IEEE 829: Standard for software test documentation
+•	ISTQB Guidelines: Test design techniques and best practices
+
+Security Standards:
+•	NIST Cybersecurity Framework: Security controls and risk management
+•	CWE/SANS Top 25: Common weakness enumeration for vulnerability testing
+
+Development Standards:
+•	RESTful API Design: Consistent API structure and versioning
+•	Semantic Versioning: Version control for releases
+•	Clean Code Principles: Maintainable and testable code 
 9. Test deliverables: 
-List of all the test deliverables 
-10. Testing metrics: 
-This section describes the metrics that should be used in the project to analyze the project status. 
+Deliverable	Description
+Test Strategy 	High-level strategy including testing objectives, scope, tools, and environment
+Test Plan	Detailed testing roadmap, schedule, resources, and criteria for success.
+Test Cases	Steps, expected results, and actual results for test cases.
+Defect Triage	A matrix to prioritize and track defects during testing.
+Sample Bug Report	Document format for logging and reporting defects.
+Software Release Notes	Summary of changes, testing outcomes, and known issues.
+Status Report	Weekly status updates for project tracking
+Test Scenarios	High-level scenarios covering each functional and non-functional requirement.
+Test Summary Report	Summary of the test execution results.
+Test Scripts	Katalon scripts for testing other website features
+Test Execution Reports	•	Detailed reports generated after each test execution.
+•	Reports to include test results, pass/fail status, and any detected issues.
+Documentation	•	Detailed documentation outlining test scenarios, scripts, and configurations. 
+•	User manuals for executing tests using Katalon.
+
+10. Testing metrics:  
+The following metrics will be tracked to measure testing effectiveness and project quality:
+
+Test Coverage Metrics:
+•	Test Case Coverage: (Number of test cases / Total requirements) × 100
+	o	Target: ≥ 90%
+•	Code Coverage: (Lines of code tested / Total lines of code) × 100
+	o	Target: ≥ 70%
+•	Automation Coverage: (Automated test cases / Total test cases) × 100
+	o	Target: ≥ 60% for regression tests
+
+Defect Metrics:
+•	Defect Density: Total defects / Size of module (KLOC or function points)
+•	Defect Removal Efficiency: (Defects found before release / Total defects) × 100
+	o	Target: ≥ 95%
+•	Defect Leakage: Defects found in production / Total defects
+	o	Target: ≤ 5%
+
+Test Execution Metrics:
+•	Test Pass Rate: (Passed tests / Total tests executed) × 100
+	o	Target: ≥ 95% before release
+•	Test Execution Progress: (Tests executed / Total planned tests) × 100
+•	Average Test Execution Time: Total time / Number of test cases
+
+Quality Metrics:
+•	Mean Time to Detect (MTTD): Average time to discover a defect
+•	Mean Time to Resolve (MTTR): Average time to fix a defect
+	o	Target: Critical bugs ≤ 24 hours, Major bugs ≤ 72 hours
+•	Reopen Rate: (Reopened defects / Total resolved defects) × 100
+	o	Target: ≤ 10%
+
+Current Project Status (as of 2026-01-04):
+•	Total Test Cases Documented: 38
+•	Automated Test Cases (Katalon): 11 (Authentication: 11, Admin Dashboard: 5)
+•	Bugs Identified and Fixed: 14
+•	Test Automation Coverage: ~29% (11/38)
+•	Test Execution Status: 38/38 test cases executed (100%)
 11. Requirement Traceability Matrix: 
 Requirement traceability matrix is used to trace the requirements to the tests that are needed to verify whether the requirements are fulfilled.
+
+Requirement ID	Requirement Description	Test Case ID(s)	Test Status	Automation Status	Defect ID(s)
+AUTH-001	User registration with email validation	FE-Sign-01, FE-Sign-02, FE-Sign-03, FE-Sign-04	Tested	Katalon	-
+AUTH-002	User registration with username validation	FE-Sign-05	Tested	Manual	CYBER-014
+AUTH-003	User login with JWT token generation	FE-Login-01, FE-Login-02, FE-Login-03, FE-Login-04	Tested	Katalon	-
+AUTH-004	JWT token validation for protected routes	FE-AUTH-01	Tested	Katalon	CYBER-001, CYBER-010
+AUTH-005	Role-based access control (Admin/Student)	FE-AUTH-02	Tested	Katalon	CYBER-008, CYBER-011, CYBER-012
+PROFILE-001	User profile viewing	FE-Profile-01	Tested	Manual	-
+PROFILE-002	Username update functionality	FE-Profile-02, FE-Profile-03	Tested	Manual	CYBER-013
+PROFILE-003	Password change functionality	FE-Profile-04, FE-Profile-05	Tested	Manual	-
+PROFILE-004	Email update functionality	FE-Profile-06, FE-Profile-07	Tested	Manual	-
+PROFILE-005	Account deletion	FE-Profile-08	Tested	Manual	-
+PROGRESS-001	View training progress	FE-Prog-01	Tested	Manual	-
+PROGRESS-002	View active simulations	FE-Prog-02	Tested	Manual	-
+SCENARIO-001	View available scenarios	FE-Scen-01, FE-Scen-02	Tested	Manual	-
+SCENARIO-002	Complete questionnaire (pass/fail)	FE-Scen-03, FE-Scen-04, FE-Scen-05	Tested	Manual	-
+SIM-001	Launch simulation	FE-Sim-01, FE-Sim-02	Tested	Manual	-
+SIM-002	Stop simulation	FE-Sim-03	Tested	Manual	-
+ADMIN-001	Admin dashboard access control	FE-Admin-01, FE-Admin-02	Tested	Katalon	CYBER-002, CYBER-008
+ADMIN-002	Cluster health monitoring	FE-Admin-03, FE-Admin-04	Tested	Manual	-
+ADMIN-003	User management (list, view, delete)	FE-Admin-05, FE-Admin-06	Tested	Katalon	CYBER-006, CYBER-009
+ADMIN-004	Audit log viewing	FE-Admin-07	Tested	Katalon	-
+NAV-001	Responsive navigation	FE-Nav-01	Tested	Manual	-
+NAV-002	404 error handling	FE-Nav-02	Tested	Manual	-
+
+Test Coverage Summary:
+•	Total Requirements: 22
+•	Total Test Cases: 38
+•	Requirements Coverage: 100% (22/22)
+•	Automated Test Cases: 11 (29%)
+•	Manual Test Cases: 27 (71%)
+•	Test Execution Rate: 100% (38/38 executed)
+
+Defect Mapping Summary:
+•	Total Defects Identified: 14
+•	Critical Defects: 3 (CYBER-001, CYBER-008, CYBER-012)
+•	High Defects: 5 (CYBER-002, CYBER-006, CYBER-009, CYBER-011, CYBER-014)
+•	Medium Defects: 6 (CYBER-003, CYBER-004, CYBER-005, CYBER-007, CYBER-010, CYBER-013)
+•	Defects Resolved: 14 (100%)
 12. Risk and mitigation
 S.No	Risk	Mitigation Plan	Impact
-			
-			
-			
+1	Kubernetes cluster instability during simulation testing	Implement health checks and auto-restart policies; Use dedicated test cluster isolated from development; Monitor resource usage and set limits	High - Could block simulation testing
+2	Test data inconsistency across environments	Use database seeding scripts for consistent test data; Implement data cleanup procedures after each test run; Maintain separate databases for dev/test/prod	Medium - May cause false test failures
+3	Insufficient test automation coverage	Prioritize critical path automation (auth, simulation launch); Allocate dedicated time for test script development; Train team on Katalon best practices	Medium - Increases manual testing effort
+4	Concurrent user load causing performance degradation	Conduct performance testing early in development; Implement caching strategies (Redis); Use horizontal pod autoscaling in Kubernetes	High - Affects user experience
+5	Security vulnerabilities in authentication	Regular security audits and penetration testing; Follow OWASP guidelines for JWT implementation; Implement rate limiting and input validation	Critical - Could compromise user data
+6	ML-IDS model producing false positives/negatives	Validate model accuracy with labeled test datasets; Implement confidence thresholds for alerts; Provide manual override capabilities	Medium - Affects simulation realism
+7	Browser compatibility issues	Test on all major browsers (Chrome, Firefox, Edge); Use cross-browser testing tools (BrowserStack); Follow web standards and avoid deprecated APIs	Low - Limited user impact
+8	Test environment downtime	Implement infrastructure as code (IaC) for quick recovery; Maintain backup test environment; Document environment setup procedures	Medium - Delays testing schedule
+9	Inadequate test documentation	Enforce test case documentation standards; Conduct peer reviews of test cases; Maintain centralized test repository	Low - Affects knowledge transfer
+10	Defect tracking and resolution delays	Implement daily defect triage meetings; Define clear severity and priority criteria; Use JIRA workflows for defect lifecycle management	Medium - Delays release schedule
 
 13. Reporting tool: 
-JIRA will be the reporting tool for this project.
-14 Test summary: 
+JIRA will be the primary reporting and defect tracking tool for this project.
+
+JIRA Configuration:
+•	Project Key: CYBER
+•	Issue Types: Bug, Test Case, Test Suite, Improvement, Epic
+•	Workflows: To Do → In Progress → In Review → Done
+•	Custom Fields:
+	o	Test Case ID (linked to Comprehensive_Test_Cases.md)
+	o	Severity (Critical, High, Medium, Low)
+	o	Environment (Dev, Test, Staging, Production)
+	o	Browser/OS (for UI defects)
+
+Reporting Dashboards:
+•	Daily Test Execution Dashboard: Pass/Fail trends, execution progress
+•	Defect Status Dashboard: Open vs. Closed defects, aging analysis
+•	Sprint Burndown: Test case execution vs. planned
+•	Test Coverage Dashboard: Requirements coverage, automation progress
+
+Additional Reporting:
+•	BUG_REPORTS.md: Detailed root cause analysis and resolution documentation
+•	Weekly Test Summary: Email report to stakeholders with key metrics
+•	Sprint Retrospective: Lessons learned and process improvements
+14 Test summary:
+
+Overall Testing Status (as of 2026-01-04):
+
+Test Execution Metrics:
+•	Total Test Cases: 38
+•	Test Cases Executed: 38 (100%)
+•	Test Cases Passed: 38 (100%)
+•	Test Cases Failed: 0
+•	Test Pass Rate: 100%
+
+Automation Coverage:
+•	Automated Test Cases: 11 (29%)
+	o	Authentication Module: 11 test cases (FE-Sign-01 to FE-Sign-05, FE-Login-01 to FE-Login-04, FE-AUTH-01, FE-AUTH-02)
+	o	Admin Dashboard Module: 5 test cases (FE-Admin-01, FE-Admin-02, FE-Admin-05, FE-Admin-06, FE-Admin-07)
+•	Manual Test Cases: 27 (71%)
+	o	User Profile & Progress: 10 test cases (FE-Profile-01 to FE-Profile-08, FE-Prog-01, FE-Prog-02)
+	o	Scenarios & Simulation: 8 test cases (FE-Scen-01 to FE-Scen-05, FE-Sim-01 to FE-Sim-03)
+	o	Admin Cluster Management: 2 test cases (FE-Admin-03, FE-Admin-04)
+	o	General & Navigation: 2 test cases (FE-Nav-01, FE-Nav-02)
+
+Defect Summary:
+•	Total Defects Identified: 14
+•	Defects Resolved: 14 (100%)
+•	Defects Open: 0
+•	Defect Detection Rate: 36.8% (14 defects / 38 test cases)
+
+Defect Breakdown by Severity:
+Severity	Count	Defect IDs	Status
+Critical	3	CYBER-001, CYBER-008, CYBER-012	✅ Resolved
+High	5	CYBER-002, CYBER-006, CYBER-009, CYBER-011, CYBER-014	✅ Resolved
+Medium	6	CYBER-003, CYBER-004, CYBER-005, CYBER-007, CYBER-010, CYBER-013	✅ Resolved
+Low	0	-	-
+
+Defect Breakdown by Module:
+Module	Defects	Defect IDs
+Authentication	5	CYBER-001, CYBER-008, CYBER-010, CYBER-012, CYBER-014
+Admin Dashboard	4	CYBER-002, CYBER-006, CYBER-008, CYBER-009
+User Profile	2	CYBER-011, CYBER-013
+UI/UX	3	CYBER-003, CYBER-004, CYBER-005, CYBER-007
+
+Key Defects Resolved:
+1.	CYBER-001 (Critical): JWT token validation not working correctly - Users could access protected routes without valid tokens
+2.	CYBER-008 (Critical): Admin redirect loop causing infinite redirects
+3.	CYBER-012 (Critical): Unauthorized admin access causing logout instead of redirect
+4.	CYBER-002 (High): Unauthenticated users could access admin dashboard
+5.	CYBER-006 (High): User deletion using browser alerts instead of custom UI
+6.	CYBER-009 (High): User join date showing "N/A" due to missing timestamps
+7.	CYBER-011 (High): Missing role-based redirection on student dashboard
+8.	CYBER-014 (High): Missing username uniqueness check during signup
+9.	CYBER-013 (Medium): Missing validation on user profile update (empty fields allowed)
+10.	CYBER-010 (Medium): Forced dashboard redirection from landing page
+
+Test Automation Tools:
+•	Katalon Studio: 2 test suites implemented
+	o	Authentication Suite: 11 test cases
+	o	Admin Dashboard Suite: 5 test cases
+•	Test Scripts Location: /New folder/Tests/
+•	Test Execution: All automated tests passing consistently
+
+Quality Metrics Achieved:
+•	✅ Requirements Coverage: 100% (22/22 requirements covered)
+•	✅ Test Execution Rate: 100% (38/38 test cases executed)
+•	✅ Test Pass Rate: 100% (all tests passing)
+•	✅ Defect Resolution Rate: 100% (14/14 defects resolved)
+•	⚠️ Automation Coverage: 29% (target: 60% for regression tests)
+
+Next Steps:
+1.	Expand Automation Coverage:
+	o	Automate Profile module test cases (FE-Profile-01 to FE-Profile-08)
+	o	Automate Simulation module test cases (FE-Sim-01 to FE-Sim-03)
+	o	Target: Achieve 60% automation coverage
+2.	Performance Testing:
+	o	Conduct load testing for concurrent user sessions
+	o	Test simulation launch under heavy load
+	o	Validate Kubernetes cluster stability
+3.	Security Testing:
+	o	Perform penetration testing on authentication endpoints
+	o	Validate JWT token security and expiration
+	o	Test for SQL injection and XSS vulnerabilities
+4.	User Acceptance Testing:
+	o	Prepare UAT environment with production-like data
+	o	Conduct testing with instructor and student groups
+	o	Gather feedback for UX improvements
+5.	Regression Testing:
+	o	Establish automated regression suite in CI/CD pipeline
+	o	Run regression tests on every code commit
+	o	Maintain test suite with new feature additions 
 15. Approvals: 
 
 The following people are required to approve the Test Strategy
 
-Approved By Role 	Approved By Name
-	
-	
-	
+Approved By Role	Approved By Name	Signature	Date
+Project Manager	_________________	_________	_____
+Project Lead	_________________	_________	_____
+QA Lead	_________________	_________	_____
+Development Lead	_________________	_________	_____
+
+---
+
+Document Version: 1.0.0
+Last Updated: 2026-01-04
+Prepared By: QA Team
+Review Cycle: Quarterly or upon major release
 
