@@ -1,0 +1,383 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Admin Dashboard (1)" time="71.485" tests="7" failures="0" errors="0">
+   <testsuite name="Admin Dashboard (1)" tests="7" failures="0" errors="0" time="71.485" skipped="0" timestamp="2026-01-04T02:00:54.653Z" hostname="nader - MSI" id="Test Suites/Admin Dashboard (1)">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_040044\\Admin Dashboard (1)\\20260104_040044"/>
+         <property name="logFiles" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_040044\\Admin Dashboard (1)\\20260104_040044\\console0.log, D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_040044\\Admin Dashboard (1)\\20260104_040044\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="nader - MSI"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Nader Ahmed Abdelsattar Abdeltawab"/>
+         <property name="hostAddress" value="192.168.202.1"/>
+         <property name="sessionId" value="1aecb59d0c920bc0bc8669f99e614c0f"/>
+         <property name="projectName" value="Tests"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Admin Dashboard/Access Admin-Authorized" time="9.973" classname="Test Cases/Admin Dashboard/Access Admin-Authorized" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:00:55 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/Access Admin-Authorized: Test Cases/Admin Dashboard/Access Admin-Authorized
+
+04-01-2026T04:00:55 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:00:56 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:00:56 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:00:58 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:00:58 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:00:59 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:00:59 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:00 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:00 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:01 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:01 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T04:01:01 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T04:01:01 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_User Management")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_User Management' is clicked on
+
+04-01-2026T04:01:02 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_User Management' is clicked on
+
+04-01-2026T04:01:02 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login Activity")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login Activity' is clicked on
+
+04-01-2026T04:01:03 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login Activity' is clicked on
+
+04-01-2026T04:01:03 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+04-01-2026T04:01:04 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+04-01-2026T04:01:04 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:01:05 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)" time="7.749" classname="Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:01:05 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail): Test Cases/Admin Dashboard/Access Admin - Unauthorized (Fail)
+
+04-01-2026T04:01:05 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:01:05 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:01:05 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:01:06 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:01:06 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000"): Navigate to 'http://localhost:3000' successfully
+
+04-01-2026T04:01:07 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000' successfully
+
+04-01-2026T04:01:07 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+04-01-2026T04:01:08 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+04-01-2026T04:01:08 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/admin"): Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:08 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:08 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+04-01-2026T04:01:09 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+04-01-2026T04:01:09 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username"), "mohamed"): Text 'mohamed' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:10 - [MESSAGE][PASSED] - Text 'mohamed' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:10 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password"), "CMnPGly1SfLjmbcgmrxzhQ=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:10 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:10 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T04:01:11 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T04:01:11 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/admin"): Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:11 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:11 - [TEST_STEP][PASSED] - delay(1): Delayed 1 second(s)
+
+04-01-2026T04:01:12 - [MESSAGE][PASSED] - Delayed 1 second(s)
+
+04-01-2026T04:01:12 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:01:12 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/View Cluster Health and Expand Pods" time="11.022" classname="Test Cases/Admin Dashboard/View Cluster Health and Expand Pods" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:01:13 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/View Cluster Health and Expand Pods: Test Cases/Admin Dashboard/View Cluster Health and Expand Pods
+
+04-01-2026T04:01:13 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:01:13 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:01:13 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:01:14 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:01:14 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/admin"): Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:15 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:15 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/admin view/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/admin view/input_Username_username'
+
+04-01-2026T04:01:17 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/admin view/input_Username_username'
+
+04-01-2026T04:01:17 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/admin view/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/admin view/input_Password_password'
+
+04-01-2026T04:01:17 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/admin view/input_Password_password'
+
+04-01-2026T04:01:17 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/admin view/button_Login")): Object: 'Object Repository/Admin/admin view/button_Login' is clicked on
+
+04-01-2026T04:01:17 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/admin view/button_Login' is clicked on
+
+04-01-2026T04:01:17 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/admin view/svg_scenarioddos_lucide lucide-chevron-down_1ed8b5")): Object: 'Object Repository/Admin/admin view/svg_scenarioddos_lucide lucide-chevron-down_1ed8b5' is clicked on
+
+04-01-2026T04:01:18 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/admin view/svg_scenarioddos_lucide lucide-chevron-down_1ed8b5' is clicked on
+
+04-01-2026T04:01:18 - [TEST_STEP][PASSED] - delay(5): Delayed 5 second(s)
+
+04-01-2026T04:01:23 - [MESSAGE][PASSED] - Delayed 5 second(s)
+
+04-01-2026T04:01:23 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:01:24 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/List Users and Expand Details" time="9.034" classname="Test Cases/Admin Dashboard/List Users and Expand Details" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:01:24 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/List Users and Expand Details: Test Cases/Admin Dashboard/List Users and Expand Details
+
+04-01-2026T04:01:24 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:01:24 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:01:24 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:01:25 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:01:25 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:01:26 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:01:26 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/input_Username_username'
+
+04-01-2026T04:01:27 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/input_Username_username'
+
+04-01-2026T04:01:27 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/input_Password_password'
+
+04-01-2026T04:01:27 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/input_Password_password'
+
+04-01-2026T04:01:27 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/button_Login")): Object: 'Object Repository/Admin/button_Login' is clicked on
+
+04-01-2026T04:01:28 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/button_Login' is clicked on
+
+04-01-2026T04:01:28 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/button_User Management")): Object: 'Object Repository/Admin/button_User Management' is clicked on
+
+04-01-2026T04:01:29 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/button_User Management' is clicked on
+
+04-01-2026T04:01:29 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/td_Actions_p-4 align-middle has(rolecheckbox)pr-0")): Object: 'Object Repository/Admin/td_Actions_p-4 align-middle has(rolecheckbox)pr-0' is clicked on
+
+04-01-2026T04:01:29 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/td_Actions_p-4 align-middle has(rolecheckbox)pr-0' is clicked on
+
+04-01-2026T04:01:29 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/svg_Joined Date_lucide lucide-chevron-down _900689")): Object: 'Object Repository/Admin/svg_Joined Date_lucide lucide-chevron-down _900689' is clicked on
+
+04-01-2026T04:01:30 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/svg_Joined Date_lucide lucide-chevron-down _900689' is clicked on
+
+04-01-2026T04:01:30 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/td_Joined Date_p-4 align-middle has(roleche_7b20bd")): Object: 'Object Repository/Admin/td_Joined Date_p-4 align-middle has(roleche_7b20bd' is clicked on
+
+04-01-2026T04:01:30 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/td_Joined Date_p-4 align-middle has(roleche_7b20bd' is clicked on
+
+04-01-2026T04:01:30 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T04:01:32 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T04:01:32 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:01:33 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/View Audit Logs" time="8.59" classname="Test Cases/Admin Dashboard/View Audit Logs" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:01:33 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/View Audit Logs: Test Cases/Admin Dashboard/View Audit Logs
+
+04-01-2026T04:01:33 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:01:33 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:01:33 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:01:34 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:01:34 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:01:35 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:01:35 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:36 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:36 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:37 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/button_Login")): Object: 'Object Repository/Admin/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T04:01:37 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T04:01:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/button_Login Activity")): Object: 'Object Repository/Admin/Page_CyberRange/button_Login Activity' is clicked on
+
+04-01-2026T04:01:38 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/button_Login Activity' is clicked on
+
+04-01-2026T04:01:38 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/td_mohd33112")): Object: 'Object Repository/Admin/Page_CyberRange/td_mohd33112' is clicked on
+
+04-01-2026T04:01:39 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/td_mohd33112' is clicked on
+
+04-01-2026T04:01:39 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T04:01:41 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T04:01:41 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:01:41 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/Reset User Password" time="10.816" classname="Test Cases/Admin Dashboard/Reset User Password" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:01:41 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/Reset User Password: Test Cases/Admin Dashboard/Reset User Password
+
+04-01-2026T04:01:41 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:01:41 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:01:41 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:01:43 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:01:43 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/admin"): Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:45 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/admin' successfully
+
+04-01-2026T04:01:45 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:46 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/input_Username_username'
+
+04-01-2026T04:01:46 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:46 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:46 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Admin/Page_CyberRange/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Admin/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:47 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Admin/Page_CyberRange/input_Password_password'
+
+04-01-2026T04:01:47 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/button_User Management")): Object: 'Object Repository/Admin/Page_CyberRange/button_User Management' is clicked on
+
+04-01-2026T04:01:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/button_User Management' is clicked on
+
+04-01-2026T04:01:48 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/button_student_inline-flex items-center jus_469e20")): Object: 'Object Repository/Admin/Page_CyberRange/button_student_inline-flex items-center jus_469e20' is clicked on
+
+04-01-2026T04:01:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/button_student_inline-flex items-center jus_469e20' is clicked on
+
+04-01-2026T04:01:48 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/input_New Password_new-password"), "PdvCe9IW1B2w4MgR6n/yyg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/input_New Password_new-password'
+
+04-01-2026T04:01:49 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/input_New Password_new-password'
+
+04-01-2026T04:01:49 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/button_Update Password")): Object: 'Object Repository/Admin/Page_CyberRange/button_Update Password' is clicked on
+
+04-01-2026T04:01:50 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/button_Update Password' is clicked on
+
+04-01-2026T04:01:50 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T04:01:52 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T04:01:52 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:01:52 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/Delete User" time="13.658" classname="Test Cases/Admin Dashboard/Delete User" status="PASSED">
+         <system-out><![CDATA[04-01-2026T04:01:52 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/Delete User: Test Cases/Admin Dashboard/Delete User
+
+04-01-2026T04:01:52 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T04:01:52 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T04:01:52 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T04:01:53 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T04:01:53 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:01:55 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T04:01:55 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/input_Username_username'
+
+04-01-2026T04:01:56 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/input_Username_username'
+
+04-01-2026T04:01:56 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/input_Password_password'
+
+04-01-2026T04:01:56 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/input_Password_password'
+
+04-01-2026T04:01:56 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/button_Login")): Object: 'Object Repository/button_Login' is clicked on
+
+04-01-2026T04:01:57 - [MESSAGE][PASSED] - Object: 'Object Repository/button_Login' is clicked on
+
+04-01-2026T04:01:57 - [TEST_STEP][PASSED] - waitForPageLoad(5): Wait for page load successfully
+
+04-01-2026T04:01:57 - [MESSAGE][PASSED] - Wait for page load successfully
+
+04-01-2026T04:01:57 - [TEST_STEP][PASSED] - userTab = TestObject().addProperty("xpath", EQUALS, "//button[@role='tab'][contains(., 'User Management')]"): null
+
+04-01-2026T04:01:57 - [TEST_STEP][PASSED] - waitForElementClickable(userTab, 10): Object '' is clickable
+
+04-01-2026T04:01:58 - [MESSAGE][PASSED] - Object '' is clickable
+
+04-01-2026T04:01:58 - [TEST_STEP][PASSED] - click(userTab): Object: '' is clicked on
+
+04-01-2026T04:01:58 - [MESSAGE][PASSED] - Object: '' is clicked on
+
+04-01-2026T04:01:58 - [TEST_STEP][PASSED] - lastDeleteBtn = TestObject().addProperty("xpath", EQUALS, "(//button[@title='Delete User'])[last()]"): null
+
+04-01-2026T04:01:58 - [TEST_STEP][PASSED] - waitForElementVisible(lastDeleteBtn, 10): Object '' is visible
+
+04-01-2026T04:01:59 - [MESSAGE][PASSED] - Object '' is visible
+
+04-01-2026T04:01:59 - [TEST_STEP][PASSED] - click(lastDeleteBtn): Object: '' is clicked on
+
+04-01-2026T04:02:02 - [MESSAGE][PASSED] - Object: '' is clicked on
+
+04-01-2026T04:02:02 - [TEST_STEP][PASSED] - confirmDeleteBtn = TestObject().addProperty("xpath", EQUALS, "//button[text()='Delete User' and contains(@class, 'bg-destructive')]"): null
+
+04-01-2026T04:02:02 - [TEST_STEP][PASSED] - waitForElementVisible(confirmDeleteBtn, 5): Object '' is visible
+
+04-01-2026T04:02:03 - [MESSAGE][PASSED] - Object '' is visible
+
+04-01-2026T04:02:03 - [TEST_STEP][PASSED] - click(confirmDeleteBtn): Object: '' is clicked on
+
+04-01-2026T04:02:03 - [MESSAGE][PASSED] - Object: '' is clicked on
+
+04-01-2026T04:02:03 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T04:02:05 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T04:02:05 - [TEST_STEP][PASSED] - verifyTextPresent("User deleted", false): Text 'User deleted' is present on page 
+
+04-01-2026T04:02:05 - [MESSAGE][PASSED] - Text 'User deleted' is present on page 
+
+04-01-2026T04:02:05 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T04:02:06 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[04-01-2026T04:00:54 - [TEST_SUITE][PASSED] - Admin Dashboard (1): null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>

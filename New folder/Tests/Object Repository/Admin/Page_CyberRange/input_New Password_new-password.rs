@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Password_password</name>
+   <name>input_New Password_new-password</name>
    <tag></tag>
-   <elementGuidId>f01b3bc0-fa2d-4cd2-80e3-a8399f63e238</elementGuidId>
+   <elementGuidId>49e12194-820b-4219-9118-dc308ce5965b</elementGuidId>
    <selectorCollection>
       <entry>
          <key>CSS</key>
-         <value>#password</value>
+         <value>#new-password</value>
       </entry>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='password']</value>
+         <value>//input[@id='new-password']</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <smartLocatorCollection>
       <entry>
          <key>SMART_LOCATOR</key>
-         <value>internal:label=&quot;Password&quot;i</value>
+         <value>internal:attr=[placeholder=&quot;Enter secure password&quot;i]</value>
       </entry>
    </smartLocatorCollection>
    <smartLocatorEnabled>false</smartLocatorEnabled>
@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>d2e9b527-53db-4cda-92f0-d0a09e827c65</webElementGuid>
+      <webElementGuid>887bdee9-adaa-4dac-a760-273e2e4c18ab</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,15 +37,23 @@
       <name>class</name>
       <type>Main</type>
       <value>flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50</value>
-      <webElementGuid>f14f995d-8c5a-4ab3-9f1a-0dbb88363a46</webElementGuid>
+      <webElementGuid>0b16db1d-74b2-47cd-9454-6ce4da362cad</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>password</value>
-      <webElementGuid>f233f1fb-5e22-454c-8e81-bcda496ee7ed</webElementGuid>
+      <value>new-password</value>
+      <webElementGuid>83c65f6b-777b-4349-a591-6b535a90ba83</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>true</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>placeholder</name>
+      <type>Main</type>
+      <value>Enter secure password</value>
+      <webElementGuid>0451eb7e-bf6a-4b28-9308-b97ef8ae1b21</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
@@ -53,54 +61,62 @@
       <name>type</name>
       <type>Main</type>
       <value>password</value>
-      <webElementGuid>877b57d3-c730-4fd7-b2a9-077c2ed9b25a</webElementGuid>
+      <webElementGuid>e5942312-8d5c-429a-9051-70bf8846ec6e</webElementGuid>
    </webElementProperties>
    <webElementProperties>
-      <isSelected>true</isSelected>
+      <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>name</name>
+      <name>value</name>
       <type>Main</type>
-      <value>password</value>
-      <webElementGuid>a3045619-f625-4bc2-a4af-03385c845c98</webElementGuid>
+      <value>3</value>
+      <webElementGuid>9f579d52-0465-4604-8ed1-2715cf6bbf85</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>wfd-id</name>
       <type>Main</type>
-      <value>id1</value>
-      <webElementGuid>23b067ce-d7a4-41f5-9f8c-85a330334882</webElementGuid>
+      <value>id2</value>
+      <webElementGuid>426b4f26-3a93-48c4-9970-86a3a690ebb8</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;password&quot;)</value>
-      <webElementGuid>c252e45b-4b4c-4ece-92b2-b2df6199e9c5</webElementGuid>
+      <value>id(&quot;new-password&quot;)</value>
+      <webElementGuid>c0cb8ac9-f9d8-4b8a-b893-1d4a3b00e1e6</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//input[@id='password']</value>
-      <webElementGuid>8cc08d0d-3222-4b24-9927-e3f40a33bbda</webElementGuid>
+      <value>//input[@id='new-password']</value>
+      <webElementGuid>ef2dd0f0-c0e9-4585-9036-2ac4a750a2f6</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='radix-_r_0_-content-users']/div/div[2]/div[2]/div/div[2]/div/input</value>
+      <webElementGuid>375bcaa1-9169-4e63-8084-d43812438e06</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:position</name>
       <type>Main</type>
-      <value>//div[2]/input</value>
-      <webElementGuid>de4ba1d0-7b74-4234-8ce3-fe98f81494bb</webElementGuid>
+      <value>//input</value>
+      <webElementGuid>f42c174f-6aaa-42eb-b268-5bf1a74ac119</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:customAttributes</name>
       <type>Main</type>
-      <value>//input[@id = 'password' and @type = 'password' and @name = 'password']</value>
-      <webElementGuid>b28e620f-7041-41b5-9263-efe5159e8ad1</webElementGuid>
+      <value>//input[@id = 'new-password' and @placeholder = 'Enter secure password' and @type = 'password']</value>
+      <webElementGuid>8e16cbe3-c013-4d70-8c42-4d9b12897e42</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>
