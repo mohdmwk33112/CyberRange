@@ -1,24 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <WebElementEntity>
    <description></description>
-   <name>input_Username_username</name>
+   <name>input_New Password_new-password</name>
    <tag></tag>
-   <elementGuidId>84a1a4da-b47b-4554-a60d-ae8d415c086c</elementGuidId>
+   <elementGuidId>7c88f251-ffcb-4839-8058-29f257292c3d</elementGuidId>
    <selectorCollection>
       <entry>
          <key>XPATH</key>
-         <value>//input[@id='username']</value>
+         <value>//input[@id='new-password']</value>
       </entry>
       <entry>
          <key>CSS</key>
-         <value>#username</value>
+         <value>#new-password</value>
       </entry>
    </selectorCollection>
    <selectorMethod>XPATH</selectorMethod>
    <smartLocatorCollection>
       <entry>
          <key>SMART_LOCATOR</key>
-         <value>internal:attr=[placeholder=&quot;johndoe&quot;i]</value>
+         <value>internal:attr=[placeholder=&quot;Enter secure password&quot;i]</value>
       </entry>
    </smartLocatorCollection>
    <smartLocatorEnabled>false</smartLocatorEnabled>
@@ -29,7 +29,7 @@
       <name>tag</name>
       <type>Main</type>
       <value>input</value>
-      <webElementGuid>b33c61ae-07c1-4c1f-be80-5a9085803fa5</webElementGuid>
+      <webElementGuid>0f633925-3449-46ea-9523-8c808b44fe8d</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
@@ -37,47 +37,63 @@
       <name>class</name>
       <type>Main</type>
       <value>flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50</value>
-      <webElementGuid>2846cc94-ae36-480b-b6e4-fa463589dcf0</webElementGuid>
+      <webElementGuid>fe6a3172-9308-45e1-889e-818a2515a88a</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>id</name>
       <type>Main</type>
-      <value>username</value>
-      <webElementGuid>ce086697-c631-4593-8692-125cd9b1cbd2</webElementGuid>
+      <value>new-password</value>
+      <webElementGuid>1b638f16-bf96-4def-9c9d-145c51fafdf4</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>placeholder</name>
       <type>Main</type>
-      <value>johndoe</value>
-      <webElementGuid>b81a3e51-d9e2-4bcb-b66c-12cb4f381aa0</webElementGuid>
+      <value>Enter secure password</value>
+      <webElementGuid>85bebe93-9eb9-4329-a6f7-820c750acc91</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
-      <name>name</name>
+      <name>type</name>
       <type>Main</type>
-      <value>username</value>
-      <webElementGuid>e6d6b75f-f0d8-4691-a557-e8f10503c2f8</webElementGuid>
+      <value>password</value>
+      <webElementGuid>cf0fbbc8-9f11-456d-b96a-f3272f6f86a5</webElementGuid>
+   </webElementProperties>
+   <webElementProperties>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>value</name>
+      <type>Main</type>
+      <value>3311233112</value>
+      <webElementGuid>2fcc8a66-48a5-4270-b6d8-693d29802bfd</webElementGuid>
    </webElementProperties>
    <webElementProperties>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath</name>
       <type>Main</type>
-      <value>id(&quot;username&quot;)</value>
-      <webElementGuid>2d4c084b-bc44-441f-9f90-81ff72136c51</webElementGuid>
+      <value>id(&quot;new-password&quot;)</value>
+      <webElementGuid>0a179bf4-f3b2-4e0b-9ee9-bd2186d347ca</webElementGuid>
    </webElementProperties>
    <webElementXpaths>
       <isSelected>true</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:attributes</name>
       <type>Main</type>
-      <value>//input[@id='username']</value>
-      <webElementGuid>8b35ec6b-67c5-4c12-a6cf-aa51f2c88a33</webElementGuid>
+      <value>//input[@id='new-password']</value>
+      <webElementGuid>28e0f7da-261e-4701-be1f-0416a821af52</webElementGuid>
+   </webElementXpaths>
+   <webElementXpaths>
+      <isSelected>false</isSelected>
+      <matchCondition>equals</matchCondition>
+      <name>xpath:idRelative</name>
+      <type>Main</type>
+      <value>//div[@id='radix-_r_0_-content-users']/div/div[2]/div[2]/div/div[2]/div/input</value>
+      <webElementGuid>3129964a-6632-44a8-8785-56e2d4743deb</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
@@ -85,14 +101,14 @@
       <name>xpath:position</name>
       <type>Main</type>
       <value>//input</value>
-      <webElementGuid>4f40cffa-b118-4fd7-8d46-b692605c30bc</webElementGuid>
+      <webElementGuid>e1b4901e-2b5b-41b8-819f-139253d61674</webElementGuid>
    </webElementXpaths>
    <webElementXpaths>
       <isSelected>false</isSelected>
       <matchCondition>equals</matchCondition>
       <name>xpath:customAttributes</name>
       <type>Main</type>
-      <value>//input[@id = 'username' and @placeholder = 'johndoe' and @name = 'username']</value>
-      <webElementGuid>980cb210-f45a-460c-8fd6-40198db84484</webElementGuid>
+      <value>//input[@id = 'new-password' and @placeholder = 'Enter secure password' and @type = 'password']</value>
+      <webElementGuid>ac7c6610-ec52-4c06-95c4-60a3408715af</webElementGuid>
    </webElementXpaths>
 </WebElementEntity>

@@ -21,22 +21,21 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
-WebUI.setText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Username_username'), 
-    'admin')
+WebUI.setText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Username_username'), 'admin')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Password_password'), 
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_Password_password'), 
     '/5S6MFFLcE4ZOg6V2jhgMg==')
 
-WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Login'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Login'))
 
-WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_User Management'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_User Management'))
 
-WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/svg_student_lucide lucide-key-round w-4 h-4'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_student_inline-flex items-center jus_469e20'))
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_New Password_new-password'), 
-    'ctjkNZzQVZQqnpFh3PgUMg==')
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/input_New Password_new-password'), 
+    '6UJhAZfJ2UdrlNzgc4+48Q==')
 
-WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Update Password'))
+WebUI.click(findTestObject('Object Repository/Admin/Page_CyberRange/Page_CyberRange/button_Update Password'))
 
 WebUI.delay(2)
 
