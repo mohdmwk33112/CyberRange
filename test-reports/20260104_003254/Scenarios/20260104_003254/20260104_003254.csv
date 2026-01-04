@@ -1,0 +1,86 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Scenarios,Chrome 143.0.7499.170,Scenarios test suit that ensures that the attackes questionnaire is working,,04-01-2026 00:33:05,04-01-2026 00:37:44,4m - 38.264s,PASSED
+,,,,,,,
+Test Cases/Scenarios/View All Scenarios,Chrome 143.0.7499.170,Verify list of scenarios loads correctly,FE-Scen-01,04-01-2026 00:33:06,04-01-2026 00:33:16,10.441s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:33:07,04-01-2026 00:33:10,3.279s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:10,04-01-2026 00:33:11,1.076s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/View Scenarios/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:11,04-01-2026 00:33:13,1.981s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Scenario/View Scenarios/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:33:13,04-01-2026 00:33:13,0.455s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:13,04-01-2026 00:33:14,0.357s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:14,04-01-2026 00:33:15,1.271s,PASSED
+delay(1),Chrome 143.0.7499.170,,,04-01-2026 00:33:15,04-01-2026 00:33:16,1.070s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:33:16,04-01-2026 00:33:16,0.312s,PASSED
+,,,,,,,
+Test Cases/Scenarios/View Scenario Details,Chrome 143.0.7499.170,Verify scenario specific details page,FE-Scen-02,04-01-2026 00:33:16,04-01-2026 00:33:24,7.206s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:33:17,04-01-2026 00:33:18,1.595s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:18,04-01-2026 00:33:19,0.983s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/View Scenarios/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:19,04-01-2026 00:33:21,1.472s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Scenario/View Scenarios/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:33:21,04-01-2026 00:33:21,0.393s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:21,04-01-2026 00:33:21,0.376s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:21,04-01-2026 00:33:23,1.250s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:23,04-01-2026 00:33:23,0.709s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:33:23,04-01-2026 00:33:24,0.311s,PASSED
+,,,,,,,
+Test Cases/Scenarios/Complete Questionnaire-Fail,Chrome 143.0.7499.170,Verify failing questionnaire keeps simulation locked,FE-Scen-04,04-01-2026 00:33:24,04-01-2026 00:35:46,2m - 22.764s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:33:24,04-01-2026 00:33:26,2.177s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:26,04-01-2026 00:33:27,0.756s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:27,04-01-2026 00:33:28,1.498s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:33:28,04-01-2026 00:33:29,0.515s,PASSED
+"sendKeys(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input_Password_password""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 00:33:29,04-01-2026 00:33:29,0.422s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:29,04-01-2026 00:33:31,1.263s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:31,04-01-2026 00:33:31,0.820s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/div_Logout_h-1.5 w-full rounded-full transi_477328""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:31,04-01-2026 00:33:33,1.332s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_Continue to Practice""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:33,04-01-2026 00:33:33,0.473s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:33,04-01-2026 00:33:34,0.620s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1""), ""a"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:34,04-01-2026 00:33:54,20.731s,PASSED
+"sendKeys(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 00:33:54,04-01-2026 00:33:55,0.373s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_1""))",Chrome 143.0.7499.170,,,04-01-2026 00:33:55,04-01-2026 00:33:56,0.779s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_2""), ""aa"")",Chrome 143.0.7499.170,,,04-01-2026 00:33:56,04-01-2026 00:34:16,20.777s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3""), ""aas"")",Chrome 143.0.7499.170,,,04-01-2026 00:34:16,04-01-2026 00:34:37,20.783s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_Submit Command""))",Chrome 143.0.7499.170,,,04-01-2026 00:34:37,04-01-2026 00:34:38,0.367s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_3""))",Chrome 143.0.7499.170,,,04-01-2026 00:34:38,04-01-2026 00:34:38,0.767s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_4""), ""aasd"")",Chrome 143.0.7499.170,,,04-01-2026 00:34:38,04-01-2026 00:34:59,21.021s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_Submit Command_1""))",Chrome 143.0.7499.170,,,04-01-2026 00:34:59,04-01-2026 00:35:00,0.504s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/html_CyberRangeCyberRangekatalonfont-family_dd8fd1""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:00,04-01-2026 00:35:01,0.938s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_5""), ""hydra -l admin -P passwords.txt ssh://192.168.1.10"")",Chrome 143.0.7499.170,,,04-01-2026 00:35:01,04-01-2026 00:35:22,21.312s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_Submit Command_2""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:22,04-01-2026 00:35:22,0.380s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:22,04-01-2026 00:35:24,1.842s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Questionnaire-fail/input__flex h-10 w-full rounded-md border b_a1e141_6""), ""gobuster dir -u http://192.168.1.10 -w common.txt"")",Chrome 143.0.7499.170,,,04-01-2026 00:35:24,04-01-2026 00:35:46,21.389s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Questionnaire-fail/button_Submit Command_3""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:46,04-01-2026 00:35:46,0.409s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:35:46,04-01-2026 00:35:46,0.306s,PASSED
+,,,,,,,
+Test Cases/Scenarios/Complete Questionnaire-Pass,Chrome 143.0.7499.170,Verify passing questionnaire unlocks simulation,FE-Scen-03,04-01-2026 00:35:46,04-01-2026 00:36:45,59.021s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:35:47,04-01-2026 00:35:49,1.969s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:35:49,04-01-2026 00:35:50,1.626s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/View Scenarios/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:35:50,04-01-2026 00:35:52,1.855s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Scenario/View Scenarios/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:35:52,04-01-2026 00:35:52,0.464s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Login""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:52,04-01-2026 00:35:53,0.377s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:53,04-01-2026 00:35:54,1.193s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:54,04-01-2026 00:35:55,0.880s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Continue to Practice""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:55,04-01-2026 00:35:57,1.811s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141""))",Chrome 143.0.7499.170,,,04-01-2026 00:35:57,04-01-2026 00:35:57,0.625s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_1""), ""hping3 -S --flood -p 80 192.168.1.10"")",Chrome 143.0.7499.170,,,04-01-2026 00:35:57,04-01-2026 00:36:19,21.946s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Submit Command""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:19,04-01-2026 00:36:20,0.365s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:20,04-01-2026 00:36:22,1.881s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/View Scenarios/input__flex h-10 w-full rounded-md border b_a1e141_2""), ""hping3 --udp --flood -p 53 192.168.1.10"")",Chrome 143.0.7499.170,,,04-01-2026 00:36:22,04-01-2026 00:36:43,21.631s,PASSED
+"click(findTestObject(""Object Repository/Scenario/View Scenarios/button_Submit Command_1""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:43,04-01-2026 00:36:44,0.474s,PASSED
+delay(1.5),Chrome 143.0.7499.170,,,04-01-2026 00:36:44,04-01-2026 00:36:45,1.516s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:36:45,04-01-2026 00:36:45,0.280s,PASSED
+,,,,,,,
+Test Cases/Scenarios/Reset Questionnaire,Chrome 143.0.7499.170,Verify user can retry questionnaire,FE-Scen-05,04-01-2026 00:36:45,04-01-2026 00:37:43,57.994s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:36:46,04-01-2026 00:36:47,1.611s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:36:47,04-01-2026 00:36:49,1.339s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:36:49,04-01-2026 00:36:50,1.887s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:36:50,04-01-2026 00:36:51,0.589s,PASSED
+"sendKeys(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input_Password_password""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 00:36:51,04-01-2026 00:36:51,0.413s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:51,04-01-2026 00:36:53,1.740s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:53,04-01-2026 00:36:54,0.740s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/button_Continue to Practice""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:54,04-01-2026 00:36:55,1.330s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141""))",Chrome 143.0.7499.170,,,04-01-2026 00:36:55,04-01-2026 00:36:56,0.621s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_1""), ""hping3 -S --flood -p 80 192.168.1.10"")",Chrome 143.0.7499.170,,,04-01-2026 00:36:56,04-01-2026 00:37:17,21.055s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/button_Submit Command""))",Chrome 143.0.7499.170,,,04-01-2026 00:37:17,04-01-2026 00:37:17,0.373s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141""))",Chrome 143.0.7499.170,,,04-01-2026 00:37:17,04-01-2026 00:37:19,1.895s,PASSED
+"setText(findTestObject(""Object Repository/Scenario/Reset Questionnaire/input__flex h-10 w-full rounded-md border b_a1e141_2""), ""hping3 --udp --flood -p 53 192.168.1.10"")",Chrome 143.0.7499.170,,,04-01-2026 00:37:19,04-01-2026 00:37:40,20.892s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/button_Submit Command_1""))",Chrome 143.0.7499.170,,,04-01-2026 00:37:40,04-01-2026 00:37:41,0.428s,PASSED
+"click(findTestObject(""Object Repository/Scenario/Reset Questionnaire/button_Retake Questionnaire to Improve Score""))",Chrome 143.0.7499.170,,,04-01-2026 00:37:41,04-01-2026 00:37:43,2.705s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:37:43,04-01-2026 00:37:43,0.250s,PASSED

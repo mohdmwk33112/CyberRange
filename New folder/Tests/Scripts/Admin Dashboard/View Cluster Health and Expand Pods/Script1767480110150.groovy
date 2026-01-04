@@ -17,3 +17,19 @@ import com.kms.katalon.core.windows.keyword.WindowsBuiltinKeywords as Windows
 import internal.GlobalVariable as GlobalVariable
 import org.openqa.selenium.Keys as Keys
 
+WebUI.openBrowser('')
+
+WebUI.navigateToUrl('http://localhost:3000/admin')
+
+WebUI.setText(findTestObject('Object Repository/Admin/admin view/input_Username_username'), 'admin')
+
+WebUI.setEncryptedText(findTestObject('Object Repository/Admin/admin view/input_Password_password'), '/5S6MFFLcE4ZOg6V2jhgMg==')
+
+WebUI.click(findTestObject('Object Repository/Admin/admin view/button_Login'))
+
+WebUI.click(findTestObject('Object Repository/Admin/admin view/svg_scenarioddos_lucide lucide-chevron-down_1ed8b5'))
+
+WebUI.delay(5)
+
+WebUI.closeBrowser()
+

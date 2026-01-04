@@ -1,0 +1,41 @@
+Suite/Test/Step Name,Browser,Description,Tag,Start time,End time,Duration,Status
+Simulation,Chrome 143.0.7499.170,Simulation test cases that ensures that the attackes are running,,04-01-2026 00:38:24,04-01-2026 00:39:17,52.542s,PASSED
+,,,,,,,
+Test Cases/Simulation/Launch Simulation-locked (fail),Chrome 143.0.7499.170,Verify locked simulation cannot be started,FE-Sim-02,04-01-2026 00:38:25,04-01-2026 00:38:45,19.563s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:38:26,04-01-2026 00:38:30,3.914s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:38:30,04-01-2026 00:38:31,1.059s,PASSED
+"setText(findTestObject(""Object Repository/Simulation/launch(fail)/input_Username_username""), ""nader2"")",Chrome 143.0.7499.170,,,04-01-2026 00:38:31,04-01-2026 00:38:33,1.624s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Simulation/launch(fail)/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:38:33,04-01-2026 00:38:33,0.409s,PASSED
+"sendKeys(findTestObject(""Object Repository/Simulation/launch(fail)/input_Password_password""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 00:38:33,04-01-2026 00:38:33,0.412s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch(fail)/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:33,04-01-2026 00:38:35,1.446s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch(fail)/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:35,04-01-2026 00:38:36,0.935s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch(fail)/button_Continue to Practice""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:36,04-01-2026 00:38:44,8.357s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:38:44,04-01-2026 00:38:45,0.437s,PASSED
+,,,,,,,
+Test Cases/Simulation/Launch Simulation-Success,Chrome 143.0.7499.170,Verify successful simulation launch,FE-Sim-01,04-01-2026 00:38:45,04-01-2026 00:39:00,15.148s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:38:45,04-01-2026 00:38:47,1.739s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:38:47,04-01-2026 00:38:47,0.700s,PASSED
+"setText(findTestObject(""Object Repository/Simulation/launch/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:38:47,04-01-2026 00:38:49,1.707s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Simulation/launch/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:38:49,04-01-2026 00:38:50,0.491s,PASSED
+"sendKeys(findTestObject(""Object Repository/Simulation/launch/input_Password_password""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 00:38:50,04-01-2026 00:38:50,0.334s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:50,04-01-2026 00:38:51,1.149s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:51,04-01-2026 00:38:52,0.703s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_03. Simulation""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:52,04-01-2026 00:38:53,1.178s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_Launch Simulation""))",Chrome 143.0.7499.170,,,04-01-2026 00:38:53,04-01-2026 00:38:54,0.865s,PASSED
+delay(5),Chrome 143.0.7499.170,,,04-01-2026 00:38:54,04-01-2026 00:38:59,5.117s,PASSED
+"scrollToPosition(0, 10000000)",Chrome 143.0.7499.170,,,04-01-2026 00:38:59,04-01-2026 00:38:59,0.169s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:38:59,04-01-2026 00:39:00,0.723s,PASSED
+,,,,,,,
+Test Cases/Simulation/Stop Simulation,Chrome 143.0.7499.170,Verify stopping a running simulation,FE-Sim-03,04-01-2026 00:39:00,04-01-2026 00:39:17,16.814s,PASSED
+"openBrowser("""")",Chrome 143.0.7499.170,,,04-01-2026 00:39:00,04-01-2026 00:39:03,2.604s,PASSED
+"navigateToUrl(""http://localhost:3000/scenarios"")",Chrome 143.0.7499.170,,,04-01-2026 00:39:03,04-01-2026 00:39:04,1.307s,PASSED
+"setText(findTestObject(""Object Repository/Simulation/launch/input_Username_username""), ""nader"")",Chrome 143.0.7499.170,,,04-01-2026 00:39:04,04-01-2026 00:39:06,2.135s,PASSED
+"setEncryptedText(findTestObject(""Object Repository/Simulation/launch/input_Password_password""), ""n+7DTJndE0qI+loUi7Fb3w=="")",Chrome 143.0.7499.170,,,04-01-2026 00:39:06,04-01-2026 00:39:07,0.630s,PASSED
+"sendKeys(findTestObject(""Object Repository/Simulation/launch/input_Password_password""), Keys.chord(ENTER))",Chrome 143.0.7499.170,,,04-01-2026 00:39:07,04-01-2026 00:39:07,0.489s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_View All Scenarios""))",Chrome 143.0.7499.170,,,04-01-2026 00:39:07,04-01-2026 00:39:09,1.480s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_Start Training""))",Chrome 143.0.7499.170,,,04-01-2026 00:39:09,04-01-2026 00:39:10,0.938s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_03. Simulation""))",Chrome 143.0.7499.170,,,04-01-2026 00:39:10,04-01-2026 00:39:11,1.476s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_Launch Simulation""))",Chrome 143.0.7499.170,,,04-01-2026 00:39:11,04-01-2026 00:39:12,0.972s,PASSED
+"click(findTestObject(""Object Repository/Simulation/launch/button_Terminate Simulation""))",Chrome 143.0.7499.170,,,04-01-2026 00:39:12,04-01-2026 00:39:14,2.118s,PASSED
+delay(2),Chrome 143.0.7499.170,,,04-01-2026 00:39:14,04-01-2026 00:39:16,2.018s,PASSED
+closeBrowser(),Chrome 143.0.7499.170,,,04-01-2026 00:39:16,04-01-2026 00:39:17,0.385s,PASSED
