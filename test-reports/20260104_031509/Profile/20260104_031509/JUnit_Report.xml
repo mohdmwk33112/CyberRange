@@ -1,0 +1,611 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites name="Profile" time="217.411" tests="10" failures="0" errors="0">
+   <testsuite name="Profile" tests="10" failures="0" errors="0" time="217.411" skipped="0" timestamp="2026-01-04T01:15:18.385Z" hostname="nader - MSI" id="Test Suites/Profile">
+      <properties>
+         <property name="deviceName" value=""/>
+         <property name="devicePlatform"/>
+         <property name="logFolder" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_031509\\Profile\\20260104_031509"/>
+         <property name="logFiles" value="D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_031509\\Profile\\20260104_031509\\console0.log, D:\\Courses\\Service\\Project\\CyberRange\\New folder\\Tests\\Reports\\20260104_031509\\Profile\\20260104_031509\\execution0.log"/>
+         <property name="attachments" value=""/>
+         <property name="hostName" value="nader - MSI"/>
+         <property name="os" value="Windows 11 64bit"/>
+         <property name="katalonVersion" value="10.4.3.0"/>
+         <property name="browser" value="Chrome 143.0.7499.170"/>
+         <property name="userFullName" value="Nader Ahmed Abdelsattar Abdeltawab"/>
+         <property name="hostAddress" value="192.168.202.1"/>
+         <property name="sessionId" value="88b3f84b1ec64db8ad6b9dc035fce426"/>
+         <property name="projectName" value="Tests"/>
+         <property name="seleniumVersion" value="4.34.0"/>
+         <property name="proxyInformation" value="ProxyInformation { proxyOption=NO_PROXY, proxyServerType=HTTP, username=, password=********, proxyServerAddress=, proxyServerPort=0, executionList=&quot;&quot;, isApplyToDesiredCapabilities=true }"/>
+         <property name="platform" value="Windows 11"/>
+      </properties>
+      <testcase name="Test Cases/Profile/View Profile" time="7.731" classname="Test Cases/Profile/View Profile" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:15:19 - [TEST_CASE][PASSED] - Test Cases/Profile/View Profile: Test Cases/Profile/View Profile
+
+04-01-2026T03:15:19 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:15:19 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:15:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:15:22 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:15:22 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:23 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:23 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:24 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:24 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:24 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:24 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:25 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:25 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:15:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:15:26 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:15:26 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/View Progress" time="6.867" classname="Test Cases/Profile/View Progress" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:15:26 - [TEST_CASE][PASSED] - Test Cases/Profile/View Progress: Test Cases/Profile/View Progress
+
+04-01-2026T03:15:26 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:15:26 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:15:26 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:15:28 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:15:28 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:29 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:29 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:30 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:30 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:31 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:31 - [TEST_STEP][PASSED] - sendKeys(findTestObject("Object Repository/Profile/input_Password_password"), Keys.chord(ENTER)): Keys 'ENTER + ' sent to object: 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:31 - [MESSAGE][PASSED] - Keys 'ENTER + ' sent to object: 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:31 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Detailed Progress")): Object: 'Object Repository/Profile/button_View Detailed Progress' is clicked on
+
+04-01-2026T03:15:33 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Detailed Progress' is clicked on
+
+04-01-2026T03:15:33 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:15:33 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Update Email - Fail" time="7.381" classname="Test Cases/Profile/Update Email - Fail" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:15:33 - [TEST_CASE][PASSED] - Test Cases/Profile/Update Email - Fail: Test Cases/Profile/Update Email - Fail
+
+04-01-2026T03:15:33 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:15:33 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:15:33 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:15:35 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:15:35 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:35 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:35 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:36 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:36 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:37 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:37 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:15:38 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:15:38 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Edit Profile")): Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:15:39 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:15:39 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Email_email"), ""): Text '' is set on object 'Object Repository/Profile/input_Email_email'
+
+04-01-2026T03:15:40 - [MESSAGE][PASSED] - Text '' is set on object 'Object Repository/Profile/input_Email_email'
+
+04-01-2026T03:15:40 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Save Changes")): Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:15:40 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:15:40 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:15:40 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Update Email - Success" time="8.347" classname="Test Cases/Profile/Update Email - Success" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:15:40 - [TEST_CASE][PASSED] - Test Cases/Profile/Update Email - Success: Test Cases/Profile/Update Email - Success
+
+04-01-2026T03:15:41 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:15:41 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:15:41 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:15:43 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:15:43 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:43 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:43 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:44 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:44 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:45 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:45 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:45 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:45 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:15:46 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:15:46 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Edit Profile")): Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:15:47 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:15:47 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Email_email"), "ayadzewail2@gmail.com"): Text 'ayadzewail2@gmail.com' is set on object 'Object Repository/Profile/input_Email_email'
+
+04-01-2026T03:15:48 - [MESSAGE][PASSED] - Text 'ayadzewail2@gmail.com' is set on object 'Object Repository/Profile/input_Email_email'
+
+04-01-2026T03:15:48 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Save Changes")): Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:15:49 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:15:49 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:15:49 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Update Password - Mismatch (Fail)" time="59.162" classname="Test Cases/Profile/Update Password - Mismatch (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:15:49 - [TEST_CASE][PASSED] - Test Cases/Profile/Update Password - Mismatch (Fail): Test Cases/Profile/Update Password - Mismatch (Fail)
+
+04-01-2026T03:15:49 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:15:49 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:15:49 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:15:51 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:15:51 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:51 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:15:51 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:52 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:15:52 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:53 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:15:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:15:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/svg_Browse Scenarios_lucide lucide-user h-6 w-6")): Object: 'Object Repository/Profile/svg_Browse Scenarios_lucide lucide-user h-6 w-6' is clicked on
+
+04-01-2026T03:15:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/svg_Browse Scenarios_lucide lucide-user h-6 w-6' is clicked on
+
+04-01-2026T03:15:54 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Change Password")): Object: 'Object Repository/Profile/button_Change Password' is clicked on
+
+04-01-2026T03:15:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Change Password' is clicked on
+
+04-01-2026T03:15:55 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6"), "UjWHzyF6vE8="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'
+
+04-01-2026T03:16:05 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'. Try using Self-healing.
+
+04-01-2026T03:16:05 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:16:06 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:16:06 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'
+
+04-01-2026T03:16:06 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1"), "9GOtePQYp2c="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'
+
+04-01-2026T03:16:16 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'. Try using Self-healing.
+
+04-01-2026T03:16:16 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:16:16 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:16:16 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'
+
+04-01-2026T03:16:16 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2"), "G5ed2Ngh+RQ="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'
+
+04-01-2026T03:16:26 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'. Try using Self-healing.
+
+04-01-2026T03:16:26 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:16:26 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:16:26 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'
+
+04-01-2026T03:16:26 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3"), "Cwp8A+okQc4="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'
+
+04-01-2026T03:16:37 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'. Try using Self-healing.
+
+04-01-2026T03:16:37 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:16:37 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:16:37 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'
+
+04-01-2026T03:16:37 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4"), "lO3w8bfNEkI="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'
+
+04-01-2026T03:16:47 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'. Try using Self-healing.
+
+04-01-2026T03:16:47 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:16:47 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:16:47 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'
+
+04-01-2026T03:16:47 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/div_Update Password")): Object: 'Object Repository/Profile/div_Update Password' is clicked on
+
+04-01-2026T03:16:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/div_Update Password' is clicked on
+
+04-01-2026T03:16:48 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:16:48 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Update Password - Success" time="90.897" classname="Test Cases/Profile/Update Password - Success" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:16:48 - [TEST_CASE][PASSED] - Test Cases/Profile/Update Password - Success: Test Cases/Profile/Update Password - Success
+
+04-01-2026T03:16:48 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:16:48 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:16:48 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:16:50 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:16:50 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:16:50 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:16:50 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:16:51 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:16:51 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:16:52 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:16:52 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:16:52 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:16:52 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:16:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:16:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Change Password")): Object: 'Object Repository/Profile/button_Change Password' is clicked on
+
+04-01-2026T03:16:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Change Password' is clicked on
+
+04-01-2026T03:16:54 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6"), "DUEOm35DxGo="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'
+
+04-01-2026T03:17:04 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'. Try using Self-healing.
+
+04-01-2026T03:17:04 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:17:04 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:17:05 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'
+
+04-01-2026T03:17:05 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1"), "HIXudGnohtg="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'
+
+04-01-2026T03:17:15 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'. Try using Self-healing.
+
+04-01-2026T03:17:15 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:17:15 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:17:15 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'
+
+04-01-2026T03:17:15 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2"), "y566jGqKNJk="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'
+
+04-01-2026T03:17:25 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'. Try using Self-healing.
+
+04-01-2026T03:17:25 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:17:25 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:17:25 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'
+
+04-01-2026T03:17:25 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3"), "lBrxkZGs0MQ="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'
+
+04-01-2026T03:17:36 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'. Try using Self-healing.
+
+04-01-2026T03:17:36 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:17:36 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:17:36 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'
+
+04-01-2026T03:17:36 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4"), "5YbW3XBgarU="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'
+
+04-01-2026T03:17:46 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'. Try using Self-healing.
+
+04-01-2026T03:17:46 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:17:46 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:17:46 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'
+
+04-01-2026T03:17:46 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5"), "2ihRrRfSAwg="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5'
+
+04-01-2026T03:17:57 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5'. Try using Self-healing.
+
+04-01-2026T03:17:57 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:17:57 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:17:57 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_5'
+
+04-01-2026T03:17:57 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6"), "M5FYQmxHOW0="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6'
+
+04-01-2026T03:18:07 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6'. Try using Self-healing.
+
+04-01-2026T03:18:07 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:18:07 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:18:07 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_6'
+
+04-01-2026T03:18:07 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7"), "RQ040/2ztytLb1OrXWsytw=="): Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7'
+
+04-01-2026T03:18:17 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] Failed to find element with id 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7'. Try using Self-healing.
+
+04-01-2026T03:18:18 - [MESSAGE][WARNING] - [WEBUI-SELF-HEALING] The current locator of test object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7' was broken. Propose an alternative one: '//div[2]/div[2]/div/div[2]/div/input'.
+
+04-01-2026T03:18:18 - [MESSAGE][WARNING] - Waiting for element timed out
+
+04-01-2026T03:18:18 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_7'
+
+04-01-2026T03:18:18 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Update Password")): Object: 'Object Repository/Profile/button_Update Password' is clicked on
+
+04-01-2026T03:18:18 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Update Password' is clicked on
+
+04-01-2026T03:18:18 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:18:19 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Admin Dashboard/Reset User Password" time="14.489" classname="Test Cases/Admin Dashboard/Reset User Password" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:18:19 - [TEST_CASE][PASSED] - Test Cases/Admin Dashboard/Reset User Password: Test Cases/Admin Dashboard/Reset User Password
+
+04-01-2026T03:18:19 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:18:19 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:18:19 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:18:22 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:18:22 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:23 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:23 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Username_username"), "admin"): Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:18:24 - [MESSAGE][PASSED] - Text 'admin' is set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Username_username'
+
+04-01-2026T03:18:24 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Password_password"), "/5S6MFFLcE4ZOg6V2jhgMg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:18:24 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_Password_password'
+
+04-01-2026T03:18:24 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Login")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T03:18:24 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Login' is clicked on
+
+04-01-2026T03:18:24 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_User Management")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_User Management' is clicked on
+
+04-01-2026T03:18:26 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_User Management' is clicked on
+
+04-01-2026T03:18:26 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/svg_student_lucide lucide-key-round w-4 h-4")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/svg_student_lucide lucide-key-round w-4 h-4' is clicked on
+
+04-01-2026T03:18:30 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/svg_student_lucide lucide-key-round w-4 h-4' is clicked on
+
+04-01-2026T03:18:30 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_New Password_new-password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_New Password_new-password'
+
+04-01-2026T03:18:31 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/input_New Password_new-password'
+
+04-01-2026T03:18:31 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Update Password")): Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Update Password' is clicked on
+
+04-01-2026T03:18:31 - [MESSAGE][PASSED] - Object: 'Object Repository/Admin/Page_CyberRange/Page_CyberRange/Page_CyberRange/button_Update Password' is clicked on
+
+04-01-2026T03:18:31 - [TEST_STEP][PASSED] - delay(2): Delayed 2 second(s)
+
+04-01-2026T03:18:33 - [MESSAGE][PASSED] - Delayed 2 second(s)
+
+04-01-2026T03:18:33 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:18:33 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Update Username - Invalid Error (Fail)" time="7.462" classname="Test Cases/Profile/Update Username - Invalid Error (Fail)" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:18:33 - [TEST_CASE][PASSED] - Test Cases/Profile/Update Username - Invalid Error (Fail): Test Cases/Profile/Update Username - Invalid Error (Fail)
+
+04-01-2026T03:18:34 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:18:34 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:18:34 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:18:35 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:18:35 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:35 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:35 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:36 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:36 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:18:37 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:18:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:18:37 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:18:37 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:18:39 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:18:39 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Edit Profile")): Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:18:39 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:18:39 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), ""): Text '' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:40 - [MESSAGE][PASSED] - Text '' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:40 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Save Changes")): Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:18:41 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:18:41 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:18:41 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Update Username - Success" time="8.574" classname="Test Cases/Profile/Update Username - Success" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:18:41 - [TEST_CASE][PASSED] - Test Cases/Profile/Update Username - Success: Test Cases/Profile/Update Username - Success
+
+04-01-2026T03:18:41 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:18:41 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:18:41 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:18:42 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:18:42 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:43 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:43 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/input_Username_username")): Object: 'Object Repository/Profile/input_Username_username' is clicked on
+
+04-01-2026T03:18:44 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/input_Username_username' is clicked on
+
+04-01-2026T03:18:44 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail2"): Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:45 - [MESSAGE][PASSED] - Text 'ayadzewail2' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:45 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:18:45 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:18:45 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:18:45 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:18:45 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:18:46 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:18:46 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Edit Profile")): Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:18:47 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Edit Profile' is clicked on
+
+04-01-2026T03:18:47 - [TEST_STEP][PASSED] - doubleClick(findTestObject("Object Repository/Profile/input_Username_username")): Object: 'Object Repository/Profile/input_Username_username' is double clicked on
+
+04-01-2026T03:18:48 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/input_Username_username' is double clicked on
+
+04-01-2026T03:18:48 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail3"): Text 'ayadzewail3' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:49 - [MESSAGE][PASSED] - Text 'ayadzewail3' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:49 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Save Changes")): Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:18:49 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Save Changes' is clicked on
+
+04-01-2026T03:18:49 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:18:49 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <testcase name="Test Cases/Profile/Delete Account" time="5.832" classname="Test Cases/Profile/Delete Account" status="PASSED">
+         <system-out><![CDATA[04-01-2026T03:18:49 - [TEST_CASE][PASSED] - Test Cases/Profile/Delete Account: Test Cases/Profile/Delete Account
+
+04-01-2026T03:18:50 - [TEST_STEP][PASSED] - openBrowser(""): Browser is opened with url: ''
+
+04-01-2026T03:18:50 - [MESSAGE][INFO] - Starting 'Chrome' driver
+
+04-01-2026T03:18:50 - [MESSAGE][INFO] - Action delay is set to 0 milliseconds
+
+04-01-2026T03:18:51 - [MESSAGE][PASSED] - Browser is opened with url: ''
+
+04-01-2026T03:18:51 - [TEST_STEP][PASSED] - navigateToUrl("http://localhost:3000/auth/login"): Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:52 - [MESSAGE][PASSED] - Navigate to 'http://localhost:3000/auth/login' successfully
+
+04-01-2026T03:18:52 - [TEST_STEP][PASSED] - setText(findTestObject("Object Repository/Profile/input_Username_username"), "ayadzewail3"): Text 'ayadzewail3' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:52 - [MESSAGE][PASSED] - Text 'ayadzewail3' is set on object 'Object Repository/Profile/input_Username_username'
+
+04-01-2026T03:18:53 - [TEST_STEP][PASSED] - setEncryptedText(findTestObject("Object Repository/Profile/input_Password_password"), "ctjkNZzQVZQqnpFh3PgUMg=="): Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:18:53 - [MESSAGE][PASSED] - Text ****** has been set on object 'Object Repository/Profile/input_Password_password'
+
+04-01-2026T03:18:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_Login")): Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:18:53 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_Login' is clicked on
+
+04-01-2026T03:18:53 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/button_View Profile")): Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:18:54 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/button_View Profile' is clicked on
+
+04-01-2026T03:18:54 - [TEST_STEP][PASSED] - click(findTestObject("Object Repository/Profile/svg_Delete Account_lucide lucide-trash2 luc_f007f8")): Object: 'Object Repository/Profile/svg_Delete Account_lucide lucide-trash2 luc_f007f8' is clicked on
+
+04-01-2026T03:18:55 - [MESSAGE][PASSED] - Object: 'Object Repository/Profile/svg_Delete Account_lucide lucide-trash2 luc_f007f8' is clicked on
+
+04-01-2026T03:18:55 - [TEST_STEP][PASSED] - acceptAlert(): Alert accepted
+
+04-01-2026T03:18:55 - [MESSAGE][PASSED] - Alert accepted
+
+04-01-2026T03:18:55 - [TEST_STEP][PASSED] - closeBrowser(): Browser is closed
+
+04-01-2026T03:18:55 - [MESSAGE][PASSED] - Browser is closed]]></system-out>
+         <system-err><![CDATA[]]></system-err>
+      </testcase>
+      <system-out><![CDATA[04-01-2026T03:15:18 - [TEST_SUITE][PASSED] - Profile: null]]></system-out>
+      <system-err><![CDATA[]]></system-err>
+   </testsuite>
+</testsuites>
