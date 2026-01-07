@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<TestCaseEntity>
+   <description>Verify admin cannot be deleted via the UI.</description>
+   <name>Delete Admin (Prevention) (Fail)</name>
+   <tag>FE-Admin-09</tag>
+   <comment></comment>
+   <recordOption>OTHER</recordOption>
+   <testCaseGuid>85b952cf-c088-4803-96c1-423b833b4d95</testCaseGuid>
+</TestCaseEntity>

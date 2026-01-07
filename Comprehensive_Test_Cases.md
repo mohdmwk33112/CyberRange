@@ -48,13 +48,20 @@
 
 | ID | Scenario | Description | Pre-requisites | Input | Execution Steps | Expected Behavior | Status |
 |:---|:---|:---|:---|:---|:---|:---|:---|
-| **FE-Admin-01** | **Access Admin - Authorized** | Verify Admin Dashboard loads for admin. | Role: 'admin' | None | 1. Log in as admin.<br>2. Access /admin. | Dashboard UI visible.<br>K8s pods list displayed. | **Automated (Katalon)** |
-| **FE-Admin-02** | **Access Admin - Unauthorized (Fail)** | Verify non-admins are blocked. | Role: 'student' | Navigate /admin | 1. Access /admin as student. | Redirected to /dashboard.<br>Access Denied toast appears. | **Automated (Katalon)** |
-| **FE-Admin-03** | **View Cluster Health & Expand Pods** | Verify pod status display and details expansion. | Cluster active. | Click Pod Card | 1. Go to Admin Dashboard.<br>2. Click a Pod card. | Detailed labels and IP shown. | Not tested |
-| **FE-Admin-04** | **Cluster Refresh - Error (Fail)** | Verify handling of cluster connection failure. | Cluster down. | Click Refresh | 1. Click Refresh button. | Error state shown on cards. | Not tested |
-| **FE-Admin-05** | **List Users & Expand Details** | Verify admin can see and expand user details. | Multiple users. | Click User Row | 1. Go to User Management.<br>2. Click a user row. | Row expands.<br>Joined date and ID visible. | **Automated (Katalon)** |
-| **FE-Admin-06** | **Delete User** | Verify admin can delete a user. | User exists. | Click Delete | 1. Click Delete button.<br>2. Confirm in custom dialog. | User disappears from list.<br>Success toast shown. | **Automated (Katalon)** |
-| **FE-Admin-07** | **View Audit Logs** | Verify system audit logs are visible. | Activity exists. | Click Audit Tab | 1. Select Login Activity tab. | Table of system logs appears. | **Automated (Katalon)** |
+| ID | Scenario | Description | Pre-requisites | Input | Execution Steps | Expected Behavior | Status |
+|:---|:---|:---|:---|:---|:---|:---|:---|
+| **FE-Admin-01** | **Access Admin - Authorized** | Verify Admin Dashboard loads for admin. | Role: 'admin' | Username: "admin" | 1. Navigate to /auth/login.<br>2. Login as admin.<br>3. Click "User Management" or "Cluster Health". | Admin dashboard UI is visible. | **Automated (Katalon)** |
+| **FE-Admin-02** | **Access Admin - Unauthorized (Fail)** | Verify non-admins are blocked from admin area. | Role: 'student' | Username: "mohamed" | 1. Login as a student user.<br>2. Attempt to navigate to /admin manually. | Redirected to /dashboard or remains on login/denied page. | **Automated (Katalon)** |
+| **FE-Admin-03** | **View Cluster Health & Expand Pods** | Verify pod status display and details expansion. | Cluster active. | Click Expand Icon | 1. Go to Admin Dashboard (Cluster Health).<br>2. Click a chevron icon for a scenario pod. | Detailed labels, status, and IP are shown. | **Automated (Katalon)** |
+| **FE-Admin-04** | **Cluster Refresh - Error (Fail)** | Verify handling of cluster connection failure. | Cluster down. | Click Refresh | 1. Click Refresh button when backend is disconnected. | Error state shown on cards. | Not tested |
+| **FE-Admin-05** | **List Users & Expand Details** | Verify admin can see and expand user details. | Multiple users. | Click User Row | 1. Go to User Management.<br>2. Click a user row or chevron icon. | Row expands to show more details (Joined Date, ID). | **Automated (Katalon)** |
+| **FE-Admin-06** | **Delete User** | Verify admin can delete a user. | User exists. | Click Delete | 1. Go to User Management.<br>2. Click Delete button for the last user.<br>3. Confirm in the custom modal. | User is removed from list.<br>Toast "User deleted" appears. | **Automated (Katalon)** |
+| **FE-Admin-07** | **View Audit Logs** | Verify system audit logs are visible. | Activity exists. | Click Audit Tab | 1. Navigate to "Login Activity" tab.<br>2. Click a log entry to view details. | Table of system logs appears correctly. | **Automated (Katalon)** |
+| **FE-Admin-08** | **Reset User Password** | Verify admin can reset a user's password. | User exists. | New Password | 1. Go to User Management.<br>2. Click "Reset Password" (Key icon) for a user.<br>3. Enter new password and click "Update". | Password updated successfully.<br>Success feedback shown. | **Automated (Katalon)** |
+| **FE-Admin-09** | **Delete Admin (Prevention)** | Verify admin cannot be deleted via the UI. | Multiple admins exist. | Look at list | 1. Go to User Management.<br>2. Find an 'admin' user. | Delete button is disabled for admins.<br>Action is prevented. | Not tested |
+| **FE-Admin-10** | **Reset Password - Validation (Fail)** | Verify password length requirements. | User Management open. | Password: "123" | 1. Click "Reset Password" for any user.<br>2. Enter "123" (less than 8 chars).<br>3. Attempt to click "Update". | Button is disabled or Error toast "Invalid Password" appears. | Not tested |
+| **FE-Admin-11** | **Delete User - Cancel Action** | Verify user is not deleted if cancel is selected. | User exists. | Click Cancel | 1. Click Delete for a user.<br>2. In the confirmation modal, click "Cancel". | Modal closes.<br>User remains in the list. | Not tested |
+| **FE-Admin-12** | **View Audit Logs - No Activity** | Verify state when no logs exist. | New system / No logs. | Click Audit Tab | 1. Select Login Activity tab. | "No records found" or empty table shown gracefully. | Not tested |
 
 ## 5. General & Navigation
 
