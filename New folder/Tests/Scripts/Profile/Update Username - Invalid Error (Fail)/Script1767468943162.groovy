@@ -21,7 +21,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
-WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail2')
+WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail')
 
 WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_Password_password'), 'ctjkNZzQVZQqnpFh3PgUMg==')
 
@@ -34,6 +34,11 @@ WebUI.click(findTestObject('Object Repository/Profile/button_Edit Profile'))
 WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), '')
 
 WebUI.click(findTestObject('Object Repository/Profile/button_Save Changes'))
+
+WebUI.waitForElementVisible(
+	findTestObject('Object Repository/Profile/p_Username is required'),
+	10
+)
 
 WebUI.closeBrowser()
 

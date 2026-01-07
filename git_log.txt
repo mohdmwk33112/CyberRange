@@ -1,0 +1,1000 @@
+﻿89df259|2026-01-04|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+330d60a|2026-01-04|	modified:   New folder/Tests/Test Suites/Profile.ts
+ New folder/Tests/Test Suites/Profile.ts | 74 ++++++++++++++++++++++++++++++++-
+ 1 file changed, 72 insertions(+), 2 deletions(-)
+
+171f8ba|2026-01-04|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+8d7827b|2026-01-04|feat: Introduce Katalon Studio test automation assets for Admin, Simulation, and Scenario features, and update test case documentation.
+ Comprehensive_Test_Cases.md                        |  20 +-
+ .../Admin/admin view/button_Login.rs               | 114 +++
+ ...-ids-deployment-7696675586-6pqc714202_47c944.rs |  90 +++
+ ...-ids-deployment-7696675586-6pqc714202_6bcc94.rs |  82 ++
+ .../Admin/admin view/input_Password_password.rs    | 106 +++
+ .../Admin/admin view/input_Username_username.rs    |  98 +++
+ ...enarioddos_lucide lucide-chevron-down_1ed8b5.rs | 138 ++++
+ .../launch(fail)/button_Continue to Practice.rs    |  98 +++
+ .../launch(fail)/button_Start Training.rs          |  98 +++
+ .../launch(fail)/button_View All Scenarios.rs      | 114 +++
+ .../launch(fail)/input_Password_password.rs        | 106 +++
+ .../launch(fail)/input_Username_username.rs        |  98 +++
+ .../Simulation/launch/button_03. Simulation.rs     |  28 +-
+ .../Simulation/launch/button_Launch Simulation.rs  |  28 +-
+ .../Simulation/launch/button_Start Training.rs     |  36 +-
+ .../launch/button_Terminate Simulation.rs          |  98 +++
+ .../Simulation/launch/button_View All Scenarios.rs |  30 +-
+ ...gout_h-1.5 w-full rounded-full transi_477328.rs |  58 ++
+ .../Simulation/launch/input_Password_password.rs   |  28 +-
+ .../Simulation/launch/input_Username_username.rs   |  26 +-
+ .../Script1767480110150.groovy}                    |  16 +
+ .../Script1767057003330.groovy                     |  14 +-
+ .../Stop Simulation/Script1767057036430.groovy     |  24 +
+ .../Verfiy IDS Alerts/Script1767057137757.groovy   |  19 -
+ .../Script1767057095151.groovy                     |  19 -
+ .../View Cluster Health and Expand Pods.tc         |   9 +
+ .../Test Cases/Simulation/Reset Simulation.tc      |   9 -
+ .../Test Cases/Simulation/Verfiy IDS Alerts.tc     |   9 -
+ .../Test Cases/Simulation/Verify Victim Health.tc  |   9 -
+ New folder/Tests/Test Suites/Admin Dashboard.ts    |   7 +
+ New folder/Tests/Test Suites/Scenarios.groovy      |  66 ++
+ New folder/Tests/Test Suites/Scenarios.ts          |  49 ++
+ New folder/Tests/Test Suites/Simulation.groovy     |  66 ++
+ New folder/Tests/Test Suites/Simulation.ts         |  35 +
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ .../Scenarios/20260104_003254/20260104_003254.csv  |  86 ++
+ .../Scenarios/20260104_003254/20260104_003254.html | 860 ++++++++++++++++++++
+ .../Scenarios/20260104_003254/JUnit_Report.xml     | 493 ++++++++++++
+ ...-full rounded-md border b_a1e141_1_position.png | Bin 0 -> 2401 bytes
+ ...-full rounded-md border b_a1e141_2_position.png | Bin 0 -> 685 bytes
+ ...-full rounded-md border b_a1e141_3_position.png | Bin 0 -> 883 bytes
+ ...-full rounded-md border b_a1e141_4_position.png | Bin 0 -> 1098 bytes
+ ...-full rounded-md border b_a1e141_5_position.png | Bin 0 -> 1150 bytes
+ ...-full rounded-md border b_a1e141_6_position.png | Bin 0 -> 2430 bytes
+ ...-full rounded-md border b_a1e141_1_position.png | Bin 0 -> 2401 bytes
+ ...-full rounded-md border b_a1e141_2_position.png | Bin 0 -> 2401 bytes
+ ...-full rounded-md border b_a1e141_1_position.png | Bin 0 -> 2401 bytes
+ ...-full rounded-md border b_a1e141_2_position.png | Bin 0 -> 2430 bytes
+ .../20260104_003254/broken-test-objects-v2.json    | 104 +++
+ .../Scenarios/20260104_003254/execution.properties |   1 +
+ .../Scenarios/20260104_003254/execution.uuid       |   1 +
+ .../Scenarios/20260104_003254/testCaseBinding      |   5 +
+ .../Scenarios/20260104_003254/tsc_id.txt           |   0
+ .../Simulation/20260104_003811/20260104_003811.csv |  41 +
+ .../20260104_003811/20260104_003811.html           | 852 ++++++++++++++++++++
+ .../Simulation/20260104_003811/JUnit_Report.xml    | 181 +++++
+ .../20260104_003811/execution.properties           |   1 +
+ .../Simulation/20260104_003811/execution.uuid      |   1 +
+ .../Simulation/20260104_003811/execution0.log.lck  |   0
+ .../Simulation/20260104_003811/testCaseBinding     |   3 +
+ .../Simulation/20260104_003811/tsc_id.txt          |   0
+ .../20260104_010512/20260104_010512.csv            |  80 ++
+ .../20260104_010512/20260104_010512.html           | 864 +++++++++++++++++++++
+ .../20260104_010512/JUnit_Report.xml               | 331 ++++++++
+ .../20260104_010512/execution.properties           |   1 +
+ .../Admin Dashboard/20260104_010512/execution.uuid |   1 +
+ .../20260104_010512/testCaseBinding                |   6 +
+ .../Admin Dashboard/20260104_010512/tsc_id.txt     |   0
+ 68 files changed, 5585 insertions(+), 174 deletions(-)
+
+fe4579c|2026-01-04|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+d229999|2026-01-04|feat: Add automation tests and object repository for admin dashboard user password reset functionality.
+ Test_Strategy.md | 369 +++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ test strat.txt   |  49 ++++++++
+ 2 files changed, 418 insertions(+)
+
+1ae170d|2026-01-03|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+03f782f|2026-01-03|	modified:   Comprehensive_Test_Cases.md 	new file:   New folder/Tests/Object Repository/Profile/a_Back to Dashboard.rs 	modified:   New folder/Tests/Object Repository/Profile/button_Change Password.rs 	modified:   New folder/Tests/Object Repository/Profile/button_Edit Profile.rs 	modified:   New folder/Tests/Object Repository/Profile/button_Login.rs 	modified:   New folder/Tests/Object Repository/Profile/button_Save Changes.rs 	new file:   New folder/Tests/Object Repository/Profile/button_View Detailed Progress.rs 	modified:   New folder/Tests/Object Repository/Profile/button_View Profile.rs 	new file:   New folder/Tests/Object Repository/Profile/div_Update Password.rs 	new file:   New folder/Tests/Object Repository/Profile/div_student.rs 	modified:   New folder/Tests/Object Repository/Profile/input_Email_email.rs 	modified:   New folder/Tests/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6.rs 	modified:   New folder/Tests/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1.rs 	modified:   New folder/Tests/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2.rs 	modified:   New folder/Tests/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3.rs 	modified:   New folder/Tests/Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4.rs 	modified:   New folder/Tests/Object Repository/Profile/input_Password_password.rs 	modified:   New folder/Tests/Object Repository/Profile/input_Username_username.rs 	new file:   New folder/Tests/Object Repository/Profile/svg_Browse Scenarios_lucide lucide-user h-6 w-6.rs 	renamed:    New folder/Tests/Scripts/Profile/Delete User/Script1767037196673.groovy -> New folder/Tests/Scripts/Profile/Delete Account/Script1767037196673.groovy 	new file:   New folder/Tests/Scripts/Profile/Update Email - Fail/Script1767469983296.groovy 	renamed:    New folder/Tests/Scripts/Profile/Update E-mail/Script1767019720536.groovy -> New folder/Tests/Scripts/Profile/Update Email - Success/Script1767019720536.groovy 	new file:   New folder/Tests/Scripts/Profile/Update Password - Mismatch (Fail)/Script1767469391100.groovy 	renamed:    New folder/Tests/Scripts/Profile/Update Password/Script1767020025100.groovy -> New folder/Tests/Scripts/Profile/Update Password - Success/Script1767020025100.groovy 	new file:   New folder/Tests/Scripts/Profile/Update Username - Invalid Error (Fail)/Script1767468943162.groovy 	renamed:    New folder/Tests/Scripts/Profile/Update Username/Script1767019597725.groovy -> New folder/Tests/Scripts/Profile/Update Username - Success/Script1767019597725.groovy 	new file:   New folder/Tests/Scripts/Profile/View Profile/Script1767472673298.groovy 	new file:   New folder/Tests/Scripts/Profile/View Progress/Script1767472776290.groovy 	renamed:    New folder/Tests/Test Cases/Profile/Delete User.tc -> New folder/Tests/Test Cases/Profile/Delete Account.tc 	new file:   New folder/Tests/Test Cases/Profile/Update Email - Fail.tc 	renamed:    New folder/Tests/Test Cases/Profile/Update E-mail.tc -> New folder/Tests/Test Cases/Profile/Update Email - Success.tc 	new file:   New folder/Tests/Test Cases/Profile/Update Password - Mismatch (Fail).tc 	renamed:    New folder/Tests/Test Cases/Profile/Update Password.tc -> New folder/Tests/Test Cases/Profile/Update Password - Success.tc 	new file:   New folder/Tests/Test Cases/Profile/Update Username - Invalid Error (Fail).tc 	renamed:    New folder/Tests/Test Cases/Profile/Update Username.tc -> New folder/Tests/Test Cases/Profile/Update Username - Success.tc 	new file:   New folder/Tests/Test Cases/Profile/View Profile.tc 	new file:   New folder/Tests/Test Cases/Profile/View Progress.tc 	new file:   New folder/Tests/Test Suites/Profile.groovy 	new file:   New folder/Tests/Test Suites/Profile.ts 	modified:   New folder/Tests/Tests.prj 	modified:   New folder/Tests/settings/internal/com.kms.katalon.composer.testcase.properties
+ Comprehensive_Test_Cases.md                        |  11 +-
+ .../Profile/a_Back to Dashboard.rs                 | 130 +++++++++++++++++
+ .../Profile/button_Change Password.rs              |  22 +--
+ .../Profile/button_Edit Profile.rs                 |  20 +--
+ .../Object Repository/Profile/button_Login.rs      |  22 +--
+ .../Profile/button_Save Changes.rs                 |  20 +--
+ .../Profile/button_View Detailed Progress.rs       | 114 +++++++++++++++
+ .../Profile/button_View Profile.rs                 |  18 +--
+ .../Profile/div_Update Password.rs                 |  90 ++++++++++++
+ .../Tests/Object Repository/Profile/div_student.rs |  98 +++++++++++++
+ .../Object Repository/Profile/input_Email_email.rs |  16 +-
+ ...New Password_flex h-10 w-full rounded_d228b6.rs |  32 ++--
+ ...w Password_flex h-10 w-full rounded_d228b6_1.rs |  32 ++--
+ ...w Password_flex h-10 w-full rounded_d228b6_2.rs |  32 ++--
+ ...w Password_flex h-10 w-full rounded_d228b6_3.rs |  32 ++--
+ ...w Password_flex h-10 w-full rounded_d228b6_4.rs |  32 ++--
+ .../Profile/input_Password_password.rs             |  18 +--
+ .../Profile/input_Username_username.rs             |  18 +--
+ ..._Browse Scenarios_lucide lucide-user h-6 w-6.rs | 162 +++++++++++++++++++++
+ .../Script1767037196673.groovy                     |   0
+ .../Update Email - Fail/Script1767469983296.groovy |  53 +++++++
+ .../Script1767019720536.groovy                     |   0
+ .../Script1767469391100.groovy                     |  51 +++++++
+ .../Script1767020025100.groovy                     |   0
+ .../Script1767468943162.groovy                     |  39 +++++
+ .../Script1767019597725.groovy                     |   0
+ .../View Profile/Script1767472673298.groovy        |  33 +++++
+ .../View Progress/Script1767472776290.groovy       |  33 +++++
+ .../Profile/{Delete User.tc => Delete Account.tc}  |   4 +-
+ .../Test Cases/Profile/Update Email - Fail.tc      |   9 ++
+ ...{Update E-mail.tc => Update Email - Success.tc} |   4 +-
+ .../Profile/Update Password - Mismatch (Fail).tc   |   9 ++
+ ...te Password.tc => Update Password - Success.tc} |   4 +-
+ .../Update Username - Invalid Error (Fail).tc      |   9 ++
+ ...te Username.tc => Update Username - Success.tc} |   4 +-
+ .../Tests/Test Cases/Profile/View Profile.tc       |   9 ++
+ .../Tests/Test Cases/Profile/View Progress.tc      |   9 ++
+ New folder/Tests/Test Suites/Profile.groovy        |  66 +++++++++
+ New folder/Tests/Test Suites/Profile.ts            |  14 ++
+ New folder/Tests/Tests.prj                         |   4 +-
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ 41 files changed, 1123 insertions(+), 152 deletions(-)
+
+025e051|2026-01-03|feat: Add automation tests and object repository for admin dashboard user password reset functionality.
+ .../Page_CyberRange/button_Login.rs                |  30 ++--
+ .../Page_CyberRange/button_Update Password.rs      | 106 +++++++++++++
+ .../Page_CyberRange/button_User Management.rs      | 170 +++++++++++++++++++++
+ .../input_New Password_new-password.rs             | 114 ++++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  26 ++--
+ .../Page_CyberRange/input_Username_username.rs     |  26 ++--
+ .../svg_student_lucide lucide-key-round w-4 h-4.rs | 146 ++++++++++++++++++
+ .../Reset User Password/Script1767474981219.groovy |  44 ++++++
+ .../Admin Dashboard/Reset User Password.tc         |   9 ++
+ New folder/Tests/Test Suites/Admin Dashboard.ts    |   7 +
+ 10 files changed, 637 insertions(+), 41 deletions(-)
+
+05f5de0|2026-01-03|fix: Ensure username uniqueness during signup and add Katalon tests for various signup failure conditions.
+ BUG_REPORTS.md                                     |  27 ++++
+ Comprehensive_Test_Cases.md                        |   1 +
+ .../Script1767473870438.groovy                     |  35 +++++
+ .../Script1767043815591.groovy                     |   6 +-
+ .../Signup/User Signup - Empty fields (Fail).tc    |   4 +-
+ .../User Signup - Existing Username (Fail).tc      |   9 ++
+ New folder/Tests/Test Suites/Authentication.ts     | 173 +++++++++++----------
+ New folder/Tests/Tests.prj                         |   4 +-
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ backend/microservices/src/auth/auth.service.ts     |   6 +
+ 10 files changed, 176 insertions(+), 91 deletions(-)
+
+aa7610f|2026-01-03|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+961ef54|2026-01-03|feat: Introduce new test cases, object repositories, and scripts for CyberRange scenario and simulation testing.
+ .../button_Continue to Practice.rs                 |  98 +++++++++++++
+ .../Scenario/Questionnaire-fail/button_Copy.rs     | 114 +++++++++++++++
+ .../Scenario/Questionnaire-fail/button_Copy_1.rs   | 106 ++++++++++++++
+ .../Scenario/Questionnaire-fail/button_Login.rs    | 114 +++++++++++++++
+ .../Questionnaire-fail/button_Start Training.rs    |  98 +++++++++++++
+ .../Questionnaire-fail/button_Submit Command.rs    |  98 +++++++++++++
+ .../Questionnaire-fail/button_Submit Command_1.rs  | 106 ++++++++++++++
+ .../Questionnaire-fail/button_Submit Command_2.rs  | 106 ++++++++++++++
+ .../Questionnaire-fail/button_Submit Command_3.rs  | 106 ++++++++++++++
+ .../button_View All Scenarios.rs                   | 114 +++++++++++++++
+ ...gout_h-1.5 w-full rounded-full transi_477328.rs |  58 ++++++++
+ ...yberRangeCyberRangefont-facefont-fami_45723b.rs | 154 +++++++++++++++++++++
+ ...yberRangeCyberRangekatalonfont-family_dd8fd1.rs | 154 +++++++++++++++++++++
+ .../Questionnaire-fail/input_Password_password.rs  | 106 ++++++++++++++
+ .../Questionnaire-fail/input_Username_username.rs  |  98 +++++++++++++
+ ..._flex h-10 w-full rounded-md border b_a1e141.rs |  82 +++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_1.rs |  98 +++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_2.rs |  98 +++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_3.rs |  98 +++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_4.rs |  98 +++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_5.rs |  98 +++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_6.rs |  98 +++++++++++++
+ .../button_Continue to Practice.rs                 |  98 +++++++++++++
+ ...button_Retake Questionnaire to Improve Score.rs | 114 +++++++++++++++
+ .../Reset Questionnaire/button_Start Training.rs   |  98 +++++++++++++
+ .../Reset Questionnaire/button_Submit Command.rs   |  98 +++++++++++++
+ .../Reset Questionnaire/button_Submit Command_1.rs |  98 +++++++++++++
+ .../button_View All Scenarios.rs                   | 114 +++++++++++++++
+ .../Reset Questionnaire/input_Password_password.rs | 106 ++++++++++++++
+ .../Reset Questionnaire/input_Username_username.rs |  98 +++++++++++++
+ ..._flex h-10 w-full rounded-md border b_a1e141.rs |  82 +++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_1.rs |  98 +++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_2.rs |  98 +++++++++++++
+ .../Scenario/View Scenarios/.meta                  |   7 +
+ .../button_Continue to Practice.rs                 |  26 ++--
+ .../button_Login.rs                                |  30 ++--
+ .../button_Start Training.rs                       |  28 ++--
+ .../button_Submit Command.rs                       |  26 ++--
+ .../button_Submit Command_1.rs                     |  26 ++--
+ .../button_View All Scenarios.rs                   |  32 ++---
+ .../input_Password_password.rs                     |  28 ++--
+ .../input_Username_username.rs                     |  26 ++--
+ ..._flex h-10 w-full rounded-md border b_a1e141.rs |  22 +--
+ ...lex h-10 w-full rounded-md border b_a1e141_1.rs |  26 ++--
+ ...lex h-10 w-full rounded-md border b_a1e141_2.rs |  26 ++--
+ .../Simulation/launch/button_03. Simulation.rs     | 106 ++++++++++++++
+ .../Simulation/launch/button_Launch Simulation.rs  | 106 ++++++++++++++
+ .../launch/button_Return to Questionnaire.rs       |  98 +++++++++++++
+ .../Simulation/launch/button_Start Training.rs     |  98 +++++++++++++
+ .../Simulation/launch/button_View All Scenarios.rs | 114 +++++++++++++++
+ .../Simulation/launch/div_Username.rs              |  98 +++++++++++++
+ .../Simulation/launch/input_Password_password.rs   | 106 ++++++++++++++
+ .../Simulation/launch/input_Username_username.rs   |  98 +++++++++++++
+ .../Script1767039300702.groovy                     |  59 ++++++++
+ .../Script1767039235563.groovy                     |  24 ++--
+ .../Reset Questionnaire/Script1767039349915.groovy |  34 +++++
+ .../View All Scenarios/Script1767039075435.groovy  |   8 +-
+ .../Script1767039154083.groovy                     |  10 +-
+ .../Script1767056958458.groovy                     |  43 ++++++
+ .../Script1767057003330.groovy                     |  39 ++++++
+ .../Reset Simulation/Script1767057061368.groovy    |  19 +++
+ .../Stop Simulation/Script1767057036430.groovy     |  19 +++
+ .../Verfiy IDS Alerts/Script1767057137757.groovy   |  19 +++
+ .../Script1767057095151.groovy                     |  19 +++
+ .../Simulation/Launch Simulation-Success.tc        |   9 ++
+ .../Simulation/Launch Simulation-locked (fail).tc  |   9 ++
+ .../Test Cases/Simulation/Reset Simulation.tc      |   9 ++
+ .../Tests/Test Cases/Simulation/Stop Simulation.tc |   9 ++
+ .../Test Cases/Simulation/Verfiy IDS Alerts.tc     |   9 ++
+ .../Test Cases/Simulation/Verify Victim Health.tc  |   9 ++
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ 71 files changed, 4708 insertions(+), 170 deletions(-)
+
+313d52a|2026-01-03|fix: Resolve frontend authentication, redirection, and profile validation issues, and introduce new authentication test suites.
+ Comprehensive_Test_Cases.md | 33 +++++++++++++++++----------------
+ 1 file changed, 17 insertions(+), 16 deletions(-)
+
+0538bfe|2026-01-03|fix: Resolve frontend authentication, redirection, and profile validation issues, and introduce new authentication test suites.
+ BUG_REPORTS.md                                     | 104 ++++++++++++++++++-
+ .../Page_CyberRange/button_Log In.rs               | 114 +++++++++++++++++++++
+ .../Page_CyberRange/button_Login.rs                | 114 +++++++++++++++++++++
+ .../Page_CyberRange/button_Logout.rs               | 106 +++++++++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 ++++++++++++++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 ++++++++++++++++++
+ .../Page_CyberRange/button_Login.rs                |  30 +++---
+ .../Page_CyberRange/button_Logout.rs               | 106 +++++++++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  26 ++---
+ .../Page_CyberRange/input_Username_username.rs     |  26 ++---
+ .../Object Repository/Admin/button_Sign Up.rs      | 114 +++++++++++++++++++++
+ .../JWT Validation/Script1766963503954.groovy      |  55 +++++++++-
+ .../Role-Based Access/Script1766960362869.groovy   |  24 +++--
+ .../Script1767469937904.groovy                     |  27 +++++
+ .../Script1766957571292.groovy                     |   2 +-
+ .../Signup/User Signup - Empty fields (Fail).tc    |   9 ++
+ New folder/Tests/Test Suites/Authentication.ts     |  45 ++++----
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ frontend/app/admin/page.tsx                        |  26 +++--
+ frontend/app/dashboard/page.tsx                    |  33 +++++-
+ frontend/app/page.tsx                              |  38 ++++---
+ frontend/app/users/profile/[id]/page.tsx           |  27 ++++-
+ 22 files changed, 1121 insertions(+), 103 deletions(-)
+
+bbea5f7|2026-01-01|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+2fd34bd|2025-12-30|feat: Add extensive test automation for admin dashboard user management and authentication, alongside related frontend, backend, and documentation updates.
+ Comprehensive_Test_Cases.md                     | 25 +++++++++-------
+ New folder/Tests/Test Suites/Admin Dashboard.ts | 39 +++++++++++++++++++++++--
+ 2 files changed, 51 insertions(+), 13 deletions(-)
+
+20fbc21|2025-12-30|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+ca32e7f|2025-12-30|feat: Add Katalon Studio automated tests for CyberRange scenarios and authentication, including object repositories, scripts, and documentation.
+ .../Page_CyberRange/button_Continue to Practice.rs |  98 ++++++++++++++++++
+ .../Scenario/Page_CyberRange/button_Login.rs       | 114 +++++++++++++++++++++
+ .../Page_CyberRange/button_Start Training.rs       |  98 ++++++++++++++++++
+ .../Page_CyberRange/button_Submit Command.rs       |  98 ++++++++++++++++++
+ .../Page_CyberRange/button_Submit Command_1.rs     |  98 ++++++++++++++++++
+ .../Page_CyberRange/button_View All Scenarios.rs   | 114 +++++++++++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     | 106 +++++++++++++++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 ++++++++++++++++++
+ ..._flex h-10 w-full rounded-md border b_a1e141.rs |  82 +++++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_1.rs |  98 ++++++++++++++++++
+ ...lex h-10 w-full rounded-md border b_a1e141_2.rs |  98 ++++++++++++++++++
+ .../Script1767039300702.groovy                     |  19 ++++
+ .../Script1767039235563.groovy                     |  53 ++++++++++
+ .../Reset Questionnaire/Script1767039349915.groovy |  19 ++++
+ .../View All Scenarios/Script1767039075435.groovy  |  35 +++++++
+ .../Script1767039154083.groovy                     |  35 +++++++
+ .../Scenarios/Complete Questionnaire-Fail.tc       |   9 ++
+ .../Scenarios/Complete Questionnaire-Pass.tc       |   9 ++
+ .../Test Cases/Scenarios/Reset Questionnaire.tc    |   9 ++
+ .../Test Cases/Scenarios/View All Scenarios.tc     |   9 ++
+ .../Test Cases/Scenarios/View Scenario Details.tc  |   9 ++
+ New folder/Tests/Test Suites/Authentication.groovy |  66 ++++++++++++
+ New folder/Tests/Test Suites/Authentication.ts     |  63 ++++++++++++
+ New folder/Tests/Tests.prj                         |   4 +-
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ package-lock.json                                  |  27 +++--
+ 26 files changed, 1461 insertions(+), 9 deletions(-)
+
+6cd5a90|2025-12-30|feat: Add extensive test automation for admin dashboard user management and authentication, alongside related frontend, backend, and documentation updates.
+ BUG_REPORTS.md                                     |  57 ++++++-
+ Comprehensive_Test_Cases.md                        |   8 +-
+ .../Page_CyberRange/button_Login Activity.rs       | 162 +++++++++++++++++++
+ .../Page_CyberRange/button_Login.rs                | 114 +++++++++++++
+ .../Page_CyberRange/button_User Management.rs      | 170 ++++++++++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 ++++++++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 ++++++++++++
+ .../Admin/Page_CyberRange/button_Login Activity.rs | 178 +++++++++++++++++++++
+ .../Admin/Page_CyberRange/button_Login.rs          | 114 +++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 ++++++++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 ++++++++++++
+ .../Admin/Page_CyberRange/td_mohd33112.rs          | 114 +++++++++++++
+ .../Tests/Object Repository/Admin/button_Login.rs  | 114 +++++++++++++
+ .../Admin/button_User Management.rs                | 170 ++++++++++++++++++++
+ .../Admin/input_Password_password.rs               |  98 ++++++++++++
+ .../Admin/input_Username_username.rs               |  98 ++++++++++++
+ ...ined Date_lucide lucide-chevron-down _900689.rs | 162 +++++++++++++++++++
+ ...tions_p-4 align-middle has(rolecheckbox)pr-0.rs |  98 ++++++++++++
+ ...ned Date_p-4 align-middle has(roleche_7b20bd.rs |  98 ++++++++++++
+ .../Page_CyberRange/button_Sign Up.rs              |  22 +--
+ .../Tests/Object Repository/button_Delete User.rs  | 106 ++++++++++++
+ New folder/Tests/Object Repository/button_Login.rs | 114 +++++++++++++
+ .../Object Repository/button_User Management.rs    | 170 ++++++++++++++++++++
+ .../Object Repository/input_Password_password.rs   |  98 ++++++++++++
+ .../Object Repository/input_Username_username.rs   |  98 ++++++++++++
+ New folder/Tests/Object Repository/path.rs         |  50 ++++++
+ .../Script1767047770024.groovy                     |  42 +++++
+ .../Script1767047492929.groovy                     |  38 +++++
+ .../Delete User/Script1767048584513.groovy         |  52 ++++++
+ .../Script1767048314933.groovy                     |  41 +++++
+ .../View Audit Logs/Script1767049523222.groovy     |  37 +++++
+ .../Script1767046354972.groovy                     |  29 ++++
+ .../Script1767045887606.groovy}                    |   0
+ .../Script1767045887679.groovy}                    |   0
+ .../Script1767045887628.groovy}                    |   0
+ .../Script1767045887699.groovy}                    |   0
+ .../Script1767043815591.groovy                     |   0
+ .../Script1767044387175.groovy                     |   0
+ .../Script1766957571292.groovy                     |   0
+ .../Access Admin - Unauthorized (Fail).tc          |   9 ++
+ .../Admin Dashboard/Access Admin-Authorized.tc     |   9 ++
+ .../Test Cases/Admin Dashboard/Audit Trail.tc      |   9 --
+ .../Test Cases/Admin Dashboard/Cluster Health.tc   |   9 --
+ .../Test Cases/Admin Dashboard/Delete Student.tc   |   9 --
+ .../Test Cases/Admin Dashboard/Delete User.tc      |   9 ++
+ .../Test Cases/Admin Dashboard/Force Reset Pwd.tc  |   9 --
+ .../List Users and Expand Details.tc               |   9 ++
+ .../Test Cases/Admin Dashboard/User Management.tc  |   9 --
+ .../Test Cases/Admin Dashboard/View Audit Logs.tc  |   9 ++
+ .../Test Cases/Authentication/JWT Validation.tc    |   2 +-
+ .../Tests/Test Cases/Authentication/Login/.meta    |   7 +
+ .../Login/User Login-Empty Fields (Fail).tc        |   9 ++
+ ...Credentials-Wrong Pass Right Username (Fail).tc |  10 ++
+ ...tials-Wrong Username Correct Password (Fail).tc |  10 ++
+ ...edentials-Wrong Username and Password (Fail).tc |  10 ++
+ .../User Login-Successful.tc}                      |   6 +-
+ .../Login Failure (Wrong Pass Right Username).tc   |   9 --
+ ...in Failure (Wrong Username Correct Password).tc |   9 --
+ .../Login Failure (Wrong Username and Password).tc |   9 --
+ .../Test Cases/Authentication/Role-Based Access.tc |   2 +-
+ .../User Signup - Existng email (Fail).tc          |   0
+ .../User Signup - Invalid Input (Fail).tc          |   0
+ .../{ => Signup}/User Signup - Successful.tc       |   0
+ .../Tests/Test Suites/Admin Dashboard.groovy       |  66 ++++++++
+ New folder/Tests/Test Suites/Admin Dashboard.ts    |  14 ++
+ New folder/Tests/Test Suites/Authentication.groovy |  66 ++++++++
+ New folder/Tests/Test Suites/Authentication.ts     |  84 ++++++++++
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ backend/microservices/src/auth/user.model.ts       |   4 +-
+ frontend/app/admin/page.tsx                        |   4 +-
+ frontend/features/admin/UserManagement.tsx         | 120 ++++++++++++--
+ 71 files changed, 3465 insertions(+), 112 deletions(-)
+
+fbf553b|2025-12-30|fix: Resolve multiple bugs in authentication, scenario progression, and questionnaire components, adding new tests and bug report documentation.
+ BUG_REPORTS.md                                     | 179 +++++++++++++++++++++
+ .../Page_CyberRange/button_Sign Up.rs              | 114 +++++++++++++
+ .../Page_CyberRange/input_Email_email.rs           | 106 ++++++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 +++++++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 +++++++++++
+ .../Script1767043815591.groovy                     |  35 ++++
+ .../Script1767044387175.groovy                     |  53 ++++++
+ .../User Signup - Existng email (Fail).tc          |   9 ++
+ .../User Signup - Invalid Input (Fail).tc          |   9 ++
+ .../com.kms.katalon.composer.testcase.properties   |   2 +-
+ backend/microservices/src/auth/auth.service.ts     |  10 +-
+ frontend/app/auth/signup/page.tsx                  |   3 +
+ frontend/app/scenarios/[id]/page.tsx               |  61 +++++--
+ frontend/features/auth/auth.api.ts                 |   8 +-
+ .../scenarios/components/TerminalQuestionnaire.tsx |  10 ++
+ 15 files changed, 778 insertions(+), 17 deletions(-)
+
+26f734e|2025-12-29|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+05e62f2|2025-12-29|-ensured signingup with a registered email will not work -modified the landing page of finished scenarios -fixed the questionare navigation
+ .../Script1766957571292.groovy                     |   0
+ ...Registration.tc => User Signup - Successful.tc} |   6 +-
+ backend/api-gateway/src/auth/auth.service.ts       |  14 +-
+ backend/microservices/src/auth/auth.controller.ts  |  14 +-
+ backend/microservices/src/auth/auth.service.ts     |   9 +-
+ frontend/app/admin/page.tsx                        | 161 +++++++++++++--------
+ frontend/app/auth/signup/page.tsx                  |  24 ++-
+ frontend/app/page.tsx                              |  24 ++-
+ frontend/app/scenarios/[id]/page.tsx               |  18 ++-
+ frontend/components/navbar.tsx                     |   9 +-
+ frontend/features/admin/UserManagement.tsx         |  99 +++++++++----
+ frontend/features/auth/auth.hooks.ts               |  25 +++-
+ 12 files changed, 291 insertions(+), 112 deletions(-)
+
+51bea83|2025-12-29|feat: Add automated tests and object repositories for user profile management, along with dependency lock files.
+ .../Profile/button_Change Password.rs              | 114 +++++++++++++++++
+ .../Profile/button_Edit Profile.rs                 | 106 ++++++++++++++++
+ .../Object Repository/Profile/button_Login.rs      | 114 +++++++++++++++++
+ .../Profile/button_Save Changes.rs                 | 106 ++++++++++++++++
+ .../Profile/button_Update Password.rs              |  98 +++++++++++++++
+ .../Profile/button_View Profile.rs                 |  98 +++++++++++++++
+ .../Object Repository/Profile/input_Email_email.rs |  90 ++++++++++++++
+ ...New Password_flex h-10 w-full rounded_d228b6.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_1.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_2.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_3.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_4.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_5.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_6.rs |  98 +++++++++++++++
+ ...w Password_flex h-10 w-full rounded_d228b6_7.rs |  98 +++++++++++++++
+ .../Profile/input_Password_password.rs             |  98 +++++++++++++++
+ .../Profile/input_Username_username.rs             |  98 +++++++++++++++
+ ...lete Account_lucide lucide-trash2 luc_f007f8.rs | 138 +++++++++++++++++++++
+ .../Profile/Delete User/Script1767037196673.groovy |  37 ++++++
+ .../Update E-mail/Script1767019720536.groovy       |  39 ++++++
+ .../Update Password/Script1767020025100.groovy     |  60 +++++++++
+ .../Update Username/Script1767019597725.groovy     |  43 +++++++
+ New folder/Tests/Test Cases/Profile/Delete User.tc |   9 ++
+ .../Tests/Test Cases/Profile/Update E-mail.tc      |   9 ++
+ .../Tests/Test Cases/Profile/Update Password.tc    |   9 ++
+ .../Tests/Test Cases/Profile/Update Username.tc    |   9 ++
+ backend/api-gateway/package-lock.json              |  24 +++-
+ backend/microservices/package-lock.json            |  30 ++++-
+ frontend/package-lock.json                         |  26 +++-
+ 29 files changed, 2131 insertions(+), 8 deletions(-)
+
+41626f6|2025-12-29|feat: Add comprehensive UI/black-box test cases for authentication, user profile, scenarios, and admin dashboard.
+ Comprehensive_Test_Cases.md | 34 +++++++++++++++++++++++++++-------
+ 1 file changed, 27 insertions(+), 7 deletions(-)
+
+a9fc4d9|2025-12-29|feat: Add comprehensive UI/black-box test cases for authentication, user profile, scenarios, and admin dashboard.
+ Comprehensive_Test_Cases.md | 40 ++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 40 insertions(+)
+
+f7987bf|2025-12-29|feat: Add comprehensive Katalon test suite for CyberRange features and introduce new frontend UI for scenarios, dashboard, and protected routes.
+ KATALON_SCRIPTS.md                                 | 230 ++++++++++++++++
+ New folder/Tests/.gitignore                        |  18 ++
+ New folder/Tests/Include/config/log.properties     |   6 +
+ .../RoleBasedRepo/Page_CyberRange/button_Log In.rs | 114 ++++++++
+ .../RoleBasedRepo/Page_CyberRange/button_Login.rs  | 114 ++++++++
+ .../RoleBasedRepo/Page_CyberRange/button_Logout.rs | 106 ++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 +++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 +++++++
+ .../SignIn/Page_CyberRange/button_Login.rs         | 114 ++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 +++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 +++++++
+ .../Tests/Object Repository/SignIn/button_Login.rs | 114 ++++++++
+ .../SignIn/input_Password_password.rs              |  98 +++++++
+ .../SignIn/input_Username_username.rs              |  98 +++++++
+ .../SignUp/Page_CyberRange/button_Sign Up.rs       | 114 ++++++++
+ .../SignUp/Page_CyberRange/input_Email_email.rs    | 106 ++++++++
+ .../Page_CyberRange/input_Password_password.rs     |  98 +++++++
+ .../Page_CyberRange/input_Username_username.rs     |  98 +++++++
+ New folder/Tests/Profiles/default.glbl             |   7 +
+ .../JWT Validation/Script1766963503954.groovy      |  27 ++
+ .../Login Success/Script1766957229291.groovy       |  31 +++
+ .../Script1766959789956.groovy                     |  33 +++
+ .../Script1766961369741.groovy                     |  33 +++
+ .../Script1766961942053.groovy                     |  33 +++
+ .../Role-Based Access/Script1766960362869.groovy   |  43 +++
+ .../User Registration/Script1766957571292.groovy   |  33 +++
+ .../Script1766962073860.groovy                     |   0
+ .../Completion Rate/Script1766964118731.groovy     |  19 ++
+ .../Test Cases/Admin Dashboard/Audit Trail.tc      |   9 +
+ .../Test Cases/Admin Dashboard/Cluster Health.tc   |   9 +
+ .../Test Cases/Admin Dashboard/Delete Student.tc   |   9 +
+ .../Test Cases/Admin Dashboard/Force Reset Pwd.tc  |   9 +
+ .../Test Cases/Admin Dashboard/User Management.tc  |   9 +
+ .../Attack Simulations/Credential Stuffing.tc      |   9 +
+ .../Test Cases/Attack Simulations/DDoS (HOIC).tc   |   9 +
+ .../Attack Simulations/Data Exfiltration.tc        |   9 +
+ .../Test Cases/Attack Simulations/Exploitation.tc  |   9 +
+ .../Attack Simulations/Reconnaissance.tc           |   9 +
+ .../Test Cases/Authentication/JWT Validation.tc    |   9 +
+ .../Test Cases/Authentication/Login Success.tc     |   9 +
+ .../Login Failure (Wrong Pass Right Username).tc   |   9 +
+ ...in Failure (Wrong Username Correct Password).tc |   9 +
+ .../Login Failure (Wrong Username and Password).tc |   9 +
+ .../Test Cases/Authentication/Role-Based Access.tc |   9 +
+ .../Test Cases/Authentication/User Registration.tc |   9 +
+ .../ML and Defensive Logic/Real-time Prediction.tc |   9 +
+ .../ML and Defensive Logic/Sidecar Injection.tc    |   9 +
+ .../ML and Defensive Logic/Telemetry Viz.tc        |   9 +
+ .../Command Validation (success).tc                |   9 +
+ .../Scenarios and Questionnaires/Hint System.tc    |   9 +
+ .../Progress Persistence.tc                        |   9 +
+ .../Scenarios and Questionnaires/Regex Match.tc    |   9 +
+ .../Unlock Simulation.tc                           |   9 +
+ .../Simulation Management/Launch Simulation.tc     |   9 +
+ .../Simulation Management/Log Streaming.tc         |   9 +
+ .../Simulation Management/Perspective Toggle.tc    |   9 +
+ .../Simulation Management/Reset Simulation.tc      |   9 +
+ .../Simulation Management/Stop Simulation.tc       |   9 +
+ .../Student Dashboard/Active Simulations.tc        |   9 +
+ .../Student Dashboard/Completion Rate.tc           |   9 +
+ .../Student Dashboard/Recent Activity.tc           |   9 +
+ .../Student Dashboard/Recommended Scenarios.tc     |   9 +
+ New folder/Tests/Tests.prj                         |  35 +++
+ New folder/Tests/build.gradle                      |  20 ++
+ New folder/Tests/console.properties                |  27 ++
+ .../external/com.katalon.plugin.report.properties  |   0
+ ....katalon.composer.execution.settings.properties |   0
+ ...kms.katalon.core.db.DatabaseSettings.properties |   0
+ .../com.kms.katalon.integration.azure.properties   |   0
+ .../com.kms.katalon.composer.project.properties    |   0
+ .../com.kms.katalon.composer.testcase.properties   |   1 +
+ ...s.katalon.composer.testcase.settings.properties |   0
+ .../com.kms.katalon.execution.mobile.properties    |   0
+ .../internal/com.kms.katalon.execution.properties  |   4 +
+ ...com.kms.katalon.execution.webservice.properties |   1 +
+ .../com.kms.katalon.execution.webui.properties     |   1 +
+ .../com.kms.katalon.execution.windows.properties   |   0
+ ...om.kms.katalon.integration.analytics.properties |   0
+ .../com.kms.katalon.integration.qtest.properties   |   0
+ PROJECT_TEST_CASES.md                              | 300 +++++++++++++++++++++
+ frontend/app/dashboard/layout.tsx                  |  12 +-
+ frontend/app/scenarios/[id]/page.tsx               |  14 +-
+ frontend/app/scenarios/layout.tsx                  |   7 +
+ frontend/app/scenarios/page.tsx                    |  23 +-
+ frontend/app/users/layout.tsx                      |   7 +
+ frontend/app/users/profile/[id]/page.tsx           | 219 +++++++++++++--
+ .../features/auth/components/ProtectedRoute.tsx    |  44 +++
+ frontend/features/dashboard/dashboard.api.ts       |   1 +
+ frontend/features/dashboard/dashboard.hooks.ts     |   1 +
+ frontend/features/user/user.api.ts                 |  23 ++
+ tests/Tests/.gitignore                             |   1 +
+ 91 files changed, 3056 insertions(+), 70 deletions(-)
+
+b24a689|2025-12-28|fixed the landing page alignment and photo issues
+ frontend/app/page.tsx                 |   4 ++--
+ frontend/public/dashboard-preview.png | Bin 0 -> 639668 bytes
+ frontend/public/hero-image.png        | Bin 0 -> 931596 bytes
+ frontend/public/terminal-bg.png       | Bin 0 -> 1079129 bytes
+ 4 files changed, 2 insertions(+), 2 deletions(-)
+
+a4654fd|2025-12-28|feat: Initialize frontend application with core pages and components, and add backend scenario module.
+ .../microservices/src/scenario/scenario.module.ts  |   3 +
+ .../microservices/src/scenario/scenario.service.ts |  26 ++-
+ frontend/app/dashboard/page.tsx                    |  23 +-
+ frontend/app/layout.tsx                            |   2 +
+ frontend/app/page.tsx                              | 236 ++++++++++++++++-----
+ frontend/app/progress/page.tsx                     | 164 ++++++++++++++
+ frontend/app/users/profile/[id]/page.tsx           | 120 +++++++++++
+ frontend/components/navbar.tsx                     |  60 ++++++
+ frontend/components/ui/avatar.tsx                  |  50 +++++
+ frontend/components/ui/progress.tsx                |  28 +++
+ frontend/features/dashboard/dashboard.hooks.ts     |   2 +-
+ frontend/package-lock.json                         | 147 +++++++++++++
+ frontend/package.json                              |   2 +
+ 13 files changed, 782 insertions(+), 81 deletions(-)
+
+468ac69|2025-12-28|feat: Introduce dashboard page with dedicated data fetching hooks and a shared API client.
+ frontend/app/dashboard/page.tsx                |  6 ++++--
+ frontend/features/dashboard/dashboard.hooks.ts |  2 +-
+ frontend/features/scenarios/scenarios.hooks.ts |  5 +++--
+ frontend/lib/api-client.ts                     | 10 +++++-----
+ 4 files changed, 13 insertions(+), 10 deletions(-)
+
+a3413e1|2025-12-28|feat: Implement new dashboard page with user stats, scenarios, and activity, including API definitions and data fetching hooks.
+ backend/microservices/package-lock.json        | 129 +++++++++++++++++++++++--
+ frontend/app/dashboard/page.tsx                |  93 +++++++++++++++++-
+ frontend/features/dashboard/dashboard.api.ts   |  14 +++
+ frontend/features/dashboard/dashboard.hooks.ts |  12 ++-
+ 4 files changed, 237 insertions(+), 11 deletions(-)
+
+b1bd637|2025-12-24|feat: Add simulation infrastructure, backend services, and frontend components for CyberRange scenarios.
+ .../src/scenario/scenario.controller.ts            |   10 +
+ .../api-gateway/src/scenario/scenario.service.ts   |    8 +
+ backend/microservices/pods.json                    |  Bin 0 -> 136268 bytes
+ backend/microservices/pods_utf8.json               | 1527 ++++++++++++++++++++
+ .../src/scenario/scenario.controller.ts            |   10 +
+ .../microservices/src/scenario/scenario.service.ts |   26 +-
+ .../src/simulation/simulation.gateway.ts           |   17 +-
+ .../src/simulation/simulation.service.ts           |  241 ++-
+ frontend/app/scenarios/[id]/page.tsx               |  221 ++-
+ frontend/components/simulation/IDSAlerts.tsx       |   84 ++
+ frontend/components/simulation/IDSStatus.tsx       |   60 +
+ frontend/components/simulation/VictimConsole.tsx   |   94 ++
+ .../components/simulation/VictimHealthMetrics.tsx  |  110 ++
+ .../components/simulation/VictimImpactChart.tsx    |  133 ++
+ sim-containers/ddos-simulator/attacker/Dockerfile  |    2 +-
+ sim-containers/ids-agent/Dockerfile                |    9 +
+ sim-containers/ids-agent/agent.py                  |  201 +++
+ sim-containers/k8s/bot/bot-sim.yaml                |    3 +
+ sim-containers/k8s/ddos/ddos-sim.yaml              |    3 +
+ sim-containers/k8s/deploy_k8s.sh                   |    2 +
+ sim-containers/k8s/fl-ids/fl-ids.yaml              |    6 +
+ .../k8s/infiltration/infiltration-sim.yaml         |    3 +
+ 22 files changed, 2613 insertions(+), 157 deletions(-)
+
+0df0be8|2025-12-23|added the fl-ids to the deployment and cleanup files
+ sim-containers/k8s/cleanup_k8s.sh | 2 ++
+ sim-containers/k8s/deploy_k8s.sh  | 6 ++++++
+ 2 files changed, 8 insertions(+)
+
+5bf9eed|2025-12-23|feat: Implement core microservices for user, auth, audit, and simulation, alongside API Gateway, simulation containers, and frontend admin features. implemented a proper health checks and integrated it with the admin dashboard (needs to be tested)
+ backend/api-gateway/src/app.module.ts              |   2 +
+ backend/api-gateway/src/audit/audit.controller.ts  |  12 +
+ backend/api-gateway/src/audit/audit.module.ts      |  19 ++
+ backend/api-gateway/src/audit/audit.service.ts     |  13 +
+ backend/api-gateway/src/auth/auth.controller.ts    |  11 +-
+ .../src/simulation/simulation.service.ts           |  67 +----
+ backend/api-gateway/src/user/user.controller.ts    |   8 +-
+ backend/api-gateway/src/user/user.service.ts       |   8 +-
+ backend/microservices/package-lock.json            |  38 +++
+ backend/microservices/package.json                 |   6 +-
+ backend/microservices/src/app.module.ts            |   2 +
+ .../microservices/src/audit/audit.controller.ts    |  18 ++
+ backend/microservices/src/audit/audit.model.ts     |  22 ++
+ backend/microservices/src/audit/audit.module.ts    |  15 +
+ backend/microservices/src/audit/audit.service.ts   |  20 ++
+ backend/microservices/src/auth/auth.module.ts      |   2 +
+ backend/microservices/src/auth/auth.service.ts     |  21 +-
+ backend/microservices/src/scripts/seed-admin.ts    |  48 ++++
+ .../src/simulation/simulation.controller.ts        |  15 +
+ .../src/simulation/simulation.service.ts           |  73 +++++
+ backend/microservices/src/user/user.controller.ts  |  11 +-
+ backend/microservices/src/user/user.service.ts     |  10 +-
+ frontend/app/admin/page.tsx                        | 315 +++++++++++++--------
+ frontend/components/ui/table.tsx                   | 117 ++++++++
+ frontend/components/ui/tabs.tsx                    |  53 ++++
+ frontend/features/admin/AuditLogs.tsx              |  98 +++++++
+ frontend/features/admin/UserManagement.tsx         | 135 +++++++++
+ frontend/features/admin/admin.api.ts               |  25 ++
+ frontend/features/auth/auth.hooks.ts               |   7 +-
+ frontend/package-lock.json                         |  95 +++++++
+ frontend/package.json                              |   1 +
+ .../Infiltration-sim/attacker/attacker.py          |  22 +-
+ sim-containers/bot-sim/attacker/attacker.py        |  25 +-
+ .../ddos-simulator/attacker/simulate_ddos.py       |  23 +-
+ sim-containers/fl-ids/ids_server.py                |  19 +-
+ sim-containers/k8s/bot/bot-sim.yaml                |  10 +-
+ sim-containers/k8s/ddos/ddos-sim.yaml              |  10 +-
+ sim-containers/k8s/fl-ids/fl-ids.yaml              |  14 +-
+ .../k8s/infiltration/infiltration-sim.yaml         |  10 +-
+ 39 files changed, 1190 insertions(+), 230 deletions(-)
+
+a8523d5|2025-12-23|Merge branch 'main' of https://github.com/mohdmwk33112/CyberRange
+1bb6591|2025-12-23|feat: Introduce comprehensive simulation and scenario management, including Kubernetes infrastructure, backend APIs, and frontend UI components.
+ Doc/Cloud-Based Ethical Hacking Simulator.docx     | Bin 0 -> 57533 bytes
+ Doc/Intelligent_Scalable_CyberRange.pdf            | Bin 0 -> 10414168 bytes
+ .../SIM_CONTAINERS_EXPLANATION.md                  |   0
+ RESTART_GUIDE.txt                                  |  56 ++++++
+ .../src/scenario/scenario.controller.ts            |   8 +
+ .../api-gateway/src/scenario/scenario.service.ts   |   6 +
+ .../src/simulation/simulation.controller.ts        |   5 +
+ .../src/simulation/simulation.module.ts            |   2 +-
+ .../src/simulation/simulation.service.ts           |   4 +
+ .../src/scenario/scenario.controller.ts            |  12 +-
+ .../microservices/src/scenario/scenario.service.ts |  16 ++
+ .../src/simulation/simulation.controller.ts        |   5 +
+ .../src/simulation/simulation.service.ts           |  92 ++++++---
+ frontend/app/admin/page.tsx                        | 206 +++++++++++++++++++++
+ frontend/app/scenarios/[id]/page.tsx               |  24 ++-
+ .../components/simulation/AttackDistribution.tsx   |  31 +++-
+ .../components/simulation/KillChainProgress.tsx    |  12 +-
+ .../components/simulation/SimulationConsole.tsx    |   8 +-
+ frontend/components/simulation/TrafficMonitor.tsx  |  28 +--
+ frontend/features/scenarios/scenarios.api.ts       |  10 +
+ frontend/features/scenarios/scenarios.hooks.ts     |  18 ++
+ .../Infiltration-sim/attacker/attacker.py          |  57 +++---
+ sim-containers/k8s/base/storage.yaml               |   6 +-
+ sim-containers/k8s/bot/bot-sim.yaml                |  10 +
+ sim-containers/k8s/ddos/ddos-sim.yaml              |  10 +
+ .../k8s/infiltration/infiltration-sim.yaml         |  10 +
+ 26 files changed, 549 insertions(+), 87 deletions(-)
+
+9fa1240|2025-12-22|Create README.md for CyberRange project
+ README.md | 112 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++
+ 1 file changed, 112 insertions(+)
+
+339eefe|2025-12-22|feat: Introduce bot, infiltration, and DDoS attack simulation containers with Kubernetes deployment configurations and documentation.
+ .../Infiltration-sim/attacker/attacker.py          |  91 +++--
+ sim-containers/SIM_CONTAINERS_EXPLANATION.md       | 374 +++++++++++++++++++++
+ sim-containers/bot-sim/attacker/attacker.py        |  88 +++--
+ .../ddos-simulator/attacker/simulate_ddos.py       |  88 +++--
+ sim-containers/k8s/bot/bot-hpa.yaml                |  19 ++
+ sim-containers/k8s/bot/bot-sim.yaml                |  34 +-
+ sim-containers/k8s/cleanup_k8s.sh                  |   6 +
+ sim-containers/k8s/ddos/ddos-hpa.yaml              |  19 ++
+ sim-containers/k8s/ddos/ddos-sim.yaml              |  34 +-
+ sim-containers/k8s/deploy_k8s.sh                   |  29 +-
+ sim-containers/k8s/fl-ids/fl-ids-hpa.yaml          |  19 ++
+ .../k8s/infiltration/infiltration-hpa.yaml         |  19 ++
+ .../k8s/infiltration/infiltration-sim.yaml         |  34 +-
+ 13 files changed, 751 insertions(+), 103 deletions(-)
+
+5629d1f|2025-12-22|feat: Introduce Federated IDS model and server, Kubernetes manifests for various simulations, and API Gateway endpoints for simulation management.
+ FL_IDS_XGBoost/feature_names.json                  | 101 +++++++++++++++++++++
+ FL_IDS_XGBoost/federated_ids_model.json            |   1 +
+ FL_IDS_XGBoost/federated_ids_model.pkl             | Bin 0 -> 2389619 bytes
+ FL_IDS_XGBoost/fl-ids-xgboost.ipynb                |   1 +
+ FL_IDS_XGBoost/model_metadata.json                 |  12 +++
+ backend/api-gateway/package-lock.json              |  44 +++++++--
+ backend/api-gateway/package.json                   |   3 +-
+ .../src/simulation/simulation.controller.ts        |  15 +++
+ .../src/simulation/simulation.service.ts           |  74 ++++++++++++++-
+ sim-containers/fl-ids/Dockerfile                   |  27 ++++++
+ sim-containers/fl-ids/feature_names.json           | 101 +++++++++++++++++++++
+ sim-containers/fl-ids/federated_ids_model.json     |   1 +
+ sim-containers/fl-ids/federated_ids_model.pkl      | Bin 0 -> 2389619 bytes
+ sim-containers/fl-ids/ids_server.py                |  90 ++++++++++++++++++
+ sim-containers/fl-ids/requirements.txt             |   5 +
+ sim-containers/k8s/bot/bot-sim.yaml                |  12 +++
+ sim-containers/k8s/ddos/ddos-sim.yaml              |  12 +++
+ sim-containers/k8s/fl-ids/fl-ids.yaml              |  54 +++++++++++
+ .../k8s/infiltration/infiltration-sim.yaml         |  12 +++
+ 19 files changed, 557 insertions(+), 8 deletions(-)
+
+1c1d27b|2025-12-22|feat: Implement core simulation and scenario management with new backend APIs and frontend components.
+ .../src/scenario/scenario.controller.ts            |   4 +-
+ .../api-gateway/src/scenario/scenario.service.ts   |   4 +-
+ .../src/simulation/simulation.controller.ts        |   5 +
+ .../src/simulation/simulation.service.ts           |   4 +
+ backend/microservices/package-lock.json            | 304 ++++++++++++++++++-
+ backend/microservices/package.json                 |   7 +-
+ backend/microservices/src/main.ts                  |  19 +-
+ .../src/scenario/scenario.controller.ts            |   4 +-
+ .../microservices/src/scenario/scenario.service.ts |  18 +-
+ .../src/simulation/simulation.controller.ts        |   5 +
+ .../src/simulation/simulation.gateway.ts           |  55 ++++
+ .../src/simulation/simulation.module.ts            |   3 +-
+ .../src/simulation/simulation.service.ts           |  97 ++++++-
+ frontend/app/auth/layout.tsx                       |  25 +-
+ frontend/app/scenarios/[id]/page.tsx               | 321 +++++++++++++++++----
+ .../components/simulation/AttackDistribution.tsx   |  45 +++
+ .../simulation/CredentialBreachStats.tsx           |  63 ++++
+ .../components/simulation/KillChainProgress.tsx    |  78 +++++
+ .../components/simulation/SimulationConsole.tsx    |  92 ++++++
+ frontend/components/simulation/TrafficMonitor.tsx  |  70 +++++
+ frontend/package-lock.json                         | 137 +++++++++
+ frontend/package.json                              |   1 +
+ .../Infiltration-sim/attacker/attacker.py          |  39 ++-
+ 23 files changed, 1306 insertions(+), 94 deletions(-)
+
+d6bb280|2025-12-21|feat: implement interactive terminal questionnaire for scenarios with backend validation and scoring
+ .../api-gateway/src/scenario/scenario.module.ts    |    2 +-
+ .../src/scenario/scenario.controller.ts            |    2 +-
+ .../microservices/src/scenario/scenario.service.ts |    3 +-
+ frontend/app/dashboard/page.tsx                    |   16 +-
+ frontend/app/scenarios/[id]/page.tsx               |  236 ++++
+ frontend/app/scenarios/page.tsx                    |  144 +++
+ frontend/components/ui/badge.tsx                   |   35 +
+ frontend/features/dashboard/dashboard.hooks.ts     |    4 +-
+ .../scenarios/components/TerminalQuestionnaire.tsx |   54 +-
+ frontend/features/scenarios/scenarios.api.ts       |    4 +-
+ frontend/features/scenarios/scenarios.hooks.ts     |   76 ++
+ frontend/package-lock.json                         | 1302 +++++++++++++++++++-
+ frontend/package.json                              |    1 +
+ 13 files changed, 1777 insertions(+), 102 deletions(-)
+
+829a336|2025-12-21|feat: Scaffold initial CyberRange application with core UI, authentication, scenario, simulation, and dashboard functionalities across frontend and backend.
+ backend/api-gateway/src/auth/auth.controller.ts    |   2 +-
+ backend/api-gateway/src/auth/auth.module.ts        |   2 +-
+ backend/api-gateway/src/main.ts                    |   4 +
+ .../src/scenario/scenario.controller.ts            |  43 +++
+ .../api-gateway/src/scenario/scenario.service.ts   |  35 +++
+ backend/api-gateway/src/user/user.module.ts        |   2 +-
+ backend/microservices/scripts/seed-scenarios.ts    | 323 ++++++++++++++++++---
+ backend/microservices/src/auth/auth.service.ts     |  11 +-
+ .../src/scenario/scenario-state.model.ts           |  10 +
+ .../src/scenario/scenario.controller.ts            |  37 +++
+ .../microservices/src/scenario/scenario.model.ts   | 125 +++++++-
+ .../microservices/src/scenario/scenario.service.ts | 130 +++++++++
+ frontend/app/auth/login/page.tsx                   |   6 +-
+ frontend/app/auth/signup/page.tsx                  |   6 +-
+ frontend/app/dashboard/layout.tsx                  |  27 +-
+ frontend/app/dashboard/page.tsx                    | 277 ++++++++++++++++++
+ frontend/app/globals.css                           |  74 ++---
+ frontend/app/layout.tsx                            |   6 +-
+ frontend/app/page.tsx                              | 151 ++++++----
+ frontend/app/providers.tsx                         |   5 +-
+ frontend/components/ui/button.tsx                  |  57 ++++
+ frontend/components/ui/card.tsx                    |  80 +++++
+ frontend/components/ui/input.tsx                   |  26 ++
+ frontend/components/ui/label.tsx                   |  27 ++
+ frontend/components/ui/mode-toggle.tsx             |  23 ++
+ frontend/components/ui/toaster.tsx                 |   1 +
+ frontend/features/auth/auth.api.ts                 |   4 +-
+ frontend/features/auth/auth.hooks.ts               |  13 +-
+ frontend/features/auth/auth.store.ts               |   8 +-
+ frontend/features/dashboard/dashboard.api.ts       |  16 +
+ frontend/features/dashboard/dashboard.hooks.ts     |  36 +++
+ .../scenarios/components/LearningContent.tsx       | 166 +++++++++++
+ .../scenarios/components/TerminalQuestionnaire.tsx | 259 +++++++++++++++++
+ frontend/features/scenarios/scenarios.api.ts       |  61 ++++
+ frontend/features/simulations/simulations.api.ts   |  25 ++
+ frontend/hooks/use-toast.ts                        |   1 +
+ frontend/package-lock.json                         | 111 ++++++-
+ frontend/package.json                              |  14 +-
+ 38 files changed, 2020 insertions(+), 184 deletions(-)
+
+40aeb23|2025-12-21|chore: add frontend dependencies
+ backend/api-gateway/src/app.module.ts |    2 +-
+ backend/api-gateway/src/main.ts       |    2 +-
+ backend/microservices/package.json    |    4 +-
+ backend/microservices/src/main.ts     |    4 +-
+ frontend/.gitignore                   |   41 +
+ frontend/README.md                    |   36 +
+ frontend/app/auth/layout.tsx          |   16 +
+ frontend/app/auth/login/page.tsx      |   56 +
+ frontend/app/auth/signup/page.tsx     |   61 +
+ frontend/app/dashboard/layout.tsx     |   32 +
+ frontend/app/favicon.ico              |  Bin 0 -> 25931 bytes
+ frontend/app/globals.css              |  125 +
+ frontend/app/layout.tsx               |   40 +
+ frontend/app/page.tsx                 |   65 +
+ frontend/app/providers.tsx            |   14 +
+ frontend/app/public/layout.tsx        |   26 +
+ frontend/components.json              |   22 +
+ frontend/components/ui/toast.tsx      |  127 +
+ frontend/components/ui/toaster.tsx    |   33 +
+ frontend/eslint.config.mjs            |   18 +
+ frontend/features/auth/auth.api.ts    |   36 +
+ frontend/features/auth/auth.hooks.ts  |   48 +
+ frontend/features/auth/auth.store.ts  |   31 +
+ frontend/hooks/use-toast.ts           |  191 +
+ frontend/lib/api-client.ts            |   23 +
+ frontend/lib/utils.ts                 |    6 +
+ frontend/next.config.ts               |    7 +
+ frontend/package-lock.json            | 7538 +++++++++++++++++++++++++++++++++
+ frontend/package.json                 |   39 +
+ frontend/postcss.config.mjs           |    7 +
+ frontend/public/file.svg              |    1 +
+ frontend/public/globe.svg             |    1 +
+ frontend/public/next.svg              |    1 +
+ frontend/public/vercel.svg            |    1 +
+ frontend/public/window.svg            |    1 +
+ frontend/tsconfig.json                |   34 +
+ 36 files changed, 8683 insertions(+), 6 deletions(-)
+
+69ca7be|2025-12-21|feat: Introduce various attack simulation containers (infiltration, bot, DDoS) and integrate them with new backend services for scenario and simulation management.
+ backend/api-gateway/package-lock.json              |   24 +-
+ backend/api-gateway/src/app.module.ts              |    2 +
+ .../src/scenario/scenario.controller.ts            |   20 +
+ .../api-gateway/src/scenario/scenario.service.ts   |   16 +
+ .../src/simulation/simulation.controller.ts        |   28 +
+ .../src/simulation/simulation.module.ts            |   21 +
+ .../src/simulation/simulation.service.ts           |   26 +
+ backend/microservices/package-lock.json            |  519 +-
+ backend/microservices/package.json                 |    3 +
+ backend/microservices/scripts/list-scenario-ids.ts |   20 +
+ backend/microservices/scripts/seed-scenarios.ts    |  167 +-
+ backend/microservices/src/app.module.ts            |    2 +
+ backend/microservices/src/main.ts                  |    4 +-
+ .../src/scenario/scenario.controller.ts            |   20 +
+ .../microservices/src/scenario/scenario.model.ts   |    6 +
+ .../microservices/src/scenario/scenario.module.ts  |    2 +
+ .../microservices/src/scenario/scenario.service.ts |   23 +
+ .../src/simulation/simulation.controller.ts        |   29 +
+ .../src/simulation/simulation.module.ts            |   11 +
+ .../src/simulation/simulation.service.ts           |  185 +
+ .../Infiltration-sim/attacker/attacker.py          |   49 +
+ .../Infiltration-sim/attacker/dockerfile           |    9 +
+ sim-containers/Infiltration-sim/data/flows.csv     |   34 +
+ sim-containers/Infiltration-sim/data/flows_raw.csv |  112 +
+ sim-containers/Infiltration-sim/docker-compose.yml |   33 +
+ sim-containers/Infiltration-sim/flows_builder.py   |  165 +
+ sim-containers/Infiltration-sim/run_experiment.sh  |   17 +
+ sim-containers/bot-sim/attacker/Dockerfile         |    9 +
+ sim-containers/bot-sim/attacker/attacker.py        |   64 +
+ sim-containers/bot-sim/data/bot_attempts.csv       |    9 +
+ sim-containers/bot-sim/data/bot_results.csv        |    9 +
+ sim-containers/bot-sim/data/flows.csv              |   61 +
+ sim-containers/bot-sim/data/flows_raw.csv          |  450 +
+ sim-containers/bot-sim/docker-compose.yml          |   35 +
+ sim-containers/bot-sim/flows_builder.py            |  191 +
+ sim-containers/bot-sim/run_experiment.sh           |   22 +
+ sim-containers/ddos-simulator/attacker/Dockerfile  |    9 +
+ .../ddos-simulator/attacker/simulate_ddos.py       |  109 +
+ sim-containers/ddos-simulator/data/ddos_stats.csv  |    2 +
+ sim-containers/ddos-simulator/data/flows.csv       |   32 +
+ sim-containers/ddos-simulator/data/flows_raw.csv   | 8924 ++++++++++++++++++++
+ sim-containers/ddos-simulator/docker-compose.yml   |   40 +
+ sim-containers/ddos-simulator/flows_builder.py     |  176 +
+ sim-containers/ddos-simulator/run_experiment.sh    |   21 +
+ sim-containers/k8s/base/storage.yaml               |   85 +
+ sim-containers/k8s/bot/bot-sim.yaml                |   83 +
+ sim-containers/k8s/cleanup_k8s.sh                  |   12 +
+ sim-containers/k8s/ddos/ddos-sim.yaml              |   87 +
+ sim-containers/k8s/deploy_k8s.sh                   |   43 +
+ .../k8s/infiltration/infiltration-sim.yaml         |   83 +
+ 50 files changed, 11922 insertions(+), 181 deletions(-)
+
+188afc9|2025-12-19|feat: Establish microservices architecture for user and scenario management, including API gateway, controllers, services, and data models.
+ backend/api-gateway/package-lock.json              |  24 +-
+ backend/api-gateway/src/app.module.ts              |   2 +
+ .../src/scenario/dto/create-scenario.dto.ts        |  24 +
+ .../src/scenario/dto/validate-action.dto.ts        |   5 +
+ .../src/scenario/dto/validate-command.dto.ts       |   5 +
+ .../src/scenario/scenario.controller.ts            |  82 +++
+ .../api-gateway/src/scenario/scenario.module.ts    |  21 +
+ .../api-gateway/src/scenario/scenario.service.ts   |  64 +++
+ backend/api-gateway/src/user/user.controller.ts    |   5 +
+ backend/api-gateway/src/user/user.service.ts       |   4 +
+ backend/microservices/package-lock.json            |  27 +-
+ backend/microservices/package.json                 |   1 +
+ backend/microservices/scripts/seed-scenarios.ts    | 192 +++++++
+ backend/microservices/src/app.module.ts            |   2 +
+ .../src/scenario/scenario-state.model.ts           |  64 +++
+ .../src/scenario/scenario.controller.ts            |  67 +++
+ .../microservices/src/scenario/scenario.model.ts   | 125 ++++
+ .../microservices/src/scenario/scenario.module.ts  |  20 +
+ .../microservices/src/scenario/scenario.service.ts | 288 ++++++++++
+ backend/microservices/src/user/user.controller.ts  |   5 +
+ backend/microservices/src/user/user.service.ts     |   9 +
+ package-lock.json                                  | 637 +++++++++++++++++++++
+ package.json                                       |   8 +
+ steps.txt                                          | 176 ++++++
+ 24 files changed, 1855 insertions(+), 2 deletions(-)
+
+8f8f394|2025-12-19|feat: Implement user management and progress tracking with API Gateway and microservice integration.
+ .gitignore                                        |  2 +
+ backend/api-gateway/src/app.module.ts             |  2 +
+ backend/api-gateway/src/user/user.controller.ts   | 62 +++++++++++++++++++++++
+ backend/api-gateway/src/user/user.module.ts       | 20 ++++++++
+ backend/api-gateway/src/user/user.service.ts      | 34 +++++++++++++
+ backend/microservices/src/app.module.ts           |  4 +-
+ backend/microservices/src/auth/user.model.ts      |  6 +++
+ backend/microservices/src/user/progress.model.ts  | 42 +++++++++++++++
+ backend/microservices/src/user/user.controller.ts | 34 +++++++++++++
+ backend/microservices/src/user/user.module.ts     | 20 ++++++++
+ backend/microservices/src/user/user.service.ts    | 58 +++++++++++++++++++++
+ 11 files changed, 283 insertions(+), 1 deletion(-)
+
+cf60e9c|2025-12-19|Implement user management and progress tracking with API Gateway and microservice integration.
+ tasks/userauth.txt | 46 ----------------------------------------------
+ 1 file changed, 46 deletions(-)
+
+de6b77f|2025-12-19|feat: Implement user authentication and authorization service with a new microservice and API Gateway integration for user registration and login.
+ backend/api-gateway/src/app.module.ts              |  40 +--
+ backend/api-gateway/src/auth/auth.controller.ts    |  22 ++
+ backend/api-gateway/src/auth/auth.module.ts        |  20 ++
+ backend/api-gateway/src/auth/auth.service.ts       |  18 ++
+ backend/microservices/package-lock.json            | 275 ++++++++++++++++++++-
+ backend/microservices/package.json                 |   9 +-
+ backend/microservices/src/app.module.ts            |   6 +-
+ backend/microservices/src/auth/auth.controller.ts  |  21 ++
+ backend/microservices/src/auth/auth.module.ts      |  28 +++
+ backend/microservices/src/auth/auth.service.ts     |  50 ++++
+ .../microservices/src/auth/dto/create-user.dto.ts  |   7 +
+ .../microservices/src/auth/dto/login-user.dto.ts   |   5 +
+ backend/microservices/src/auth/user.model.ts       |  33 +++
+ tasks/userauth.txt                                 |  46 ++++
+ 14 files changed, 555 insertions(+), 25 deletions(-)
+
+ccc35d7|2025-12-19|hi removed
+ backend/hi.txt | 1 -
+ 1 file changed, 1 deletion(-)
+
+a88eb59|2025-12-19|hi
+ backend/hi.txt | 1 +
+ 1 file changed, 1 insertion(+)
+
+91ecac9|2025-12-19|initial project
+ .gitignore                                         |   39 +
+ backend/How to run the project.txt                 |   11 +
+ backend/api-gateway/.eslintrc.js                   |   25 +
+ backend/api-gateway/.gitignore                     |   56 +
+ backend/api-gateway/.prettierrc                    |    4 +
+ backend/api-gateway/README.md                      |   99 +
+ backend/api-gateway/nest-cli.json                  |    8 +
+ backend/api-gateway/package-lock.json              | 9600 +++++++++++++++++++
+ backend/api-gateway/package.json                   |   70 +
+ backend/api-gateway/src/app.controller.ts          |   32 +
+ backend/api-gateway/src/app.module.ts              |   22 +
+ backend/api-gateway/src/app.service.ts             |   27 +
+ backend/api-gateway/src/main.ts                    |   11 +
+ backend/api-gateway/test/app.e2e-spec.ts           |   24 +
+ backend/api-gateway/test/jest-e2e.json             |    9 +
+ backend/api-gateway/tsconfig.build.json            |    4 +
+ backend/api-gateway/tsconfig.json                  |   21 +
+ backend/microservices/.eslintrc.js                 |   25 +
+ backend/microservices/.gitignore                   |   56 +
+ backend/microservices/.prettierrc                  |    4 +
+ backend/microservices/README.md                    |   99 +
+ backend/microservices/nest-cli.json                |    8 +
+ backend/microservices/package-lock.json            | 9745 ++++++++++++++++++++
+ backend/microservices/package.json                 |   74 +
+ backend/microservices/src/app.controller.ts        |   13 +
+ backend/microservices/src/app.module.ts            |   24 +
+ backend/microservices/src/app.service.ts           |    9 +
+ backend/microservices/src/main.ts                  |   22 +
+ .../src/product/product.controller.ts              |   30 +
+ backend/microservices/src/product/product.model.ts |   20 +
+ .../microservices/src/product/product.module.ts    |   15 +
+ .../microservices/src/product/product.service.ts   |   33 +
+ backend/microservices/test/app.e2e-spec.ts         |   24 +
+ backend/microservices/test/jest-e2e.json           |    9 +
+ backend/microservices/tsconfig.build.json          |    4 +
+ backend/microservices/tsconfig.json                |   21 +
+ 36 files changed, 20297 insertions(+)
