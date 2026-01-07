@@ -21,7 +21,7 @@ WebUI.openBrowser('')
 
 WebUI.navigateToUrl('http://localhost:3000/auth/login')
 
-WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail2')
+WebUI.setText(findTestObject('Object Repository/Profile/input_Username_username'), 'ayadzewail')
 
 WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_Password_password'), 'ctjkNZzQVZQqnpFh3PgUMg==')
 
@@ -31,21 +31,9 @@ WebUI.click(findTestObject('Object Repository/Profile/svg_Browse Scenarios_lucid
 
 WebUI.click(findTestObject('Object Repository/Profile/button_Change Password'))
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'), 'UjWHzyF6vE8=')
+WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6'), 'lO3w8bfNEkI=')
 
-WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_1'), 
-    '9GOtePQYp2c=')
-
-WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_2'), 
-    'G5ed2Ngh+RQ=')
-
-WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_3'), 
-    'Cwp8A+okQc4=')
-
-WebUI.setEncryptedText(findTestObject('Object Repository/Profile/input_New Password_flex h-10 w-full rounded_d228b6_4'), 
-    'lO3w8bfNEkI=')
-
-WebUI.click(findTestObject('Object Repository/Profile/div_Update Password'))
+WebUI.verifyElementNotClickable(findTestObject('Object Repository/Profile/button_Update Password'))
 
 WebUI.closeBrowser()
 
