@@ -1,0 +1,285 @@
+CyberRange Platform - Detailed Test Plan
+Document Control
+Field	Details
+Project Name	CyberRange System
+Document Type	Detailed Test Plan (DTP)
+Version	1.0
+Status	Draft
+Revision	1
+Document Owner	CyberRange Team
+Document Author	QA Team
+Document Reviewer	Project Manager
+Last Modified	January 4, 2026
+Print Date	January 4, 2026
+
+Document History
+Revision History
+Version	Revision Date	Summary of Changes	Changed By
+1.0	January 4, 2026	Initial version adapted for CyberRange platform	QA Team
+Approvals
+Name	Position/Department	Version	Approval Date
+(Name)	Project Manager	1.0	DD/MM/YYYY
+Distribution
+This document is available to the entire project team.
+
+
+
+
+1. Introduction	
+1.1 Background
+The Detailed Test Plan (DTP) establishes a comprehensive testing strategy for the CyberRange platform, an advanced simulation environment designed for cybersecurity training and education. The platform enables users to execute realistic attack scenarios within a controlled environment while monitoring and analyzing Intrusion Detection System (IDS) alerts.
+Primary Target: Verify the core functionality of the simulation engine, user progress tracking mechanisms, and administrative control systems to ensure a robust and reliable cybersecurity training platform.
+1.2 Testing Objectives
+The testing process aims to achieve the following objectives:
+•	Implement robust verification processes for the CyberRange simulation engine to ensure reliable scenario execution
+•	Ensure security integrity of user authentication mechanisms and role-based access control (RBAC) for Student and Admin roles
+•	Validate end-to-end workflows for launching, monitoring, and terminating cybersecurity simulations
+•	Verify accuracy and reliability of IDS alert reporting within the frontend interface
+•	Confirm system stability under various operational conditions and user interactions
+1.3 Document Audience
+This document is intended for the following stakeholders:
+Product Owner
+Project Manager
+QA Team
+Development Team
+
+1.4 References
+1.	Comprehensive_Test_Cases.md
+2.	Project Requirements Specification
+3.	System Architecture Documentation
+4.	User Story Catalog
+
+1.5 Definitions and Acronyms
+Acronym	Definition
+IDS	Intrusion Detection System
+FE	Frontend
+BE	Backend
+K8s	Kubernetes
+JWT	JSON Web Token
+DTP	Detailed Test Plan
+RBAC	Role-Based Access Control
+API	Application Programming Interface
+
+2. Testable Items
+2.1 In Scope
+This testing activity encompasses the following critical areas:
+1.	User Authentication and Profile Management - Complete user lifecycle from registration to session management
+2.	Scenario Selection and Questionnaire Logic - Prerequisite validation and scenario unlocking mechanisms
+3.	Pulse/Simulation Lifecycle Management - Full simulation lifecycle including start, monitoring, and termination
+4.	Admin Dashboard and Cluster Monitoring - Administrative controls and system health monitoring
+
+2.1.1 Functional Scope
+Functional Area	Sub-Area	Description
+Authentication	Login/Signup	Verify user registration flows, login mechanisms, and JWT token handling including token expiration and refresh
+Scenarios	Listing/Details	Verify scenario availability, prerequisite-based enabling/disabling, and scenario detail presentation
+Simulation	Lifecycle Management	Verify container orchestration, real-time log streaming, terminal interaction, and graceful task termination
+Admin	User Management	Verify user listing, deletion workflows, role assignment, and comprehensive audit log viewing
+Admin	Cluster Health	Verify Kubernetes pod status reporting, resource utilization metrics, and system health indicators
+
+2.1.2 Non-Functional Scope
+Non-Functional Requirement	Description
+Performance	Validate basic load handling for concurrent simulations with scaled testing parameters
+Usability	Ensure responsive design across Admin and User dashboards on various screen sizes and devices
+Security	Verify proper authentication, authorization, and data protection mechanisms
+Reliability	Confirm system stability and error recovery capabilities
+
+2.2 Out of Scope
+The following items are explicitly excluded from the current testing cycle:
+	Item	Description
+	High-Volume DDoS Testing	High-volume Distributed Denial of Service attacks against the platform infrastructure (self-DoS scenarios)
+	Physical Hardware Stress Testing	Physical infrastructure testing including hardware failures and disaster recovery
+	Payment Integration	Third-party payment gateway integration and financial transaction processing
+	Advanced Analytics	Complex data analytics and machine learning features not in current scope
+
+2.3 Testing Exclusions
+The following features are excluded from the current testing phase:
+•	Advanced reporting features not implemented in the current sprint
+•	Experimental features marked as "beta" or "preview"
+•	Deprecated legacy functionality scheduled for removal
+•	Future enhancement features not yet in development
+
+3. Detailed Test Approach
+All testing activities are designed to ensure the CyberRange platform meets functional requirements as defined in the Comprehensive_Test_Cases.md documentation.
+
+3.1 Naming Conventions
+Test case identifiers follow a standardized format for consistency and traceability:
+Format: FE-[Module]-[Number]
+Examples:
+•	FE-Auth-01 - Frontend Authentication Test Case 1
+•	FE-Sim-03 - Frontend Simulation Test Case 3
+•	FE-Admin-05 - Frontend Admin Test Case 5
+
+3.2 Test Case Design
+Test cases are designed using a user-centric approach based on documented user stories:
+Example User Stories:
+•	"As a Student, I want to launch a simulation so that I can practice cybersecurity skills"
+•	"As an Admin, I want to delete a user so that I can manage platform access"
+•	"As a Student, I want to view my progress so that I can track my learning"
+
+Testing Methodology:
+•	Black-Box UI Testing: Focus on user interface interactions and workflows
+•	API Integration Verification: Validate backend service communication and data integrity
+•	Automated Testing: Critical paths automated using Katalon Studio for regression efficiency
+
+3.3 Test Scheduling
+Testing activities are synchronized with development sprints to ensure continuous quality assurance:
+Testing Phases:
+•	Unit Tests: Executed by development team using npm test command
+•	Integration Tests: Executed by QA team in the Staging environment
+•	System Tests: Executed by QA team in the Staging environment
+•	User Acceptance Testing: Conducted with select users in Pre-Production environment
+
+3.4 Data Build
+Data Requirements and Preparation:
+1.	Pre-seeded Scenarios 
+o	Format: SQL dump or JSON configuration files
+o	Content: Comprehensive scenario catalog with varying difficulty levels
+2.	Test Users 
+o	Admin Account: admin/admin
+o	Student Account: tester/password
+o	Additional role-specific test accounts as needed
+3.	Mock IDS Alerts 
+o	Simulated alert data for frontend verification
+o	Variety of alert types and severity levels
+
+3.5	Results and Sign-Off
+3.5.1 Suspension and Resumption Criteria
+Testing Suspension Triggers:
+•	Kubernetes cluster becomes unresponsive or unavailable
+•	Authentication service failure (classified as Blocker severity)
+•	Database connection failures preventing test execution
+•	Critical security vulnerabilities discovered during testing
+Resumption Conditions:
+•	All critical services fully restored and operational
+•	Root cause analysis completed and documented
+•	Remediation actions implemented and verified
+3.5.2 Pass/Fail Criteria
+Pass Criteria:
+•	All features function as described in Comprehensive_Test_Cases.md
+•	No Critical or High severity defects remain open
+•	All test cases executed with documented results
+•	Performance benchmarks met or exceeded
+Fail Criteria:
+•	Any Critical defect preventing core functionality (e.g., simulation launch failure)
+•	High severity security vulnerabilities identified
+•	Unacceptable performance degradation
+•	Data integrity issues detected
+
+4. Test Conditions
+4.1 Business Event 1 - User Authentication
+Test Scenario: Complete authentication workflow validation
+Verification Points:
+•	Users can successfully register with valid credentials
+•	Users can log in with correct username and password
+•	System issues valid JWT tokens upon successful authentication
+•	Invalid credentials return HTTP 401 Unauthorized response
+•	Token expiration and refresh mechanisms function correctly
+•	Session management operates as expected
+4.2 Business Event 2 - Scenario Qualification
+Test Scenario: Prerequisite validation and scenario unlocking
+Verification Points:
+•	Users must complete prerequisite questionnaires to unlock scenarios
+•	Minimum qualifying score of 90% correctly enforced
+•	"Launch" button remains disabled until qualification criteria met
+•	Scenario progression logic functions correctly
+•	User progress persists across sessions
+
+4.3 Business Event 3 - Simulation Execution
+Test Scenario: End-to-end simulation lifecycle management
+Verification Points:
+•	Clicking "Launch" button triggers Kubernetes job creation
+•	Simulation status displays as "Running" in user interface
+•	Terminal input/output functionality operates correctly
+•	Real-time log streaming displays accurate information
+•	Simulation can be stopped gracefully by user action
+•	Resources properly cleaned up after simulation termination
+
+4.4 Business Event 4 - Administrative Monitoring
+Test Scenario: Admin dashboard and system oversight capabilities
+Verification Points:
+•	Admin can view comprehensive list of active Kubernetes pods
+•	System audit logs display complete user activity records
+•	Resource utilization metrics display accurately
+•	Admin can perform user management operations
+•	Cluster health indicators reflect true system state
+
+
+
+5. Test Environments
+5.1 Client-Side Infrastructure
+Supported Browsers:
+•	Google Chrome (Latest stable version)
+•	Mozilla Firefox (Latest stable version)
+•	Safari (Latest stable version)
+•	Microsoft Edge (Latest stable version)
+Operating Systems:
+•	Windows 10/11
+•	Linux (Ubuntu 20.04+, Fedora, Debian)
+•	macOS (Monterey and later)
+
+5.2 Host/Server-Side Infrastructure
+Core Components:
+•	Kubernetes Cluster: Minikube (development) or Cloud Provider (staging/production)
+•	Backend Services: Node.js with NestJS framework
+•	Database: PostgreSQL (primary) or MongoDB (document storage)
+•	Container Runtime: Docker Engine
+
+5.3 Middleware and Supporting Services
+Infrastructure Components:
+•	API Gateway: Reverse proxy for request routing and load balancing
+•	Redis: Caching layer and job queue management
+•	Message Queue: RabbitMQ or similar for asynchronous processing
+•	Monitoring: Prometheus and Grafana for metrics and alerting
+
+
+
+5.4 Test Data Preparation
+Database Management Scripts:
+•	Reset Database: npm run db:reset - Clears all data and reinitializes schema
+•	Seed Scenarios: npm run seed:scenarios - Populates scenario catalog
+•	Create Test Users: npm run seed:users - Generates test user accounts
+•	Mock Data Generation: npm run generate:mocks - Creates sample alert data
+
+6. Test Schedule
+The testing schedule is organized into focused cycles aligned with feature development:
+Cycle 1: Authentication & User Profile (Days 1-2)
+Focus Areas:
+•	User registration and login workflows
+•	Profile management functionality
+•	Session handling and token management
+•	Password reset and account recovery
+Cycle 2: Scenarios & Questionnaires (Day 3)
+Focus Areas:
+•	Scenario listing and filtering
+•	Questionnaire presentation and scoring
+•	Prerequisite validation logic
+•	Scenario unlocking mechanisms
+Cycle 3: Simulation Engine & IDS (Days 4-5)
+Focus Areas:
+•	Simulation lifecycle management
+•	Container orchestration and monitoring
+•	IDS alert generation and display
+•	Real-time log streaming
+•	Terminal interaction functionality
+
+Cycle 4: Admin Features & Regression (Day 6)
+Focus Areas:
+•	Administrative dashboard functionality
+•	User management operations
+•	System monitoring and health checks
+•	Comprehensive regression testing
+•	Final integration validation
+
+7. Appendices
+Appendix A - System Schematics
+Refer to the Architecture Diagram in the Project Documentation repository for detailed system architecture, component interaction flows, and infrastructure topology.
+Appendix B - Test Metrics
+Key performance indicators tracked throughout testing:
+•	Test execution rate
+•	Defect detection rate
+•	Test coverage percentage
+•	Pass/fail ratios by module
+•	Mean time to failure (MTTF)
+Appendix C - Risk Assessment
+Identified risks and mitigation strategies documented in separate Risk Management Plan.
+
